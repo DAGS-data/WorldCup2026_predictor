@@ -172,9 +172,9 @@ Features: `overperformance`, `opponent_overperformance`, `overperformance_diff`
 
 | Feature | Formula |
 |---------|---------|
-| `goals_scored_per_match` | $\frac{1}{n}\sum g_{\text{for}}$ |
-| `goals_conceded_per_match` | $\frac{1}{n}\sum g_{\text{against}}$ |
-| `goal_diff_per_match` | $\bar{g}_{\text{for}} - \bar{g}_{\text{against}}$ |
+| `goals_scored_per_match` | $\frac{1}{n}\sum g_{F}$ |
+| `goals_conceded_per_match` | $\frac{1}{n}\sum g_{A}$ |
+| `goal_diff_per_match` | $\mu_F - \mu_A$ |
 | `clean_sheet_rate` | $\frac{\text{matches with no goals conceded}}{n}$ |
 | `comeback_rate` | $\frac{\text{comeback wins}}{n}$ |
 
@@ -288,7 +288,7 @@ Scores above 8 goals are truncated (combined probability $< 0.001\%$).
 
 ##### Most Likely Score
 
-$$\text{score}_{\text{pred}} = \underset{g_A,\, g_B}{\arg\max}\; P(g_A, g_B)$$
+$$s_{\text{pred}} = \underset{g_A,\, g_B}{\arg\max}\; P(g_A, g_B)$$
 
 #### Example: Argentina vs England
 
@@ -315,7 +315,7 @@ $$\text{score}_{\text{pred}} = \underset{g_A,\, g_B}{\arg\max}\; P(g_A, g_B)$$
 
 Each team receives a rating from **1–100** combining three weighted factors:
 
-$$\text{rating} = 1 + 99 \times \Bigl(0.65 \cdot \text{ELO}_{\text{norm}} + 0.25 \cdot \text{Form} + 0.10 \cdot \text{GD}_{\text{factor}}\Bigr)$$
+$$\text{rating} = 1 + 99 \times \Bigl(0.65 \cdot \text{ELO}_\text{norm} + 0.25 \cdot \text{Form} + 0.10 \cdot \text{GD}_\text{factor}\Bigr)$$
 
 | Component | Weight | Description |
 |-----------|--------|-------------|

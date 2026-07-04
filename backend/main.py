@@ -232,16 +232,30 @@ def predict_match_v2(team1_id: int, team2_id: int):
                 "comeback": False, "advanced": False,
             })
 
-    features = compute_match_features(
+    # --- Dual-prediction symmetrization ---
+    # Predict P(team1 advances) from BOTH perspectives and average.
+    # Reason: XGBoost features are directional (elo_diff, momentum_diff, etc.)
+    # and tree models don't guarantee complementary probabilities. Dual
+    # prediction + averaging eliminates order bias — swapping teams yields
+    # exactly complementary probabilities.
+    features_fwd = compute_match_features(
         team1_id, team2_id, t1, t2,
         t1_hist, t2_hist,
+        "round_of_16", "2026-07-04"
+    )
+    features_rev = compute_match_features(
+        team2_id, team1_id, t2, t1,
+        t2_hist, t1_hist,
         "round_of_16", "2026-07-04"
     )
 
     try:
         xgb = get_xgb_predictor()
-        prob = xgb.predict(features)
-        explanation = xgb.explain(features)
+        prob_fwd = xgb.predict(features_fwd)       # P(team1 advances) from team1's view
+        prob_rev = xgb.predict(features_rev)       # P(team2 advances) from team2's view
+        # Symmetrize: average forward prediction with (1 - reverse prediction)
+        prob = round((prob_fwd + (1.0 - prob_rev)) / 2.0, 4)
+        explanation = xgb.explain(features_fwd)    # SHAP from team1's perspective
     except Exception as e:
         prob = None
         explanation = {"error": str(e)}
@@ -257,7 +271,7 @@ def predict_match_v2(team1_id: int, team2_id: int):
         "v2_prediction": {
             "team1_advance_prob": prob,
             "model": "XGBoost (38 features, Optuna-tuned)",
-            "features_used": len(features),
+            "features_used": len(features_fwd),
         },
         "v1_baseline": {
             "team1_win_prob": poisson["team1_win_prob"],

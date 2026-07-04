@@ -670,16 +670,6 @@ async function runH2H() {
         '</div>' +
         '<div class="prob-labels" style="font-size:10px"><span>Gana: '+w1+'%</span><span>ET: '+dr+'%</span><span>Pierde: '+w2+'%</span></div></div>';
     }
-      }
-    } else {
-      resultHtml += '<p style="color:var(--red)">Model prediction unavailable. Make sure the model is trained.</p>';
-    }
-
-    // Add Poisson baseline
-    if (data.v1_baseline) {
-      resultHtml += '<div style="margin-top:16px;padding:12px;background:#f9f9f9;border-radius:8px;border:1px solid var(--border);font-size:12px;color:var(--muted)">' +
-        '<strong>Poisson baseline:</strong> ' + data.team1.name + ' win ' + data.v1_baseline.team1_win_prob + '% | Draw ' + data.v1_baseline.draw_prob + '% | ' + data.team2.name + ' win ' + data.v1_baseline.team2_win_prob + '%</div>';
-    }
 
     document.querySelector('#h2h-result-placeholder .h2h-result').innerHTML = resultHtml;
   } catch(e) {

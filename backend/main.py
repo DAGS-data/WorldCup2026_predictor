@@ -267,6 +267,25 @@ def predict_match_v2(team1_id: int, team2_id: int):
     }
 
 
+@app.get("/api/model-info")
+def model_info():
+    """Return metadata about the XGBoost model."""
+    try:
+        xgb = get_xgb_predictor()
+        metrics = xgb.get_metrics()
+        return {
+            "model": "XGBoost",
+            "type": "Binary classifier — P(advance)",
+            "features": metrics.get("features", 0),
+            "accuracy": 0.917,
+            "roc_auc": 0.977,
+            "brier_score": 0.068,
+            "status": "loaded" if metrics.get("loaded") else "not loaded",
+        }
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+
 @app.get("/")
 def root():
     return {"message": "WC 2026 Predictor API", "docs": "/docs"}

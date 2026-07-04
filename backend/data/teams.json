@@ -12,7 +12,7 @@
     "lng": -102.5,
     "fifa_rank": 15,
     "elo_rating": 1872.5,
-    "squad_value_millions": 0,
+    "squad_value_millions": 250,
     "recent_form": [
       {
         "opponent": "Ecuador",
@@ -59,7 +59,9 @@
       "form_score": 100.0,
       "elo_contribution": 84.9,
       "gd_factor": 83.3
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/mexiko/startseite/verein/6303"
   },
   {
     "id": 1,
@@ -74,7 +76,7 @@
     "lng": 22.9,
     "fifa_rank": 47,
     "elo_rating": 1569.5,
-    "squad_value_millions": 0,
+    "squad_value_millions": 115,
     "recent_form": [
       {
         "opponent": "Canada",
@@ -121,7 +123,8 @@
       "form_score": 38.0,
       "elo_contribution": 32.7,
       "gd_factor": 41.7
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 2,
@@ -136,7 +139,7 @@
     "lng": 127.8,
     "fifa_rank": 24,
     "elo_rating": 1754.1,
-    "squad_value_millions": 0,
+    "squad_value_millions": 158,
     "recent_form": [
       {
         "opponent": "South Africa",
@@ -174,7 +177,8 @@
       "form_score": 30.8,
       "elo_contribution": 64.5,
       "gd_factor": 44.4
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 3,
@@ -189,7 +193,7 @@
     "lng": 15.5,
     "fifa_rank": 39,
     "elo_rating": 1688.9,
-    "squad_value_millions": 0,
+    "squad_value_millions": 190,
     "recent_form": [
       {
         "opponent": "Mexico",
@@ -227,7 +231,8 @@
       "form_score": 16.7,
       "elo_contribution": 53.3,
       "gd_factor": 27.8
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 4,
@@ -242,7 +247,7 @@
     "lng": -106.3,
     "fifa_rank": 38,
     "elo_rating": 1676.4,
-    "squad_value_millions": 0,
+    "squad_value_millions": 180,
     "recent_form": [
       {
         "opponent": "South Africa",
@@ -289,7 +294,9 @@
       "form_score": 63.0,
       "elo_contribution": 51.1,
       "gd_factor": 75.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/kanada/startseite/verein/3515"
   },
   {
     "id": 5,
@@ -304,7 +311,7 @@
     "lng": 17.7,
     "fifa_rank": 51,
     "elo_rating": 1684.3,
-    "squad_value_millions": 0,
+    "squad_value_millions": 130,
     "recent_form": [
       {
         "opponent": "United States",
@@ -351,7 +358,8 @@
       "form_score": 37.0,
       "elo_contribution": 52.5,
       "gd_factor": 37.5
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 6,
@@ -366,7 +374,7 @@
     "lng": 51.2,
     "fifa_rank": 37,
     "elo_rating": 1473.2,
-    "squad_value_millions": 0,
+    "squad_value_millions": 15,
     "recent_form": [
       {
         "opponent": "Bosnia-Herzegovina",
@@ -404,7 +412,8 @@
       "form_score": 15.4,
       "elo_contribution": 16.1,
       "gd_factor": 5.6
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 7,
@@ -419,7 +428,7 @@
     "lng": 8.2,
     "fifa_rank": 14,
     "elo_rating": 1853.3,
-    "squad_value_millions": 0,
+    "squad_value_millions": 275,
     "recent_form": [
       {
         "opponent": "Algeria",
@@ -466,7 +475,8 @@
       "form_score": 89.0,
       "elo_contribution": 81.6,
       "gd_factor": 75.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 8,
@@ -481,7 +491,7 @@
     "lng": -51.9,
     "fifa_rank": 6,
     "elo_rating": 2059.7,
-    "squad_value_millions": 0,
+    "squad_value_millions": 1010,
     "recent_form": [
       {
         "opponent": "Japan",
@@ -528,7 +538,9 @@
       "form_score": 89.0,
       "elo_contribution": 100.0,
       "gd_factor": 79.2
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/brasilien/startseite/verein/3439"
   },
   {
     "id": 9,
@@ -543,7 +555,7 @@
     "lng": -7.1,
     "fifa_rank": 7,
     "elo_rating": 1836.3,
-    "squad_value_millions": 0,
+    "squad_value_millions": 360,
     "recent_form": [
       {
         "opponent": "Netherlands",
@@ -590,7 +602,9 @@
       "form_score": 75.0,
       "elo_contribution": 78.7,
       "gd_factor": 62.5
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/marokko/startseite/verein/3575"
   },
   {
     "id": 10,
@@ -605,7 +619,7 @@
     "lng": -72.3,
     "fifa_rank": 53,
     "elo_rating": 1465.5,
-    "squad_value_millions": 0,
+    "squad_value_millions": 14,
     "recent_form": [
       {
         "opponent": "Morocco",
@@ -643,7 +657,8 @@
       "form_score": 0.0,
       "elo_contribution": 14.7,
       "gd_factor": 16.7
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 11,
@@ -658,7 +673,7 @@
     "lng": -4.2,
     "fifa_rank": 36,
     "elo_rating": 1672.2,
-    "squad_value_millions": 0,
+    "squad_value_millions": 240,
     "recent_form": [
       {
         "opponent": "Brazil",
@@ -696,7 +711,8 @@
       "form_score": 30.8,
       "elo_contribution": 50.4,
       "gd_factor": 33.3
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 12,
@@ -711,7 +727,7 @@
     "lng": -95.7,
     "fifa_rank": 11,
     "elo_rating": 1869.0,
-    "squad_value_millions": 0,
+    "squad_value_millions": 345,
     "recent_form": [
       {
         "opponent": "Bosnia-Herzegovina",
@@ -758,7 +774,8 @@
       "form_score": 74.0,
       "elo_contribution": 84.3,
       "gd_factor": 75.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 13,
@@ -773,7 +790,7 @@
     "lng": -58.4,
     "fifa_rank": 44,
     "elo_rating": 1707.4,
-    "squad_value_millions": 0,
+    "squad_value_millions": 132,
     "recent_form": [
       {
         "opponent": "Germany",
@@ -820,7 +837,8 @@
       "form_score": 51.0,
       "elo_contribution": 56.4,
       "gd_factor": 41.7
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 14,
@@ -835,7 +853,7 @@
     "lng": 133.8,
     "fifa_rank": 27,
     "elo_rating": 1667.5,
-    "squad_value_millions": 0,
+    "squad_value_millions": 65,
     "recent_form": [
       {
         "opponent": "Egypt",
@@ -882,7 +900,8 @@
       "form_score": 49.0,
       "elo_contribution": 49.6,
       "gd_factor": 50.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 15,
@@ -897,7 +916,7 @@
     "lng": 35.0,
     "fifa_rank": 0,
     "elo_rating": 1706.2,
-    "squad_value_millions": 0,
+    "squad_value_millions": 325,
     "recent_form": [
       {
         "opponent": "United States",
@@ -935,7 +954,8 @@
       "form_score": 35.8,
       "elo_contribution": 56.2,
       "gd_factor": 38.9
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 16,
@@ -950,7 +970,7 @@
     "lng": 10.5,
     "fifa_rank": 10,
     "elo_rating": 1930.7,
-    "squad_value_millions": 0,
+    "squad_value_millions": 840,
     "recent_form": [
       {
         "opponent": "Paraguay",
@@ -997,7 +1017,9 @@
       "form_score": 60.1,
       "elo_contribution": 94.9,
       "gd_factor": 75.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/deutschland/startseite/verein/3262"
   },
   {
     "id": 17,
@@ -1012,7 +1034,7 @@
     "lng": -69.0,
     "fifa_rank": 90,
     "elo_rating": 1400.9,
-    "squad_value_millions": 0,
+    "squad_value_millions": 5,
     "recent_form": [
       {
         "opponent": "Ivory Coast",
@@ -1050,7 +1072,8 @@
       "form_score": 16.7,
       "elo_contribution": 3.6,
       "gd_factor": 5.6
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 18,
@@ -1065,7 +1088,7 @@
     "lng": -5.5,
     "fifa_rank": 41,
     "elo_rating": 1679.7,
-    "squad_value_millions": 0,
+    "squad_value_millions": 230,
     "recent_form": [
       {
         "opponent": "Norway",
@@ -1112,7 +1135,8 @@
       "form_score": 48.0,
       "elo_contribution": 51.7,
       "gd_factor": 54.2
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 19,
@@ -1127,7 +1151,7 @@
     "lng": -78.2,
     "fifa_rank": 29,
     "elo_rating": 1704.9,
-    "squad_value_millions": 0,
+    "squad_value_millions": 165,
     "recent_form": [
       {
         "opponent": "Mexico",
@@ -1174,7 +1198,8 @@
       "form_score": 38.0,
       "elo_contribution": 56.0,
       "gd_factor": 41.7
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 20,
@@ -1189,7 +1214,7 @@
     "lng": 5.3,
     "fifa_rank": 8,
     "elo_rating": 1958.6,
-    "squad_value_millions": 0,
+    "squad_value_millions": 785,
     "recent_form": [
       {
         "opponent": "Morocco",
@@ -1236,7 +1261,9 @@
       "form_score": 75.0,
       "elo_contribution": 99.8,
       "gd_factor": 75.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/niederlande/startseite/verein/3379"
   },
   {
     "id": 21,
@@ -1251,7 +1278,7 @@
     "lng": 138.3,
     "fifa_rank": 18,
     "elo_rating": 1796.9,
-    "squad_value_millions": 0,
+    "squad_value_millions": 271,
     "recent_form": [
       {
         "opponent": "Brazil",
@@ -1298,7 +1325,9 @@
       "form_score": 48.0,
       "elo_contribution": 71.9,
       "gd_factor": 62.5
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/japan/startseite/verein/3435"
   },
   {
     "id": 22,
@@ -1313,7 +1342,7 @@
     "lng": 18.6,
     "fifa_rank": 25,
     "elo_rating": 1766.3,
-    "squad_value_millions": 0,
+    "squad_value_millions": 220,
     "recent_form": [
       {
         "opponent": "France",
@@ -1360,7 +1389,8 @@
       "form_score": 35.1,
       "elo_contribution": 66.6,
       "gd_factor": 37.5
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 23,
@@ -1375,7 +1405,7 @@
     "lng": 9.5,
     "fifa_rank": 31,
     "elo_rating": 1596.9,
-    "squad_value_millions": 0,
+    "squad_value_millions": 85,
     "recent_form": [
       {
         "opponent": "Netherlands",
@@ -1413,7 +1443,8 @@
       "form_score": 0.0,
       "elo_contribution": 37.4,
       "gd_factor": 0.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 24,
@@ -1428,7 +1459,7 @@
     "lng": 4.5,
     "fifa_rank": 9,
     "elo_rating": 1929.2,
-    "squad_value_millions": 0,
+    "squad_value_millions": 595,
     "recent_form": [
       {
         "opponent": "Senegal",
@@ -1475,7 +1506,9 @@
       "form_score": 77.0,
       "elo_contribution": 94.7,
       "gd_factor": 70.8
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/belgien/startseite/verein/3382"
   },
   {
     "id": 25,
@@ -1490,7 +1523,7 @@
     "lng": 30.8,
     "fifa_rank": 28,
     "elo_rating": 1658.9,
-    "squad_value_millions": 0,
+    "squad_value_millions": 135,
     "recent_form": [
       {
         "opponent": "Australia",
@@ -1537,7 +1570,8 @@
       "form_score": 62.0,
       "elo_contribution": 48.1,
       "gd_factor": 58.3
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 26,
@@ -1552,7 +1586,7 @@
     "lng": 53.7,
     "fifa_rank": 20,
     "elo_rating": 1707.5,
-    "squad_value_millions": 0,
+    "squad_value_millions": 52,
     "recent_form": [
       {
         "opponent": "Egypt",
@@ -1590,7 +1624,8 @@
       "form_score": 50.0,
       "elo_contribution": 56.5,
       "gd_factor": 50.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 27,
@@ -1605,7 +1640,7 @@
     "lng": 174.9,
     "fifa_rank": 88,
     "elo_rating": 1382.4,
-    "squad_value_millions": 0,
+    "squad_value_millions": 22,
     "recent_form": [
       {
         "opponent": "Belgium",
@@ -1643,7 +1678,8 @@
       "form_score": 15.4,
       "elo_contribution": 0.4,
       "gd_factor": 16.7
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 28,
@@ -1658,7 +1694,7 @@
     "lng": -3.7,
     "fifa_rank": 2,
     "elo_rating": 2076.6,
-    "squad_value_millions": 0,
+    "squad_value_millions": 965,
     "recent_form": [
       {
         "opponent": "Austria",
@@ -1705,7 +1741,9 @@
       "form_score": 89.0,
       "elo_contribution": 100.0,
       "gd_factor": 83.3
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/spanien/startseite/verein/3375"
   },
   {
     "id": 29,
@@ -1720,7 +1758,7 @@
     "lng": -23.6,
     "fifa_rank": 54,
     "elo_rating": 1523.2,
-    "squad_value_millions": 0,
+    "squad_value_millions": 35,
     "recent_form": [
       {
         "opponent": "Argentina",
@@ -1767,7 +1805,8 @@
       "form_score": 36.0,
       "elo_contribution": 24.7,
       "gd_factor": 45.8
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 30,
@@ -1782,7 +1821,7 @@
     "lng": 45.1,
     "fifa_rank": 45,
     "elo_rating": 1580.3,
-    "squad_value_millions": 0,
+    "squad_value_millions": 28,
     "recent_form": [
       {
         "opponent": "Cape Verde",
@@ -1820,7 +1859,8 @@
       "form_score": 33.3,
       "elo_contribution": 34.5,
       "gd_factor": 27.8
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 31,
@@ -1835,7 +1875,7 @@
     "lng": -55.8,
     "fifa_rank": 16,
     "elo_rating": 1830.6,
-    "squad_value_millions": 0,
+    "squad_value_millions": 390,
     "recent_form": [
       {
         "opponent": "Spain",
@@ -1873,7 +1913,9 @@
       "form_score": 32.1,
       "elo_contribution": 77.7,
       "gd_factor": 44.4
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/uruguay/startseite/verein/3449"
   },
   {
     "id": 32,
@@ -1888,7 +1930,7 @@
     "lng": 2.2,
     "fifa_rank": 3,
     "elo_rating": 2081.9,
-    "squad_value_millions": 0,
+    "squad_value_millions": 1230,
     "recent_form": [
       {
         "opponent": "Sweden",
@@ -1935,7 +1977,9 @@
       "form_score": 100.0,
       "elo_contribution": 100.0,
       "gd_factor": 95.8
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/frankreich/startseite/verein/3377"
   },
   {
     "id": 33,
@@ -1950,7 +1994,7 @@
     "lng": -14.5,
     "fifa_rank": 17,
     "elo_rating": 1710.1,
-    "squad_value_millions": 0,
+    "squad_value_millions": 285,
     "recent_form": [
       {
         "opponent": "Belgium",
@@ -1997,7 +2041,8 @@
       "form_score": 26.0,
       "elo_contribution": 56.9,
       "gd_factor": 54.2
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 34,
@@ -2012,7 +2057,7 @@
     "lng": 43.7,
     "fifa_rank": 49,
     "elo_rating": 1436.2,
-    "squad_value_millions": 0,
+    "squad_value_millions": 18,
     "recent_form": [
       {
         "opponent": "Senegal",
@@ -2050,7 +2095,8 @@
       "form_score": 0.0,
       "elo_contribution": 9.7,
       "gd_factor": 0.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 35,
@@ -2065,7 +2111,7 @@
     "lng": 8.5,
     "fifa_rank": 33,
     "elo_rating": 1779.6,
-    "squad_value_millions": 0,
+    "squad_value_millions": 480,
     "recent_form": [
       {
         "opponent": "Ivory Coast",
@@ -2112,7 +2158,9 @@
       "form_score": 74.0,
       "elo_contribution": 68.9,
       "gd_factor": 58.3
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/norwegen/startseite/verein/3440"
   },
   {
     "id": 36,
@@ -2127,7 +2175,7 @@
     "lng": -63.6,
     "fifa_rank": 1,
     "elo_rating": 2127.3,
-    "squad_value_millions": 0,
+    "squad_value_millions": 950,
     "recent_form": [
       {
         "opponent": "Cape Verde",
@@ -2174,7 +2222,9 @@
       "form_score": 100.0,
       "elo_contribution": 100.0,
       "gd_factor": 83.3
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/argentinien/startseite/verein/3437"
   },
   {
     "id": 37,
@@ -2189,7 +2239,7 @@
     "lng": 2.6,
     "fifa_rank": 34,
     "elo_rating": 1654.3,
-    "squad_value_millions": 0,
+    "squad_value_millions": 145,
     "recent_form": [
       {
         "opponent": "Switzerland",
@@ -2236,7 +2286,8 @@
       "form_score": 37.0,
       "elo_contribution": 47.3,
       "gd_factor": 33.3
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 38,
@@ -2251,7 +2302,7 @@
     "lng": 14.5,
     "fifa_rank": 22,
     "elo_rating": 1779.8,
-    "squad_value_millions": 0,
+    "squad_value_millions": 265,
     "recent_form": [
       {
         "opponent": "Spain",
@@ -2298,7 +2349,8 @@
       "form_score": 35.1,
       "elo_contribution": 68.9,
       "gd_factor": 37.5
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 39,
@@ -2313,7 +2365,7 @@
     "lng": 36.8,
     "fifa_rank": 52,
     "elo_rating": 1408.6,
-    "squad_value_millions": 0,
+    "squad_value_millions": 12,
     "recent_form": [
       {
         "opponent": "Argentina",
@@ -2351,7 +2403,8 @@
       "form_score": 0.0,
       "elo_contribution": 4.9,
       "gd_factor": 22.2
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 40,
@@ -2366,7 +2419,7 @@
     "lng": -8.2,
     "fifa_rank": 5,
     "elo_rating": 1992.0,
-    "squad_value_millions": 0,
+    "squad_value_millions": 760,
     "recent_form": [
       {
         "opponent": "Croatia",
@@ -2413,7 +2466,9 @@
       "form_score": 76.0,
       "elo_contribution": 100.0,
       "gd_factor": 75.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/portugal/startseite/verein/3300"
   },
   {
     "id": 41,
@@ -2428,7 +2483,7 @@
     "lng": 21.8,
     "fifa_rank": 60,
     "elo_rating": 1571.5,
-    "squad_value_millions": 0,
+    "squad_value_millions": 28,
     "recent_form": [
       {
         "opponent": "England",
@@ -2475,7 +2530,8 @@
       "form_score": 37.0,
       "elo_contribution": 33.0,
       "gd_factor": 50.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 42,
@@ -2490,7 +2546,7 @@
     "lng": 64.6,
     "fifa_rank": 55,
     "elo_rating": 1440.6,
-    "squad_value_millions": 0,
+    "squad_value_millions": 45,
     "recent_form": [
       {
         "opponent": "Congo DR",
@@ -2528,7 +2584,8 @@
       "form_score": 0.0,
       "elo_contribution": 10.4,
       "gd_factor": 0.0
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 43,
@@ -2543,7 +2600,7 @@
     "lng": -74.3,
     "fifa_rank": 12,
     "elo_rating": 1894.2,
-    "squad_value_millions": 0,
+    "squad_value_millions": 278,
     "recent_form": [
       {
         "opponent": "Ghana",
@@ -2590,7 +2647,9 @@
       "form_score": 87.0,
       "elo_contribution": 88.7,
       "gd_factor": 66.7
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/kolumbien/startseite/verein/3816"
   },
   {
     "id": 44,
@@ -2605,7 +2664,7 @@
     "lng": -1.2,
     "fifa_rank": 4,
     "elo_rating": 2038.8,
-    "squad_value_millions": 0,
+    "squad_value_millions": 1470,
     "recent_form": [
       {
         "opponent": "Congo DR",
@@ -2652,7 +2711,9 @@
       "form_score": 88.0,
       "elo_contribution": 100.0,
       "gd_factor": 70.8
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/england/startseite/verein/3299"
   },
   {
     "id": 45,
@@ -2667,7 +2728,7 @@
     "lng": 15.2,
     "fifa_rank": 13,
     "elo_rating": 1877.4,
-    "squad_value_millions": 0,
+    "squad_value_millions": 375,
     "recent_form": [
       {
         "opponent": "Portugal",
@@ -2714,7 +2775,9 @@
       "form_score": 50.0,
       "elo_contribution": 85.8,
       "gd_factor": 45.8
-    }
+    },
+    "squad_value_source": "transfermarkt.com",
+    "squad_value_url": "https://www.transfermarkt.com/kroatien/startseite/verein/3556"
   },
   {
     "id": 46,
@@ -2729,7 +2792,7 @@
     "lng": -1.0,
     "fifa_rank": 48,
     "elo_rating": 1563.2,
-    "squad_value_millions": 0,
+    "squad_value_millions": 209,
     "recent_form": [
       {
         "opponent": "Colombia",
@@ -2776,7 +2839,8 @@
       "form_score": 34.1,
       "elo_contribution": 31.6,
       "gd_factor": 45.8
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   },
   {
     "id": 47,
@@ -2791,7 +2855,7 @@
     "lng": -80.8,
     "fifa_rank": 46,
     "elo_rating": 1516.5,
-    "squad_value_millions": 0,
+    "squad_value_millions": 28,
     "recent_form": [
       {
         "opponent": "England",
@@ -2829,6 +2893,7 @@
       "form_score": 0.0,
       "elo_contribution": 23.5,
       "gd_factor": 27.8
-    }
+    },
+    "squad_value_source": "transfermarkt.com"
   }
 ]

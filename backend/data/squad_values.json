@@ -1,0 +1,126 @@
+{
+  "Czechia": {
+    "value_millions": 232.1,
+    "currency": "EUR"
+  },
+  "Canada": {
+    "value_millions": 198.65,
+    "currency": "EUR"
+  },
+  "Bosnia-Herzegovina": {
+    "value_millions": 242.7,
+    "currency": "EUR"
+  },
+  "Switzerland": {
+    "value_millions": 332.5,
+    "currency": "EUR"
+  },
+  "Brazil": {
+    "value_millions": 928.2,
+    "currency": "EUR"
+  },
+  "Morocco": {
+    "value_millions": 447.7,
+    "currency": "EUR"
+  },
+  "Scotland": {
+    "value_millions": 170.25,
+    "currency": "EUR"
+  },
+  "United States": {
+    "value_millions": 385.65,
+    "currency": "EUR"
+  },
+  "Paraguay": {
+    "value_millions": 17.5,
+    "currency": "EUR"
+  },
+  "Türkiye": {
+    "value_millions": 473.7,
+    "currency": "EUR"
+  },
+  "Germany": {
+    "value_millions": 947.0,
+    "currency": "EUR"
+  },
+  "Ecuador": {
+    "value_millions": 188.18,
+    "currency": "EUR"
+  },
+  "Netherlands": {
+    "value_millions": 754.2,
+    "currency": "EUR"
+  },
+  "Japan": {
+    "value_millions": 270.85,
+    "currency": "EUR"
+  },
+  "Sweden": {
+    "value_millions": 409.08,
+    "currency": "EUR"
+  },
+  "Belgium": {
+    "value_millions": 547.5,
+    "currency": "EUR"
+  },
+  "Egypt": {
+    "value_millions": 116.48,
+    "currency": "EUR"
+  },
+  "Iran": {
+    "value_millions": 32.05,
+    "currency": "EUR"
+  },
+  "Spain": {
+    "value_millions": 1220.0,
+    "currency": "EUR"
+  },
+  "Uruguay": {
+    "value_millions": 359.3,
+    "currency": "EUR"
+  },
+  "France": {
+    "value_millions": 1520.0,
+    "currency": "EUR"
+  },
+  "Senegal": {
+    "value_millions": 247.0,
+    "currency": "EUR"
+  },
+  "Iraq": {
+    "value_millions": 25.33,
+    "currency": "EUR"
+  },
+  "Norway": {
+    "value_millions": 42.45,
+    "currency": "EUR"
+  },
+  "Argentina": {
+    "value_millions": 198.6,
+    "currency": "EUR"
+  },
+  "Algeria": {
+    "value_millions": 251.9,
+    "currency": "EUR"
+  },
+  "Portugal": {
+    "value_millions": 1010.0,
+    "currency": "EUR"
+  },
+  "Congo DR": {
+    "value_millions": 143.9,
+    "currency": "EUR"
+  },
+  "Colombia": {
+    "value_millions": 302.35,
+    "currency": "EUR"
+  },
+  "England": {
+    "value_millions": 1360.0,
+    "currency": "EUR"
+  },
+  "Croatia": {
+    "value_millions": 387.3,
+    "currency": "EUR"
+  }
+}

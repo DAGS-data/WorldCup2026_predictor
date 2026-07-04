@@ -5,766 +5,1562 @@
     "team1_id": 0,
     "team2_id": 1,
     "date": "2026-06-11",
-    "venue": "Estadio Azteca, Mexico City",
+    "venue": "Estadio Banorte",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group A"
   },
   {
     "id": 1,
     "group": "A",
-    "team1_id": 1,
-    "team2_id": 2,
+    "team1_id": 2,
+    "team2_id": 3,
     "date": "2026-06-12",
-    "venue": "AT&T Stadium, Dallas",
+    "venue": "Estadio Akron",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group A"
   },
   {
     "id": 2,
-    "group": "A",
-    "team1_id": 2,
-    "team2_id": 0,
-    "date": "2026-06-13",
-    "venue": "SoFi Stadium, Los Angeles",
-    "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 3,
-    "group": "B",
-    "team1_id": 3,
-    "team2_id": 4,
-    "date": "2026-06-11",
-    "venue": "MetLife Stadium, New York",
-    "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 4,
     "group": "B",
     "team1_id": 4,
     "team2_id": 5,
     "date": "2026-06-12",
-    "venue": "Mercedes-Benz Stadium, Atlanta",
+    "venue": "BMO Field",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group B"
+  },
+  {
+    "id": 3,
+    "group": "D",
+    "team1_id": 12,
+    "team2_id": 13,
+    "date": "2026-06-13",
+    "venue": "SoFi Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "4",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group D"
+  },
+  {
+    "id": 4,
+    "group": "B",
+    "team1_id": 6,
+    "team2_id": 7,
+    "date": "2026-06-13",
+    "venue": "Levi's Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group B"
   },
   {
     "id": 5,
-    "group": "B",
-    "team1_id": 5,
-    "team2_id": 3,
+    "group": "C",
+    "team1_id": 8,
+    "team2_id": 9,
     "date": "2026-06-13",
-    "venue": "Hard Rock Stadium, Miami",
+    "venue": "MetLife Stadium",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group C"
   },
   {
     "id": 6,
     "group": "C",
-    "team1_id": 6,
-    "team2_id": 7,
-    "date": "2026-06-11",
-    "venue": "Arrowhead Stadium, Kansas City",
+    "team1_id": 10,
+    "team2_id": 11,
+    "date": "2026-06-14",
+    "venue": "Gillette Stadium",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group C"
   },
   {
     "id": 7,
-    "group": "C",
-    "team1_id": 7,
-    "team2_id": 8,
-    "date": "2026-06-12",
-    "venue": "NRG Stadium, Houston",
+    "group": "D",
+    "team1_id": 14,
+    "team2_id": 15,
+    "date": "2026-06-14",
+    "venue": "BC Place",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group D"
   },
   {
     "id": 8,
-    "group": "C",
-    "team1_id": 8,
-    "team2_id": 6,
-    "date": "2026-06-13",
-    "venue": "BMO Field, Toronto",
+    "group": "E",
+    "team1_id": 16,
+    "team2_id": 17,
+    "date": "2026-06-14",
+    "venue": "NRG Stadium",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "7",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group E"
   },
   {
     "id": 9,
-    "group": "D",
-    "team1_id": 9,
-    "team2_id": 10,
-    "date": "2026-06-11",
-    "venue": "BC Place, Vancouver",
+    "group": "F",
+    "team1_id": 20,
+    "team2_id": 21,
+    "date": "2026-06-14",
+    "venue": "AT&T Stadium",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Group F"
   },
   {
     "id": 10,
-    "group": "D",
-    "team1_id": 10,
-    "team2_id": 11,
-    "date": "2026-06-12",
-    "venue": "Levi's Stadium, Santa Clara",
-    "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 11,
-    "group": "D",
-    "team1_id": 11,
-    "team2_id": 9,
-    "date": "2026-06-13",
-    "venue": "Lincoln Financial Field, Philadelphia",
-    "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 12,
     "group": "E",
-    "team1_id": 12,
-    "team2_id": 13,
-    "date": "2026-06-14",
-    "venue": "Gillette Stadium, Boston",
-    "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 13,
-    "group": "E",
-    "team1_id": 13,
-    "team2_id": 14,
-    "date": "2026-06-15",
-    "venue": "Lumen Field, Seattle",
-    "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 14,
-    "group": "E",
-    "team1_id": 14,
-    "team2_id": 12,
-    "date": "2026-06-16",
-    "venue": "Estadio BBVA, Monterrey",
-    "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 15,
-    "group": "F",
-    "team1_id": 15,
-    "team2_id": 16,
-    "date": "2026-06-14",
-    "venue": "Estadio Akron, Guadalajara",
-    "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 16,
-    "group": "F",
-    "team1_id": 16,
-    "team2_id": 17,
-    "date": "2026-06-15",
-    "venue": "Estadio Azteca, Mexico City",
-    "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 17,
-    "group": "F",
-    "team1_id": 17,
-    "team2_id": 15,
-    "date": "2026-06-16",
-    "venue": "AT&T Stadium, Dallas",
-    "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 18,
-    "group": "G",
     "team1_id": 18,
     "team2_id": 19,
     "date": "2026-06-14",
-    "venue": "SoFi Stadium, Los Angeles",
+    "venue": "Lincoln Financial Field",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group E"
   },
   {
-    "id": 19,
-    "group": "G",
-    "team1_id": 19,
-    "team2_id": 20,
-    "date": "2026-06-15",
-    "venue": "MetLife Stadium, New York",
-    "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 20,
-    "group": "G",
-    "team1_id": 20,
-    "team2_id": 18,
-    "date": "2026-06-16",
-    "venue": "Mercedes-Benz Stadium, Atlanta",
-    "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 21,
-    "group": "H",
-    "team1_id": 21,
-    "team2_id": 22,
-    "date": "2026-06-14",
-    "venue": "Hard Rock Stadium, Miami",
-    "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
-  },
-  {
-    "id": 22,
-    "group": "H",
+    "id": 11,
+    "group": "F",
     "team1_id": 22,
     "team2_id": 23,
     "date": "2026-06-15",
-    "venue": "Arrowhead Stadium, Kansas City",
+    "venue": "Estadio BBVA",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "5",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group F"
+  },
+  {
+    "id": 12,
+    "group": "H",
+    "team1_id": 28,
+    "team2_id": 29,
+    "date": "2026-06-15",
+    "venue": "Mercedes-Benz Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group H"
+  },
+  {
+    "id": 13,
+    "group": "G",
+    "team1_id": 24,
+    "team2_id": 25,
+    "date": "2026-06-15",
+    "venue": "Lumen Field",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group G"
+  },
+  {
+    "id": 14,
+    "group": "H",
+    "team1_id": 30,
+    "team2_id": 31,
+    "date": "2026-06-15",
+    "venue": "Hard Rock Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group H"
+  },
+  {
+    "id": 15,
+    "group": "G",
+    "team1_id": 26,
+    "team2_id": 27,
+    "date": "2026-06-16",
+    "venue": "SoFi Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Group G"
+  },
+  {
+    "id": 16,
+    "group": "I",
+    "team1_id": 32,
+    "team2_id": 33,
+    "date": "2026-06-16",
+    "venue": "MetLife Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group I"
+  },
+  {
+    "id": 17,
+    "group": "I",
+    "team1_id": 34,
+    "team2_id": 35,
+    "date": "2026-06-16",
+    "venue": "Gillette Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "4"
+    },
+    "notes": "FIFA World Cup, Group I"
+  },
+  {
+    "id": 18,
+    "group": "J",
+    "team1_id": 36,
+    "team2_id": 37,
+    "date": "2026-06-17",
+    "venue": "GEHA Field at Arrowhead Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group J"
+  },
+  {
+    "id": 19,
+    "group": "J",
+    "team1_id": 38,
+    "team2_id": 39,
+    "date": "2026-06-17",
+    "venue": "Levi's Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group J"
+  },
+  {
+    "id": 20,
+    "group": "K",
+    "team1_id": 40,
+    "team2_id": 41,
+    "date": "2026-06-17",
+    "venue": "NRG Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group K"
+  },
+  {
+    "id": 21,
+    "group": "L",
+    "team1_id": 44,
+    "team2_id": 45,
+    "date": "2026-06-17",
+    "venue": "AT&T Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "4",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Group L"
+  },
+  {
+    "id": 22,
+    "group": "L",
+    "team1_id": 46,
+    "team2_id": 47,
+    "date": "2026-06-17",
+    "venue": "BMO Field",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group L"
   },
   {
     "id": 23,
-    "group": "H",
-    "team1_id": 23,
-    "team2_id": 21,
-    "date": "2026-06-16",
-    "venue": "NRG Stadium, Houston",
+    "group": "K",
+    "team1_id": 42,
+    "team2_id": 43,
+    "date": "2026-06-18",
+    "venue": "Estadio Banorte",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "3"
+    },
+    "notes": "FIFA World Cup, Group K"
   },
   {
     "id": 24,
-    "group": "I",
-    "team1_id": 24,
-    "team2_id": 25,
-    "date": "2026-06-17",
-    "venue": "BMO Field, Toronto",
+    "group": "A",
+    "team1_id": 3,
+    "team2_id": 1,
+    "date": "2026-06-18",
+    "venue": "Mercedes-Benz Stadium",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group A"
   },
   {
     "id": 25,
-    "group": "I",
-    "team1_id": 25,
-    "team2_id": 26,
+    "group": "B",
+    "team1_id": 7,
+    "team2_id": 5,
     "date": "2026-06-18",
-    "venue": "BC Place, Vancouver",
+    "venue": "SoFi Stadium",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "4",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group B"
   },
   {
     "id": 26,
-    "group": "I",
-    "team1_id": 26,
-    "team2_id": 24,
-    "date": "2026-06-19",
-    "venue": "Levi's Stadium, Santa Clara",
+    "group": "B",
+    "team1_id": 4,
+    "team2_id": 6,
+    "date": "2026-06-18",
+    "venue": "BC Place",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "6",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group B"
   },
   {
     "id": 27,
-    "group": "J",
-    "team1_id": 27,
-    "team2_id": 28,
-    "date": "2026-06-17",
-    "venue": "Lincoln Financial Field, Philadelphia",
+    "group": "A",
+    "team1_id": 0,
+    "team2_id": 2,
+    "date": "2026-06-19",
+    "venue": "Estadio Akron",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group A"
   },
   {
     "id": 28,
-    "group": "J",
-    "team1_id": 28,
-    "team2_id": 29,
-    "date": "2026-06-18",
-    "venue": "Gillette Stadium, Boston",
+    "group": "D",
+    "team1_id": 12,
+    "team2_id": 14,
+    "date": "2026-06-19",
+    "venue": "Lumen Field",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group D"
   },
   {
     "id": 29,
-    "group": "J",
-    "team1_id": 29,
-    "team2_id": 27,
+    "group": "C",
+    "team1_id": 11,
+    "team2_id": 9,
     "date": "2026-06-19",
-    "venue": "Lumen Field, Seattle",
+    "venue": "Gillette Stadium",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group C"
   },
   {
     "id": 30,
-    "group": "K",
-    "team1_id": 30,
-    "team2_id": 31,
-    "date": "2026-06-17",
-    "venue": "Estadio BBVA, Monterrey",
+    "group": "C",
+    "team1_id": 8,
+    "team2_id": 10,
+    "date": "2026-06-20",
+    "venue": "Lincoln Financial Field",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group C"
   },
   {
     "id": 31,
-    "group": "K",
-    "team1_id": 31,
-    "team2_id": 32,
-    "date": "2026-06-18",
-    "venue": "Estadio Akron, Guadalajara",
+    "group": "D",
+    "team1_id": 15,
+    "team2_id": 13,
+    "date": "2026-06-20",
+    "venue": "Levi's Stadium",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group D"
   },
   {
     "id": 32,
-    "group": "K",
-    "team1_id": 32,
-    "team2_id": 30,
-    "date": "2026-06-19",
-    "venue": "Estadio Azteca, Mexico City",
+    "group": "F",
+    "team1_id": 20,
+    "team2_id": 22,
+    "date": "2026-06-20",
+    "venue": "NRG Stadium",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "5",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group F"
   },
   {
     "id": 33,
-    "group": "L",
-    "team1_id": 33,
-    "team2_id": 34,
-    "date": "2026-06-17",
-    "venue": "AT&T Stadium, Dallas",
+    "group": "E",
+    "team1_id": 16,
+    "team2_id": 18,
+    "date": "2026-06-20",
+    "venue": "BMO Field",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group E"
   },
   {
     "id": 34,
-    "group": "L",
-    "team1_id": 34,
-    "team2_id": 35,
-    "date": "2026-06-18",
-    "venue": "SoFi Stadium, Los Angeles",
+    "group": "E",
+    "team1_id": 19,
+    "team2_id": 17,
+    "date": "2026-06-21",
+    "venue": "GEHA Field at Arrowhead Stadium",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group E"
   },
   {
     "id": 35,
-    "group": "L",
-    "team1_id": 35,
-    "team2_id": 33,
-    "date": "2026-06-19",
-    "venue": "MetLife Stadium, New York",
+    "group": "F",
+    "team1_id": 23,
+    "team2_id": 21,
+    "date": "2026-06-21",
+    "venue": "Estadio BBVA",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "4"
+    },
+    "notes": "FIFA World Cup, Group F"
   },
   {
     "id": 36,
-    "group": "M",
-    "team1_id": 36,
-    "team2_id": 37,
-    "date": "2026-06-20",
-    "venue": "Mercedes-Benz Stadium, Atlanta",
+    "group": "H",
+    "team1_id": 28,
+    "team2_id": 30,
+    "date": "2026-06-21",
+    "venue": "Mercedes-Benz Stadium",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "4",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group H"
   },
   {
     "id": 37,
-    "group": "M",
-    "team1_id": 37,
-    "team2_id": 38,
+    "group": "G",
+    "team1_id": 24,
+    "team2_id": 26,
     "date": "2026-06-21",
-    "venue": "Hard Rock Stadium, Miami",
+    "venue": "SoFi Stadium",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group G"
   },
   {
     "id": 38,
-    "group": "M",
-    "team1_id": 38,
-    "team2_id": 36,
-    "date": "2026-06-22",
-    "venue": "Arrowhead Stadium, Kansas City",
+    "group": "H",
+    "team1_id": 31,
+    "team2_id": 29,
+    "date": "2026-06-21",
+    "venue": "Hard Rock Stadium",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Group H"
   },
   {
     "id": 39,
-    "group": "N",
-    "team1_id": 39,
-    "team2_id": 40,
-    "date": "2026-06-20",
-    "venue": "NRG Stadium, Houston",
+    "group": "G",
+    "team1_id": 27,
+    "team2_id": 25,
+    "date": "2026-06-22",
+    "venue": "BC Place",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "3"
+    },
+    "notes": "FIFA World Cup, Group G"
   },
   {
     "id": 40,
-    "group": "N",
-    "team1_id": 40,
-    "team2_id": 41,
-    "date": "2026-06-21",
-    "venue": "BMO Field, Toronto",
+    "group": "J",
+    "team1_id": 36,
+    "team2_id": 38,
+    "date": "2026-06-22",
+    "venue": "AT&T Stadium",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group J"
   },
   {
     "id": 41,
-    "group": "N",
-    "team1_id": 41,
-    "team2_id": 39,
+    "group": "I",
+    "team1_id": 32,
+    "team2_id": 34,
     "date": "2026-06-22",
-    "venue": "BC Place, Vancouver",
+    "venue": "Lincoln Financial Field",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group I"
   },
   {
     "id": 42,
-    "group": "O",
-    "team1_id": 42,
-    "team2_id": 43,
-    "date": "2026-06-20",
-    "venue": "Levi's Stadium, Santa Clara",
+    "group": "I",
+    "team1_id": 35,
+    "team2_id": 33,
+    "date": "2026-06-23",
+    "venue": "MetLife Stadium",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Group I"
   },
   {
     "id": 43,
-    "group": "O",
-    "team1_id": 43,
-    "team2_id": 44,
-    "date": "2026-06-21",
-    "venue": "Lincoln Financial Field, Philadelphia",
+    "group": "J",
+    "team1_id": 39,
+    "team2_id": 37,
+    "date": "2026-06-23",
+    "venue": "Levi's Stadium",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Group J"
   },
   {
     "id": 44,
-    "group": "O",
-    "team1_id": 44,
+    "group": "K",
+    "team1_id": 40,
     "team2_id": 42,
-    "date": "2026-06-22",
-    "venue": "Gillette Stadium, Boston",
+    "date": "2026-06-23",
+    "venue": "NRG Stadium",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "5",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group K"
   },
   {
     "id": 45,
-    "group": "P",
-    "team1_id": 45,
+    "group": "L",
+    "team1_id": 44,
     "team2_id": 46,
-    "date": "2026-06-20",
-    "venue": "Lumen Field, Seattle",
+    "date": "2026-06-23",
+    "venue": "Gillette Stadium",
     "stage": "group",
-    "matchday": 1,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group L"
   },
   {
     "id": 46,
-    "group": "P",
-    "team1_id": 46,
-    "team2_id": 47,
-    "date": "2026-06-21",
-    "venue": "Estadio BBVA, Monterrey",
+    "group": "L",
+    "team1_id": 47,
+    "team2_id": 45,
+    "date": "2026-06-23",
+    "venue": "BMO Field",
     "stage": "group",
-    "matchday": 2,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group L"
   },
   {
     "id": 47,
-    "group": "P",
-    "team1_id": 47,
-    "team2_id": 45,
-    "date": "2026-06-22",
-    "venue": "Estadio Akron, Guadalajara",
+    "group": "K",
+    "team1_id": 43,
+    "team2_id": 41,
+    "date": "2026-06-24",
+    "venue": "Estadio Akron",
     "stage": "group",
-    "matchday": 3,
-    "status": "scheduled",
-    "score": null
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group K"
   },
   {
     "id": 48,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-27",
-    "venue": "Estadio Azteca, Mexico City",
-    "stage": "round_of_32",
+    "group": "B",
+    "team1_id": 5,
+    "team2_id": 6,
+    "date": "2026-06-24",
+    "venue": "Lumen Field",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group B"
   },
   {
     "id": 49,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-27",
-    "venue": "AT&T Stadium, Dallas",
-    "stage": "round_of_32",
+    "group": "B",
+    "team1_id": 7,
+    "team2_id": 4,
+    "date": "2026-06-24",
+    "venue": "BC Place",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group B"
   },
   {
     "id": 50,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-27",
-    "venue": "SoFi Stadium, Los Angeles",
-    "stage": "round_of_32",
+    "group": "C",
+    "team1_id": 9,
+    "team2_id": 10,
+    "date": "2026-06-24",
+    "venue": "Mercedes-Benz Stadium",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "4",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Group C"
   },
   {
     "id": 51,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-27",
-    "venue": "MetLife Stadium, New York",
-    "stage": "round_of_32",
+    "group": "C",
+    "team1_id": 11,
+    "team2_id": 8,
+    "date": "2026-06-24",
+    "venue": "Hard Rock Stadium",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "3"
+    },
+    "notes": "FIFA World Cup, Group C"
   },
   {
     "id": 52,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-28",
-    "venue": "Mercedes-Benz Stadium, Atlanta",
-    "stage": "round_of_32",
+    "group": "A",
+    "team1_id": 3,
+    "team2_id": 0,
+    "date": "2026-06-25",
+    "venue": "Estadio Banorte",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "3"
+    },
+    "notes": "FIFA World Cup, Group A"
   },
   {
     "id": 53,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-28",
-    "venue": "Hard Rock Stadium, Miami",
-    "stage": "round_of_32",
+    "group": "A",
+    "team1_id": 1,
+    "team2_id": 2,
+    "date": "2026-06-25",
+    "venue": "Estadio BBVA",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group A"
   },
   {
     "id": 54,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-28",
-    "venue": "Arrowhead Stadium, Kansas City",
-    "stage": "round_of_32",
+    "group": "E",
+    "team1_id": 17,
+    "team2_id": 18,
+    "date": "2026-06-25",
+    "venue": "Lincoln Financial Field",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Group E"
   },
   {
     "id": 55,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-28",
-    "venue": "NRG Stadium, Houston",
-    "stage": "round_of_32",
+    "group": "E",
+    "team1_id": 19,
+    "team2_id": 16,
+    "date": "2026-06-25",
+    "venue": "MetLife Stadium",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group E"
   },
   {
     "id": 56,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-29",
-    "venue": "BMO Field, Toronto",
-    "stage": "round_of_32",
+    "group": "F",
+    "team1_id": 21,
+    "team2_id": 22,
+    "date": "2026-06-25",
+    "venue": "AT&T Stadium",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group F"
   },
   {
     "id": 57,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-29",
-    "venue": "BC Place, Vancouver",
-    "stage": "round_of_32",
+    "group": "F",
+    "team1_id": 23,
+    "team2_id": 20,
+    "date": "2026-06-25",
+    "venue": "GEHA Field at Arrowhead Stadium",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "3"
+    },
+    "notes": "FIFA World Cup, Group F"
   },
   {
     "id": 58,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-29",
-    "venue": "Levi's Stadium, Santa Clara",
-    "stage": "round_of_32",
+    "group": "D",
+    "team1_id": 13,
+    "team2_id": 14,
+    "date": "2026-06-26",
+    "venue": "Levi's Stadium",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group D"
   },
   {
     "id": 59,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-29",
-    "venue": "Lincoln Financial Field, Philadelphia",
-    "stage": "round_of_32",
+    "group": "D",
+    "team1_id": 15,
+    "team2_id": 12,
+    "date": "2026-06-26",
+    "venue": "SoFi Stadium",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Group D"
   },
   {
     "id": 60,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-30",
-    "venue": "Gillette Stadium, Boston",
-    "stage": "round_of_32",
+    "group": "I",
+    "team1_id": 35,
+    "team2_id": 32,
+    "date": "2026-06-26",
+    "venue": "Gillette Stadium",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "4"
+    },
+    "notes": "FIFA World Cup, Group I"
   },
   {
     "id": 61,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-30",
-    "venue": "Lumen Field, Seattle",
-    "stage": "round_of_32",
+    "group": "I",
+    "team1_id": 33,
+    "team2_id": 34,
+    "date": "2026-06-26",
+    "venue": "BMO Field",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "5",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group I"
   },
   {
     "id": 62,
-    "group": null,
-    "team1_id": null,
-    "team2_id": null,
-    "date": "2026-06-30",
-    "venue": "Estadio BBVA, Monterrey",
-    "stage": "round_of_32",
+    "group": "H",
+    "team1_id": 29,
+    "team2_id": 30,
+    "date": "2026-06-27",
+    "venue": "NRG Stadium",
+    "stage": "group",
     "matchday": null,
-    "status": "scheduled",
-    "score": null
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group H"
   },
   {
     "id": 63,
+    "group": "H",
+    "team1_id": 31,
+    "team2_id": 28,
+    "date": "2026-06-27",
+    "venue": "Estadio Akron",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group H"
+  },
+  {
+    "id": 64,
+    "group": "G",
+    "team1_id": 25,
+    "team2_id": 26,
+    "date": "2026-06-27",
+    "venue": "Lumen Field",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group G"
+  },
+  {
+    "id": 65,
+    "group": "G",
+    "team1_id": 27,
+    "team2_id": 24,
+    "date": "2026-06-27",
+    "venue": "BC Place",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "5"
+    },
+    "notes": "FIFA World Cup, Group G"
+  },
+  {
+    "id": 66,
+    "group": "L",
+    "team1_id": 45,
+    "team2_id": 46,
+    "date": "2026-06-27",
+    "venue": "Lincoln Financial Field",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group L"
+  },
+  {
+    "id": 67,
+    "group": "L",
+    "team1_id": 47,
+    "team2_id": 44,
+    "date": "2026-06-27",
+    "venue": "MetLife Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Group L"
+  },
+  {
+    "id": 68,
+    "group": "K",
+    "team1_id": 43,
+    "team2_id": 40,
+    "date": "2026-06-27",
+    "venue": "Hard Rock Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Group K"
+  },
+  {
+    "id": 69,
+    "group": "K",
+    "team1_id": 41,
+    "team2_id": 42,
+    "date": "2026-06-27",
+    "venue": "Mercedes-Benz Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Group K"
+  },
+  {
+    "id": 70,
+    "group": "J",
+    "team1_id": 37,
+    "team2_id": 38,
+    "date": "2026-06-28",
+    "venue": "GEHA Field at Arrowhead Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "3"
+    },
+    "notes": "FIFA World Cup, Group J"
+  },
+  {
+    "id": 71,
+    "group": "J",
+    "team1_id": 39,
+    "team2_id": 36,
+    "date": "2026-06-28",
+    "venue": "AT&T Stadium",
+    "stage": "group",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "3"
+    },
+    "notes": "FIFA World Cup, Group J"
+  },
+  {
+    "id": 72,
+    "group": null,
+    "team1_id": 1,
+    "team2_id": 4,
+    "date": "2026-06-28",
+    "venue": "SoFi Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 73,
+    "group": null,
+    "team1_id": 8,
+    "team2_id": 21,
+    "date": "2026-06-29",
+    "venue": "NRG Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 74,
+    "group": null,
+    "team1_id": 16,
+    "team2_id": 13,
+    "date": "2026-06-29",
+    "venue": "Gillette Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed_penalties",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 75,
+    "group": null,
+    "team1_id": 20,
+    "team2_id": 9,
+    "date": "2026-06-30",
+    "venue": "Estadio BBVA",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed_penalties",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 76,
+    "group": null,
+    "team1_id": 18,
+    "team2_id": 35,
+    "date": "2026-06-30",
+    "venue": "AT&T Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 77,
+    "group": null,
+    "team1_id": 32,
+    "team2_id": 22,
+    "date": "2026-06-30",
+    "venue": "MetLife Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 78,
+    "group": null,
+    "team1_id": 0,
+    "team2_id": 19,
+    "date": "2026-07-01",
+    "venue": "Estadio Banorte",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 79,
+    "group": null,
+    "team1_id": 44,
+    "team2_id": 41,
+    "date": "2026-07-01",
+    "venue": "Mercedes-Benz Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 80,
+    "group": null,
+    "team1_id": 24,
+    "team2_id": 33,
+    "date": "2026-07-01",
+    "venue": "Lumen Field",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed_aet",
+    "score": {
+      "team1": "3",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 81,
+    "group": null,
+    "team1_id": 12,
+    "team2_id": 5,
+    "date": "2026-07-02",
+    "venue": "Levi's Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 82,
+    "group": null,
+    "team1_id": 28,
+    "team2_id": 38,
+    "date": "2026-07-02",
+    "venue": "SoFi Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 83,
+    "group": null,
+    "team1_id": 40,
+    "team2_id": 45,
+    "date": "2026-07-02",
+    "venue": "BMO Field",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 84,
+    "group": null,
+    "team1_id": 7,
+    "team2_id": 37,
+    "date": "2026-07-03",
+    "venue": "BC Place",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 85,
+    "group": null,
+    "team1_id": 14,
+    "team2_id": 25,
+    "date": "2026-07-03",
+    "venue": "AT&T Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed_penalties",
+    "score": {
+      "team1": "1",
+      "team2": "1"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 86,
+    "group": null,
+    "team1_id": 36,
+    "team2_id": 29,
+    "date": "2026-07-03",
+    "venue": "Hard Rock Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed_aet",
+    "score": {
+      "team1": "3",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 87,
+    "group": null,
+    "team1_id": 43,
+    "team2_id": 46,
+    "date": "2026-07-04",
+    "venue": "GEHA Field at Arrowhead Stadium",
+    "stage": "round_of_32",
+    "matchday": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "0"
+    },
+    "notes": "FIFA World Cup, Round of 32"
+  },
+  {
+    "id": 88,
+    "group": null,
+    "team1_id": 4,
+    "team2_id": 9,
+    "date": "2026-07-04",
+    "venue": "NRG Stadium",
+    "stage": "round_of_16",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Round of 16"
+  },
+  {
+    "id": 89,
+    "group": null,
+    "team1_id": 13,
+    "team2_id": 32,
+    "date": "2026-07-04",
+    "venue": "Lincoln Financial Field",
+    "stage": "round_of_16",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Round of 16"
+  },
+  {
+    "id": 90,
+    "group": null,
+    "team1_id": 8,
+    "team2_id": 35,
+    "date": "2026-07-05",
+    "venue": "MetLife Stadium",
+    "stage": "round_of_16",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Round of 16"
+  },
+  {
+    "id": 91,
+    "group": null,
+    "team1_id": 0,
+    "team2_id": 44,
+    "date": "2026-07-06",
+    "venue": "Estadio Banorte",
+    "stage": "round_of_16",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Round of 16"
+  },
+  {
+    "id": 92,
+    "group": null,
+    "team1_id": 40,
+    "team2_id": 28,
+    "date": "2026-07-06",
+    "venue": "AT&T Stadium",
+    "stage": "round_of_16",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Round of 16"
+  },
+  {
+    "id": 93,
+    "group": null,
+    "team1_id": 12,
+    "team2_id": 24,
+    "date": "2026-07-07",
+    "venue": "Lumen Field",
+    "stage": "round_of_16",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Round of 16"
+  },
+  {
+    "id": 94,
+    "group": null,
+    "team1_id": 36,
+    "team2_id": 25,
+    "date": "2026-07-07",
+    "venue": "Mercedes-Benz Stadium",
+    "stage": "round_of_16",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Round of 16"
+  },
+  {
+    "id": 95,
+    "group": null,
+    "team1_id": 7,
+    "team2_id": 43,
+    "date": "2026-07-07",
+    "venue": "BC Place",
+    "stage": "round_of_16",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Round of 16"
+  },
+  {
+    "id": 96,
     "group": null,
     "team1_id": null,
     "team2_id": null,
-    "date": "2026-06-30",
-    "venue": "Estadio Akron, Guadalajara",
-    "stage": "round_of_32",
+    "date": "2026-07-09",
+    "venue": "Gillette Stadium",
+    "stage": "quarter_finals",
     "matchday": null,
     "status": "scheduled",
-    "score": null
+    "score": null,
+    "notes": "FIFA World Cup, Quarterfinals"
+  },
+  {
+    "id": 97,
+    "group": null,
+    "team1_id": null,
+    "team2_id": null,
+    "date": "2026-07-10",
+    "venue": "SoFi Stadium",
+    "stage": "quarter_finals",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Quarterfinals"
+  },
+  {
+    "id": 98,
+    "group": null,
+    "team1_id": null,
+    "team2_id": null,
+    "date": "2026-07-11",
+    "venue": "Hard Rock Stadium",
+    "stage": "quarter_finals",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Quarterfinals"
+  },
+  {
+    "id": 99,
+    "group": null,
+    "team1_id": null,
+    "team2_id": null,
+    "date": "2026-07-12",
+    "venue": "GEHA Field at Arrowhead Stadium",
+    "stage": "quarter_finals",
+    "matchday": null,
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Quarterfinals"
   }
 ]

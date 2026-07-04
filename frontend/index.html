@@ -318,12 +318,13 @@ function renderMatches(stage, filterGroup) {
     const t1Flag = t1 ? flagImg(t1) : '<span class="flag-fallback">❓</span>';
     const t2Flag = t2 ? flagImg(t2) : '<span class="flag-fallback">❓</span>';
     const status = match.status || 'scheduled';
-    const badgeClass = status === 'completed' ? 'badge-completed' : status === 'live' ? 'badge-live' : 'badge-scheduled';
-    const statusText = status.charAt(0).toUpperCase() + status.slice(1);
-    const stageText = match.stage === 'round_of_32' ? 'R32' : match.stage === 'group' ? 'Group ' + match.group : match.stage;
+    const isCompleted = status.startsWith('completed');
+    const badgeClass = isCompleted ? 'badge-completed' : status === 'live' ? 'badge-live' : 'badge-scheduled';
+    const statusText = isCompleted ? (status.includes('penalties') ? 'FT (P)' : status.includes('aet') ? 'AET' : 'FT') : status.charAt(0).toUpperCase() + status.slice(1);
+    const stageText = match.stage === 'round_of_32' ? 'R32' : match.stage === 'round_of_16' ? 'R16' : match.stage === 'quarter_finals' ? 'QF' : match.stage === 'semi_finals' ? 'SF' : match.stage === 'final' ? '🏆 Final' : match.stage === 'group' ? 'Group ' + match.group : match.stage;
     
     let scoreOrVs = '';
-    if (status === 'completed' && match.score) {
+    if (isCompleted && match.score) {
       scoreOrVs = '<span class="score">' + match.score.team1 + ' - ' + match.score.team2 + '</span>';
     } else if (match.prediction && match.prediction.predicted_score) {
       scoreOrVs = '<span class="vs">vs</span>';

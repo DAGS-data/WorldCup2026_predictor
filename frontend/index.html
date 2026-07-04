@@ -177,7 +177,6 @@ nav .nav-links button.active { color: #fff; background: var(--accent); }
   <div class="nav-links">
     <button onclick="navigate('teams')" class="active" data-page="teams">Teams</button>
     <button onclick="navigate('matches')" data-page="matches">Matches</button>
-    <button onclick="navigate('bracket')" data-page="bracket">Bracket</button>
     <button onclick="navigate('h2h')" data-page="h2h">H2H</button>
   </div>
 </nav>
@@ -205,13 +204,6 @@ nav .nav-links button.active { color: #fff; background: var(--accent); }
     <div id="detail-content"></div>
   </div>
 
-  <!-- PAGE: Bracket -->
-  <div id="page-bracket" class="page">
-    <div id="bracket-content"></div>
-    <div id="bracket-loading" class="loading-text">Simulating tournament bracket...</div>
-    <div id="bracket-error" class="empty-state hidden"><p>Failed to load bracket</p><button onclick="loadBracket()">Retry</button></div>
-  </div>
-
   <!-- PAGE: Head-to-Head -->
   <div id="page-h2h" class="page">
     <div id="h2h-content" class="h2h-container">
@@ -232,10 +224,9 @@ nav .nav-links button.active { color: #fff; background: var(--accent); }
 // ===================== DATA STORE =====================
 const API = 'http://localhost:8000';
 const FETCH_TIMEOUT = 5000; // 5s timeout — fail fast, don't hang
-let store = { teams: null, matches: null, bracket: null, groups: null };
+let store = { teams: null, matches: null, groups: null };
 let currentPage = 'teams';
 let activeTeamId = null;
-let bracketLoaded = false;
 
 // Fast fetch with timeout
 async function apiFetch(path) {
@@ -267,7 +258,6 @@ function navigate(page, teamId) {
   if (page === 'detail' && teamId !== undefined) renderTeamDetail(teamId);
   if (page === 'teams' && store.teams) renderTeams();
   if (page === 'matches' && store.matches) renderMatches();
-  if (page === 'bracket') { if (!bracketLoaded) loadBracket(); else renderBracket(); }
   if (page === 'h2h') { if (store.teams) initH2H(); }
 
   window.scrollTo(0, 0);
@@ -307,23 +297,6 @@ async function loadAllData() {
   try {
     store.groups = await apiFetch('/api/groups');
   } catch(e) {}
-}
-
-async function loadBracket() {
-  document.getElementById('bracket-error').classList.add('hidden');
-  document.getElementById('bracket-loading').style.display = 'block';
-  document.getElementById('bracket-content').innerHTML = '';
-
-  try {
-    const resp = await fetch(API+'/api/bracket');
-    store.bracket = await resp.json();
-    bracketLoaded = true;
-    document.getElementById('bracket-loading').style.display = 'none';
-    if (currentPage === 'bracket') renderBracket();
-  } catch(e) {
-    document.getElementById('bracket-loading').style.display = 'none';
-    document.getElementById('bracket-error').classList.remove('hidden');
-  }
 }
 
 // ===================== FLAG HELPER =====================
@@ -420,17 +393,38 @@ function renderMatches(stage, filterGroup) {
     if (match.prediction && !isCompleted) {
       const p = match.prediction;
       const isKnockout = match.stage !== 'group';
-      const t1Name_short = t1 ? (t1.abbr || t1Name) : 'T1';
-      const t2Name_short = t2 ? (t2.abbr || t2Name) : 'T2';
-      const etLabel = isKnockout ? 'ET' : 'Draw';
-      const modelLabel = isKnockout ? 'Poisson' : 'Poisson';
-      probHtml = '<div class="prob-bar">' +
-        '<div style="background:var(--green);width:'+p.team1_win_prob+'%"></div>' +
-        '<div style="background:#e67e22;width:'+p.draw_prob+'%"></div>' +
-        '<div style="background:var(--red);width:'+p.team2_win_prob+'%"></div>' +
-        '</div>' +
-        '<div class="prob-labels"><span>'+t1Name_short+' '+p.team1_win_prob+'%</span><span>'+etLabel+' '+p.draw_prob+'%</span><span>'+t2Name_short+' '+p.team2_win_prob+'%</span></div>' +
-        '<div class="pred-score">' + modelLabel + ' · Predicted: ' + p.predicted_score + (isKnockout ? ' · Click for XGBoost' : '') + '</div>';
+      const t1s = t1 ? (t1.abbr || t1Name) : 'T1';
+      const t2s = t2 ? (t2.abbr || t2Name) : 'T2';
+
+      // === PRIMARY: XGBoost (knockout) or Poisson W/D/L (group) ===
+      if (isKnockout && match.xgb_prediction) {
+        const xp = match.xgb_prediction;
+        probHtml = '<div style="font-size:11px;color:var(--accent);margin-top:8px;margin-bottom:4px;font-weight:600">🤖 XGBoost · Probabilidad de avanzar</div>' +
+          '<div class="prob-bar" style="height:8px">' +
+          '<div style="background:var(--green);width:'+xp.team1_advance_prob+'%"></div>' +
+          '<div style="background:var(--red);width:'+xp.team2_advance_prob+'%"></div>' +
+          '</div>' +
+          '<div class="prob-labels"><span><strong>'+t1s+' '+xp.team1_advance_prob+'%</strong></span><span><strong>'+t2s+' '+xp.team2_advance_prob+'%</strong></span></div>';
+
+        // Poisson desglose below
+        probHtml += '<div style="font-size:9px;color:var(--muted);margin-top:6px;margin-bottom:2px">📊 Desglose: Gana / ET / Pierde</div>' +
+          '<div class="prob-bar" style="height:3px">' +
+          '<div style="background:var(--green);width:'+p.team1_win_prob+'%"></div>' +
+          '<div style="background:#e67e22;width:'+p.draw_prob+'%"></div>' +
+          '<div style="background:var(--red);width:'+p.team2_win_prob+'%"></div>' +
+          '</div>' +
+          '<div class="prob-labels" style="font-size:9px"><span>G: '+p.team1_win_prob+'%</span><span>ET: '+p.draw_prob+'%</span><span>P: '+p.team2_win_prob+'%</span></div>' +
+          '<div class="pred-score">Poisson · ' + p.predicted_score + '</div>';
+      } else {
+        // Group stage: Poisson W/D/L
+        probHtml = '<div class="prob-bar">' +
+          '<div style="background:var(--green);width:'+p.team1_win_prob+'%"></div>' +
+          '<div style="background:#e67e22;width:'+p.draw_prob+'%"></div>' +
+          '<div style="background:var(--red);width:'+p.team2_win_prob+'%"></div>' +
+          '</div>' +
+          '<div class="prob-labels"><span>'+t1s+' '+p.team1_win_prob+'%</span><span>Draw '+p.draw_prob+'%</span><span>'+t2s+' '+p.team2_win_prob+'%</span></div>' +
+          '<div class="pred-score">Poisson · ' + p.predicted_score + '</div>';
+      }
     }
 
     return '<div class="match-card">' +
@@ -521,8 +515,7 @@ function renderTeamDetail(teamId) {
     resultDiv.innerHTML = '<div class="loading-text">Predicting...</div>';
 
     try {
-      const resp = await fetch(API+'/api/predict/v2?team1_id='+teamId+'&team2_id='+oppId);
-      const data = await resp.json();
+      const data = await apiFetch('/api/predict/v2?team1_id='+teamId+'&team2_id='+oppId);
       const opp = store.teams.find(x => x.id === parseInt(oppId));
 
       let html = '<div style="text-align:center;margin-bottom:12px;font-weight:700;font-size:16px"><strong>' + data.team1.name + '</strong> vs <strong>' + data.team2.name + '</strong></div>';
@@ -550,39 +543,6 @@ function renderTeamDetail(teamId) {
 }
 
 // ===================== RENDER: BRACKET =====================
-function renderBracket() {
-  const b = store.bracket;
-  if (!b) return;
-
-  const rounds = [
-    {key: 'round_of_32', label: 'Round of 32', matches: b.round_of_32},
-    {key: 'round_of_16', label: 'Round of 16', matches: b.round_of_16},
-    {key: 'quarter_finals', label: 'Quarter Finals', matches: b.quarter_finals},
-    {key: 'semi_finals', label: 'Semi Finals', matches: b.semi_finals},
-    {key: 'final', label: 'Final', matches: b.final},
-  ];
-
-  let champHtml = '';
-  if (b.predicted_champion) {
-    champHtml = '<div style="text-align:center;margin-top:32px;padding:24px;background:var(--card);border:2px solid var(--accent);border-radius:var(--radius)"><div style="font-size:48px">🏆</div><div style="font-size:20px;font-weight:700;margin-top:8px">Predicted Champion</div><div style="font-size:32px;font-weight:800;color:var(--accent);margin-top:4px">' + b.predicted_champion + '</div></div>';
-  }
-
-  document.getElementById('bracket-content').innerHTML =
-    '<div class="bracket-wrapper"><div class="bracket">' +
-    rounds.map(r => {
-      if (!r.matches || r.matches.length === 0) return '';
-      return '<div class="bracket-round"><h4>' + r.label + '</h4>' +
-        r.matches.map(m => {
-          const isWinner = m.predicted_winner;
-          return '<div class="bracket-match">' +
-            '<div class="bt"><span class="flag-fallback">' + (m.team1_flag || '🏳️') + '</span><span class="bn" style="' + (isWinner===m.team1 ? 'color:var(--green);font-weight:700' : '') + '">' + m.team1 + '</span><span class="bprob">' + (m.team1_win_prob || '?') + '%</span></div>' +
-            '<div class="bt" style="margin-top:4px"><span class="flag-fallback">' + (m.team2_flag || '🏳️') + '</span><span class="bn" style="' + (isWinner===m.team2 ? 'color:var(--green);font-weight:700' : '') + '">' + m.team2 + '</span><span class="bprob">' + (m.team2_win_prob || '?') + '%</span></div>' +
-            '</div>';
-        }).join('') +
-        '</div>';
-    }).join('') +
-    '</div></div>' + champHtml;
-}
 
 // ===================== HEAD-TO-HEAD PAGE =====================
 function initH2H() {
@@ -623,8 +583,8 @@ async function runH2H() {
 
   // Fetch prediction
   try {
-    const resp = await fetch(API+'/api/predict/v2?team1_id='+id1+'&team2_id='+id2);
-    const data = await resp.json();
+    const data = await apiFetch('/api/predict/v2?team1_id='+id1+'&team2_id='+id2);
+    
 
     let resultHtml = '';
 

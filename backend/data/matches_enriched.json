@@ -27,7 +27,7 @@
       "team2_xg": 0.59,
       "key_factors": [
         "ELO advantage: Mexico (+303 pts)",
-        "Squad value edge: Mexico ($135M)",
+        "Squad value edge: Mexico ($143M)",
         "Home advantage: Mexico"
       ]
     }
@@ -122,7 +122,7 @@
       "team2_xg": 0.95,
       "key_factors": [
         "ELO advantage: United States (+162 pts)",
-        "Squad value edge: United States ($213M)",
+        "Squad value edge: United States ($232M)",
         "Home advantage: United States"
       ]
     }
@@ -155,7 +155,7 @@
       "team2_xg": 2.3,
       "key_factors": [
         "ELO advantage: Switzerland (+380 pts)",
-        "Squad value edge: Switzerland ($260M)"
+        "Squad value edge: Switzerland ($313M)"
       ]
     }
   },
@@ -187,7 +187,7 @@
       "team2_xg": 0.79,
       "key_factors": [
         "ELO advantage: Brazil (+223 pts)",
-        "Squad value edge: Brazil ($650M)"
+        "Squad value edge: Brazil ($481M)"
       ]
     }
   },
@@ -219,7 +219,7 @@
       "team2_xg": 1.87,
       "key_factors": [
         "ELO advantage: Scotland (+207 pts)",
-        "Squad value edge: Scotland ($226M)"
+        "Squad value edge: Scotland ($114M)"
       ]
     }
   },
@@ -251,7 +251,7 @@
       "team2_xg": 1.45,
       "key_factors": [
         "ELO advantage: Türkiye (+39 pts)",
-        "Squad value edge: Türkiye ($260M)"
+        "Squad value edge: Türkiye ($396M)"
       ]
     }
   },
@@ -283,7 +283,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: Germany (+530 pts)",
-        "Squad value edge: Germany ($835M)"
+        "Squad value edge: Germany ($942M)"
       ]
     }
   },
@@ -315,7 +315,7 @@
       "team2_xg": 0.95,
       "key_factors": [
         "ELO advantage: Netherlands (+162 pts)",
-        "Squad value edge: Netherlands ($514M)"
+        "Squad value edge: Netherlands ($483M)"
       ]
     }
   },
@@ -345,7 +345,9 @@
       "predicted_score": "1-1",
       "team1_xg": 1.29,
       "team2_xg": 1.41,
-      "key_factors": []
+      "key_factors": [
+        "Squad value edge: Ivory Coast ($153M)"
+      ]
     }
   },
   {
@@ -376,7 +378,7 @@
       "team2_xg": 0.93,
       "key_factors": [
         "ELO advantage: Sweden (+169 pts)",
-        "Squad value edge: Sweden ($135M)"
+        "Squad value edge: Sweden ($339M)"
       ]
     }
   },
@@ -408,7 +410,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: Spain (+553 pts)",
-        "Squad value edge: Spain ($930M)"
+        "Squad value edge: Spain ($1166M)"
       ]
     }
   },
@@ -440,7 +442,7 @@
       "team2_xg": 0.67,
       "key_factors": [
         "ELO advantage: Belgium (+270 pts)",
-        "Squad value edge: Belgium ($460M)"
+        "Squad value edge: Belgium ($431M)"
       ]
     }
   },
@@ -472,7 +474,7 @@
       "team2_xg": 1.98,
       "key_factors": [
         "ELO advantage: Uruguay (+250 pts)",
-        "Squad value edge: Uruguay ($362M)"
+        "Squad value edge: Uruguay ($319M)"
       ]
     }
   },
@@ -535,7 +537,7 @@
       "team2_xg": 0.42,
       "key_factors": [
         "ELO advantage: France (+372 pts)",
-        "Squad value edge: France ($945M)"
+        "Squad value edge: France ($1042M)"
       ]
     }
   },
@@ -567,7 +569,7 @@
       "team2_xg": 2.21,
       "key_factors": [
         "ELO advantage: Norway (+343 pts)",
-        "Squad value edge: Norway ($462M)"
+        "Squad value edge: Norway ($569M)"
       ]
     }
   },
@@ -599,7 +601,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: Argentina (+473 pts)",
-        "Squad value edge: Argentina ($805M)"
+        "Squad value edge: Argentina ($556M)"
       ]
     }
   },
@@ -631,7 +633,7 @@
       "team2_xg": 0.42,
       "key_factors": [
         "ELO advantage: Austria (+371 pts)",
-        "Squad value edge: Austria ($253M)"
+        "Squad value edge: Austria ($225M)"
       ]
     }
   },
@@ -663,7 +665,7 @@
       "team2_xg": 0.3,
       "key_factors": [
         "ELO advantage: Portugal (+420 pts)",
-        "Squad value edge: Portugal ($732M)"
+        "Squad value edge: Portugal ($866M)"
       ]
     }
   },
@@ -695,7 +697,7 @@
       "team2_xg": 0.95,
       "key_factors": [
         "ELO advantage: England (+161 pts)",
-        "Squad value edge: England ($1095M)"
+        "Squad value edge: England ($973M)"
       ]
     }
   },
@@ -727,7 +729,7 @@
       "team2_xg": 1.23,
       "key_factors": [
         "ELO advantage: Ghana (+47 pts)",
-        "Squad value edge: Ghana ($181M)"
+        "Squad value edge: Ghana ($200M)"
       ]
     }
   },
@@ -759,7 +761,7 @@
       "team2_xg": 2.48,
       "key_factors": [
         "ELO advantage: Colombia (+454 pts)",
-        "Squad value edge: Colombia ($233M)"
+        "Squad value edge: Colombia ($217M)"
       ]
     }
   },
@@ -790,7 +792,8 @@
       "team1_xg": 1.65,
       "team2_xg": 1.05,
       "key_factors": [
-        "ELO advantage: Czechia (+119 pts)"
+        "ELO advantage: Czechia (+119 pts)",
+        "Squad value edge: Czechia ($139M)"
       ]
     }
   },
@@ -822,7 +825,7 @@
       "team2_xg": 0.93,
       "key_factors": [
         "ELO advantage: Switzerland (+169 pts)",
-        "Squad value edge: Switzerland ($145M)"
+        "Squad value edge: Switzerland ($186M)"
       ]
     }
   },
@@ -854,7 +857,7 @@
       "team2_xg": 0.84,
       "key_factors": [
         "ELO advantage: Canada (+203 pts)",
-        "Squad value edge: Canada ($165M)",
+        "Squad value edge: Canada ($179M)",
         "Home advantage: Canada"
       ]
     }
@@ -887,7 +890,6 @@
       "team2_xg": 1.05,
       "key_factors": [
         "ELO advantage: Mexico (+118 pts)",
-        "Squad value edge: Mexico ($92M)",
         "Home advantage: Mexico"
       ]
     }
@@ -920,7 +922,7 @@
       "team2_xg": 0.85,
       "key_factors": [
         "ELO advantage: United States (+202 pts)",
-        "Squad value edge: United States ($280M)",
+        "Squad value edge: United States ($308M)",
         "Home advantage: United States"
       ]
     }
@@ -953,7 +955,7 @@
       "team2_xg": 1.76,
       "key_factors": [
         "ELO advantage: Morocco (+164 pts)",
-        "Squad value edge: Morocco ($120M)"
+        "Squad value edge: Morocco ($277M)"
       ]
     }
   },
@@ -985,7 +987,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: Brazil (+594 pts)",
-        "Squad value edge: Brazil ($996M)"
+        "Squad value edge: Brazil ($872M)"
       ]
     }
   },
@@ -1016,7 +1018,7 @@
       "team1_xg": 1.35,
       "team2_xg": 1.35,
       "key_factors": [
-        "Squad value edge: Türkiye ($193M)"
+        "Squad value edge: Türkiye ($320M)"
       ]
     }
   },
@@ -1048,7 +1050,7 @@
       "team2_xg": 0.87,
       "key_factors": [
         "ELO advantage: Netherlands (+192 pts)",
-        "Squad value edge: Netherlands ($565M)"
+        "Squad value edge: Netherlands ($345M)"
       ]
     }
   },
@@ -1080,7 +1082,7 @@
       "team2_xg": 0.72,
       "key_factors": [
         "ELO advantage: Germany (+251 pts)",
-        "Squad value edge: Germany ($610M)"
+        "Squad value edge: Germany ($425M)"
       ]
     }
   },
@@ -1112,7 +1114,7 @@
       "team2_xg": 0.59,
       "key_factors": [
         "ELO advantage: Ecuador (+304 pts)",
-        "Squad value edge: Ecuador ($160M)"
+        "Squad value edge: Ecuador ($364M)"
       ]
     }
   },
@@ -1144,7 +1146,7 @@
       "team2_xg": 1.85,
       "key_factors": [
         "ELO advantage: Japan (+200 pts)",
-        "Squad value edge: Japan ($186M)"
+        "Squad value edge: Japan ($201M)"
       ]
     }
   },
@@ -1176,7 +1178,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: Spain (+496 pts)",
-        "Squad value edge: Spain ($937M)"
+        "Squad value edge: Spain ($1179M)"
       ]
     }
   },
@@ -1208,7 +1210,7 @@
       "team2_xg": 0.8,
       "key_factors": [
         "ELO advantage: Belgium (+222 pts)",
-        "Squad value edge: Belgium ($543M)"
+        "Squad value edge: Belgium ($515M)"
       ]
     }
   },
@@ -1240,7 +1242,7 @@
       "team2_xg": 0.58,
       "key_factors": [
         "ELO advantage: Uruguay (+307 pts)",
-        "Squad value edge: Uruguay ($355M)"
+        "Squad value edge: Uruguay ($305M)"
       ]
     }
   },
@@ -1272,7 +1274,7 @@
       "team2_xg": 2.04,
       "key_factors": [
         "ELO advantage: Egypt (+276 pts)",
-        "Squad value edge: Egypt ($113M)"
+        "Squad value edge: Egypt ($82M)"
       ]
     }
   },
@@ -1304,7 +1306,7 @@
       "team2_xg": 0.48,
       "key_factors": [
         "ELO advantage: Argentina (+348 pts)",
-        "Squad value edge: Argentina ($685M)"
+        "Squad value edge: Argentina ($562M)"
       ]
     }
   },
@@ -1336,7 +1338,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: France (+646 pts)",
-        "Squad value edge: France ($1212M)"
+        "Squad value edge: France ($1499M)"
       ]
     }
   },
@@ -1368,7 +1370,7 @@
       "team2_xg": 1.18,
       "key_factors": [
         "ELO advantage: Norway (+70 pts)",
-        "Squad value edge: Norway ($195M)"
+        "Squad value edge: Norway ($112M)"
       ]
     }
   },
@@ -1400,7 +1402,7 @@
       "team2_xg": 1.96,
       "key_factors": [
         "ELO advantage: Algeria (+246 pts)",
-        "Squad value edge: Algeria ($133M)"
+        "Squad value edge: Algeria ($232M)"
       ]
     }
   },
@@ -1432,7 +1434,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: Portugal (+551 pts)",
-        "Squad value edge: Portugal ($715M)"
+        "Squad value edge: Portugal ($925M)"
       ]
     }
   },
@@ -1464,7 +1466,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: England (+476 pts)",
-        "Squad value edge: England ($1261M)"
+        "Squad value edge: England ($1126M)"
       ]
     }
   },
@@ -1496,7 +1498,7 @@
       "team2_xg": 2.25,
       "key_factors": [
         "ELO advantage: Croatia (+361 pts)",
-        "Squad value edge: Croatia ($347M)"
+        "Squad value edge: Croatia ($353M)"
       ]
     }
   },
@@ -1528,7 +1530,7 @@
       "team2_xg": 0.54,
       "key_factors": [
         "ELO advantage: Colombia (+323 pts)",
-        "Squad value edge: Colombia ($250M)"
+        "Squad value edge: Colombia ($158M)"
       ]
     }
   },
@@ -1560,7 +1562,7 @@
       "team2_xg": 0.82,
       "key_factors": [
         "ELO advantage: Bosnia-Herzegovina (+211 pts)",
-        "Squad value edge: Bosnia-Herzegovina ($115M)"
+        "Squad value edge: Bosnia-Herzegovina ($126M)"
       ]
     }
   },
@@ -1592,7 +1594,7 @@
       "team2_xg": 1.16,
       "key_factors": [
         "ELO advantage: Switzerland (+177 pts)",
-        "Squad value edge: Switzerland ($95M)",
+        "Squad value edge: Switzerland ($134M)",
         "Home advantage: Canada"
       ]
     }
@@ -1625,7 +1627,7 @@
       "team2_xg": 0.42,
       "key_factors": [
         "ELO advantage: Morocco (+371 pts)",
-        "Squad value edge: Morocco ($346M)"
+        "Squad value edge: Morocco ($392M)"
       ]
     }
   },
@@ -1657,7 +1659,7 @@
       "team2_xg": 2.32,
       "key_factors": [
         "ELO advantage: Brazil (+387 pts)",
-        "Squad value edge: Brazil ($770M)"
+        "Squad value edge: Brazil ($758M)"
       ]
     }
   },
@@ -1720,7 +1722,8 @@
       "team1_xg": 0.89,
       "team2_xg": 1.81,
       "key_factors": [
-        "ELO advantage: South Korea (+185 pts)"
+        "ELO advantage: South Korea (+185 pts)",
+        "Squad value edge: South Korea ($90M)"
       ]
     }
   },
@@ -1752,7 +1755,7 @@
       "team2_xg": 2.05,
       "key_factors": [
         "ELO advantage: Ivory Coast (+279 pts)",
-        "Squad value edge: Ivory Coast ($225M)"
+        "Squad value edge: Ivory Coast ($517M)"
       ]
     }
   },
@@ -1784,7 +1787,7 @@
       "team2_xg": 1.91,
       "key_factors": [
         "ELO advantage: Germany (+226 pts)",
-        "Squad value edge: Germany ($675M)"
+        "Squad value edge: Germany ($578M)"
       ]
     }
   },
@@ -1815,7 +1818,8 @@
       "team1_xg": 1.43,
       "team2_xg": 1.27,
       "key_factors": [
-        "ELO advantage: Japan (+31 pts)"
+        "ELO advantage: Japan (+31 pts)",
+        "Squad value edge: Sweden ($138M)"
       ]
     }
   },
@@ -1847,7 +1851,7 @@
       "team2_xg": 2.25,
       "key_factors": [
         "ELO advantage: Netherlands (+362 pts)",
-        "Squad value edge: Netherlands ($700M)"
+        "Squad value edge: Netherlands ($684M)"
       ]
     }
   },
@@ -1910,6 +1914,7 @@
       "team2_xg": 2.01,
       "key_factors": [
         "ELO advantage: United States (+163 pts)",
+        "Squad value edge: Türkiye ($88M)",
         "Home advantage: United States"
       ]
     }
@@ -1942,7 +1947,7 @@
       "team2_xg": 2.11,
       "key_factors": [
         "ELO advantage: France (+302 pts)",
-        "Squad value edge: France ($750M)"
+        "Squad value edge: France ($930M)"
       ]
     }
   },
@@ -1974,7 +1979,7 @@
       "team2_xg": 0.67,
       "key_factors": [
         "ELO advantage: Senegal (+274 pts)",
-        "Squad value edge: Senegal ($267M)"
+        "Squad value edge: Senegal ($457M)"
       ]
     }
   },
@@ -2037,7 +2042,7 @@
       "team2_xg": 1.97,
       "key_factors": [
         "ELO advantage: Spain (+246 pts)",
-        "Squad value edge: Spain ($575M)"
+        "Squad value edge: Spain ($861M)"
       ]
     }
   },
@@ -2069,7 +2074,7 @@
       "team2_xg": 1.47,
       "key_factors": [
         "ELO advantage: Iran (+49 pts)",
-        "Squad value edge: Egypt ($83M)"
+        "Squad value edge: Egypt ($84M)"
       ]
     }
   },
@@ -2101,7 +2106,7 @@
       "team2_xg": 2.72,
       "key_factors": [
         "ELO advantage: Belgium (+547 pts)",
-        "Squad value edge: Belgium ($573M)"
+        "Squad value edge: Belgium ($513M)"
       ]
     }
   },
@@ -2133,7 +2138,7 @@
       "team2_xg": 0.56,
       "key_factors": [
         "ELO advantage: Croatia (+314 pts)",
-        "Squad value edge: Croatia ($166M)"
+        "Squad value edge: Croatia ($153M)"
       ]
     }
   },
@@ -2165,7 +2170,7 @@
       "team2_xg": 2.66,
       "key_factors": [
         "ELO advantage: England (+522 pts)",
-        "Squad value edge: England ($1442M)"
+        "Squad value edge: England ($1325M)"
       ]
     }
   },
@@ -2197,7 +2202,7 @@
       "team2_xg": 1.59,
       "key_factors": [
         "ELO advantage: Portugal (+98 pts)",
-        "Squad value edge: Portugal ($482M)"
+        "Squad value edge: Portugal ($708M)"
       ]
     }
   },
@@ -2259,8 +2264,7 @@
       "team1_xg": 1.04,
       "team2_xg": 1.66,
       "key_factors": [
-        "ELO advantage: Austria (+126 pts)",
-        "Squad value edge: Austria ($120M)"
+        "ELO advantage: Austria (+126 pts)"
       ]
     }
   },
@@ -2292,7 +2296,7 @@
       "team2_xg": 3.15,
       "key_factors": [
         "ELO advantage: Argentina (+719 pts)",
-        "Squad value edge: Argentina ($938M)"
+        "Squad value edge: Argentina ($787M)"
       ]
     }
   },
@@ -2324,6 +2328,7 @@
       "team2_xg": 1.87,
       "key_factors": [
         "ELO advantage: Canada (+107 pts)",
+        "Squad value edge: Canada ($149M)",
         "Home advantage: Canada"
       ]
     },
@@ -2361,7 +2366,7 @@
       "team2_xg": 0.69,
       "key_factors": [
         "ELO advantage: Brazil (+263 pts)",
-        "Squad value edge: Brazil ($739M)"
+        "Squad value edge: Brazil ($657M)"
       ]
     },
     "xgb_prediction": {
@@ -2398,7 +2403,7 @@
       "team2_xg": 0.79,
       "key_factors": [
         "ELO advantage: Germany (+223 pts)",
-        "Squad value edge: Germany ($708M)"
+        "Squad value edge: Germany ($793M)"
       ]
     },
     "xgb_prediction": {
@@ -2435,7 +2440,7 @@
       "team2_xg": 1.04,
       "key_factors": [
         "ELO advantage: Netherlands (+122 pts)",
-        "Squad value edge: Netherlands ($425M)"
+        "Squad value edge: Netherlands ($307M)"
       ]
     },
     "xgb_prediction": {
@@ -2471,8 +2476,7 @@
       "team1_xg": 1.1,
       "team2_xg": 1.6,
       "key_factors": [
-        "ELO advantage: Norway (+100 pts)",
-        "Squad value edge: Norway ($250M)"
+        "ELO advantage: Norway (+100 pts)"
       ]
     },
     "xgb_prediction": {
@@ -2509,7 +2513,7 @@
       "team2_xg": 0.56,
       "key_factors": [
         "ELO advantage: France (+316 pts)",
-        "Squad value edge: France ($1010M)"
+        "Squad value edge: France ($1111M)"
       ]
     },
     "xgb_prediction": {
@@ -2546,7 +2550,7 @@
       "team2_xg": 0.93,
       "key_factors": [
         "ELO advantage: Mexico (+168 pts)",
-        "Squad value edge: Mexico ($85M)",
+        "Squad value edge: Ecuador ($177M)",
         "Home advantage: Mexico"
       ]
     },
@@ -2584,7 +2588,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: England (+467 pts)",
-        "Squad value edge: England ($1442M)"
+        "Squad value edge: England ($1216M)"
       ]
     },
     "xgb_prediction": {
@@ -2620,8 +2624,7 @@
       "team1_xg": 1.9,
       "team2_xg": 0.8,
       "key_factors": [
-        "ELO advantage: Belgium (+219 pts)",
-        "Squad value edge: Belgium ($310M)"
+        "ELO advantage: Belgium (+219 pts)"
       ]
     },
     "xgb_prediction": {
@@ -2658,7 +2661,7 @@
       "team2_xg": 0.89,
       "key_factors": [
         "ELO advantage: United States (+185 pts)",
-        "Squad value edge: United States ($215M)",
+        "Squad value edge: United States ($239M)",
         "Home advantage: United States"
       ]
     },
@@ -2696,7 +2699,7 @@
       "team2_xg": 0.61,
       "key_factors": [
         "ELO advantage: Spain (+297 pts)",
-        "Squad value edge: Spain ($700M)"
+        "Squad value edge: Spain ($975M)"
       ]
     },
     "xgb_prediction": {
@@ -2733,7 +2736,7 @@
       "team2_xg": 1.06,
       "key_factors": [
         "ELO advantage: Portugal (+115 pts)",
-        "Squad value edge: Portugal ($385M)"
+        "Squad value edge: Portugal ($623M)"
       ]
     },
     "xgb_prediction": {
@@ -2770,7 +2773,7 @@
       "team2_xg": 0.85,
       "key_factors": [
         "ELO advantage: Switzerland (+199 pts)",
-        "Squad value edge: Switzerland ($130M)"
+        "Squad value edge: Switzerland ($81M)"
       ]
     },
     "xgb_prediction": {
@@ -2841,7 +2844,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: Argentina (+604 pts)",
-        "Squad value edge: Argentina ($915M)"
+        "Squad value edge: Argentina ($753M)"
       ]
     },
     "xgb_prediction": {
@@ -2911,7 +2914,7 @@
       "team2_xg": 1.75,
       "key_factors": [
         "ELO advantage: Morocco (+160 pts)",
-        "Squad value edge: Morocco ($180M)",
+        "Squad value edge: Morocco ($249M)",
         "Home advantage: Canada"
       ]
     },
@@ -2946,7 +2949,7 @@
       "team2_xg": 2.29,
       "key_factors": [
         "ELO advantage: France (+374 pts)",
-        "Squad value edge: France ($1098M)"
+        "Squad value edge: France ($1366M)"
       ]
     },
     "xgb_prediction": {
@@ -2980,7 +2983,7 @@
       "team2_xg": 0.65,
       "key_factors": [
         "ELO advantage: Brazil (+280 pts)",
-        "Squad value edge: Brazil ($530M)"
+        "Squad value edge: Brazil ($338M)"
       ]
     },
     "xgb_prediction": {
@@ -3014,7 +3017,7 @@
       "team2_xg": 1.77,
       "key_factors": [
         "ELO advantage: England (+166 pts)",
-        "Squad value edge: England ($1220M)",
+        "Squad value edge: England ($1168M)",
         "Home advantage: Mexico"
       ]
     },
@@ -3049,7 +3052,7 @@
       "team2_xg": 1.56,
       "key_factors": [
         "ELO advantage: Spain (+85 pts)",
-        "Squad value edge: Spain ($205M)"
+        "Squad value edge: Spain ($210M)"
       ]
     },
     "xgb_prediction": {
@@ -3083,7 +3086,7 @@
       "team2_xg": 1.5,
       "key_factors": [
         "ELO advantage: Belgium (+60 pts)",
-        "Squad value edge: Belgium ($250M)",
+        "Squad value edge: Belgium ($162M)",
         "Home advantage: United States"
       ]
     },
@@ -3118,7 +3121,7 @@
       "team2_xg": 0.25,
       "key_factors": [
         "ELO advantage: Argentina (+468 pts)",
-        "Squad value edge: Argentina ($815M)"
+        "Squad value edge: Argentina ($691M)"
       ]
     },
     "xgb_prediction": {

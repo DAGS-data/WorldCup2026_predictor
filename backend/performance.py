@@ -31,7 +31,7 @@ def calculate_goal_difference_factor(recent_form: list[dict[str, Any]]) -> float
     if not recent_form:
         return 0.5
     total_gd = sum(
-        m.get("goals_for", 0) - m.get("goals_against", 0)
+        int(m.get("goals_for", 0)) - int(m.get("goals_against", 0))
         for m in recent_form[:10]
     )
     avg_gd = total_gd / len(recent_form[:10])

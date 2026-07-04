@@ -11,11 +11,55 @@
     "lat": 23.6,
     "lng": -102.5,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1872.5,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Ecuador",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "0",
+        "date": "2026-07-01",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Estadio Banorte"
+      },
+      {
+        "opponent": "Czechia",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "0",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Banorte"
+      },
+      {
+        "opponent": "South Korea",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-19",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Akron"
+      },
+      {
+        "opponent": "South Africa",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "0",
+        "date": "2026-06-11",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Banorte"
+      }
+    ],
     "group": "A",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 89,
+      "rating_10": 9,
+      "form_score": 100.0,
+      "elo_contribution": 84.9,
+      "gd_factor": 83.3
+    }
   },
   {
     "id": 1,
@@ -29,11 +73,55 @@
     "lat": -30.6,
     "lng": 22.9,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1569.5,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Canada",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-28",
+        "competition": "WC 2026 round_of_32",
+        "venue": "SoFi Stadium"
+      },
+      {
+        "opponent": "South Korea",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "Estadio BBVA"
+      },
+      {
+        "opponent": "Czechia",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-18",
+        "competition": "WC 2026 group",
+        "venue": "Mercedes-Benz Stadium"
+      },
+      {
+        "opponent": "Mexico",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "2",
+        "date": "2026-06-11",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Banorte"
+      }
+    ],
     "group": "A",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 36,
+      "rating_10": 4,
+      "form_score": 38.0,
+      "elo_contribution": 32.7,
+      "gd_factor": 41.7
+    }
   },
   {
     "id": 2,
@@ -47,11 +135,46 @@
     "lat": 35.9,
     "lng": 127.8,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1754.1,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "South Africa",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "Estadio BBVA"
+      },
+      {
+        "opponent": "Mexico",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-19",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Akron"
+      },
+      {
+        "opponent": "Czechia",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-06-12",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Akron"
+      }
+    ],
     "group": "A",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 55,
+      "rating_10": 6,
+      "form_score": 30.8,
+      "elo_contribution": 64.5,
+      "gd_factor": 44.4
+    }
   },
   {
     "id": 3,
@@ -65,11 +188,46 @@
     "lat": 49.8,
     "lng": 15.5,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1688.9,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Mexico",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "3",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Banorte"
+      },
+      {
+        "opponent": "South Africa",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-18",
+        "competition": "WC 2026 group",
+        "venue": "Mercedes-Benz Stadium"
+      },
+      {
+        "opponent": "South Korea",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-06-12",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Akron"
+      }
+    ],
     "group": "A",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 42,
+      "rating_10": 5,
+      "form_score": 16.7,
+      "elo_contribution": 53.3,
+      "gd_factor": 27.8
+    }
   },
   {
     "id": 4,
@@ -83,11 +241,55 @@
     "lat": 56.1,
     "lng": -106.3,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1676.4,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "South Africa",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-28",
+        "competition": "WC 2026 round_of_32",
+        "venue": "SoFi Stadium"
+      },
+      {
+        "opponent": "Switzerland",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-06-24",
+        "competition": "WC 2026 group",
+        "venue": "BC Place"
+      },
+      {
+        "opponent": "Qatar",
+        "result": "W",
+        "goals_for": "6",
+        "goals_against": "0",
+        "date": "2026-06-18",
+        "competition": "WC 2026 group",
+        "venue": "BC Place"
+      },
+      {
+        "opponent": "Bosnia-Herzegovina",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-12",
+        "competition": "WC 2026 group",
+        "venue": "BMO Field"
+      }
+    ],
     "group": "B",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 57,
+      "rating_10": 6,
+      "form_score": 63.0,
+      "elo_contribution": 51.1,
+      "gd_factor": 75.0
+    }
   },
   {
     "id": 5,
@@ -101,11 +303,55 @@
     "lat": 43.9,
     "lng": 17.7,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1684.3,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "United States",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "2",
+        "date": "2026-07-02",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Levi's Stadium"
+      },
+      {
+        "opponent": "Qatar",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "1",
+        "date": "2026-06-24",
+        "competition": "WC 2026 group",
+        "venue": "Lumen Field"
+      },
+      {
+        "opponent": "Switzerland",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "4",
+        "date": "2026-06-18",
+        "competition": "WC 2026 group",
+        "venue": "SoFi Stadium"
+      },
+      {
+        "opponent": "Canada",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-12",
+        "competition": "WC 2026 group",
+        "venue": "BMO Field"
+      }
+    ],
     "group": "B",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 48,
+      "rating_10": 5,
+      "form_score": 37.0,
+      "elo_contribution": 52.5,
+      "gd_factor": 37.5
+    }
   },
   {
     "id": 6,
@@ -119,11 +365,46 @@
     "lat": 25.4,
     "lng": 51.2,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1473.2,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Bosnia-Herzegovina",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "3",
+        "date": "2026-06-24",
+        "competition": "WC 2026 group",
+        "venue": "Lumen Field"
+      },
+      {
+        "opponent": "Canada",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "6",
+        "date": "2026-06-18",
+        "competition": "WC 2026 group",
+        "venue": "BC Place"
+      },
+      {
+        "opponent": "Switzerland",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-13",
+        "competition": "WC 2026 group",
+        "venue": "Levi's Stadium"
+      }
+    ],
     "group": "B",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 16,
+      "rating_10": 2,
+      "form_score": 15.4,
+      "elo_contribution": 16.1,
+      "gd_factor": 5.6
+    }
   },
   {
     "id": 7,
@@ -137,11 +418,55 @@
     "lat": 46.8,
     "lng": 8.2,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1853.3,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "0",
+        "date": "2026-07-03",
+        "competition": "WC 2026 round_of_32",
+        "venue": "BC Place"
+      },
+      {
+        "opponent": "Canada",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-06-24",
+        "competition": "WC 2026 group",
+        "venue": "BC Place"
+      },
+      {
+        "opponent": "Bosnia-Herzegovina",
+        "result": "W",
+        "goals_for": "4",
+        "goals_against": "1",
+        "date": "2026-06-18",
+        "competition": "WC 2026 group",
+        "venue": "SoFi Stadium"
+      },
+      {
+        "opponent": "Qatar",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-13",
+        "competition": "WC 2026 group",
+        "venue": "Levi's Stadium"
+      }
+    ],
     "group": "B",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 83,
+      "rating_10": 8,
+      "form_score": 89.0,
+      "elo_contribution": 81.6,
+      "gd_factor": 75.0
+    }
   },
   {
     "id": 8,
@@ -155,11 +480,55 @@
     "lat": -14.2,
     "lng": -51.9,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 2059.7,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Japan",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-06-29",
+        "competition": "WC 2026 round_of_32",
+        "venue": "NRG Stadium"
+      },
+      {
+        "opponent": "Scotland",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "0",
+        "date": "2026-06-24",
+        "competition": "WC 2026 group",
+        "venue": "Hard Rock Stadium"
+      },
+      {
+        "opponent": "Haiti",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "0",
+        "date": "2026-06-20",
+        "competition": "WC 2026 group",
+        "venue": "Lincoln Financial Field"
+      },
+      {
+        "opponent": "Morocco",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-13",
+        "competition": "WC 2026 group",
+        "venue": "MetLife Stadium"
+      }
+    ],
     "group": "C",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 95,
+      "rating_10": 10,
+      "form_score": 89.0,
+      "elo_contribution": 100.0,
+      "gd_factor": 79.2
+    }
   },
   {
     "id": 9,
@@ -173,11 +542,55 @@
     "lat": 31.8,
     "lng": -7.1,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1836.3,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Netherlands",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-30",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Estadio BBVA"
+      },
+      {
+        "opponent": "Haiti",
+        "result": "W",
+        "goals_for": "4",
+        "goals_against": "2",
+        "date": "2026-06-24",
+        "competition": "WC 2026 group",
+        "venue": "Mercedes-Benz Stadium"
+      },
+      {
+        "opponent": "Scotland",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-19",
+        "competition": "WC 2026 group",
+        "venue": "Gillette Stadium"
+      },
+      {
+        "opponent": "Brazil",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-13",
+        "competition": "WC 2026 group",
+        "venue": "MetLife Stadium"
+      }
+    ],
     "group": "C",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 76,
+      "rating_10": 8,
+      "form_score": 75.0,
+      "elo_contribution": 78.7,
+      "gd_factor": 62.5
+    }
   },
   {
     "id": 10,
@@ -191,11 +604,46 @@
     "lat": 19.1,
     "lng": -72.3,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1465.5,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Morocco",
+        "result": "L",
+        "goals_for": "2",
+        "goals_against": "4",
+        "date": "2026-06-24",
+        "competition": "WC 2026 group",
+        "venue": "Mercedes-Benz Stadium"
+      },
+      {
+        "opponent": "Brazil",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "3",
+        "date": "2026-06-20",
+        "competition": "WC 2026 group",
+        "venue": "Lincoln Financial Field"
+      },
+      {
+        "opponent": "Scotland",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-14",
+        "competition": "WC 2026 group",
+        "venue": "Gillette Stadium"
+      }
+    ],
     "group": "C",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 12,
+      "rating_10": 2,
+      "form_score": 0.0,
+      "elo_contribution": 14.7,
+      "gd_factor": 16.7
+    }
   },
   {
     "id": 11,
@@ -209,11 +657,46 @@
     "lat": 56.5,
     "lng": -4.2,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1672.2,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Brazil",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "3",
+        "date": "2026-06-24",
+        "competition": "WC 2026 group",
+        "venue": "Hard Rock Stadium"
+      },
+      {
+        "opponent": "Morocco",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-19",
+        "competition": "WC 2026 group",
+        "venue": "Gillette Stadium"
+      },
+      {
+        "opponent": "Haiti",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-14",
+        "competition": "WC 2026 group",
+        "venue": "Gillette Stadium"
+      }
+    ],
     "group": "C",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 44,
+      "rating_10": 5,
+      "form_score": 30.8,
+      "elo_contribution": 50.4,
+      "gd_factor": 33.3
+    }
   },
   {
     "id": 12,
@@ -227,11 +710,55 @@
     "lat": 37.1,
     "lng": -95.7,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1869.0,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Bosnia-Herzegovina",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "0",
+        "date": "2026-07-02",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Levi's Stadium"
+      },
+      {
+        "opponent": "Türkiye",
+        "result": "L",
+        "goals_for": "2",
+        "goals_against": "3",
+        "date": "2026-06-26",
+        "competition": "WC 2026 group",
+        "venue": "SoFi Stadium"
+      },
+      {
+        "opponent": "Australia",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "0",
+        "date": "2026-06-19",
+        "competition": "WC 2026 group",
+        "venue": "Lumen Field"
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "W",
+        "goals_for": "4",
+        "goals_against": "1",
+        "date": "2026-06-13",
+        "competition": "WC 2026 group",
+        "venue": "SoFi Stadium"
+      }
+    ],
     "group": "D",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 81,
+      "rating_10": 8,
+      "form_score": 74.0,
+      "elo_contribution": 84.3,
+      "gd_factor": 75.0
+    }
   },
   {
     "id": 13,
@@ -245,11 +772,55 @@
     "lat": -23.4,
     "lng": -58.4,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1707.4,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Germany",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-29",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Gillette Stadium"
+      },
+      {
+        "opponent": "Australia",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-26",
+        "competition": "WC 2026 group",
+        "venue": "Levi's Stadium"
+      },
+      {
+        "opponent": "Türkiye",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-20",
+        "competition": "WC 2026 group",
+        "venue": "Levi's Stadium"
+      },
+      {
+        "opponent": "United States",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "4",
+        "date": "2026-06-13",
+        "competition": "WC 2026 group",
+        "venue": "SoFi Stadium"
+      }
+    ],
     "group": "D",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 54,
+      "rating_10": 6,
+      "form_score": 51.0,
+      "elo_contribution": 56.4,
+      "gd_factor": 41.7
+    }
   },
   {
     "id": 14,
@@ -263,11 +834,55 @@
     "lat": -25.3,
     "lng": 133.8,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1667.5,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Egypt",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-07-03",
+        "competition": "WC 2026 round_of_32",
+        "venue": "AT&T Stadium"
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-26",
+        "competition": "WC 2026 group",
+        "venue": "Levi's Stadium"
+      },
+      {
+        "opponent": "United States",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "2",
+        "date": "2026-06-19",
+        "competition": "WC 2026 group",
+        "venue": "Lumen Field"
+      },
+      {
+        "opponent": "Türkiye",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "0",
+        "date": "2026-06-14",
+        "competition": "WC 2026 group",
+        "venue": "BC Place"
+      }
+    ],
     "group": "D",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 50,
+      "rating_10": 5,
+      "form_score": 49.0,
+      "elo_contribution": 49.6,
+      "gd_factor": 50.0
+    }
   },
   {
     "id": 15,
@@ -281,11 +896,46 @@
     "lat": 39.0,
     "lng": 35.0,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1706.2,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "United States",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "2",
+        "date": "2026-06-26",
+        "competition": "WC 2026 group",
+        "venue": "SoFi Stadium"
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-20",
+        "competition": "WC 2026 group",
+        "venue": "Levi's Stadium"
+      },
+      {
+        "opponent": "Australia",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "2",
+        "date": "2026-06-14",
+        "competition": "WC 2026 group",
+        "venue": "BC Place"
+      }
+    ],
     "group": "D",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 50,
+      "rating_10": 5,
+      "form_score": 35.8,
+      "elo_contribution": 56.2,
+      "gd_factor": 38.9
+    }
   },
   {
     "id": 16,
@@ -299,11 +949,55 @@
     "lat": 51.2,
     "lng": 10.5,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1930.7,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Paraguay",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-29",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Gillette Stadium"
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "MetLife Stadium"
+      },
+      {
+        "opponent": "Ivory Coast",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-06-20",
+        "competition": "WC 2026 group",
+        "venue": "BMO Field"
+      },
+      {
+        "opponent": "Curaçao",
+        "result": "W",
+        "goals_for": "7",
+        "goals_against": "1",
+        "date": "2026-06-14",
+        "competition": "WC 2026 group",
+        "venue": "NRG Stadium"
+      }
+    ],
     "group": "E",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 84,
+      "rating_10": 9,
+      "form_score": 60.1,
+      "elo_contribution": 94.9,
+      "gd_factor": 75.0
+    }
   },
   {
     "id": 17,
@@ -317,11 +1011,46 @@
     "lat": 12.2,
     "lng": -69.0,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1400.9,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Ivory Coast",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "2",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "Lincoln Financial Field"
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-21",
+        "competition": "WC 2026 group",
+        "venue": "GEHA Field at Arrowhead Stadium"
+      },
+      {
+        "opponent": "Germany",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "7",
+        "date": "2026-06-14",
+        "competition": "WC 2026 group",
+        "venue": "NRG Stadium"
+      }
+    ],
     "group": "E",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 8,
+      "rating_10": 2,
+      "form_score": 16.7,
+      "elo_contribution": 3.6,
+      "gd_factor": 5.6
+    }
   },
   {
     "id": 18,
@@ -335,11 +1064,55 @@
     "lat": 7.5,
     "lng": -5.5,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1679.7,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Norway",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-06-30",
+        "competition": "WC 2026 round_of_32",
+        "venue": "AT&T Stadium"
+      },
+      {
+        "opponent": "Curaçao",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "0",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "Lincoln Financial Field"
+      },
+      {
+        "opponent": "Germany",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-06-20",
+        "competition": "WC 2026 group",
+        "venue": "BMO Field"
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-14",
+        "competition": "WC 2026 group",
+        "venue": "Lincoln Financial Field"
+      }
+    ],
     "group": "E",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 52,
+      "rating_10": 6,
+      "form_score": 48.0,
+      "elo_contribution": 51.7,
+      "gd_factor": 54.2
+    }
   },
   {
     "id": 19,
@@ -353,11 +1126,55 @@
     "lat": -1.8,
     "lng": -78.2,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1704.9,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Mexico",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "2",
+        "date": "2026-07-01",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Estadio Banorte"
+      },
+      {
+        "opponent": "Germany",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "MetLife Stadium"
+      },
+      {
+        "opponent": "Curaçao",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-21",
+        "competition": "WC 2026 group",
+        "venue": "GEHA Field at Arrowhead Stadium"
+      },
+      {
+        "opponent": "Ivory Coast",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-14",
+        "competition": "WC 2026 group",
+        "venue": "Lincoln Financial Field"
+      }
+    ],
     "group": "E",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 51,
+      "rating_10": 6,
+      "form_score": 38.0,
+      "elo_contribution": 56.0,
+      "gd_factor": 41.7
+    }
   },
   {
     "id": 20,
@@ -371,11 +1188,55 @@
     "lat": 52.1,
     "lng": 5.3,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1958.6,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Morocco",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-30",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Estadio BBVA"
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "1",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "GEHA Field at Arrowhead Stadium"
+      },
+      {
+        "opponent": "Sweden",
+        "result": "W",
+        "goals_for": "5",
+        "goals_against": "1",
+        "date": "2026-06-20",
+        "competition": "WC 2026 group",
+        "venue": "NRG Stadium"
+      },
+      {
+        "opponent": "Japan",
+        "result": "D",
+        "goals_for": "2",
+        "goals_against": "2",
+        "date": "2026-06-14",
+        "competition": "WC 2026 group",
+        "venue": "AT&T Stadium"
+      }
+    ],
     "group": "F",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 91,
+      "rating_10": 9,
+      "form_score": 75.0,
+      "elo_contribution": 99.8,
+      "gd_factor": 75.0
+    }
   },
   {
     "id": 21,
@@ -389,11 +1250,55 @@
     "lat": 36.2,
     "lng": 138.3,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1796.9,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Brazil",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-06-29",
+        "competition": "WC 2026 round_of_32",
+        "venue": "NRG Stadium"
+      },
+      {
+        "opponent": "Sweden",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "AT&T Stadium"
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "W",
+        "goals_for": "4",
+        "goals_against": "0",
+        "date": "2026-06-21",
+        "competition": "WC 2026 group",
+        "venue": "Estadio BBVA"
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "D",
+        "goals_for": "2",
+        "goals_against": "2",
+        "date": "2026-06-14",
+        "competition": "WC 2026 group",
+        "venue": "AT&T Stadium"
+      }
+    ],
     "group": "F",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 65,
+      "rating_10": 7,
+      "form_score": 48.0,
+      "elo_contribution": 71.9,
+      "gd_factor": 62.5
+    }
   },
   {
     "id": 22,
@@ -407,11 +1312,55 @@
     "lat": 60.1,
     "lng": 18.6,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1766.3,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "France",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "3",
+        "date": "2026-06-30",
+        "competition": "WC 2026 round_of_32",
+        "venue": "MetLife Stadium"
+      },
+      {
+        "opponent": "Japan",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "AT&T Stadium"
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "5",
+        "date": "2026-06-20",
+        "competition": "WC 2026 group",
+        "venue": "NRG Stadium"
+      },
+      {
+        "opponent": "Tunisia",
+        "result": "W",
+        "goals_for": "5",
+        "goals_against": "1",
+        "date": "2026-06-15",
+        "competition": "WC 2026 group",
+        "venue": "Estadio BBVA"
+      }
+    ],
     "group": "F",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 56,
+      "rating_10": 6,
+      "form_score": 35.1,
+      "elo_contribution": 66.6,
+      "gd_factor": 37.5
+    }
   },
   {
     "id": 23,
@@ -425,11 +1374,46 @@
     "lat": 33.9,
     "lng": 9.5,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1596.9,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Netherlands",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "3",
+        "date": "2026-06-25",
+        "competition": "WC 2026 group",
+        "venue": "GEHA Field at Arrowhead Stadium"
+      },
+      {
+        "opponent": "Japan",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "4",
+        "date": "2026-06-21",
+        "competition": "WC 2026 group",
+        "venue": "Estadio BBVA"
+      },
+      {
+        "opponent": "Sweden",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "5",
+        "date": "2026-06-15",
+        "competition": "WC 2026 group",
+        "venue": "Estadio BBVA"
+      }
+    ],
     "group": "F",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 25,
+      "rating_10": 3,
+      "form_score": 0.0,
+      "elo_contribution": 37.4,
+      "gd_factor": 0.0
+    }
   },
   {
     "id": 24,
@@ -443,11 +1427,55 @@
     "lat": 50.5,
     "lng": 4.5,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1929.2,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Senegal",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "2",
+        "date": "2026-07-01",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Lumen Field"
+      },
+      {
+        "opponent": "New Zealand",
+        "result": "W",
+        "goals_for": "5",
+        "goals_against": "1",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "BC Place"
+      },
+      {
+        "opponent": "Iran",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-21",
+        "competition": "WC 2026 group",
+        "venue": "SoFi Stadium"
+      },
+      {
+        "opponent": "Egypt",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-15",
+        "competition": "WC 2026 group",
+        "venue": "Lumen Field"
+      }
+    ],
     "group": "G",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 88,
+      "rating_10": 9,
+      "form_score": 77.0,
+      "elo_contribution": 94.7,
+      "gd_factor": 70.8
+    }
   },
   {
     "id": 25,
@@ -461,11 +1489,55 @@
     "lat": 26.8,
     "lng": 30.8,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1658.9,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Australia",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-07-03",
+        "competition": "WC 2026 round_of_32",
+        "venue": "AT&T Stadium"
+      },
+      {
+        "opponent": "Iran",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "Lumen Field"
+      },
+      {
+        "opponent": "New Zealand",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "1",
+        "date": "2026-06-22",
+        "competition": "WC 2026 group",
+        "venue": "BC Place"
+      },
+      {
+        "opponent": "Belgium",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-15",
+        "competition": "WC 2026 group",
+        "venue": "Lumen Field"
+      }
+    ],
     "group": "G",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 53,
+      "rating_10": 6,
+      "form_score": 62.0,
+      "elo_contribution": 48.1,
+      "gd_factor": 58.3
+    }
   },
   {
     "id": 26,
@@ -479,11 +1551,46 @@
     "lat": 32.4,
     "lng": 53.7,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1707.5,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Egypt",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "Lumen Field"
+      },
+      {
+        "opponent": "Belgium",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-21",
+        "competition": "WC 2026 group",
+        "venue": "SoFi Stadium"
+      },
+      {
+        "opponent": "New Zealand",
+        "result": "D",
+        "goals_for": "2",
+        "goals_against": "2",
+        "date": "2026-06-16",
+        "competition": "WC 2026 group",
+        "venue": "SoFi Stadium"
+      }
+    ],
     "group": "G",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 55,
+      "rating_10": 6,
+      "form_score": 50.0,
+      "elo_contribution": 56.5,
+      "gd_factor": 50.0
+    }
   },
   {
     "id": 27,
@@ -497,11 +1604,46 @@
     "lat": -40.9,
     "lng": 174.9,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1382.4,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Belgium",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "5",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "BC Place"
+      },
+      {
+        "opponent": "Egypt",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "3",
+        "date": "2026-06-22",
+        "competition": "WC 2026 group",
+        "venue": "BC Place"
+      },
+      {
+        "opponent": "Iran",
+        "result": "D",
+        "goals_for": "2",
+        "goals_against": "2",
+        "date": "2026-06-16",
+        "competition": "WC 2026 group",
+        "venue": "SoFi Stadium"
+      }
+    ],
     "group": "G",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 7,
+      "rating_10": 2,
+      "form_score": 15.4,
+      "elo_contribution": 0.4,
+      "gd_factor": 16.7
+    }
   },
   {
     "id": 28,
@@ -515,11 +1657,55 @@
     "lat": 40.5,
     "lng": -3.7,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 2076.6,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Austria",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "0",
+        "date": "2026-07-02",
+        "competition": "WC 2026 round_of_32",
+        "venue": "SoFi Stadium"
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Akron"
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "W",
+        "goals_for": "4",
+        "goals_against": "0",
+        "date": "2026-06-21",
+        "competition": "WC 2026 group",
+        "venue": "Mercedes-Benz Stadium"
+      },
+      {
+        "opponent": "Cape Verde",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-15",
+        "competition": "WC 2026 group",
+        "venue": "Mercedes-Benz Stadium"
+      }
+    ],
     "group": "H",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 96,
+      "rating_10": 10,
+      "form_score": 89.0,
+      "elo_contribution": 100.0,
+      "gd_factor": 83.3
+    }
   },
   {
     "id": 29,
@@ -533,11 +1719,55 @@
     "lat": 15.1,
     "lng": -23.6,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1523.2,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Argentina",
+        "result": "L",
+        "goals_for": "2",
+        "goals_against": "3",
+        "date": "2026-07-03",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Hard Rock Stadium"
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "NRG Stadium"
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "D",
+        "goals_for": "2",
+        "goals_against": "2",
+        "date": "2026-06-21",
+        "competition": "WC 2026 group",
+        "venue": "Hard Rock Stadium"
+      },
+      {
+        "opponent": "Spain",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-15",
+        "competition": "WC 2026 group",
+        "venue": "Mercedes-Benz Stadium"
+      }
+    ],
     "group": "H",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 30,
+      "rating_10": 4,
+      "form_score": 36.0,
+      "elo_contribution": 24.7,
+      "gd_factor": 45.8
+    }
   },
   {
     "id": 30,
@@ -551,11 +1781,46 @@
     "lat": 23.9,
     "lng": 45.1,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1580.3,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Cape Verde",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "NRG Stadium"
+      },
+      {
+        "opponent": "Spain",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "4",
+        "date": "2026-06-21",
+        "competition": "WC 2026 group",
+        "venue": "Mercedes-Benz Stadium"
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-15",
+        "competition": "WC 2026 group",
+        "venue": "Hard Rock Stadium"
+      }
+    ],
     "group": "H",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 34,
+      "rating_10": 4,
+      "form_score": 33.3,
+      "elo_contribution": 34.5,
+      "gd_factor": 27.8
+    }
   },
   {
     "id": 31,
@@ -569,11 +1834,46 @@
     "lat": -32.5,
     "lng": -55.8,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1830.6,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Spain",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Akron"
+      },
+      {
+        "opponent": "Cape Verde",
+        "result": "D",
+        "goals_for": "2",
+        "goals_against": "2",
+        "date": "2026-06-21",
+        "competition": "WC 2026 group",
+        "venue": "Hard Rock Stadium"
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-15",
+        "competition": "WC 2026 group",
+        "venue": "Hard Rock Stadium"
+      }
+    ],
     "group": "H",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 63,
+      "rating_10": 7,
+      "form_score": 32.1,
+      "elo_contribution": 77.7,
+      "gd_factor": 44.4
+    }
   },
   {
     "id": 32,
@@ -587,11 +1887,55 @@
     "lat": 46.6,
     "lng": 2.2,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 2081.9,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Sweden",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "0",
+        "date": "2026-06-30",
+        "competition": "WC 2026 round_of_32",
+        "venue": "MetLife Stadium"
+      },
+      {
+        "opponent": "Norway",
+        "result": "W",
+        "goals_for": "4",
+        "goals_against": "1",
+        "date": "2026-06-26",
+        "competition": "WC 2026 group",
+        "venue": "Gillette Stadium"
+      },
+      {
+        "opponent": "Iraq",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "0",
+        "date": "2026-06-22",
+        "competition": "WC 2026 group",
+        "venue": "Lincoln Financial Field"
+      },
+      {
+        "opponent": "Senegal",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "1",
+        "date": "2026-06-16",
+        "competition": "WC 2026 group",
+        "venue": "MetLife Stadium"
+      }
+    ],
     "group": "I",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 100,
+      "rating_10": 10,
+      "form_score": 100.0,
+      "elo_contribution": 100.0,
+      "gd_factor": 95.8
+    }
   },
   {
     "id": 33,
@@ -605,11 +1949,55 @@
     "lat": 14.5,
     "lng": -14.5,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1710.1,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Belgium",
+        "result": "L",
+        "goals_for": "2",
+        "goals_against": "3",
+        "date": "2026-07-01",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Lumen Field"
+      },
+      {
+        "opponent": "Iraq",
+        "result": "W",
+        "goals_for": "5",
+        "goals_against": "0",
+        "date": "2026-06-26",
+        "competition": "WC 2026 group",
+        "venue": "BMO Field"
+      },
+      {
+        "opponent": "Norway",
+        "result": "L",
+        "goals_for": "2",
+        "goals_against": "3",
+        "date": "2026-06-23",
+        "competition": "WC 2026 group",
+        "venue": "MetLife Stadium"
+      },
+      {
+        "opponent": "France",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "3",
+        "date": "2026-06-16",
+        "competition": "WC 2026 group",
+        "venue": "MetLife Stadium"
+      }
+    ],
     "group": "I",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 49,
+      "rating_10": 5,
+      "form_score": 26.0,
+      "elo_contribution": 56.9,
+      "gd_factor": 54.2
+    }
   },
   {
     "id": 34,
@@ -623,11 +2011,46 @@
     "lat": 33.2,
     "lng": 43.7,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1436.2,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Senegal",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "5",
+        "date": "2026-06-26",
+        "competition": "WC 2026 group",
+        "venue": "BMO Field"
+      },
+      {
+        "opponent": "France",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "3",
+        "date": "2026-06-22",
+        "competition": "WC 2026 group",
+        "venue": "Lincoln Financial Field"
+      },
+      {
+        "opponent": "Norway",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "4",
+        "date": "2026-06-16",
+        "competition": "WC 2026 group",
+        "venue": "Gillette Stadium"
+      }
+    ],
     "group": "I",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 7,
+      "rating_10": 2,
+      "form_score": 0.0,
+      "elo_contribution": 9.7,
+      "gd_factor": 0.0
+    }
   },
   {
     "id": 35,
@@ -641,11 +2064,55 @@
     "lat": 60.5,
     "lng": 8.5,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1779.6,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Ivory Coast",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-06-30",
+        "competition": "WC 2026 round_of_32",
+        "venue": "AT&T Stadium"
+      },
+      {
+        "opponent": "France",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "4",
+        "date": "2026-06-26",
+        "competition": "WC 2026 group",
+        "venue": "Gillette Stadium"
+      },
+      {
+        "opponent": "Senegal",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "2",
+        "date": "2026-06-23",
+        "competition": "WC 2026 group",
+        "venue": "MetLife Stadium"
+      },
+      {
+        "opponent": "Iraq",
+        "result": "W",
+        "goals_for": "4",
+        "goals_against": "1",
+        "date": "2026-06-16",
+        "competition": "WC 2026 group",
+        "venue": "Gillette Stadium"
+      }
+    ],
     "group": "I",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 69,
+      "rating_10": 7,
+      "form_score": 74.0,
+      "elo_contribution": 68.9,
+      "gd_factor": 58.3
+    }
   },
   {
     "id": 36,
@@ -659,11 +2126,55 @@
     "lat": -38.4,
     "lng": -63.6,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 2127.3,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Cape Verde",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "2",
+        "date": "2026-07-03",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Hard Rock Stadium"
+      },
+      {
+        "opponent": "Jordan",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "1",
+        "date": "2026-06-28",
+        "competition": "WC 2026 group",
+        "venue": "AT&T Stadium"
+      },
+      {
+        "opponent": "Austria",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "0",
+        "date": "2026-06-22",
+        "competition": "WC 2026 group",
+        "venue": "AT&T Stadium"
+      },
+      {
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "0",
+        "date": "2026-06-17",
+        "competition": "WC 2026 group",
+        "venue": "GEHA Field at Arrowhead Stadium"
+      }
+    ],
     "group": "J",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 98,
+      "rating_10": 10,
+      "form_score": 100.0,
+      "elo_contribution": 100.0,
+      "gd_factor": 83.3
+    }
   },
   {
     "id": 37,
@@ -677,11 +2188,55 @@
     "lat": 28.0,
     "lng": 2.6,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1654.3,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Switzerland",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "2",
+        "date": "2026-07-03",
+        "competition": "WC 2026 round_of_32",
+        "venue": "BC Place"
+      },
+      {
+        "opponent": "Austria",
+        "result": "D",
+        "goals_for": "3",
+        "goals_against": "3",
+        "date": "2026-06-28",
+        "competition": "WC 2026 group",
+        "venue": "GEHA Field at Arrowhead Stadium"
+      },
+      {
+        "opponent": "Jordan",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-06-23",
+        "competition": "WC 2026 group",
+        "venue": "Levi's Stadium"
+      },
+      {
+        "opponent": "Argentina",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "3",
+        "date": "2026-06-17",
+        "competition": "WC 2026 group",
+        "venue": "GEHA Field at Arrowhead Stadium"
+      }
+    ],
     "group": "J",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 44,
+      "rating_10": 5,
+      "form_score": 37.0,
+      "elo_contribution": 47.3,
+      "gd_factor": 33.3
+    }
   },
   {
     "id": 38,
@@ -695,11 +2250,55 @@
     "lat": 47.5,
     "lng": 14.5,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1779.8,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Spain",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "3",
+        "date": "2026-07-02",
+        "competition": "WC 2026 round_of_32",
+        "venue": "SoFi Stadium"
+      },
+      {
+        "opponent": "Algeria",
+        "result": "D",
+        "goals_for": "3",
+        "goals_against": "3",
+        "date": "2026-06-28",
+        "competition": "WC 2026 group",
+        "venue": "GEHA Field at Arrowhead Stadium"
+      },
+      {
+        "opponent": "Argentina",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "2",
+        "date": "2026-06-22",
+        "competition": "WC 2026 group",
+        "venue": "AT&T Stadium"
+      },
+      {
+        "opponent": "Jordan",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "1",
+        "date": "2026-06-17",
+        "competition": "WC 2026 group",
+        "venue": "Levi's Stadium"
+      }
+    ],
     "group": "J",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 58,
+      "rating_10": 6,
+      "form_score": 35.1,
+      "elo_contribution": 68.9,
+      "gd_factor": 37.5
+    }
   },
   {
     "id": 39,
@@ -713,11 +2312,46 @@
     "lat": 31.2,
     "lng": 36.8,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1408.6,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Argentina",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "3",
+        "date": "2026-06-28",
+        "competition": "WC 2026 group",
+        "venue": "AT&T Stadium"
+      },
+      {
+        "opponent": "Algeria",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-06-23",
+        "competition": "WC 2026 group",
+        "venue": "Levi's Stadium"
+      },
+      {
+        "opponent": "Austria",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "3",
+        "date": "2026-06-17",
+        "competition": "WC 2026 group",
+        "venue": "Levi's Stadium"
+      }
+    ],
     "group": "J",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 6,
+      "rating_10": 1,
+      "form_score": 0.0,
+      "elo_contribution": 4.9,
+      "gd_factor": 22.2
+    }
   },
   {
     "id": 40,
@@ -731,11 +2365,55 @@
     "lat": 39.4,
     "lng": -8.2,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1992.0,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Croatia",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-07-02",
+        "competition": "WC 2026 round_of_32",
+        "venue": "BMO Field"
+      },
+      {
+        "opponent": "Colombia",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "Hard Rock Stadium"
+      },
+      {
+        "opponent": "Uzbekistan",
+        "result": "W",
+        "goals_for": "5",
+        "goals_against": "0",
+        "date": "2026-06-23",
+        "competition": "WC 2026 group",
+        "venue": "NRG Stadium"
+      },
+      {
+        "opponent": "Congo DR",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-17",
+        "competition": "WC 2026 group",
+        "venue": "NRG Stadium"
+      }
+    ],
     "group": "K",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 92,
+      "rating_10": 9,
+      "form_score": 76.0,
+      "elo_contribution": 100.0,
+      "gd_factor": 75.0
+    }
   },
   {
     "id": 41,
@@ -749,11 +2427,55 @@
     "lat": -4.0,
     "lng": 21.8,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1571.5,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "England",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-07-01",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Mercedes-Benz Stadium"
+      },
+      {
+        "opponent": "Uzbekistan",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "1",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "Mercedes-Benz Stadium"
+      },
+      {
+        "opponent": "Colombia",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-24",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Akron"
+      },
+      {
+        "opponent": "Portugal",
+        "result": "D",
+        "goals_for": "1",
+        "goals_against": "1",
+        "date": "2026-06-17",
+        "competition": "WC 2026 group",
+        "venue": "NRG Stadium"
+      }
+    ],
     "group": "K",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 36,
+      "rating_10": 4,
+      "form_score": 37.0,
+      "elo_contribution": 33.0,
+      "gd_factor": 50.0
+    }
   },
   {
     "id": 42,
@@ -767,11 +2489,46 @@
     "lat": 41.4,
     "lng": 64.6,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1440.6,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Congo DR",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "3",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "Mercedes-Benz Stadium"
+      },
+      {
+        "opponent": "Portugal",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "5",
+        "date": "2026-06-23",
+        "competition": "WC 2026 group",
+        "venue": "NRG Stadium"
+      },
+      {
+        "opponent": "Colombia",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "3",
+        "date": "2026-06-18",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Banorte"
+      }
+    ],
     "group": "K",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 8,
+      "rating_10": 2,
+      "form_score": 0.0,
+      "elo_contribution": 10.4,
+      "gd_factor": 0.0
+    }
   },
   {
     "id": 43,
@@ -785,11 +2542,55 @@
     "lat": 4.6,
     "lng": -74.3,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1894.2,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Ghana",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-07-04",
+        "competition": "WC 2026 round_of_32",
+        "venue": "GEHA Field at Arrowhead Stadium"
+      },
+      {
+        "opponent": "Portugal",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "Hard Rock Stadium"
+      },
+      {
+        "opponent": "Congo DR",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-24",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Akron"
+      },
+      {
+        "opponent": "Uzbekistan",
+        "result": "W",
+        "goals_for": "3",
+        "goals_against": "1",
+        "date": "2026-06-18",
+        "competition": "WC 2026 group",
+        "venue": "Estadio Banorte"
+      }
+    ],
     "group": "K",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 86,
+      "rating_10": 9,
+      "form_score": 87.0,
+      "elo_contribution": 88.7,
+      "gd_factor": 66.7
+    }
   },
   {
     "id": 44,
@@ -803,11 +2604,55 @@
     "lat": 52.4,
     "lng": -1.2,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 2038.8,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Congo DR",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-07-01",
+        "competition": "WC 2026 round_of_32",
+        "venue": "Mercedes-Benz Stadium"
+      },
+      {
+        "opponent": "Panama",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "0",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "MetLife Stadium"
+      },
+      {
+        "opponent": "Ghana",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-23",
+        "competition": "WC 2026 group",
+        "venue": "Gillette Stadium"
+      },
+      {
+        "opponent": "Croatia",
+        "result": "W",
+        "goals_for": "4",
+        "goals_against": "2",
+        "date": "2026-06-17",
+        "competition": "WC 2026 group",
+        "venue": "AT&T Stadium"
+      }
+    ],
     "group": "L",
-    "group_pos": 1
+    "group_pos": 1,
+    "performance": {
+      "rating_100": 94,
+      "rating_10": 9,
+      "form_score": 88.0,
+      "elo_contribution": 100.0,
+      "gd_factor": 70.8
+    }
   },
   {
     "id": 45,
@@ -821,11 +2666,55 @@
     "lat": 45.1,
     "lng": 15.2,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1877.4,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Portugal",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-07-02",
+        "competition": "WC 2026 round_of_32",
+        "venue": "BMO Field"
+      },
+      {
+        "opponent": "Ghana",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "Lincoln Financial Field"
+      },
+      {
+        "opponent": "Panama",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-23",
+        "competition": "WC 2026 group",
+        "venue": "BMO Field"
+      },
+      {
+        "opponent": "England",
+        "result": "L",
+        "goals_for": "2",
+        "goals_against": "4",
+        "date": "2026-06-17",
+        "competition": "WC 2026 group",
+        "venue": "AT&T Stadium"
+      }
+    ],
     "group": "L",
-    "group_pos": 2
+    "group_pos": 2,
+    "performance": {
+      "rating_100": 73,
+      "rating_10": 8,
+      "form_score": 50.0,
+      "elo_contribution": 85.8,
+      "gd_factor": 45.8
+    }
   },
   {
     "id": 46,
@@ -839,11 +2728,55 @@
     "lat": 7.9,
     "lng": -1.0,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1563.2,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "Colombia",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-07-04",
+        "competition": "WC 2026 round_of_32",
+        "venue": "GEHA Field at Arrowhead Stadium"
+      },
+      {
+        "opponent": "Croatia",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "Lincoln Financial Field"
+      },
+      {
+        "opponent": "England",
+        "result": "D",
+        "goals_for": "0",
+        "goals_against": "0",
+        "date": "2026-06-23",
+        "competition": "WC 2026 group",
+        "venue": "Gillette Stadium"
+      },
+      {
+        "opponent": "Panama",
+        "result": "W",
+        "goals_for": "1",
+        "goals_against": "0",
+        "date": "2026-06-17",
+        "competition": "WC 2026 group",
+        "venue": "BMO Field"
+      }
+    ],
     "group": "L",
-    "group_pos": 3
+    "group_pos": 3,
+    "performance": {
+      "rating_100": 34,
+      "rating_10": 4,
+      "form_score": 34.1,
+      "elo_contribution": 31.6,
+      "gd_factor": 45.8
+    }
   },
   {
     "id": 47,
@@ -857,10 +2790,45 @@
     "lat": 8.5,
     "lng": -80.8,
     "fifa_rank": 0,
-    "elo_rating": 1500,
+    "elo_rating": 1516.5,
     "squad_value_millions": 0,
-    "recent_form": [],
+    "recent_form": [
+      {
+        "opponent": "England",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "2",
+        "date": "2026-06-27",
+        "competition": "WC 2026 group",
+        "venue": "MetLife Stadium"
+      },
+      {
+        "opponent": "Croatia",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-23",
+        "competition": "WC 2026 group",
+        "venue": "BMO Field"
+      },
+      {
+        "opponent": "Ghana",
+        "result": "L",
+        "goals_for": "0",
+        "goals_against": "1",
+        "date": "2026-06-17",
+        "competition": "WC 2026 group",
+        "venue": "BMO Field"
+      }
+    ],
     "group": "L",
-    "group_pos": 4
+    "group_pos": 4,
+    "performance": {
+      "rating_100": 19,
+      "rating_10": 3,
+      "form_score": 0.0,
+      "elo_contribution": 23.5,
+      "gd_factor": 27.8
+    }
   }
 ]

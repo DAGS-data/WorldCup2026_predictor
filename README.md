@@ -55,11 +55,11 @@ open frontend/index.html           # o doble clic
 |--------|------|------------|
 | [ESPN API](https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world) | Equipos, partidos, resultados, stages | Tiempo real |
 | [FIFA/Coca-Cola World Ranking](https://www.fifa.com/fifa-world-ranking) | Ranking FIFA oficial | Junio 2026 |
-| [Transfermarkt](https://www.transfermarkt.com) | Valor de mercado de plantillas (€) | 2025/2026 |
+| [Transfermarkt](https://www.transfermarkt.com/vereins-statistik/wertvollstenationalmannschaften/marktwertetop) | Valor de mercado de plantillas (€) — 48 equipos verificados | Julio 2026 ✓ |
 | [FlagCDN](https://flagcdn.com) | Banderas de selecciones | CDN estático |
 | [CartoDB](https://carto.com) | Mapas (Leaflet tiles) | CDN |
 
-Match data comes from the `fifa.world` ESPN endpoint covering the 2026 World Cup. Squad values (`squad_value_millions`) come from Transfermarkt and represent the total market value of each national team in millions of euros.
+Squad values were verified against [Transfermarkt's National Team Rankings](https://www.transfermarkt.com/vereins-statistik/wertvollstenationalmannschaften/marktwertetop) on July 4, 2026. Each team's total squad market value is sourced directly from Transfermarkt's 26-player squad valuation.
 
 ---
 
@@ -93,8 +93,8 @@ Probability that a team wins the knockout tie (in regulation time, extra time, o
 | Métrica | Valor | Interpretación |
 |---------|-------|----------------|
 | **Accuracy** | 91.7% | 91.7% correct predictions in validation |
-| **ROC AUC** | 0.977 | Excelente discriminación entre avance/eliminación |
-| **Brier Score** | 0.068 | Calibración casi perfecta (0 = perfecto, 0.25 = aleatorio) |
+| **ROC AUC** | 0.987 | Excellent discrimination between advance/elimination |
+| **Brier Score** | 0.066 | Near-perfect calibration (0 = perfect, 0.25 = random) |
 
 #### Función Objetivo
 
@@ -348,16 +348,16 @@ Las 48 selecciones incluyen el valor de mercado de sus plantillas según Transfe
 
 | # | Selección | Valor |
 |---|-----------|-------|
-| 1 | 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra | €1,470M |
-| 2 | 🇫🇷 Francia | €1,230M |
-| 3 | 🇧🇷 Brasil | €1,010M |
-| 4 | 🇪🇸 España | €965M |
-| 5 | 🇦🇷 Argentina | €950M |
-| 6 | 🇩🇪 Alemania | €840M |
-| 7 | 🇳🇱 Países Bajos | €785M |
-| 8 | 🇵🇹 Portugal | €760M |
-| 9 | 🇧🇪 Bélgica | €595M |
-| 10 | 🇳🇴 Noruega | €480M |
+| 1 | 🇫🇷 Francia | €1,520M |
+| 2 | 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra | €1,360M |
+| 3 | 🇪🇸 España | €1,220M |
+| 4 | 🇵🇹 Portugal | €1,010M |
+| 5 | 🇩🇪 Alemania | €947M |
+| 6 | 🇧🇷 Brasil | €928M |
+| 7 | 🇦🇷 Argentina | €808M |
+| 8 | 🇳🇱 Países Bajos | €754M |
+| 9 | 🇳🇴 Noruega | €590M |
+| 10 | 🇧🇪 Bélgica | €548M |
 
 ---
 
@@ -402,4 +402,4 @@ MIT
 
 ---
 
-*Datos: ESPN API, Transfermarkt, FIFA. Modelos: XGBoost + ELO + Poisson. World Cup 2026 Predictor v9.*
+*Datos: ESPN API, Transfermarkt (verified July 2026), FIFA. Modelos: XGBoost + ELO + Poisson. World Cup 2026 Predictor v10.*

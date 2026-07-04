@@ -342,7 +342,7 @@ function renderTeams(filterGroup) {
   const filtersDiv = document.getElementById('teams-filters');
   let groups = [...new Set(t.map(x => x.group))].sort();
   filtersDiv.innerHTML = '<button class="active" onclick="renderTeams(null)">All</button>' +
-    groups.map(g => '<button onclick="renderTeams(\\'' + g + '\\')">' + g + '</button>').join('');
+    groups.map(g => '<button onclick="renderTeams(\'' + g + '\')">' + g + '</button>').join('');
 
   const filtered = filterGroup ? t.filter(x => x.group === filterGroup) : t;
   const grid = document.getElementById('teams-grid');
@@ -355,7 +355,7 @@ function renderTeams(filterGroup) {
 
     const sv = team.squad_value_millions > 0 ? ('<div class="squad-value">€' + formatM(team.squad_value_millions) + '</div>') : '';
 
-    return '<div class="team-card" onclick="navigate(\\'detail\\', ' + team.id + ')">' +
+    return '<div class="team-card" onclick="navigate(\'detail\', ' + team.id + ')">' +
       flagImg(team) +
       '<div class="info"><div class="name">' + team.name + '</div>' +
       '<span class="code">#' + (team.fifa_rank || '?') + ' FIFA</span>' +
@@ -379,15 +379,15 @@ function renderMatches(stage, filterGroup) {
 
   const stageDiv = document.getElementById('matches-stage-filters');
   stageDiv.innerHTML = '<button class="active" onclick="renderMatches(null)">All</button>' +
-    '<button onclick="renderMatches(\\'group\\')">Group Stage</button>' +
-    '<button onclick="renderMatches(\\'knockout\\')">Knockout</button>';
+    '<button onclick="renderMatches(\'group\')">Group Stage</button>' +
+    '<button onclick="renderMatches(\'knockout\')">Knockout</button>';
 
   const groupDiv = document.getElementById('matches-group-filters');
   if (stage === 'group' || !stage) {
     groupDiv.style.display = 'flex';
     let groups = [...new Set(m.filter(x=>x.group).map(x=>x.group))].sort();
-    groupDiv.innerHTML = '<button class="active" onclick="renderMatches(\\''+(stage||'null')+'\\',null)">All</button>' +
-      groups.map(g => '<button onclick="renderMatches(\\''+(stage||'null')+'\\',\\''+g+'\\')">' + g + '</button>').join('');
+    groupDiv.innerHTML = '<button class="active" onclick="renderMatches(\''+(stage||'null')+'\',null)">All</button>' +
+      groups.map(g => '<button onclick="renderMatches(\''+(stage||'null')+'\',\''+g+'\')">' + g + '</button>').join('');
   } else { groupDiv.style.display = 'none'; }
 
   let filtered = m;
@@ -470,7 +470,7 @@ function renderTeamDetail(teamId) {
 
   document.getElementById('detail-content').innerHTML =
     '<div class="team-detail">' +
-    '<button class="back-btn" onclick="navigate(\\'teams\\')">← Back to Teams</button>' +
+    '<button class="back-btn" onclick="navigate(\'teams\')">← Back to Teams</button>' +
     (t.is_host ? '<div class="host-badge">🏠 Host Nation</div>' : '') +
     '<div class="detail-header">' +
     flagImg(t) +

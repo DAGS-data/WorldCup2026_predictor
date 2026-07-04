@@ -228,6 +228,10 @@ let store = { teams: null, matches: null, groups: null };
 let currentPage = 'teams';
 let activeTeamId = null;
 
+// Prevent XSS: escape HTML in user-controlled strings
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function escHTML(html) { return html; } // trusted HTML from our code
+
 // Fast fetch with timeout
 async function apiFetch(path) {
   const controller = new AbortController();

@@ -6,7 +6,6 @@ Trained on all completed tournament matches with time-based CV.
 """
 
 import json
-import pickle
 from pathlib import Path
 from typing import Optional
 

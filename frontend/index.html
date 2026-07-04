@@ -231,10 +231,26 @@ nav .nav-links button.active { color: #fff; background: var(--accent); }
 <script>
 // ===================== DATA STORE =====================
 const API = 'http://localhost:8000';
+const FETCH_TIMEOUT = 5000; // 5s timeout — fail fast, don't hang
 let store = { teams: null, matches: null, bracket: null, groups: null };
 let currentPage = 'teams';
 let activeTeamId = null;
 let bracketLoaded = false;
+
+// Fast fetch with timeout
+async function apiFetch(path) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
+  try {
+    const resp = await fetch(API + path, { signal: controller.signal });
+    clearTimeout(timer);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    return await resp.json();
+  } catch(e) {
+    clearTimeout(timer);
+    throw e;
+  }
+}
 
 // ===================== ROUTING =====================
 function navigate(page, teamId) {
@@ -265,21 +281,21 @@ async function loadAllData() {
 
   // Load teams FIRST — render immediately when ready
   try {
-    const teamsR = await fetch(API+'/api/teams');
-    store.teams = await teamsR.json();
+    store.teams = await apiFetch('/api/teams');
     document.getElementById('teams-loading').style.display = 'none';
     if (currentPage === 'teams') renderTeams();
     if (currentPage === 'h2h') initH2H();
   } catch(e) {
     document.getElementById('teams-loading').style.display = 'none';
-    document.getElementById('teams-error').classList.remove('hidden');
+    const errDiv = document.getElementById('teams-error');
+    errDiv.innerHTML = '<p>⚠️ Cannot reach API at ' + API + '</p><p style="font-size:12px;color:var(--muted);margin-top:8px">Run: <code>cd backend && python3 main.py</code></p><button onclick="loadAllData()">Retry</button>';
+    errDiv.classList.remove('hidden');
   }
 
-  // Load matches AFTER teams — render when ready
+  // Load matches AFTER teams
   document.getElementById('matches-loading').style.display = 'block';
   try {
-    const matchesR = await fetch(API+'/api/matches');
-    store.matches = await matchesR.json();
+    store.matches = await apiFetch('/api/matches');
     document.getElementById('matches-loading').style.display = 'none';
     if (currentPage === 'matches') renderMatches();
   } catch(e) {
@@ -289,8 +305,7 @@ async function loadAllData() {
 
   // Groups: load in background
   try {
-    const groupsR = await fetch(API+'/api/groups');
-    store.groups = await groupsR.json();
+    store.groups = await apiFetch('/api/groups');
   } catch(e) {}
 }
 

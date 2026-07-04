@@ -1,10 +1,10 @@
 # ⚽ World Cup 2026 Predictor — XGBoost Edition
 
-> **⚠️ DISCLAIMER — LEER ANTES DE USAR**
+> **⚠️ DISCLAIMER — READ BEFORE USE**
 >
-> Este sistema es un proyecto **académico y experimental**. Las predicciones aquí mostradas son estimaciones estadísticas basadas en modelos matemáticos y datos históricos. **NO constituyen asesoría de apuestas, recomendación financiera ni garantía de resultados.** El fútbol es inherentemente impredecible y ningún modelo puede anticipar todos los factores que influyen en un partido (lesiones, decisiones arbitrales, condiciones climáticas, estado anímico de los jugadores, etc.).
+> This system is an **academic and experimental**. The predictions shown are statistical estimates based on mathematical models and historical data. **They DO NOT constitute betting advice, financial recommendations, or guarantees of results.** Football is inherently unpredictable and no model can account for all factors that influence a match (injuries, referee decisions, weather conditions, player morale, etc.).
 >
-> **No nos hacemos responsables por el uso indebido de estas predicciones.** Si usted decide utilizar esta información para apuestas deportivas, lo hace bajo su propio riesgo. Las apuestas pueden causar adicción y pérdidas financieras significativas. Juegue responsablemente.
+> **We are not responsible for misuse of these predictions.** If you choose to use this information for sports betting, you do so at your own risk. Gambling can cause addiction and significant financial losses. Please gamble responsibly.
 >
 > ---
 
@@ -17,7 +17,7 @@ wc2026-predictor/
 ├── backend/
 │   ├── main.py                  # FastAPI server (8 endpoints)
 │   ├── elo.py                   # Sistema de rating ELO
-│   ├── predictor.py             # Modelo Poisson + simulador de torneo
+│   ├── predictor.py             # Poisson model + tournament simulator
 │   ├── performance.py           # Rating compuesto de rendimiento (1–100)
 │   ├── feature_engineering.py   # Pipeline de 38 features para XGBoost
 │   └── models/
@@ -27,8 +27,8 @@ wc2026-predictor/
 │   └── data/
 │       ├── teams.json           # 48 selecciones con ELO, FIFA rank, valor plantilla
 │       ├── teams_enriched.json  # Pre-computado con ratings (respuesta instantánea)
-│       ├── matches.json         # Todos los partidos del torneo (fuente: ESPN API)
-│       └── matches_enriched.json# Pre-computado con predicciones XGBoost + Poisson
+│       ├── matches.json         # All tournament matches (source: ESPN API)
+│       └── matches_enriched.json# Pre-computed with predictions XGBoost + Poisson
 └── frontend/
     └── index.html               # Dashboard SPA (vanilla JS, tema claro)
 ```
@@ -59,7 +59,7 @@ open frontend/index.html           # o doble clic
 | [FlagCDN](https://flagcdn.com) | Banderas de selecciones | CDN estático |
 | [CartoDB](https://carto.com) | Mapas (Leaflet tiles) | CDN |
 
-Los datos de partidos se obtienen del endpoint `fifa.world` de ESPN que cubre la Copa del Mundo 2026. Los valores de plantilla (`squad_value_millions`) provienen de Transfermarkt y representan el valor total de mercado de cada selección nacional en millones de euros.
+Match data comes from the `fifa.world` ESPN endpoint covering the 2026 World Cup. Squad values (`squad_value_millions`) come from Transfermarkt and represent the total market value of each national team in millions of euros.
 
 ---
 
@@ -67,7 +67,7 @@ Los datos de partidos se obtienen del endpoint `fifa.world` de ESPN que cubre la
 
 El sistema utiliza **dos modelos complementarios** con roles claramente definidos:
 
-### Modelo 1: XGBoost — Predicción de Avance en Eliminatoria
+### Modelo 1: XGBoost — Knockout Advancement Prediction
 
 **Modelo principal** para fases de eliminación directa (R32, R16, Cuartos, Semis, Final).
 
@@ -75,7 +75,7 @@ El sistema utiliza **dos modelos complementarios** con roles claramente definido
 
 $$P(\text{equipo avanza}) \in [0, 1]$$
 
-Probabilidad de que un equipo gane la eliminatoria (en tiempo reglamentario, tiempo extra, o penales).
+Probability that a team wins the knockout tie (in regulation time, extra time, or penalties).
 
 #### Arquitectura del Modelo
 
@@ -84,7 +84,7 @@ Probabilidad de que un equipo gane la eliminatoria (en tiempo reglamentario, tie
 | Algoritmo | XGBoost (Gradient Boosted Trees) |
 | Tipo | Clasificador binario |
 | Features | 38 variables de ingeniería |
-| Muestras | 176 (partidos completados del torneo) |
+| Samples | 176 (completed tournament matches) |
 | Hiperparámetros | Optimizados con Optuna (200 rondas) |
 | Validación | Time-based split (80% train, 20% validation) |
 
@@ -92,7 +92,7 @@ Probabilidad de que un equipo gane la eliminatoria (en tiempo reglamentario, tie
 
 | Métrica | Valor | Interpretación |
 |---------|-------|----------------|
-| **Accuracy** | 91.7% | 91.7% de predicciones correctas en validación |
+| **Accuracy** | 91.7% | 91.7% correct predictions in validation |
 | **ROC AUC** | 0.977 | Excelente discriminación entre avance/eliminación |
 | **Brier Score** | 0.068 | Calibración casi perfecta (0 = perfecto, 0.25 = aleatorio) |
 
@@ -103,9 +103,9 @@ XGBoost minimiza la pérdida logística binaria (*binary logloss*):
 $$\mathcal{L} = -\frac{1}{N}\sum_{i=1}^{N} \left[y_i \log(\hat{p}_i) + (1-y_i)\log(1-\hat{p}_i)\right]$$
 
 Donde:
-- $N = 176$ muestras de entrenamiento
+- $N = 176$ training samples
 - $y_i \in \{0, 1\}$ — resultado real (1 = avanzó, 0 = eliminado)
-- $\hat{p}_i = \sigma(\hat{y}_i)$ — probabilidad predicha por el ensemble de árboles
+- $\hat{p}_i = \sigma(\hat{y}_i)$ — predicted probability from the tree ensemble
 
 #### Optimización de Hiperparámetros (Optuna)
 
@@ -131,7 +131,7 @@ Las features se agrupan en 8 categorías:
 | `host_advantage` | $\mathbb{1}[A \text{ es anfitrión}]$ | ¿Juega de local? |
 | `host_vs_away` | $\mathbb{1}[A \text{ anfitrión} \land \neg B \text{ anfitrión}]$ | Local vs visitante puro |
 
-**2. Momentum de Torneo (3 features)**
+**2. Tournament Momentum (3 features)**
 
 El momentum mide el rendimiento reciente ponderado exponencialmente:
 
@@ -165,7 +165,7 @@ Features: `overperformance`, `opponent_overperformance`, `overperformance_diff`
 |---------|-------------|
 | `rest_days_diff` | Diferencia de días de descanso |
 | `extra_time_diff` | Minutos extra jugados (negativo = más fresco) |
-| `cumulative_mins_ratio` | Ratio de minutos acumulados en el torneo |
+| `cumulative_mins_ratio` | Ratio de accumulated tournament minutes |
 
 **5. Métricas de Rendimiento (5 features)**
 
@@ -193,35 +193,35 @@ Desviación estándar de goles por partido. Valores bajos indican consistencia.
 
 #### Explicabilidad con SHAP
 
-Cada predicción incluye valores **SHAP** (*SHapley Additive exPlanations*), basados en la teoría de juegos cooperativos de Shapley:
+Each prediction includes values **SHAP** (*SHapley Additive exPlanations*), based on Shapley cooperative game theory:
 
 $$\phi_j = \sum_{S \subseteq F \setminus \{j\}} \frac{|S|!(|F| - |S| - 1)!}{|F|!} \left[f(S \cup \{j\}) - f(S)\right]$$
 
 Donde:
 - $F$ es el conjunto de features
 - $S$ es un subconjunto de features
-- $f(S)$ es la predicción usando solo las features en $S$
+- $f(S)$ is the prediction using only the features en $S$
 - $\phi_j$ es la contribución marginal de la feature $j$
 
-Esto permite explicar **por qué** el modelo predice lo que predice (ej: "+15.2% por diferencia de ELO, −3.4% por ranking FIFA inferior").
+This explains **why** the model predicts what it predicts (ej: "+15.2% due to ELO difference, −3.4% due to lower FIFA ranking").
 
 #### Limitaciones
 
-- Entrenado con datos de UN solo torneo (WC 2026). No generaliza a otros contextos.
-- No modela lesiones, cambios tácticos, ni alineaciones.
-- Asume que los patrones de la fase de grupos se mantienen en eliminatorias.
+- Trained on data from a SINGLE tournament (WC 2026). Does not generalize to other contexts.
+- Does not model injuries, tactical changes, or lineups.
+- Assumes group stage patterns hold in knockout rounds.
 
 ---
 
-### Modelo 2: ELO + Poisson — Predicción de Marcador y Goles
+### Modelo 2: ELO + Poisson — Score and Goal Prediction
 
-**Modelo complementario** para desglose Gana/Empate/Pierde y probabilidad de marcador exacto.
+**Modelo complementario** para Win/Draw/Loss breakdown and exact score probability.
 
 #### 2.1 Sistema de Rating ELO
 
-Adaptado del ajedrez (Arpad Elo, 1960). Cada selección tiene un rating $R$ que representa su fuerza relativa.
+Adapted from chess (Arpad Elo, 1960). Each team has a rating $R$ representing its relative strength.
 
-##### Probabilidad Esperada
+##### Expected Score
 
 Para un partido entre A (rating $R_A$) y B (rating $R_B$):
 
@@ -229,18 +229,18 @@ $$E_A = \frac{1}{1 + 10^{(R_B - R_A) / 400}}$$
 
 Propiedades:
 - $E_A \in [0, 1]$
-- **Regla de los 400 puntos:** Un equipo con 400 puntos más gana ~91% de las veces
+- **400-point rule:** A team rated 400 points higher wins ~91% of the time
 - $E_B = 1 - E_A$
 
-##### Ventaja de Localía
+##### Home Advantage
 
 Las selecciones anfitrionas reciben un bono fijo de +100 ELO:
 
 $$E_A^{\text{local}} = \frac{1}{1 + 10^{(R_B - (R_A + 100)) / 400}}$$
 
-##### Actualización de Rating (Factor K)
+##### Rating Update (Factor K)
 
-Tras cada partido, los ratings se actualizan con el factor K de Copa del Mundo ($K = 30$):
+After each match, ratings are updated with the World Cup K-factor ($K = 30$):
 
 $$R'_A = R_A + K \cdot (S_A - E_A)$$
 
@@ -249,44 +249,44 @@ Donde $S_A$ es el resultado real:
 - Empate: $S_A = 0.5$
 - Derrota: $S_A = 0.0$
 
-El ELO total del sistema se conserva — lo que un equipo gana, el otro lo pierde.
+Total ELO in the system is conserved — what one team gains, the other loses.
 
 #### 2.2 Modelo de Goles de Poisson
 
 Los goles en fútbol son eventos raros y discretos — modelados naturalmente por la distribución de Poisson.
 
-##### Goles Esperados (xG)
+##### Expected Goals (xG)
 
 $$\lambda_A = \max\left(0.25,\; \lambda_{\text{base}} + \frac{R_A - R_B}{400}\right)$$
 
 Donde:
 - $\lambda_{\text{base}} = 1.35$ — promedio empírico de goles por equipo en fase de grupos de Copas del Mundo
-- Cada 100 puntos ELO desplazan los goles esperados en ±0.25
-- Piso de 0.25 para evitar predicciones degeneradas (cero goles)
+- Each 100 ELO points shifts expected goals by ±0.25
+- Floor of 0.25 prevents degenerate predictions (zero goals)
 
 Con ventaja de localía: $R_A \leftarrow R_A + 100$ para el anfitrión.
 
-##### Probabilidad de un Marcador Exacto
+##### Exact Score Probability
 
 $$P(g_A, g_B) = \underbrace{\frac{\lambda_A^{g_A} \cdot e^{-\lambda_A}}{g_A!}}_{\text{Poisson}(g_A \mid \lambda_A)} \times \underbrace{\frac{\lambda_B^{g_B} \cdot e^{-\lambda_B}}{g_B!}}_{\text{Poisson}(g_B \mid \lambda_B)}$$
 
-Los goles de ambos equipos se asumen **procesos de Poisson independientes** — supuesto estándar en analítica de fútbol (modelos Dixon-Coles, Maher).
+Goals from both teams are assumed **independent Poisson processes** — standard assumption in football analytics (modelos Dixon-Coles, Maher).
 
-##### Probabilidades Agregadas
+##### Aggregate Probabilities
 
-Sumando sobre todos los marcadores posibles ($g_i \in [0, 8]$):
+Summing over all possible scores ($g_i \in [0, 8]$):
 
-$$P(\text{A gana}) = \sum_{g_A=0}^{8} \sum_{g_B=0}^{g_A-1} P(g_A, g_B)$$
+$$P(\text{A wins}) = \sum_{g_A=0}^{8} \sum_{g_B=0}^{g_A-1} P(g_A, g_B)$$
 
 $$P(\text{Empate}) = \sum_{g=0}^{8} P(g, g)$$
 
-$$P(\text{B gana}) = \sum_{g_B=0}^{8} \sum_{g_A=0}^{g_B-1} P(g_A, g_B)$$
+$$P(\text{B wins}) = \sum_{g_B=0}^{8} \sum_{g_A=0}^{g_B-1} P(g_A, g_B)$$
 
-Marcadores con más de 8 goles se truncan (probabilidad combinada < 0.001%).
+Scores above 8 goals are truncated (combined probability < 0.001%).
 
-##### Marcador Más Probable
+##### Most Likely Score
 
-$$\text{marcador}_{\text{pred}} = \arg\max_{g_A, g_B}\; P(g_A, g_B)$$
+$$\text{score}_{\text{pred}} = \arg\max_{g_A, g_B}\; P(g_A, g_B)$$
 
 #### Ejemplo: Argentina vs Inglaterra
 
@@ -295,23 +295,23 @@ $$\text{marcador}_{\text{pred}} = \arg\max_{g_A, g_B}\; P(g_A, g_B)$$
 | 🇦🇷 Argentina | 2127 | 1.78 |
 | 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra | 2039 | 1.42 |
 
-- **Argentina gana:** 52.3%
-- **Empate / Tiempo Extra:** 24.1%
-- **Inglaterra gana:** 23.6%
-- **Marcador más probable:** 2–1
+- **Argentina wins:** 52.3%
+- **Draw / Extra Time:** 24.1%
+- **England wins:** 23.6%
+- **Most likely score:** 2–1
 
 #### Limitaciones
 
 - Independencia de Poisson: no modela correlación intra-partido (ej: expulsión que afecta a ambos)
-- No considera alineaciones, lesiones ni factores tácticos
+- Does not consider lineups, injuries, or tactical factors
 - Solo usa ELO como predictor de fuerza
-- Sin tiempo extra en fase de grupos (se asume resultado en 90 minutos)
+- No extra time in group stage (90-minute result assumed)
 
 ---
 
 ### Modelo 3: Rating de Rendimiento Compuesto
 
-Cada selección recibe un rating **1–100** que combina tres factores ponderados:
+Each team receives a rating **1–100** combining three weighted factors:
 
 $$\text{rating} = 1 + 99 \times \big(0.65 \cdot \text{ELO}_{\text{norm}} + 0.25 \cdot \text{Forma} + 0.10 \cdot \text{GD}_{\text{factor}}\big)$$
 
@@ -338,7 +338,7 @@ El frontend es una SPA (*Single Page Application*) con 4 vistas:
 | **Teams** | 48 cards con bandera, FIFA rank, valor plantilla y rating |
 | **Matches** | Todos los partidos: XGBoost (avance) + Poisson (G/ET/P) |
 | **H2H** | Comparador cara a cara: pick 2 equipos, XGBoost + SHAP |
-| **Detail** | Ficha completa de cada selección con mapa, forma y predictor |
+| **Detail** | Full team profile with map, form, and predictor |
 
 ---
 
@@ -367,7 +367,7 @@ Las 48 selecciones incluyen el valor de mercado de sus plantillas según Transfe
 |----------|-------------|
 | `GET /api/teams` | 48 equipos con ratings y squad values |
 | `GET /api/teams/{id}` | Detalle de una selección |
-| `GET /api/matches` | Partidos con predicciones XGBoost + Poisson |
+| `GET /api/matches` | Matches with predictions XGBoost + Poisson |
 | `GET /api/matches/{id}` | Detalle de un partido |
 | `GET /api/groups` | 16 grupos con equipos y partidos |
 | `GET /api/predict/v2?team1_id=X&team2_id=Y` | **XGBoost:** P(avanzar) + SHAP + Poisson baseline |
@@ -398,7 +398,7 @@ MIT
 
 ---
 
-> **⚠️ RECORDATORIO:** Este proyecto es una herramienta educativa y experimental. No debe utilizarse como base para decisiones de apuestas. Los modelos estadísticos tienen limitaciones inherentes y el fútbol real frecuentemente desafía las predicciones. Utilice bajo su propio criterio y responsabilidad.
+> **⚠️ REMINDER:** This project is an educational and experimental tool. It should not be used as a basis for betting decisions. Statistical models have inherent limitations and real football frequently defies predictions. Use at your own discretion and responsibility.
 
 ---
 

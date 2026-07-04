@@ -403,15 +403,15 @@ function renderMatches(stage, filterGroup) {
       // === PRIMARY: XGBoost (knockout) or Poisson W/D/L (group) ===
       if (isKnockout && match.xgb_prediction) {
         const xp = match.xgb_prediction;
-        probHtml = '<div style="font-size:11px;color:var(--accent);margin-top:8px;margin-bottom:4px;font-weight:600">🤖 XGBoost · Probabilidad de avanzar</div>' +
+        probHtml = '<div style="font-size:11px;color:var(--accent);margin-top:8px;margin-bottom:4px;font-weight:600">🤖 XGBoost · Advance Probability</div>' +
           '<div class="prob-bar" style="height:8px">' +
           '<div style="background:var(--green);width:'+xp.team1_advance_prob+'%"></div>' +
           '<div style="background:var(--red);width:'+xp.team2_advance_prob+'%"></div>' +
           '</div>' +
           '<div class="prob-labels"><span><strong>'+t1s+' '+xp.team1_advance_prob+'%</strong></span><span><strong>'+t2s+' '+xp.team2_advance_prob+'%</strong></span></div>';
 
-        // Poisson desglose below
-        probHtml += '<div style="font-size:9px;color:var(--muted);margin-top:6px;margin-bottom:2px">📊 Desglose: Gana / ET / Pierde</div>' +
+        // Poisson breakdown below
+        probHtml += '<div style="font-size:9px;color:var(--muted);margin-top:6px;margin-bottom:2px">📊 Breakdown: Win / ET / Lose</div>' +
           '<div class="prob-bar" style="height:3px">' +
           '<div style="background:var(--green);width:'+p.team1_win_prob+'%"></div>' +
           '<div style="background:#e67e22;width:'+p.draw_prob+'%"></div>' +
@@ -527,16 +527,16 @@ function renderTeamDetail(teamId) {
       // === PRIMARY: XGBoost ===
       if (data.v2_prediction && data.v2_prediction.team1_advance_prob != null) {
         const p = (data.v2_prediction.team1_advance_prob * 100).toFixed(1);
-        html += '<div style="font-size:12px;color:var(--accent);margin-bottom:6px;font-weight:700">🤖 XGBoost · Probabilidad de avanzar</div>';
+        html += '<div style="font-size:12px;color:var(--accent);margin-bottom:6px;font-weight:700">🤖 XGBoost · Advance Probability</div>';
         html += '<div class="prob-bar" style="height:10px"><div style="background:var(--green);width:'+p+'%"></div><div style="background:var(--red);width:'+(100-p)+'%"></div></div>';
         html += '<div class="prob-labels"><span><strong>'+data.team1.name+': '+p+'%</strong></span><span><strong>'+data.team2.name+': '+(100-p).toFixed(1)+'%</strong></span></div>';
       }
 
-      // === SECONDARY: Poisson desglose ===
+      // === SECONDARY: Poisson breakdown ===
       if (data.v1_baseline) {
-        html += '<div style="font-size:10px;color:var(--muted);margin-top:12px;margin-bottom:4px">📊 Desglose: Gana / Tiempo Extra / Pierde</div>';
+        html += '<div style="font-size:10px;color:var(--muted);margin-top:12px;margin-bottom:4px">📊 Breakdown: Win / Extra Time / Lose</div>';
         html += '<div class="prob-bar" style="height:4px"><div style="background:var(--green);width:'+data.v1_baseline.team1_win_prob+'%"></div><div style="background:#e67e22;width:'+data.v1_baseline.draw_prob+'%"></div><div style="background:var(--red);width:'+data.v1_baseline.team2_win_prob+'%"></div></div>';
-        html += '<div class="prob-labels" style="font-size:10px"><span>Gana: '+data.v1_baseline.team1_win_prob+'%</span><span>ET: '+data.v1_baseline.draw_prob+'%</span><span>Pierde: '+data.v1_baseline.team2_win_prob+'%</span></div>';
+        html += '<div class="prob-labels" style="font-size:10px"><span>Win: '+data.v1_baseline.team1_win_prob+'%</span><span>ET: '+data.v1_baseline.draw_prob+'%</span><span>Lose: '+data.v1_baseline.team2_win_prob+'%</span></div>';
       }
 
       resultDiv.innerHTML = html;
@@ -599,7 +599,7 @@ async function runH2H() {
       const winner = p1 >= 0.5 ? data.team1.name : data.team2.name;
       const wpct = (Math.max(p1, p2) * 100).toFixed(1);
 
-      resultHtml += '<div class="winner">🤖 XGBoost: 🏆 ' + winner + ' avanza (' + wpct + '%)</div>';
+      resultHtml += '<div class="winner">🤖 XGBoost: 🏆 ' + winner + ' advances (' + wpct + '%)</div>';
       resultHtml += '<div class="prob-bar-wrap"><div class="prob-bar" style="height:14px">' +
         '<div style="background:var(--green);width:'+(p1*100)+'%"></div>' +
         '<div style="background:var(--red);width:'+(p2*100)+'%"></div>' +
@@ -609,7 +609,7 @@ async function runH2H() {
 
       // SHAP explanation
       if (data.explanation && data.explanation.top_factors) {
-        resultHtml += '<div class="h2h-explanation"><h4>🔍 Por qué?</h4>';
+        resultHtml += '<div class="h2h-explanation"><h4>🔍 Why?</h4>';
         data.explanation.top_factors.slice(0, 5).forEach(f => {
           const cls = f.shap > 0 ? 'shap-pos' : 'shap-neg';
           const sign = f.shap > 0 ? '+' : '';
@@ -617,22 +617,22 @@ async function runH2H() {
         });
         resultHtml += '</div>';
     }} else {
-      resultHtml += '<p style="color:var(--red);text-align:center">Modelo no disponible</p>';
+      resultHtml += '<p style="color:var(--red);text-align:center">Model unavailable</p>';
     }
 
-    // === SECONDARY: Poisson desglose Gana/ET/Pierde ===
+    // === SECONDARY: Poisson breakdown Win/ET/Lose ===
     if (data.v1_baseline) {
       const w1 = data.v1_baseline.team1_win_prob;
       const dr = data.v1_baseline.draw_prob;
       const w2 = data.v1_baseline.team2_win_prob;
 
-      resultHtml += '<div style="margin-top:16px;font-size:11px;color:var(--muted);margin-bottom:4px;text-align:center">📊 Desglose Poisson: Gana / Tiempo Extra / Pierde</div>';
+      resultHtml += '<div style="margin-top:16px;font-size:11px;color:var(--muted);margin-bottom:4px;text-align:center">📊 Poisson Breakdown: Win / Extra Time / Lose</div>';
       resultHtml += '<div class="prob-bar-wrap"><div class="prob-bar" style="height:6px">' +
         '<div style="background:var(--green);width:'+w1+'%"></div>' +
         '<div style="background:#e67e22;width:'+dr+'%"></div>' +
         '<div style="background:var(--red);width:'+w2+'%"></div>' +
         '</div>' +
-        '<div class="prob-labels" style="font-size:10px"><span>Gana: '+w1+'%</span><span>ET: '+dr+'%</span><span>Pierde: '+w2+'%</span></div></div>';
+        '<div class="prob-labels" style="font-size:10px"><span>Win: '+w1+'%</span><span>ET: '+dr+'%</span><span>Lose: '+w2+'%</span></div></div>';
     }
 
     document.querySelector('#h2h-result-placeholder .h2h-result').innerHTML = resultHtml;
@@ -658,7 +658,7 @@ function h2hTeamCard(team) {
 loadAllData();
 </script>
 <footer style="text-align:center;padding:16px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);margin-top:32px">
-⚠️ Herramienta educativa. No es recomendación de apuestas. <a href="README.md" style="color:var(--muted)">Más info</a>
+⚠️ Educational tool. Not betting advice. <a href="README.md" style="color:var(--muted)">More info</a>
 </footer>
 </body>
 </html>

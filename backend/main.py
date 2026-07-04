@@ -10,6 +10,16 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from performance import calculate_performance_rating
 from predictor import calculate_match_probabilities, get_prediction_factors, simulate_tournament
+from models.xgboost_predictor import KnockoutPredictor
+
+# Init XGBoost predictor (lazy load)
+_xgb_predictor = None
+
+def get_xgb_predictor():
+    global _xgb_predictor
+    if _xgb_predictor is None:
+        _xgb_predictor = KnockoutPredictor()
+    return _xgb_predictor
 
 DATA_DIR = Path(__file__).parent / "data"
 
@@ -170,6 +180,91 @@ def retrain():
     load_teams.cache_clear()
     load_matches.cache_clear()
     return {"status": "ok", "message": "Model data reloaded successfully"}
+
+
+@app.get("/api/predict/v2")
+def predict_match_v2(team1_id: int, team2_id: int):
+    """
+    XGBoost-powered prediction: P(team advances) with 50+ features.
+    Returns advancement probability + SHAP explanations.
+    """
+    teams = load_teams()
+    t1 = next((t for t in teams if t["id"] == team1_id), None)
+    t2 = next((t for t in teams if t["id"] == team2_id), None)
+    if not t1 or not t2:
+        raise HTTPException(status_code=404, detail="Team not found")
+    
+    # Get historical data for features
+    matches = load_matches()
+    
+    # Build team histories from completed matches
+    from collections import defaultdict
+    from feature_engineering import compute_match_features
+    
+    t1_hist = []
+    t2_hist = []
+    
+    for m in sorted(
+        [m for m in matches if m.get("score") and m.get("status", "").startswith("completed")],
+        key=lambda x: x["date"]
+    ):
+        if m.get("team1_id") == team1_id or m.get("team2_id") == team1_id:
+            role = "home" if m["team1_id"] == team1_id else "away"
+            t1_hist.append({
+                "score": m["score"], "stage": m.get("stage","group"),
+                "date": m["date"], "team_role": role,
+                "team_elo": t1["elo_rating"], "opponent_elo": t2["elo_rating"],
+                "status": m["status"], "clean_sheet": int(m["score"]["team2" if role=="home" else "team1"]) == 0,
+                "comeback": False, "advanced": False,
+            })
+        if m.get("team1_id") == team2_id or m.get("team2_id") == team2_id:
+            role = "home" if m["team1_id"] == team2_id else "away"
+            t2_hist.append({
+                "score": m["score"], "stage": m.get("stage","group"),
+                "date": m["date"], "team_role": role,
+                "team_elo": t2["elo_rating"], "opponent_elo": t1["elo_rating"],
+                "status": m["status"], "clean_sheet": int(m["score"]["team2" if role=="home" else "team1"]) == 0,
+                "comeback": False, "advanced": False,
+            })
+    
+    # Compute features
+    features = compute_match_features(
+        team1_id, team2_id, t1, t2,
+        t1_hist, t2_hist,
+        "round_of_16", "2026-07-04"  # stage, date
+    )
+    
+    # Predict
+    try:
+        xgb = get_xgb_predictor()
+        prob = xgb.predict(features)
+        explanation = xgb.explain(features)
+    except Exception as e:
+        prob = None
+        explanation = {"error": str(e)}
+    
+    # Also get Poisson baseline for comparison
+    poisson = calculate_match_probabilities(
+        t1["elo_rating"], t2["elo_rating"],
+        t1.get("is_host", False), t2.get("is_host", False)
+    )
+    
+    return {
+        "team1": {"name": t1["name"], "flag": t1["flag_emoji"], "elo": t1["elo_rating"], "fifa_rank": t1.get("fifa_rank")},
+        "team2": {"name": t2["name"], "flag": t2["flag_emoji"], "elo": t2["elo_rating"], "fifa_rank": t2.get("fifa_rank")},
+        "v2_prediction": {
+            "team1_advance_prob": prob,
+            "model": "XGBoost (50+ features, Optuna-tuned)",
+            "features_used": len(features),
+        },
+        "v1_baseline": {
+            "team1_win_prob": poisson["team1_win_prob"],
+            "draw_prob": poisson["draw_prob"],
+            "team2_win_prob": poisson["team2_win_prob"],
+            "model": "ELO + Poisson",
+        },
+        "explanation": explanation,
+    }
 
 
 @app.get("/")

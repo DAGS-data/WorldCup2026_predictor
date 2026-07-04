@@ -270,7 +270,7 @@ function renderTeams(filterGroup) {
     return '<div class="team-card" onclick="navigate(\'detail\', ' + team.id + ')">' +
       flagImg(team) +
       '<div class="info"><div class="name">' + team.name + '</div>' +
-      '<span class="code">' + (team.code || '') + '</span>' +
+      '<span class="code">#' + (team.fifa_rank || '?') + ' FIFA</span>' +
       '</div>' +
       '<span class="rating ' + ratingClass + '">' + r10 + '/10</span>' +
       '</div>';
@@ -333,15 +333,30 @@ function renderMatches(stage, filterGroup) {
     }
     
     let probHtml = '';
-    if (match.prediction && (status === 'scheduled' || status === 'live')) {
+    if (match.prediction && (isCompleted ? false : true)) {
       const p = match.prediction;
-      probHtml = '<div class="prob-bar">' +
-        '<div style="background:var(--green);width:'+p.team1_win_prob+'%"></div>' +
-        '<div style="background:var(--muted);width:'+p.draw_prob+'%"></div>' +
-        '<div style="background:var(--red);width:'+p.team2_win_prob+'%"></div>' +
-        '</div>' +
-        '<div class="prob-labels"><span>'+p.team1_win_prob+'%</span><span>'+p.draw_prob+'%</span><span>'+p.team2_win_prob+'%</span></div>' +
-        '<div class="pred-score">Predicted: ' + p.predicted_score + '</div>';
+      const isKnockout = match.stage !== 'group';
+      if (isKnockout) {
+        // Knockout: show advancement probability
+        const adv1 = p.team1_win_prob;
+        const adv2 = p.team2_win_prob;
+        probHtml = '<div style="display:flex;height:6px;border-radius:3px;overflow:hidden;margin-top:10px">' +
+          '<div style="background:var(--green);width:'+adv1+'%"></div>' +
+          '<div style="background:var(--red);width:'+adv2+'%"></div>' +
+          '</div>' +
+          '<div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px">' +
+          '<span>⚡ '+adv1+'% advance</span><span>'+adv2+'% advance ⚡</span></div>' +
+          '<div class="pred-score">XGBoost · Predicted: ' + p.predicted_score + '</div>';
+      } else {
+        // Group: show W/D/L
+        probHtml = '<div class="prob-bar">' +
+          '<div style="background:var(--green);width:'+p.team1_win_prob+'%"></div>' +
+          '<div style="background:var(--muted);width:'+p.draw_prob+'%"></div>' +
+          '<div style="background:var(--red);width:'+p.team2_win_prob+'%"></div>' +
+          '</div>' +
+          '<div class="prob-labels"><span>'+p.team1_win_prob+'%</span><span>'+p.draw_prob+'%</span><span>'+p.team2_win_prob+'%</span></div>' +
+          '<div class="pred-score">Poisson · Predicted: ' + p.predicted_score + '</div>';
+      }
     }
     
     return '<div class="match-card">' +

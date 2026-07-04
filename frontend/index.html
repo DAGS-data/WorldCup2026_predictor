@@ -395,23 +395,17 @@ function renderMatches(stage, filterGroup) {
     if (match.prediction && !isCompleted) {
       const p = match.prediction;
       const isKnockout = match.stage !== 'group';
-      if (isKnockout) {
-        probHtml = '<div style="display:flex;height:6px;border-radius:3px;overflow:hidden;margin-top:10px">' +
-          '<div style="background:var(--green);width:'+p.team1_win_prob+'%"></div>' +
-          '<div style="background:var(--red);width:'+p.team2_win_prob+'%"></div>' +
-          '</div>' +
-          '<div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px">' +
-          '<span>⚡ '+p.team1_win_prob+'% advance</span><span>'+p.team2_win_prob+'% advance ⚡</span></div>' +
-          '<div class="pred-score">XGBoost · Predicted: ' + p.predicted_score + '</div>';
-      } else {
-        probHtml = '<div class="prob-bar">' +
-          '<div style="background:var(--green);width:'+p.team1_win_prob+'%"></div>' +
-          '<div style="background:var(--muted);width:'+p.draw_prob+'%"></div>' +
-          '<div style="background:var(--red);width:'+p.team2_win_prob+'%"></div>' +
-          '</div>' +
-          '<div class="prob-labels"><span>'+p.team1_win_prob+'%</span><span>'+p.draw_prob+'%</span><span>'+p.team2_win_prob+'%</span></div>' +
-          '<div class="pred-score">Poisson · Predicted: ' + p.predicted_score + '</div>';
-      }
+      // Always show 3 outcomes: Win / Draw(ET) / Lose
+      const t1Name_short = t1 ? (t1.abbr || t1Name) : 'T1';
+      const t2Name_short = t2 ? (t2.abbr || t2Name) : 'T2';
+      const etLabel = isKnockout ? 'ET' : 'Draw';
+      probHtml = '<div class="prob-bar">' +
+        '<div style="background:var(--green);width:'+p.team1_win_prob+'%"></div>' +
+        '<div style="background:#e67e22;width:'+p.draw_prob+'%"></div>' +
+        '<div style="background:var(--red);width:'+p.team2_win_prob+'%"></div>' +
+        '</div>' +
+        '<div class="prob-labels"><span>'+t1Name_short+' '+p.team1_win_prob+'%</span><span>'+etLabel+' '+p.draw_prob+'%</span><span>'+t2Name_short+' '+p.team2_win_prob+'%</span></div>' +
+        '<div class="pred-score">' + (isKnockout ? 'XGBoost' : 'Poisson') + ' · Predicted: ' + p.predicted_score + '</div>';
     }
 
     return '<div class="match-card">' +
@@ -506,19 +500,24 @@ function renderTeamDetail(teamId) {
       const data = await resp.json();
       const opp = store.teams.find(x => x.id === parseInt(oppId));
 
-      let html = '<div style="text-align:center;margin-bottom:12px"><strong>' + data.team1.name + '</strong> vs <strong>' + data.team2.name + '</strong></div>';
+      let html = '<div style="text-align:center;margin-bottom:12px;font-weight:700;font-size:16px"><strong>' + data.team1.name + '</strong> vs <strong>' + data.team2.name + '</strong></div>';
 
-      if (data.v2_prediction && data.v2_prediction.team1_advance_prob != null) {
-        const p = (data.v2_prediction.team1_advance_prob * 100).toFixed(1);
-        html += '<div style="font-size:12px;color:var(--muted);margin-bottom:8px">🤖 XGBoost Model (38 features)</div>';
-        html += '<div class="prob-bar"><div style="background:var(--green);width:'+p+'%"></div><div style="background:var(--red);width:'+(100-p)+'%"></div></div>';
-        html += '<div class="prob-labels"><span>'+data.team1.name+': '+p+'%</span><span>'+data.team2.name+': '+(100-p).toFixed(1)+'%</span></div>';
+      // === 3-outcome: Gana / ET / Pierde (Poisson) ===
+      if (data.v1_baseline) {
+        const w1 = data.v1_baseline.team1_win_prob;
+        const dr = data.v1_baseline.draw_prob;
+        const w2 = data.v1_baseline.team2_win_prob;
+        html += '<div style="font-size:12px;color:var(--muted);margin-bottom:6px">⚽ Predicción de partido</div>';
+        html += '<div class="prob-bar"><div style="background:var(--green);width:'+w1+'%"></div><div style="background:#e67e22;width:'+dr+'%"></div><div style="background:var(--red);width:'+w2+'%"></div></div>';
+        html += '<div class="prob-labels"><span>Gana: '+w1+'%</span><span>Tiempo Extra: '+dr+'%</span><span>Pierde: '+w2+'%</span></div>';
       }
 
-      if (data.v1_baseline) {
-        html += '<div style="font-size:12px;color:var(--muted);margin-top:12px;margin-bottom:4px">📊 Poisson Baseline</div>';
-        html += '<div class="prob-bar"><div style="background:var(--green);width:'+data.v1_baseline.team1_win_prob+'%"></div><div style="background:var(--muted);width:'+data.v1_baseline.draw_prob+'%"></div><div style="background:var(--red);width:'+data.v1_baseline.team2_win_prob+'%"></div></div>';
-        html += '<div class="prob-labels"><span>Win: '+data.v1_baseline.team1_win_prob+'%</span><span>Draw: '+data.v1_baseline.draw_prob+'%</span><span>Win: '+data.v1_baseline.team2_win_prob+'%</span></div>';
+      // === XGBoost advance probability ===
+      if (data.v2_prediction && data.v2_prediction.team1_advance_prob != null) {
+        const p = (data.v2_prediction.team1_advance_prob * 100).toFixed(1);
+        html += '<div style="font-size:11px;color:var(--muted);margin-top:12px;margin-bottom:4px">🤖 XGBoost: Probabilidad de avanzar</div>';
+        html += '<div class="prob-bar"><div style="background:var(--green);width:'+p+'%"></div><div style="background:var(--red);width:'+(100-p)+'%"></div></div>';
+        html += '<div class="prob-labels"><span>'+data.team1.name+': '+p+'%</span><span>'+data.team2.name+': '+(100-p).toFixed(1)+'%</span></div>';
       }
 
       resultDiv.innerHTML = html;
@@ -606,19 +605,37 @@ async function runH2H() {
     const data = await resp.json();
 
     let resultHtml = '';
+
+    // === 3-outcome prediction (Win / ET / Lose) ===
+    if (data.v1_baseline) {
+      const w1 = data.v1_baseline.team1_win_prob;
+      const dr = data.v1_baseline.draw_prob;
+      const w2 = data.v1_baseline.team2_win_prob;
+
+      resultHtml += '<div style="font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;text-align:center">⚽ Match Outcome (Poisson)</div>';
+      resultHtml += '<div class="prob-bar-wrap"><div class="prob-bar">' +
+        '<div style="background:var(--green);width:'+w1+'%"></div>' +
+        '<div style="background:#e67e22;width:'+dr+'%"></div>' +
+        '<div style="background:var(--red);width:'+w2+'%"></div>' +
+        '</div>' +
+        '<div class="prob-labels"><span>'+t1.name+' gana: '+w1+'%</span><span>Tiempo Extra: '+dr+'%</span><span>'+t2.name+' gana: '+w2+'%</span></div></div>';
+    }
+
+    // === XGBoost advance probability ===
     if (data.v2_prediction && data.v2_prediction.team1_advance_prob != null) {
       const p1 = data.v2_prediction.team1_advance_prob;
       const p2 = 1 - p1;
       const winner = p1 >= 0.5 ? data.team1.name : data.team2.name;
       const wpct = (Math.max(p1, p2) * 100).toFixed(1);
 
-      resultHtml += '<div class="winner">🏆 ' + winner + ' more likely to advance (' + wpct + '%)</div>';
-      resultHtml += '<div class="prob-bar-wrap"><div class="prob-bar">' +
-        '<div style="background:var(--green);width:'+(p1*100)+'%"></div>' +
-        '<div style="background:var(--red);width:'+(p2*100)+'%"></div>' +
+      resultHtml += '<div style="margin-top:16px;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;text-align:center">🤖 XGBoost: P(avanzar)</div>';
+      resultHtml += '<div class=\"winner\">🏆 ' + winner + ' más probable (' + wpct + '%)</div>';
+      resultHtml += '<div class=\"prob-bar-wrap\"><div class=\"prob-bar\">' +
+        '<div style=\"background:var(--green);width:'+(p1*100)+'%\"></div>' +
+        '<div style=\"background:var(--red);width:'+(p2*100)+'%\"></div>' +
         '</div>' +
-        '<div class="prob-labels"><span>'+t1.name+': '+(p1*100).toFixed(1)+'%</span><span>'+t2.name+': '+(p2*100).toFixed(1)+'%</span></div></div>';
-      resultHtml += '<div class="model-tag">🤖 XGBoost · 38 features · Optuna-tuned · 91.7% accuracy · 0.977 AUC</div>';
+        '<div class=\"prob-labels\"><span>'+t1.name+': '+(p1*100).toFixed(1)+'%</span><span>'+t2.name+': '+(p2*100).toFixed(1)+'%</span></div></div>';
+      resultHtml += '<div class=\"model-tag\">🤖 XGBoost · 38 features · Optuna-tuned · 91.7% accuracy · 0.977 AUC</div>';
 
       // SHAP explanation
       if (data.explanation && data.explanation.top_factors) {

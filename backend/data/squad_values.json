@@ -96,7 +96,7 @@
     "currency": "EUR"
   },
   "Argentina": {
-    "value_millions": 198.6,
+    "value_millions": 807.5,
     "currency": "EUR"
   },
   "Algeria": {
@@ -121,6 +121,74 @@
   },
   "Croatia": {
     "value_millions": 387.3,
+    "currency": "EUR"
+  },
+  "Mexico": {
+    "value_millions": 191.85,
+    "currency": "EUR"
+  },
+  "South Africa": {
+    "value_millions": 49.25,
+    "currency": "EUR"
+  },
+  "South Korea": {
+    "value_millions": 139.05,
+    "currency": "EUR"
+  },
+  "Qatar": {
+    "value_millions": 19.93,
+    "currency": "EUR"
+  },
+  "Haiti": {
+    "value_millions": 55.85,
+    "currency": "EUR"
+  },
+  "Australia": {
+    "value_millions": 77.45,
+    "currency": "EUR"
+  },
+  "Curaçao": {
+    "value_millions": 25.78,
+    "currency": "EUR"
+  },
+  "Ivory Coast": {
+    "value_millions": 522.1,
+    "currency": "EUR"
+  },
+  "Tunisia": {
+    "value_millions": 69.95,
+    "currency": "EUR"
+  },
+  "New Zealand": {
+    "value_millions": 34.3,
+    "currency": "EUR"
+  },
+  "Saudi Arabia": {
+    "value_millions": 40.68,
+    "currency": "EUR"
+  },
+  "Austria": {
+    "value_millions": 245.2,
+    "currency": "EUR"
+  },
+  "Jordan": {
+    "value_millions": 20.3,
+    "currency": "EUR"
+  },
+  "Uzbekistan": {
+    "value_millions": 85.13,
+    "currency": "EUR"
+  },
+  "Ghana": {
+    "value_millions": 234.35,
+    "currency": "EUR"
+  },
+  "Panama": {
+    "value_millions": 34.55,
+    "currency": "EUR"
+  },
+  "Cape Verde": {
+    "value_millions": 54.5,
     "currency": "EUR"
   }
 }

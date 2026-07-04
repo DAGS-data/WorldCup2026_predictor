@@ -262,28 +262,36 @@ async function loadAllData() {
   document.getElementById('teams-error').classList.add('hidden');
   document.getElementById('matches-error').classList.add('hidden');
   document.getElementById('teams-loading').style.display = 'block';
+
+  // Load teams FIRST — render immediately when ready
+  try {
+    const teamsR = await fetch(API+'/api/teams');
+    store.teams = await teamsR.json();
+    document.getElementById('teams-loading').style.display = 'none';
+    if (currentPage === 'teams') renderTeams();
+    if (currentPage === 'h2h') initH2H();
+  } catch(e) {
+    document.getElementById('teams-loading').style.display = 'none';
+    document.getElementById('teams-error').classList.remove('hidden');
+  }
+
+  // Load matches AFTER teams — render when ready
   document.getElementById('matches-loading').style.display = 'block';
+  try {
+    const matchesR = await fetch(API+'/api/matches');
+    store.matches = await matchesR.json();
+    document.getElementById('matches-loading').style.display = 'none';
+    if (currentPage === 'matches') renderMatches();
+  } catch(e) {
+    document.getElementById('matches-loading').style.display = 'none';
+    document.getElementById('matches-error').classList.remove('hidden');
+  }
 
-  const [teamsR, matchesR, groupsR] = await Promise.allSettled([
-    fetch(API+'/api/teams').then(r=>r.json()),
-    fetch(API+'/api/matches').then(r=>r.json()),
-    fetch(API+'/api/groups').then(r=>r.json()),
-  ]);
-
-  store.teams = teamsR.status === 'fulfilled' ? teamsR.value : null;
-  store.matches = matchesR.status === 'fulfilled' ? matchesR.value : null;
-  store.groups = groupsR.status === 'fulfilled' ? groupsR.value : null;
-
-  document.getElementById('teams-loading').style.display = 'none';
-  document.getElementById('matches-loading').style.display = 'none';
-
-  if (!store.teams) document.getElementById('teams-error').classList.remove('hidden');
-  if (!store.matches) document.getElementById('matches-error').classList.remove('hidden');
-
-  if (currentPage === 'teams') renderTeams();
-  if (currentPage === 'matches') renderMatches();
-  if (currentPage === 'bracket' && !bracketLoaded) loadBracket();
-  if (currentPage === 'h2h') initH2H();
+  // Groups: load in background
+  try {
+    const groupsR = await fetch(API+'/api/groups');
+    store.groups = await groupsR.json();
+  } catch(e) {}
 }
 
 async function loadBracket() {
@@ -395,17 +403,17 @@ function renderMatches(stage, filterGroup) {
     if (match.prediction && !isCompleted) {
       const p = match.prediction;
       const isKnockout = match.stage !== 'group';
-      // Always show 3 outcomes: Win / Draw(ET) / Lose
       const t1Name_short = t1 ? (t1.abbr || t1Name) : 'T1';
       const t2Name_short = t2 ? (t2.abbr || t2Name) : 'T2';
       const etLabel = isKnockout ? 'ET' : 'Draw';
+      const modelLabel = isKnockout ? 'Poisson' : 'Poisson';
       probHtml = '<div class="prob-bar">' +
         '<div style="background:var(--green);width:'+p.team1_win_prob+'%"></div>' +
         '<div style="background:#e67e22;width:'+p.draw_prob+'%"></div>' +
         '<div style="background:var(--red);width:'+p.team2_win_prob+'%"></div>' +
         '</div>' +
         '<div class="prob-labels"><span>'+t1Name_short+' '+p.team1_win_prob+'%</span><span>'+etLabel+' '+p.draw_prob+'%</span><span>'+t2Name_short+' '+p.team2_win_prob+'%</span></div>' +
-        '<div class="pred-score">' + (isKnockout ? 'XGBoost' : 'Poisson') + ' · Predicted: ' + p.predicted_score + '</div>';
+        '<div class="pred-score">' + modelLabel + ' · Predicted: ' + p.predicted_score + (isKnockout ? ' · Click for XGBoost' : '') + '</div>';
     }
 
     return '<div class="match-card">' +
@@ -502,22 +510,19 @@ function renderTeamDetail(teamId) {
 
       let html = '<div style="text-align:center;margin-bottom:12px;font-weight:700;font-size:16px"><strong>' + data.team1.name + '</strong> vs <strong>' + data.team2.name + '</strong></div>';
 
-      // === 3-outcome: Gana / ET / Pierde (Poisson) ===
-      if (data.v1_baseline) {
-        const w1 = data.v1_baseline.team1_win_prob;
-        const dr = data.v1_baseline.draw_prob;
-        const w2 = data.v1_baseline.team2_win_prob;
-        html += '<div style="font-size:12px;color:var(--muted);margin-bottom:6px">⚽ Predicción de partido</div>';
-        html += '<div class="prob-bar"><div style="background:var(--green);width:'+w1+'%"></div><div style="background:#e67e22;width:'+dr+'%"></div><div style="background:var(--red);width:'+w2+'%"></div></div>';
-        html += '<div class="prob-labels"><span>Gana: '+w1+'%</span><span>Tiempo Extra: '+dr+'%</span><span>Pierde: '+w2+'%</span></div>';
-      }
-
-      // === XGBoost advance probability ===
+      // === PRIMARY: XGBoost ===
       if (data.v2_prediction && data.v2_prediction.team1_advance_prob != null) {
         const p = (data.v2_prediction.team1_advance_prob * 100).toFixed(1);
-        html += '<div style="font-size:11px;color:var(--muted);margin-top:12px;margin-bottom:4px">🤖 XGBoost: Probabilidad de avanzar</div>';
-        html += '<div class="prob-bar"><div style="background:var(--green);width:'+p+'%"></div><div style="background:var(--red);width:'+(100-p)+'%"></div></div>';
-        html += '<div class="prob-labels"><span>'+data.team1.name+': '+p+'%</span><span>'+data.team2.name+': '+(100-p).toFixed(1)+'%</span></div>';
+        html += '<div style="font-size:12px;color:var(--accent);margin-bottom:6px;font-weight:700">🤖 XGBoost · Probabilidad de avanzar</div>';
+        html += '<div class="prob-bar" style="height:10px"><div style="background:var(--green);width:'+p+'%"></div><div style="background:var(--red);width:'+(100-p)+'%"></div></div>';
+        html += '<div class="prob-labels"><span><strong>'+data.team1.name+': '+p+'%</strong></span><span><strong>'+data.team2.name+': '+(100-p).toFixed(1)+'%</strong></span></div>';
+      }
+
+      // === SECONDARY: Poisson desglose ===
+      if (data.v1_baseline) {
+        html += '<div style="font-size:10px;color:var(--muted);margin-top:12px;margin-bottom:4px">📊 Desglose: Gana / Tiempo Extra / Pierde</div>';
+        html += '<div class="prob-bar" style="height:4px"><div style="background:var(--green);width:'+data.v1_baseline.team1_win_prob+'%"></div><div style="background:#e67e22;width:'+data.v1_baseline.draw_prob+'%"></div><div style="background:var(--red);width:'+data.v1_baseline.team2_win_prob+'%"></div></div>';
+        html += '<div class="prob-labels" style="font-size:10px"><span>Gana: '+data.v1_baseline.team1_win_prob+'%</span><span>ET: '+data.v1_baseline.draw_prob+'%</span><span>Pierde: '+data.v1_baseline.team2_win_prob+'%</span></div>';
       }
 
       resultDiv.innerHTML = html;
@@ -606,46 +611,48 @@ async function runH2H() {
 
     let resultHtml = '';
 
-    // === 3-outcome prediction (Win / ET / Lose) ===
-    if (data.v1_baseline) {
-      const w1 = data.v1_baseline.team1_win_prob;
-      const dr = data.v1_baseline.draw_prob;
-      const w2 = data.v1_baseline.team2_win_prob;
-
-      resultHtml += '<div style="font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;text-align:center">⚽ Match Outcome (Poisson)</div>';
-      resultHtml += '<div class="prob-bar-wrap"><div class="prob-bar">' +
-        '<div style="background:var(--green);width:'+w1+'%"></div>' +
-        '<div style="background:#e67e22;width:'+dr+'%"></div>' +
-        '<div style="background:var(--red);width:'+w2+'%"></div>' +
-        '</div>' +
-        '<div class="prob-labels"><span>'+t1.name+' gana: '+w1+'%</span><span>Tiempo Extra: '+dr+'%</span><span>'+t2.name+' gana: '+w2+'%</span></div></div>';
-    }
-
-    // === XGBoost advance probability ===
+    // === PRIMARY: XGBoost advance probability ===
     if (data.v2_prediction && data.v2_prediction.team1_advance_prob != null) {
       const p1 = data.v2_prediction.team1_advance_prob;
       const p2 = 1 - p1;
       const winner = p1 >= 0.5 ? data.team1.name : data.team2.name;
       const wpct = (Math.max(p1, p2) * 100).toFixed(1);
 
-      resultHtml += '<div style="margin-top:16px;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;text-align:center">🤖 XGBoost: P(avanzar)</div>';
-      resultHtml += '<div class=\"winner\">🏆 ' + winner + ' más probable (' + wpct + '%)</div>';
-      resultHtml += '<div class=\"prob-bar-wrap\"><div class=\"prob-bar\">' +
-        '<div style=\"background:var(--green);width:'+(p1*100)+'%\"></div>' +
-        '<div style=\"background:var(--red);width:'+(p2*100)+'%\"></div>' +
+      resultHtml += '<div class="winner">🤖 XGBoost: 🏆 ' + winner + ' avanza (' + wpct + '%)</div>';
+      resultHtml += '<div class="prob-bar-wrap"><div class="prob-bar" style="height:14px">' +
+        '<div style="background:var(--green);width:'+(p1*100)+'%"></div>' +
+        '<div style="background:var(--red);width:'+(p2*100)+'%"></div>' +
         '</div>' +
-        '<div class=\"prob-labels\"><span>'+t1.name+': '+(p1*100).toFixed(1)+'%</span><span>'+t2.name+': '+(p2*100).toFixed(1)+'%</span></div></div>';
-      resultHtml += '<div class=\"model-tag\">🤖 XGBoost · 38 features · Optuna-tuned · 91.7% accuracy · 0.977 AUC</div>';
+        '<div class="prob-labels"><span><strong>'+t1.name+': '+(p1*100).toFixed(1)+'%</strong></span><span><strong>'+t2.name+': '+(p2*100).toFixed(1)+'%</strong></span></div></div>';
+      resultHtml += '<div class="model-tag">38 features · Optuna-tuned · 91.7% accuracy · 0.977 AUC</div>';
 
       // SHAP explanation
       if (data.explanation && data.explanation.top_factors) {
-        resultHtml += '<div class="h2h-explanation"><h4>🔍 Why this prediction?</h4>';
+        resultHtml += '<div class="h2h-explanation"><h4>🔍 Por qué?</h4>';
         data.explanation.top_factors.slice(0, 5).forEach(f => {
           const cls = f.shap > 0 ? 'shap-pos' : 'shap-neg';
           const sign = f.shap > 0 ? '+' : '';
           resultHtml += '<div class="shap-row"><span>'+f.feature+'</span><span style="color:var(--muted);font-size:11px">val: '+f.value.toFixed(2)+'</span><span class="'+cls+'">'+sign+f.shap.toFixed(3)+'</span></div>';
         });
         resultHtml += '</div>';
+    }} else {
+      resultHtml += '<p style="color:var(--red);text-align:center">Modelo no disponible</p>';
+    }
+
+    // === SECONDARY: Poisson desglose Gana/ET/Pierde ===
+    if (data.v1_baseline) {
+      const w1 = data.v1_baseline.team1_win_prob;
+      const dr = data.v1_baseline.draw_prob;
+      const w2 = data.v1_baseline.team2_win_prob;
+
+      resultHtml += '<div style="margin-top:16px;font-size:11px;color:var(--muted);margin-bottom:4px;text-align:center">📊 Desglose Poisson: Gana / Tiempo Extra / Pierde</div>';
+      resultHtml += '<div class="prob-bar-wrap"><div class="prob-bar" style="height:6px">' +
+        '<div style="background:var(--green);width:'+w1+'%"></div>' +
+        '<div style="background:#e67e22;width:'+dr+'%"></div>' +
+        '<div style="background:var(--red);width:'+w2+'%"></div>' +
+        '</div>' +
+        '<div class="prob-labels" style="font-size:10px"><span>Gana: '+w1+'%</span><span>ET: '+dr+'%</span><span>Pierde: '+w2+'%</span></div></div>';
+    }
       }
     } else {
       resultHtml += '<p style="color:var(--red)">Model prediction unavailable. Make sure the model is trained.</p>';

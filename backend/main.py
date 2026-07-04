@@ -2,6 +2,7 @@
 
 import json
 import os
+import time
 from functools import lru_cache
 from pathlib import Path
 
@@ -20,6 +21,11 @@ def get_xgb_predictor():
     if _xgb_predictor is None:
         _xgb_predictor = KnockoutPredictor()
     return _xgb_predictor
+
+# In-memory caches with TTL (seconds)
+_cache: dict = {}
+CACHE_TTL = 30  # cache teams/matches for 30 seconds
+BRACKET_CACHE_TTL = 120  # bracket is heavy, cache 2 minutes
 
 DATA_DIR = Path(__file__).parent / "data"
 

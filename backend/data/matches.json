@@ -8,11 +8,8 @@
     "venue": "Estadio Azteca, Mexico City",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 1,
@@ -23,11 +20,8 @@
     "venue": "AT&T Stadium, Dallas",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 2,
@@ -38,11 +32,8 @@
     "venue": "SoFi Stadium, Los Angeles",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 3
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 3,
@@ -53,11 +44,8 @@
     "venue": "MetLife Stadium, New York",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 4,
@@ -68,11 +56,8 @@
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 5,
@@ -83,11 +68,8 @@
     "venue": "Hard Rock Stadium, Miami",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 6,
@@ -98,11 +80,8 @@
     "venue": "Arrowhead Stadium, Kansas City",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 7,
@@ -113,11 +92,8 @@
     "venue": "NRG Stadium, Houston",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 8,
@@ -128,11 +104,8 @@
     "venue": "BMO Field, Toronto",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 4
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 9,
@@ -143,11 +116,8 @@
     "venue": "BC Place, Vancouver",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 10,
@@ -158,11 +128,8 @@
     "venue": "Levi's Stadium, Santa Clara",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 11,
@@ -173,11 +140,8 @@
     "venue": "Lincoln Financial Field, Philadelphia",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 3
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 12,
@@ -188,11 +152,8 @@
     "venue": "Gillette Stadium, Boston",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 4,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 13,
@@ -203,11 +164,8 @@
     "venue": "Lumen Field, Seattle",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 3,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 14,
@@ -218,11 +176,8 @@
     "venue": "Estadio BBVA, Monterrey",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 15,
@@ -233,11 +188,8 @@
     "venue": "Estadio Akron, Guadalajara",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 16,
@@ -248,11 +200,8 @@
     "venue": "Estadio Azteca, Mexico City",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 17,
@@ -263,11 +212,8 @@
     "venue": "AT&T Stadium, Dallas",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 18,
@@ -278,11 +224,8 @@
     "venue": "SoFi Stadium, Los Angeles",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 19,
@@ -293,11 +236,8 @@
     "venue": "MetLife Stadium, New York",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 20,
@@ -308,11 +248,8 @@
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 3
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 21,
@@ -323,11 +260,8 @@
     "venue": "Hard Rock Stadium, Miami",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 22,
@@ -338,11 +272,8 @@
     "venue": "Arrowhead Stadium, Kansas City",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 3,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 23,
@@ -353,11 +284,8 @@
     "venue": "NRG Stadium, Houston",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 24,
@@ -368,11 +296,8 @@
     "venue": "BMO Field, Toronto",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 25,
@@ -383,11 +308,8 @@
     "venue": "BC Place, Vancouver",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 26,
@@ -398,11 +320,8 @@
     "venue": "Levi's Stadium, Santa Clara",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 27,
@@ -413,11 +332,8 @@
     "venue": "Lincoln Financial Field, Philadelphia",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 28,
@@ -428,11 +344,8 @@
     "venue": "Gillette Stadium, Boston",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 29,
@@ -443,11 +356,8 @@
     "venue": "Lumen Field, Seattle",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 3
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 30,
@@ -458,11 +368,8 @@
     "venue": "Estadio BBVA, Monterrey",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 31,
@@ -473,11 +380,8 @@
     "venue": "Estadio Akron, Guadalajara",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 32,
@@ -488,11 +392,8 @@
     "venue": "Estadio Azteca, Mexico City",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 33,
@@ -503,11 +404,8 @@
     "venue": "AT&T Stadium, Dallas",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 3,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 34,
@@ -518,11 +416,8 @@
     "venue": "SoFi Stadium, Los Angeles",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 35,
@@ -533,11 +428,8 @@
     "venue": "MetLife Stadium, New York",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 3,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 36,
@@ -548,11 +440,8 @@
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 37,
@@ -563,11 +452,8 @@
     "venue": "Hard Rock Stadium, Miami",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 38,
@@ -578,11 +464,8 @@
     "venue": "Arrowhead Stadium, Kansas City",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 39,
@@ -593,11 +476,8 @@
     "venue": "NRG Stadium, Houston",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 40,
@@ -608,11 +488,8 @@
     "venue": "BMO Field, Toronto",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 41,
@@ -623,11 +500,8 @@
     "venue": "BC Place, Vancouver",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 42,
@@ -638,11 +512,8 @@
     "venue": "Levi's Stadium, Santa Clara",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 43,
@@ -653,11 +524,8 @@
     "venue": "Lincoln Financial Field, Philadelphia",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 44,
@@ -668,11 +536,8 @@
     "venue": "Gillette Stadium, Boston",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 45,
@@ -683,11 +548,8 @@
     "venue": "Lumen Field, Seattle",
     "stage": "group",
     "matchday": 1,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 46,
@@ -698,11 +560,8 @@
     "venue": "Estadio BBVA, Monterrey",
     "stage": "group",
     "matchday": 2,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 47,
@@ -713,77 +572,62 @@
     "venue": "Estadio Akron, Guadalajara",
     "stage": "group",
     "matchday": 3,
-    "status": "completed",
-    "score": {
-      "team1": 1,
-      "team2": 1
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 48,
     "group": null,
-    "team1_id": 0,
-    "team2_id": 5,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-27",
     "venue": "Estadio Azteca, Mexico City",
     "stage": "round_of_32",
     "matchday": null,
-    "status": "completed",
-    "score": {
-      "team1": 3,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 49,
     "group": null,
-    "team1_id": 4,
-    "team2_id": 1,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-27",
     "venue": "AT&T Stadium, Dallas",
     "stage": "round_of_32",
     "matchday": null,
-    "status": "completed",
-    "score": {
-      "team1": 0,
-      "team2": 4
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 50,
     "group": null,
-    "team1_id": 6,
-    "team2_id": 9,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-27",
     "venue": "SoFi Stadium, Los Angeles",
     "stage": "round_of_32",
     "matchday": null,
-    "status": "completed",
-    "score": {
-      "team1": 3,
-      "team2": 2
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 51,
     "group": null,
-    "team1_id": 10,
-    "team2_id": 8,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-27",
     "venue": "MetLife Stadium, New York",
     "stage": "round_of_32",
     "matchday": null,
-    "status": "completed",
-    "score": {
-      "team1": 2,
-      "team2": 0
-    }
+    "status": "scheduled",
+    "score": null
   },
   {
     "id": 52,
     "group": null,
-    "team1_id": 12,
-    "team2_id": 15,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-28",
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "stage": "round_of_32",
@@ -794,8 +638,8 @@
   {
     "id": 53,
     "group": null,
-    "team1_id": 17,
-    "team2_id": 13,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-28",
     "venue": "Hard Rock Stadium, Miami",
     "stage": "round_of_32",
@@ -806,8 +650,8 @@
   {
     "id": 54,
     "group": null,
-    "team1_id": 18,
-    "team2_id": 21,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-28",
     "venue": "Arrowhead Stadium, Kansas City",
     "stage": "round_of_32",
@@ -818,8 +662,8 @@
   {
     "id": 55,
     "group": null,
-    "team1_id": 22,
-    "team2_id": 19,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-28",
     "venue": "NRG Stadium, Houston",
     "stage": "round_of_32",
@@ -830,8 +674,8 @@
   {
     "id": 56,
     "group": null,
-    "team1_id": 25,
-    "team2_id": 28,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-29",
     "venue": "BMO Field, Toronto",
     "stage": "round_of_32",
@@ -842,8 +686,8 @@
   {
     "id": 57,
     "group": null,
-    "team1_id": 27,
-    "team2_id": 24,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-29",
     "venue": "BC Place, Vancouver",
     "stage": "round_of_32",
@@ -854,8 +698,8 @@
   {
     "id": 58,
     "group": null,
-    "team1_id": 30,
-    "team2_id": 33,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-29",
     "venue": "Levi's Stadium, Santa Clara",
     "stage": "round_of_32",
@@ -866,8 +710,8 @@
   {
     "id": 59,
     "group": null,
-    "team1_id": 35,
-    "team2_id": 31,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-29",
     "venue": "Lincoln Financial Field, Philadelphia",
     "stage": "round_of_32",
@@ -878,8 +722,8 @@
   {
     "id": 60,
     "group": null,
-    "team1_id": 37,
-    "team2_id": 39,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-30",
     "venue": "Gillette Stadium, Boston",
     "stage": "round_of_32",
@@ -890,8 +734,8 @@
   {
     "id": 61,
     "group": null,
-    "team1_id": 40,
-    "team2_id": 38,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-30",
     "venue": "Lumen Field, Seattle",
     "stage": "round_of_32",
@@ -902,8 +746,8 @@
   {
     "id": 62,
     "group": null,
-    "team1_id": 42,
-    "team2_id": 46,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-30",
     "venue": "Estadio BBVA, Monterrey",
     "stage": "round_of_32",
@@ -914,8 +758,8 @@
   {
     "id": 63,
     "group": null,
-    "team1_id": 47,
-    "team2_id": 44,
+    "team1_id": null,
+    "team2_id": null,
     "date": "2026-06-30",
     "venue": "Estadio Akron, Guadalajara",
     "stage": "round_of_32",

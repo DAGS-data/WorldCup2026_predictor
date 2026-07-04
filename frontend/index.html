@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>World Cup 2026 Predictor</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -125,6 +127,9 @@ nav .nav-links button.active { color: var(--accent); background: rgba(255,107,53
 .predict-section .pred-result { margin-top: 12px; padding: 16px; background: var(--bg); border-radius: 8px; display: none; }
 .predict-section .pred-result.show { display: block; }
 
+/* Map */
+.detail-map { width: 100%; height: 280px; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 24px; z-index: 1; }
+
 /* Empty/error state */
 .empty-state { text-align: center; padding: 48px; color: var(--muted); }
 .empty-state button { margin-top: 12px; background: var(--accent); color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; }
@@ -192,7 +197,9 @@ function navigate(page, teamId) {
   document.getElementById('page-' + page).classList.add('active');
   
   document.querySelectorAll('[data-page]').forEach(b => b.classList.remove('active'));
-  document.querySelector('[data-page="' + page + '"]').classList.add('active');
+  // Nav highlight (only for pages with nav buttons)
+  const navBtn = document.querySelector('[data-page="' + page + '"]');
+  if (navBtn) navBtn.classList.add('active');
   
   if (page === 'detail' && teamId !== undefined) renderTeamDetail(teamId);
   if (page === 'teams' && store.teams) renderTeams();
@@ -306,6 +313,10 @@ function renderMatches(stage, filterGroup) {
   grid.innerHTML = filtered.map(match => {
     const t1 = store.teams ? store.teams.find(x => x.id === match.team1_id) : null;
     const t2 = store.teams ? store.teams.find(x => x.id === match.team2_id) : null;
+    const t1Name = t1 ? t1.name : 'TBD';
+    const t2Name = t2 ? t2.name : 'TBD';
+    const t1Flag = t1 ? flagImg(t1) : '<span class="flag-fallback">❓</span>';
+    const t2Flag = t2 ? flagImg(t2) : '<span class="flag-fallback">❓</span>';
     const status = match.status || 'scheduled';
     const badgeClass = status === 'completed' ? 'badge-completed' : status === 'live' ? 'badge-live' : 'badge-scheduled';
     const statusText = status.charAt(0).toUpperCase() + status.slice(1);
@@ -336,9 +347,9 @@ function renderMatches(stage, filterGroup) {
       '<div class="match-header"><span class="stage-badge">' + stageText + '</span>' +
       '<span class="stage-badge ' + badgeClass + '">' + statusText + '</span></div>' +
       '<div class="teams">' +
-      '<div class="team">' + (t1 ? flagImg(t1) : '') + '<span class="tname">' + (t1 ? t1.name : 'Team '+match.team1_id) + '</span></div>' +
+      '<div class="team">' + t1Flag + '<span class="tname">' + t1Name + '</span></div>' +
       scoreOrVs +
-      '<div class="team">' + (t2 ? flagImg(t2) : '') + '<span class="tname">' + (t2 ? t2.name : 'Team '+match.team2_id) + '</span></div>' +
+      '<div class="team">' + t2Flag + '<span class="tname">' + t2Name + '</span></div>' +
       '</div>' +
       '<div class="meta">' + (match.date || '') + ' · ' + (match.venue || '') + '</div>' +
       probHtml +
@@ -376,6 +387,7 @@ function renderTeamDetail(teamId) {
     flagImg(t) +
     '<div><h1>' + t.name + '</h1><div class="big-rating" style="color:'+ratingColor+'">' + rating + ' <span>/ 100</span></div></div>' +
     '</div>' +
+    '<div id="detail-map" class="detail-map"></div>' +
     '<div class="stats-grid">' +
     '<div class="stat-card"><div class="stat-value">#' + (t.fifa_rank || '?') + '</div><div class="stat-label">FIFA Rank</div></div>' +
     '<div class="stat-card"><div class="stat-value">' + (t.elo_rating || '?') + '</div><div class="stat-label">ELO Rating</div></div>' +
@@ -388,6 +400,28 @@ function renderTeamDetail(teamId) {
     '<select id="predict-opponent"><option value="">Select opponent...</option>' + otherTeams.map(x => '<option value="'+x.id+'">'+x.name+'</option>').join('') + '</select>' +
     '<div id="predict-result" class="pred-result"></div></div>' +
     '</div>';
+  
+  // Init map
+  if (t.lat && t.lng) {
+    setTimeout(() => {
+      const mapEl = document.getElementById('detail-map');
+      if (mapEl && !mapEl._leaflet_id) {
+        const map = L.map('detail-map').setView([t.lat, t.lng], 4);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+          maxZoom: 10
+        }).addTo(map);
+        L.circleMarker([t.lat, t.lng], {
+          radius: 12,
+          fillColor: '#ff6b35',
+          color: '#fff',
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.8
+        }).addTo(map).bindPopup('<b>' + t.name + '</b><br>FIFA #' + (t.fifa_rank || '?') + ' | Rating: ' + rating + '/100');
+      }
+    }, 100);
+  }
   
   // Predict handler
   document.getElementById('predict-opponent').onchange = async function() {

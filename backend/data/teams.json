@@ -11,41 +11,43 @@
     "confederation": "CONCACAF",
     "is_host": true,
     "code": "MEX",
+    "lat": 23.6,
+    "lng": -102.5,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Costa Rica",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
+        "opponent": "Australia",
         "result": "W",
         "goals_for": 4,
-        "goals_against": 3,
+        "goals_against": 2,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Algeria",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "W",
+        "opponent": "Netherlands",
+        "result": "D",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 1,
         "date": "2025-10-15",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Uruguay",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
@@ -53,44 +55,44 @@
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 2,
+        "opponent": "Brazil",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-11-19",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Japan",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2026-01-20",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Ecuador",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Nigeria",
         "result": "W",
         "goals_for": 3,
         "goals_against": 1,
-        "date": "2026-01-20",
-        "competition": "Friendly"
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
       },
       {
         "opponent": "Colombia",
-        "result": "L",
+        "result": "W",
         "goals_for": 1,
         "goals_against": 2,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -98,41 +100,43 @@
     "id": 1,
     "name": "Netherlands",
     "group": "A",
-    "fifa_rank": 6,
-    "elo_rating": 1980,
+    "fifa_rank": 8,
+    "elo_rating": 1960,
     "flag_emoji": "🇳🇱",
     "flag_code": "nl",
     "squad_value_millions": 580,
     "confederation": "UEFA",
     "is_host": false,
     "code": "NED",
+    "lat": 52.1,
+    "lng": 5.3,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Peru",
         "result": "W",
         "goals_for": 3,
         "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
+        "opponent": "Mexico",
         "result": "W",
         "goals_for": 3,
         "goals_against": 0,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "D",
-        "goals_for": 1,
+        "opponent": "Paraguay",
+        "result": "W",
+        "goals_for": 3,
         "goals_against": 1,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Paraguay",
         "result": "W",
         "goals_for": 4,
         "goals_against": 0,
@@ -140,10 +144,10 @@
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Panama",
         "result": "W",
         "goals_for": 4,
-        "goals_against": 0,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
@@ -151,41 +155,41 @@
         "opponent": "Panama",
         "result": "W",
         "goals_for": 4,
-        "goals_against": 3,
+        "goals_against": 2,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
+        "opponent": "Iran",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 3,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
-        "result": "D",
+        "opponent": "Egypt",
+        "result": "W",
         "goals_for": 2,
-        "goals_against": 2,
+        "goals_against": 0,
         "date": "2026-02-05",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
       },
       {
         "opponent": "Costa Rica",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 2,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -193,7 +197,7 @@
     "id": 2,
     "name": "Ghana",
     "group": "A",
-    "fifa_rank": 61,
+    "fifa_rank": 60,
     "elo_rating": 1550,
     "flag_emoji": "🇬🇭",
     "flag_code": "gh",
@@ -201,86 +205,88 @@
     "confederation": "CAF",
     "is_host": false,
     "code": "GHA",
+    "lat": 7.9,
+    "lng": -1.0,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "L",
+        "opponent": "Egypt",
+        "result": "W",
         "goals_for": 1,
         "goals_against": 2,
-        "date": "2025-09-10",
-        "competition": "Nations League"
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "opponent": "Egypt",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Australia",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 3,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "L",
-        "goals_for": 1,
+        "opponent": "USA",
+        "result": "W",
+        "goals_for": 3,
         "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 3,
+        "opponent": "Japan",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "D",
-        "goals_for": 2,
+        "opponent": "England",
+        "result": "L",
+        "goals_for": 1,
         "goals_against": 2,
         "date": "2025-11-19",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
         "opponent": "Argentina",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
+        "opponent": "Panama",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 2,
         "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Portugal",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
+        "date": "2026-03-22",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "USA",
         "result": "L",
         "goals_for": 1,
         "goals_against": 2,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -288,7 +294,7 @@
     "id": 3,
     "name": "Canada",
     "group": "B",
-    "fifa_rank": 48,
+    "fifa_rank": 38,
     "elo_rating": 1680,
     "flag_emoji": "🇨🇦",
     "flag_code": "ca",
@@ -296,86 +302,88 @@
     "confederation": "CONCACAF",
     "is_host": true,
     "code": "CAN",
+    "lat": 56.1,
+    "lng": -106.3,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Colombia",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Egypt",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Portugal",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2025-10-11",
+        "competition": "Friendly"
       },
       {
         "opponent": "Canada",
         "result": "W",
         "goals_for": 2,
         "goals_against": 1,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
-        "date": "2025-10-11",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Honduras",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
+        "opponent": "Morocco",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 2,
+        "opponent": "France",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 1,
         "date": "2025-11-19",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Peru",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 0,
+        "date": "2026-01-20",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
+        "opponent": "Peru",
         "result": "L",
         "goals_for": 0,
-        "goals_against": 2,
+        "goals_against": 1,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -383,7 +391,7 @@
     "id": 4,
     "name": "Denmark",
     "group": "B",
-    "fifa_rank": 19,
+    "fifa_rank": 21,
     "elo_rating": 1830,
     "flag_emoji": "🇩🇰",
     "flag_code": "dk",
@@ -391,84 +399,86 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "DEN",
+    "lat": 56.3,
+    "lng": 9.5,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
+        "opponent": "Colombia",
         "result": "W",
         "goals_for": 2,
-        "goals_against": 1,
+        "goals_against": 0,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "opponent": "Algeria",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "opponent": "Australia",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Costa Rica",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
-        "date": "2025-11-19",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
+        "opponent": "Germany",
         "result": "D",
         "goals_for": 1,
         "goals_against": 1,
-        "date": "2026-03-22",
-        "competition": "Nations League"
+        "date": "2025-11-19",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "USA",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 0,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
       },
       {
         "opponent": "Uruguay",
         "result": "D",
-        "goals_for": 0,
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "South Korea",
+        "result": "W",
+        "goals_for": 4,
         "goals_against": 0,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Brazil",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2026-03-26",
         "competition": "Friendly"
       }
@@ -478,7 +488,7 @@
     "id": 5,
     "name": "Iran",
     "group": "B",
-    "fifa_rank": 22,
+    "fifa_rank": 20,
     "elo_rating": 1720,
     "flag_emoji": "🇮🇷",
     "flag_code": "ir",
@@ -486,86 +496,88 @@
     "confederation": "AFC",
     "is_host": false,
     "code": "IRN",
+    "lat": 32.4,
+    "lng": 53.7,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "D",
-        "goals_for": 2,
+        "opponent": "Argentina",
+        "result": "L",
+        "goals_for": 0,
         "goals_against": 2,
-        "date": "2025-09-10",
-        "competition": "Nations League"
+        "date": "2025-09-05",
+        "competition": "Friendly"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Panama",
         "result": "L",
         "goals_for": 1,
         "goals_against": 3,
-        "date": "2025-10-11",
+        "date": "2025-09-10",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "W",
-        "goals_for": 2,
+        "opponent": "Brazil",
+        "result": "D",
+        "goals_for": 0,
         "goals_against": 0,
+        "date": "2025-10-11",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "L",
+        "opponent": "Peru",
+        "result": "W",
         "goals_for": 1,
-        "goals_against": 3,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 1,
-        "date": "2025-11-19",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
+        "opponent": "Spain",
         "result": "D",
         "goals_for": 0,
         "goals_against": 0,
-        "date": "2026-03-26",
+        "date": "2025-11-19",
         "competition": "Friendly"
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Morocco",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 0,
+        "date": "2026-03-26",
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -574,93 +586,95 @@
     "name": "Argentina",
     "group": "C",
     "fifa_rank": 1,
-    "elo_rating": 2120,
+    "elo_rating": 2140,
     "flag_emoji": "🇦🇷",
     "flag_code": "ar",
     "squad_value_millions": 980,
     "confederation": "CONMEBOL",
     "is_host": false,
     "code": "ARG",
+    "lat": -38.4,
+    "lng": -63.6,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Mexico",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 2,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 2,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "D",
         "goals_for": 1,
         "goals_against": 1,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Egypt",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 1,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Morocco",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "D",
+        "opponent": "Senegal",
+        "result": "W",
         "goals_for": 2,
-        "goals_against": 2,
+        "goals_against": 0,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
-        "date": "2025-11-14",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Panama",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
-        "date": "2025-11-19",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Argentina",
+        "opponent": "Paraguay",
         "result": "W",
         "goals_for": 4,
         "goals_against": 1,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
-        "date": "2026-03-22",
-        "competition": "Nations League"
+        "date": "2025-11-14",
+        "competition": "WC Qualifier"
       },
       {
         "opponent": "Uruguay",
         "result": "W",
         "goals_for": 1,
+        "goals_against": 1,
+        "date": "2025-11-19",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Peru",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 1,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Peru",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 1,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "France",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 1,
+        "date": "2026-03-22",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Mexico",
+        "result": "W",
+        "goals_for": 3,
         "goals_against": 0,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -668,7 +682,7 @@
     "id": 7,
     "name": "Poland",
     "group": "C",
-    "fifa_rank": 28,
+    "fifa_rank": 26,
     "elo_rating": 1720,
     "flag_emoji": "🇵🇱",
     "flag_code": "pl",
@@ -676,86 +690,88 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "POL",
+    "lat": 51.9,
+    "lng": 19.1,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 3,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
+        "opponent": "Costa Rica",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "D",
-        "goals_for": 0,
-        "goals_against": 0,
-        "date": "2025-10-11",
+        "date": "2025-09-05",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Australia",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 1,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Brazil",
         "result": "L",
         "goals_for": 0,
         "goals_against": 3,
+        "date": "2025-10-11",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Australia",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "W",
+        "opponent": "England",
+        "result": "D",
         "goals_for": 2,
-        "goals_against": 1,
+        "goals_against": 2,
         "date": "2025-11-14",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Algeria",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 0,
+        "goals_for": 3,
+        "goals_against": 2,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
+        "opponent": "Iran",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 2,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
+        "opponent": "Australia",
         "result": "W",
         "goals_for": 3,
         "goals_against": 2,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Nigeria",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -771,86 +787,88 @@
     "confederation": "AFC",
     "is_host": false,
     "code": "KSA",
+    "lat": 23.9,
+    "lng": 45.1,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "D",
+        "opponent": "South Korea",
+        "result": "L",
         "goals_for": 0,
-        "goals_against": 0,
+        "goals_against": 3,
         "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2025-10-11",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Honduras",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2025-10-15",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Jamaica",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 2,
-        "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
         "opponent": "Panama",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 2,
-        "date": "2025-11-19",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2025-09-10",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Germany",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
-        "date": "2026-01-20",
+        "goals_for": 3,
+        "goals_against": 1,
+        "date": "2025-10-11",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 2,
-        "date": "2026-02-05",
+        "opponent": "Brazil",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 1,
+        "date": "2025-10-15",
         "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
-        "date": "2026-03-22",
-        "competition": "Nations League"
       },
       {
         "opponent": "Uruguay",
         "result": "W",
         "goals_for": 2,
         "goals_against": 0,
+        "date": "2025-11-14",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 1,
+        "date": "2025-11-19",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Morocco",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Colombia",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Peru",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Chile",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 2,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -858,7 +876,7 @@
     "id": 9,
     "name": "France",
     "group": "D",
-    "fifa_rank": 2,
+    "fifa_rank": 3,
     "elo_rating": 2080,
     "flag_emoji": "🇫🇷",
     "flag_code": "fr",
@@ -866,33 +884,35 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "FRA",
+    "lat": 46.6,
+    "lng": 2.2,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "W",
+        "opponent": "Panama",
+        "result": "D",
         "goals_for": 2,
+        "goals_against": 2,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Argentina",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 1,
+        "date": "2025-09-10",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "W",
+        "goals_for": 4,
         "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Algeria",
         "result": "W",
         "goals_for": 3,
         "goals_against": 2,
@@ -900,50 +920,50 @@
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "D",
+        "opponent": "Algeria",
+        "result": "W",
         "goals_for": 1,
         "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "D",
-        "goals_for": 0,
-        "goals_against": 0,
+        "opponent": "Colombia",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 2,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "France",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2026-01-20",
+        "competition": "Friendly"
       },
       {
         "opponent": "Argentina",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "D",
-        "goals_for": 0,
-        "goals_against": 0,
+        "opponent": "Morocco",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
-        "result": "W",
+        "opponent": "Brazil",
+        "result": "D",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 1,
         "date": "2026-03-26",
         "competition": "Friendly"
       }
@@ -961,84 +981,86 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "SUI",
+    "lat": 46.8,
+    "lng": 8.2,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Paraguay",
         "result": "W",
-        "goals_for": 3,
+        "goals_for": 2,
         "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
+        "opponent": "Senegal",
         "result": "W",
-        "goals_for": 1,
+        "goals_for": 2,
+        "goals_against": 1,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Australia",
+        "result": "W",
+        "goals_for": 2,
         "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "USA",
         "result": "W",
-        "goals_for": 2,
+        "goals_for": 4,
         "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Portugal",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
         "date": "2025-11-14",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Panama",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 3,
-        "date": "2025-11-19",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
-        "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
         "opponent": "Colombia",
-        "result": "D",
-        "goals_for": 1,
+        "result": "W",
+        "goals_for": 4,
         "goals_against": 1,
-        "date": "2026-02-05",
-        "competition": "Friendly"
+        "date": "2025-11-19",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 2,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
+        "opponent": "Australia",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Morocco",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 1,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Senegal",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2026-03-26",
         "competition": "Friendly"
       }
@@ -1048,7 +1070,7 @@
     "id": 11,
     "name": "Tunisia",
     "group": "D",
-    "fifa_rank": 29,
+    "fifa_rank": 31,
     "elo_rating": 1620,
     "flag_emoji": "🇹🇳",
     "flag_code": "tn",
@@ -1056,86 +1078,88 @@
     "confederation": "CAF",
     "is_host": false,
     "code": "TUN",
+    "lat": 33.9,
+    "lng": 9.5,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "L",
-        "goals_for": 0,
+        "opponent": "South Korea",
+        "result": "W",
+        "goals_for": 2,
         "goals_against": 2,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
-        "result": "D",
+        "opponent": "Egypt",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 3,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Colombia",
+        "result": "L",
         "goals_for": 1,
         "goals_against": 1,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "W",
+        "opponent": "Peru",
+        "result": "L",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "W",
-        "goals_for": 3,
+        "opponent": "USA",
+        "result": "D",
+        "goals_for": 2,
         "goals_against": 2,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
+        "opponent": "Italy",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2025-11-19",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Japan",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
+        "date": "2026-01-20",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 1,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
+        "opponent": "USA",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 2,
         "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 1,
-        "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
         "opponent": "Uruguay",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 0,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Egypt",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -1143,7 +1167,7 @@
     "id": 12,
     "name": "Brazil",
     "group": "E",
-    "fifa_rank": 3,
+    "fifa_rank": 6,
     "elo_rating": 2060,
     "flag_emoji": "🇧🇷",
     "flag_code": "br",
@@ -1151,86 +1175,88 @@
     "confederation": "CONMEBOL",
     "is_host": false,
     "code": "BRA",
+    "lat": -14.2,
+    "lng": -51.9,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "England",
         "result": "W",
-        "goals_for": 4,
+        "goals_for": 1,
         "goals_against": 2,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Canada",
-        "result": "W",
+        "opponent": "Iran",
+        "result": "D",
         "goals_for": 2,
-        "goals_against": 0,
+        "goals_against": 2,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Ecuador",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "France",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
-        "date": "2025-10-15",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Jamaica",
-        "result": "D",
         "goals_for": 2,
         "goals_against": 2,
+        "date": "2025-10-15",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Australia",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Iran",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "goals_for": 1,
+        "goals_against": 2,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Costa Rica",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 0,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Spain",
         "result": "W",
         "goals_for": 3,
         "goals_against": 1,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 1,
+        "opponent": "Nigeria",
+        "result": "D",
+        "goals_for": 0,
         "goals_against": 0,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Chile",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "goals_for": 4,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -1238,7 +1264,7 @@
     "id": 13,
     "name": "Serbia",
     "group": "E",
-    "fifa_rank": 25,
+    "fifa_rank": 32,
     "elo_rating": 1760,
     "flag_emoji": "🇷🇸",
     "flag_code": "rs",
@@ -1246,81 +1272,83 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "SRB",
+    "lat": 44.0,
+    "lng": 21.0,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 2,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
+        "opponent": "Nigeria",
         "result": "L",
         "goals_for": 0,
-        "goals_against": 1,
-        "date": "2025-09-10",
-        "competition": "Nations League"
+        "goals_against": 3,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Australia",
         "result": "W",
         "goals_for": 2,
         "goals_against": 1,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "South Korea",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
+        "opponent": "Morocco",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
-        "date": "2025-11-14",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Panama",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
-        "date": "2025-11-19",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Argentina",
-        "result": "W",
+        "opponent": "Germany",
+        "result": "D",
         "goals_for": 1,
+        "goals_against": 1,
+        "date": "2025-11-14",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Spain",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2025-11-19",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Spain",
+        "result": "D",
+        "goals_for": 0,
         "goals_against": 0,
         "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
+        "opponent": "France",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 1,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "opponent": "Ecuador",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 3,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "France",
         "result": "W",
         "goals_for": 3,
         "goals_against": 2,
@@ -1333,7 +1361,7 @@
     "id": 14,
     "name": "South Korea",
     "group": "E",
-    "fifa_rank": 23,
+    "fifa_rank": 24,
     "elo_rating": 1780,
     "flag_emoji": "🇰🇷",
     "flag_code": "kr",
@@ -1341,86 +1369,88 @@
     "confederation": "AFC",
     "is_host": false,
     "code": "KOR",
+    "lat": 35.9,
+    "lng": 127.8,
     "recent_form": [
+      {
+        "opponent": "Australia",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 0,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Canada",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Germany",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
+        "date": "2025-10-11",
+        "competition": "Friendly"
+      },
       {
         "opponent": "USA",
         "result": "D",
         "goals_for": 0,
         "goals_against": 0,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "D",
-        "goals_for": 0,
-        "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2025-10-11",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Honduras",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Algeria",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 3,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "W",
-        "goals_for": 2,
+        "opponent": "Colombia",
+        "result": "D",
+        "goals_for": 0,
         "goals_against": 0,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 2,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
+        "opponent": "Panama",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 0,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
-        "result": "L",
-        "goals_for": 0,
         "goals_against": 1,
-        "date": "2026-03-26",
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 3,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 1,
+        "date": "2026-03-22",
         "competition": "Friendly"
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2026-03-26",
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -1429,91 +1459,93 @@
     "name": "England",
     "group": "F",
     "fifa_rank": 4,
-    "elo_rating": 2060,
+    "elo_rating": 2040,
     "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "flag_code": "gb-eng",
     "squad_value_millions": 1100,
     "confederation": "UEFA",
     "is_host": false,
     "code": "ENG",
+    "lat": 52.4,
+    "lng": -1.2,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 1,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
+        "opponent": "Ecuador",
         "result": "D",
         "goals_for": 2,
         "goals_against": 2,
-        "date": "2025-10-11",
+        "date": "2025-09-05",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Iran",
         "result": "W",
         "goals_for": 4,
-        "goals_against": 3,
+        "goals_against": 2,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Portugal",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 1,
+        "date": "2025-10-11",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Portugal",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-10-15",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Jamaica",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "opponent": "Portugal",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-11-14",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Colombia",
         "result": "W",
-        "goals_for": 2,
+        "goals_for": 3,
         "goals_against": 0,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
+        "opponent": "Algeria",
         "result": "D",
-        "goals_for": 0,
-        "goals_against": 0,
-        "date": "2026-02-05",
-        "competition": "Friendly"
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "Peru",
         "result": "W",
-        "goals_for": 2,
+        "goals_for": 3,
+        "goals_against": 2,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Australia",
+        "result": "W",
+        "goals_for": 4,
         "goals_against": 0,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "France",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "goals_for": 4,
+        "goals_against": 1,
         "date": "2026-03-26",
         "competition": "Friendly"
       }
@@ -1523,7 +1555,7 @@
     "id": 16,
     "name": "Senegal",
     "group": "F",
-    "fifa_rank": 20,
+    "fifa_rank": 17,
     "elo_rating": 1740,
     "flag_emoji": "🇸🇳",
     "flag_code": "sn",
@@ -1531,86 +1563,88 @@
     "confederation": "CAF",
     "is_host": false,
     "code": "SEN",
+    "lat": 14.5,
+    "lng": -14.5,
     "recent_form": [
-      {
-        "opponent": "USA",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 2,
-        "date": "2025-10-11",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Honduras",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
-        "date": "2025-10-15",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Jamaica",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
-        "date": "2025-11-14",
-        "competition": "WC Qualifier"
-      },
       {
         "opponent": "Panama",
         "result": "D",
         "goals_for": 1,
         "goals_against": 1,
-        "date": "2025-11-19",
+        "date": "2025-09-05",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "L",
-        "goals_for": 0,
+        "opponent": "Canada",
+        "result": "D",
+        "goals_for": 2,
         "goals_against": 2,
-        "date": "2026-01-20",
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "South Korea",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2025-10-11",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Colombia",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
+        "date": "2025-10-15",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Italy",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 2,
+        "date": "2025-11-14",
         "competition": "Friendly"
       },
       {
         "opponent": "Colombia",
         "result": "W",
-        "goals_for": 1,
+        "goals_for": 3,
         "goals_against": 0,
-        "date": "2026-02-05",
-        "competition": "Friendly"
+        "date": "2025-11-19",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "Paraguay",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Colombia",
         "result": "L",
-        "goals_for": 0,
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "France",
+        "result": "W",
+        "goals_for": 2,
         "goals_against": 2,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Uruguay",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 2,
+        "opponent": "Colombia",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -1618,7 +1652,7 @@
     "id": 17,
     "name": "Costa Rica",
     "group": "F",
-    "fifa_rank": 42,
+    "fifa_rank": 52,
     "elo_rating": 1620,
     "flag_emoji": "🇨🇷",
     "flag_code": "cr",
@@ -1626,86 +1660,88 @@
     "confederation": "CONCACAF",
     "is_host": false,
     "code": "CRC",
+    "lat": 9.7,
+    "lng": -84.2,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
+        "opponent": "South Korea",
         "result": "W",
         "goals_for": 2,
         "goals_against": 1,
-        "date": "2025-09-10",
-        "competition": "Nations League"
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Australia",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 1,
+        "goals_against": 0,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Algeria",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Colombia",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 1,
+        "goals_for": 1,
+        "goals_against": 0,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
+        "opponent": "Saudi Arabia",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 2,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "opponent": "Uruguay",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "South Korea",
         "result": "W",
         "goals_for": 4,
         "goals_against": 2,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
+        "opponent": "Spain",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "Argentina",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "goals_for": 3,
+        "goals_against": 1,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Senegal",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
+        "goals_for": 2,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -1713,92 +1749,94 @@
     "id": 18,
     "name": "Spain",
     "group": "G",
-    "fifa_rank": 8,
-    "elo_rating": 2040,
+    "fifa_rank": 2,
+    "elo_rating": 2080,
     "flag_emoji": "🇪🇸",
     "flag_code": "es",
     "squad_value_millions": 880,
     "confederation": "UEFA",
     "is_host": false,
     "code": "ESP",
+    "lat": 40.5,
+    "lng": -3.7,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Colombia",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 2,
+        "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
+        "opponent": "Costa Rica",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 3,
+        "goals_against": 1,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
+        "opponent": "Morocco",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
+        "opponent": "USA",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Chile",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
+        "goals_for": 4,
+        "goals_against": 0,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "England",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
+        "goals_for": 4,
+        "goals_against": 1,
         "date": "2025-11-19",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Nigeria",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 0,
+        "date": "2026-01-20",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
-        "date": "2026-01-20",
-        "competition": "Friendly"
+        "opponent": "Saudi Arabia",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 1,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
       },
       {
         "opponent": "Colombia",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 2,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 2,
         "goals_against": 1,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Germany",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2026-03-26",
         "competition": "Friendly"
       }
@@ -1808,94 +1846,96 @@
     "id": 19,
     "name": "Morocco",
     "group": "G",
-    "fifa_rank": 13,
-    "elo_rating": 1820,
+    "fifa_rank": 7,
+    "elo_rating": 1860,
     "flag_emoji": "🇲🇦",
     "flag_code": "ma",
     "squad_value_millions": 350,
     "confederation": "CAF",
     "is_host": false,
     "code": "MAR",
+    "lat": 31.8,
+    "lng": -7.1,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Mexico",
         "result": "L",
         "goals_for": 1,
-        "goals_against": 2,
+        "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
+        "opponent": "France",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "goals_for": 4,
+        "goals_against": 2,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Cuba",
-        "result": "D",
-        "goals_for": 1,
+        "opponent": "Peru",
+        "result": "L",
+        "goals_for": 0,
         "goals_against": 1,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Mexico",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
+        "goals_for": 4,
+        "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Algeria",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
+        "goals_for": 2,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "opponent": "Spain",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-11-19",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Morocco",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 1,
+        "date": "2026-01-20",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 2,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
+        "opponent": "Saudi Arabia",
         "result": "W",
         "goals_for": 2,
-        "goals_against": 1,
-        "date": "2026-03-22",
-        "competition": "Nations League"
+        "goals_against": 0,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Spain",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 1,
-        "date": "2026-03-26",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2026-03-22",
         "competition": "Friendly"
+      },
+      {
+        "opponent": "Mexico",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2026-03-26",
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -1911,86 +1951,88 @@
     "confederation": "AFC",
     "is_host": false,
     "code": "AUS",
+    "lat": -25.3,
+    "lng": 133.8,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Spain",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 1,
+        "goals_against": 0,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Canada",
+        "opponent": "Peru",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "D",
+        "opponent": "Senegal",
+        "result": "W",
         "goals_for": 1,
-        "goals_against": 1,
+        "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Brazil",
         "result": "W",
-        "goals_for": 3,
+        "goals_for": 4,
         "goals_against": 2,
         "date": "2025-10-15",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Jamaica",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 2,
-        "date": "2025-11-14",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Panama",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2025-11-19",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 2,
-        "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "Germany",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 1,
-        "date": "2026-02-05",
+        "goals_for": 3,
+        "goals_against": 2,
+        "date": "2025-11-14",
         "competition": "Friendly"
       },
       {
         "opponent": "Costa Rica",
         "result": "W",
         "goals_for": 4,
-        "goals_against": 2,
-        "date": "2026-03-22",
-        "competition": "Nations League"
+        "goals_against": 0,
+        "date": "2025-11-19",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Brazil",
         "result": "W",
         "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-03-26",
+        "goals_against": 1,
+        "date": "2026-01-20",
         "competition": "Friendly"
+      },
+      {
+        "opponent": "Mexico",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Colombia",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Mexico",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 1,
+        "date": "2026-03-26",
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -1998,7 +2040,7 @@
     "id": 21,
     "name": "Germany",
     "group": "H",
-    "fifa_rank": 11,
+    "fifa_rank": 10,
     "elo_rating": 1960,
     "flag_emoji": "🇩🇪",
     "flag_code": "de",
@@ -2006,81 +2048,83 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "GER",
+    "lat": 51.2,
+    "lng": 10.5,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Senegal",
         "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
+        "opponent": "Netherlands",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
+        "goals_for": 2,
+        "goals_against": 0,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Chile",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
+        "goals_for": 4,
+        "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Paraguay",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
+        "goals_for": 4,
+        "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "England",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
+        "goals_for": 3,
+        "goals_against": 2,
         "date": "2025-11-14",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
         "opponent": "Panama",
         "result": "L",
-        "goals_for": 2,
+        "goals_for": 1,
         "goals_against": 3,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Japan",
         "result": "D",
         "goals_for": 2,
         "goals_against": 2,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "England",
         "result": "W",
         "goals_for": 2,
-        "goals_against": 0,
+        "goals_against": 2,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "Egypt",
         "result": "W",
-        "goals_for": 2,
+        "goals_for": 1,
         "goals_against": 1,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Italy",
         "result": "W",
         "goals_for": 2,
         "goals_against": 0,
@@ -2101,86 +2145,88 @@
     "confederation": "CONMEBOL",
     "is_host": false,
     "code": "COL",
+    "lat": 4.6,
+    "lng": -74.3,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
+        "opponent": "Costa Rica",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 0,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
-        "result": "D",
-        "goals_for": 2,
+        "opponent": "Australia",
+        "result": "L",
+        "goals_for": 0,
         "goals_against": 2,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
+        "opponent": "Uruguay",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 3,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 2,
+        "opponent": "Brazil",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-10-15",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Canada",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "goals_for": 4,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "USA",
         "result": "W",
-        "goals_for": 1,
+        "goals_for": 2,
         "goals_against": 0,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Peru",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
+        "goals_for": 2,
+        "goals_against": 1,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "Senegal",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Germany",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 0,
-        "date": "2026-02-05",
+        "goals_against": 2,
+        "date": "2026-03-22",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "Canada",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
-        "result": "D",
-        "goals_for": 2,
+        "goals_for": 3,
         "goals_against": 2,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -2196,86 +2242,88 @@
     "confederation": "CAF",
     "is_host": false,
     "code": "EGY",
+    "lat": 26.8,
+    "lng": 30.8,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 0,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
         "opponent": "Canada",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 2,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 1,
-        "date": "2025-10-11",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Honduras",
         "result": "L",
         "goals_for": 0,
-        "goals_against": 1,
-        "date": "2025-10-15",
+        "goals_against": 3,
+        "date": "2025-09-05",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Iran",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
-        "date": "2025-11-14",
+        "date": "2025-09-10",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "France",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
-        "date": "2025-11-19",
+        "goals_for": 4,
+        "goals_against": 2,
+        "date": "2025-10-11",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Japan",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 2,
+        "date": "2025-10-15",
         "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Argentina",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2026-02-05",
-        "competition": "Friendly"
       },
       {
         "opponent": "Costa Rica",
         "result": "D",
         "goals_for": 0,
         "goals_against": 0,
-        "date": "2026-03-22",
-        "competition": "Nations League"
+        "date": "2025-11-14",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 0,
+        "date": "2025-11-19",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Argentina",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
+        "date": "2026-01-20",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Nigeria",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 1,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
       },
       {
         "opponent": "Uruguay",
         "result": "L",
         "goals_for": 0,
+        "goals_against": 2,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Egypt",
+        "result": "L",
+        "goals_for": 1,
         "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -2291,86 +2339,88 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "ITA",
+    "lat": 41.9,
+    "lng": 12.5,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 3,
+        "opponent": "Netherlands",
+        "result": "D",
+        "goals_for": 2,
         "goals_against": 2,
-        "date": "2025-10-11",
-        "competition": "WC Qualifier"
+        "date": "2025-09-05",
+        "competition": "Friendly"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Argentina",
         "result": "W",
         "goals_for": 3,
+        "goals_against": 1,
+        "date": "2025-09-10",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "England",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 1,
+        "date": "2025-10-11",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Japan",
+        "result": "D",
+        "goals_for": 2,
         "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Brazil",
         "result": "W",
         "goals_for": 4,
-        "goals_against": 0,
+        "goals_against": 2,
         "date": "2025-11-14",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Panama",
-        "result": "D",
-        "goals_for": 0,
-        "goals_against": 0,
+        "opponent": "Nigeria",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 1,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
+        "opponent": "Uruguay",
         "result": "W",
         "goals_for": 4,
-        "goals_against": 1,
-        "date": "2026-03-22",
-        "competition": "Nations League"
+        "goals_against": 0,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
-        "result": "D",
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 1,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "W",
         "goals_for": 1,
         "goals_against": 1,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "South Korea",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -2386,86 +2436,88 @@
     "confederation": "CONMEBOL",
     "is_host": false,
     "code": "URU",
+    "lat": -32.5,
+    "lng": -55.8,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Iran",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Ecuador",
         "result": "W",
         "goals_for": 2,
         "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 2,
+        "opponent": "USA",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
-        "date": "2025-10-15",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Jamaica",
+        "opponent": "Netherlands",
         "result": "L",
         "goals_for": 0,
-        "goals_against": 1,
+        "goals_against": 2,
+        "date": "2025-10-15",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "South Korea",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Portugal",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 1,
+        "goals_against": 0,
         "date": "2025-11-19",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Egypt",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "Australia",
         "result": "D",
         "goals_for": 2,
         "goals_against": 2,
         "date": "2026-02-05",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "Senegal",
         "result": "W",
         "goals_for": 4,
         "goals_against": 2,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Morocco",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 4,
+        "goals_against": 2,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -2474,72 +2526,74 @@
     "name": "Qatar",
     "group": "I",
     "fifa_rank": 37,
-    "elo_rating": 1500,
+    "elo_rating": 1480,
     "flag_emoji": "🇶🇦",
     "flag_code": "qa",
     "squad_value_millions": 30,
     "confederation": "AFC",
     "is_host": false,
     "code": "QAT",
+    "lat": 25.4,
+    "lng": 51.2,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "W",
+        "opponent": "Argentina",
+        "result": "L",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Canada",
+        "opponent": "Germany",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "D",
         "goals_for": 2,
         "goals_against": 2,
+        "date": "2025-09-10",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Germany",
         "result": "L",
         "goals_for": 1,
         "goals_against": 2,
         "date": "2025-10-15",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Jamaica",
-        "result": "D",
+        "opponent": "Australia",
+        "result": "L",
         "goals_for": 0,
-        "goals_against": 0,
+        "goals_against": 3,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Japan",
         "result": "L",
         "goals_for": 0,
-        "goals_against": 1,
+        "goals_against": 3,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "W",
+        "opponent": "Netherlands",
+        "result": "L",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 3,
         "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "Germany",
         "result": "D",
         "goals_for": 1,
         "goals_against": 1,
@@ -2547,20 +2601,20 @@
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "Ecuador",
         "result": "W",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 1,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 3,
+        "opponent": "Senegal",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -2576,86 +2630,88 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "BEL",
+    "lat": 50.5,
+    "lng": 4.5,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
+        "opponent": "Italy",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 0,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Canada",
-        "result": "D",
-        "goals_for": 1,
+        "opponent": "Portugal",
+        "result": "W",
+        "goals_for": 3,
         "goals_against": 1,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Peru",
         "result": "L",
         "goals_for": 0,
-        "goals_against": 1,
+        "goals_against": 3,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
+        "opponent": "Nigeria",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 1,
+        "opponent": "Mexico",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Mexico",
         "result": "W",
-        "goals_for": 3,
+        "goals_for": 2,
         "goals_against": 1,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Japan",
         "result": "W",
-        "goals_for": 2,
+        "goals_for": 3,
         "goals_against": 0,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 0,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
+        "opponent": "Canada",
         "result": "W",
         "goals_for": 2,
-        "goals_against": 1,
+        "goals_against": 0,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 2,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Chile",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -2663,94 +2719,96 @@
     "id": 28,
     "name": "Chile",
     "group": "J",
-    "fifa_rank": 31,
-    "elo_rating": 1740,
+    "fifa_rank": 44,
+    "elo_rating": 1700,
     "flag_emoji": "🇨🇱",
     "flag_code": "cl",
     "squad_value_millions": 140,
     "confederation": "CONMEBOL",
     "is_host": false,
     "code": "CHI",
+    "lat": -35.7,
+    "lng": -71.5,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Portugal",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2025-09-05",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Uruguay",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 0,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Senegal",
         "result": "D",
         "goals_for": 2,
         "goals_against": 2,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Nigeria",
         "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Panama",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Peru",
         "result": "D",
-        "goals_for": 0,
-        "goals_against": 0,
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Senegal",
         "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "South Korea",
+        "result": "W",
         "goals_for": 2,
         "goals_against": 2,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 0,
         "date": "2026-02-05",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 2,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
+        "opponent": "Germany",
         "result": "L",
         "goals_for": 0,
-        "goals_against": 1,
-        "date": "2026-03-26",
+        "goals_against": 2,
+        "date": "2026-03-22",
         "competition": "Friendly"
+      },
+      {
+        "opponent": "Paraguay",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
+        "date": "2026-03-26",
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -2766,83 +2824,85 @@
     "confederation": "OFC",
     "is_host": false,
     "code": "NZL",
+    "lat": -40.9,
+    "lng": 174.9,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "W",
-        "goals_for": 2,
+        "opponent": "Saudi Arabia",
+        "result": "L",
+        "goals_for": 1,
         "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "L",
+        "opponent": "Morocco",
+        "result": "W",
         "goals_for": 2,
-        "goals_against": 3,
+        "goals_against": 1,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "France",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 2,
+        "date": "2025-10-11",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "USA",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 2,
+        "opponent": "Peru",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Portugal",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 3,
+        "date": "2025-11-19",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Paraguay",
         "result": "D",
         "goals_for": 2,
         "goals_against": 2,
-        "date": "2025-11-19",
+        "date": "2026-01-20",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "L",
-        "goals_for": 0,
+        "opponent": "Canada",
+        "result": "D",
+        "goals_for": 1,
         "goals_against": 1,
         "date": "2026-02-05",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "England",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Netherlands",
         "result": "L",
-        "goals_for": 0,
+        "goals_for": 1,
         "goals_against": 2,
         "date": "2026-03-26",
         "competition": "Friendly"
@@ -2853,7 +2913,7 @@
     "id": 30,
     "name": "United States",
     "group": "K",
-    "fifa_rank": 10,
+    "fifa_rank": 11,
     "elo_rating": 1880,
     "flag_emoji": "🇺🇸",
     "flag_code": "us",
@@ -2861,86 +2921,88 @@
     "confederation": "CONCACAF",
     "is_host": true,
     "code": "USA",
+    "lat": 37.1,
+    "lng": -95.7,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Colombia",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Ecuador",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Australia",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
+        "goals_for": 3,
+        "goals_against": 2,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "D",
-        "goals_for": 2,
+        "opponent": "Australia",
+        "result": "W",
+        "goals_for": 3,
         "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "W",
-        "goals_for": 4,
+        "opponent": "Chile",
+        "result": "L",
+        "goals_for": 1,
         "goals_against": 3,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "W",
+        "opponent": "Netherlands",
+        "result": "D",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 1,
         "date": "2025-11-19",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Argentina",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
-        "result": "D",
-        "goals_for": 0,
+        "opponent": "Nigeria",
+        "result": "W",
+        "goals_for": 3,
         "goals_against": 0,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Italy",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 1,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "W",
+        "opponent": "Iran",
+        "result": "D",
         "goals_for": 2,
-        "goals_against": 0,
+        "goals_against": 2,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Japan",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
+        "goals_for": 4,
+        "goals_against": 2,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -2948,7 +3010,7 @@
     "id": 31,
     "name": "Croatia",
     "group": "K",
-    "fifa_rank": 7,
+    "fifa_rank": 13,
     "elo_rating": 1900,
     "flag_emoji": "🇭🇷",
     "flag_code": "hr",
@@ -2956,84 +3018,86 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "CRO",
+    "lat": 45.1,
+    "lng": 15.2,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
+        "opponent": "Argentina",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
+        "goals_against": 2,
+        "date": "2025-09-05",
+        "competition": "Friendly"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Colombia",
         "result": "D",
-        "goals_for": 0,
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Egypt",
+        "result": "W",
+        "goals_for": 4,
         "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
+        "opponent": "Canada",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "D",
+        "opponent": "Canada",
+        "result": "L",
         "goals_for": 1,
-        "goals_against": 1,
+        "goals_against": 3,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "D",
+        "opponent": "Brazil",
+        "result": "L",
         "goals_for": 0,
-        "goals_against": 0,
+        "goals_against": 2,
         "date": "2025-11-19",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Saudi Arabia",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 1,
+        "date": "2026-01-20",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Mexico",
         "result": "D",
         "goals_for": 1,
         "goals_against": 1,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
         "date": "2026-02-05",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 0,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
+        "opponent": "Chile",
         "result": "L",
         "goals_for": 1,
-        "goals_against": 2,
+        "goals_against": 1,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "France",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
         "date": "2026-03-26",
         "competition": "Friendly"
       }
@@ -3043,7 +3107,7 @@
     "id": 32,
     "name": "Cameroon",
     "group": "K",
-    "fifa_rank": 43,
+    "fifa_rank": 42,
     "elo_rating": 1600,
     "flag_emoji": "🇨🇲",
     "flag_code": "cm",
@@ -3051,86 +3115,88 @@
     "confederation": "CAF",
     "is_host": false,
     "code": "CMR",
+    "lat": 7.4,
+    "lng": 12.4,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 2,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
+        "opponent": "Saudi Arabia",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 4,
+        "goals_for": 2,
         "goals_against": 1,
-        "date": "2025-10-11",
+        "date": "2025-09-05",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "L",
+        "opponent": "South Korea",
+        "result": "W",
         "goals_for": 2,
-        "goals_against": 3,
+        "goals_against": 1,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Germany",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2025-10-11",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Ecuador",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "D",
-        "goals_for": 2,
+        "opponent": "South Korea",
+        "result": "W",
+        "goals_for": 3,
         "goals_against": 2,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "opponent": "Paraguay",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 3,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "France",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "Peru",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 2,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Morocco",
         "result": "D",
         "goals_for": 0,
         "goals_against": 0,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Mexico",
         "result": "W",
         "goals_for": 2,
-        "goals_against": 0,
+        "goals_against": 2,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -3146,49 +3212,51 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "POR",
+    "lat": 39.4,
+    "lng": -8.2,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Germany",
         "result": "W",
-        "goals_for": 3,
+        "goals_for": 2,
         "goals_against": 0,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Canada",
+        "opponent": "Peru",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
+        "goals_for": 2,
+        "goals_against": 1,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 3,
+        "opponent": "Panama",
+        "result": "D",
+        "goals_for": 0,
         "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "opponent": "Germany",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 2,
         "date": "2025-10-15",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Costa Rica",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 4,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Japan",
         "result": "D",
         "goals_for": 1,
         "goals_against": 1,
@@ -3196,33 +3264,33 @@
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "D",
-        "goals_for": 1,
+        "opponent": "Nigeria",
+        "result": "W",
+        "goals_for": 4,
         "goals_against": 1,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
-        "result": "D",
+        "opponent": "Italy",
+        "result": "W",
         "goals_for": 1,
         "goals_against": 1,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
+        "opponent": "Egypt",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
-        "result": "D",
-        "goals_for": 1,
+        "opponent": "France",
+        "result": "W",
+        "goals_for": 2,
         "goals_against": 1,
         "date": "2026-03-26",
         "competition": "Friendly"
@@ -3233,7 +3301,7 @@
     "id": 34,
     "name": "Sweden",
     "group": "L",
-    "fifa_rank": 26,
+    "fifa_rank": 25,
     "elo_rating": 1780,
     "flag_emoji": "🇸🇪",
     "flag_code": "se",
@@ -3241,86 +3309,88 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "SWE",
+    "lat": 60.1,
+    "lng": 18.6,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Mexico",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
+        "goals_for": 2,
+        "goals_against": 0,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
+        "opponent": "Algeria",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 0,
+        "goals_against": 1,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 1,
+        "opponent": "Egypt",
+        "result": "D",
+        "goals_for": 0,
         "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Costa Rica",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 2,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "L",
-        "goals_for": 0,
+        "opponent": "Algeria",
+        "result": "D",
+        "goals_for": 2,
         "goals_against": 2,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Paraguay",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2025-11-19",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Netherlands",
         "result": "L",
         "goals_for": 1,
         "goals_against": 3,
-        "date": "2025-11-19",
+        "date": "2026-01-20",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "South Korea",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2026-02-05",
         "competition": "WC Qualifier"
       },
       {
         "opponent": "Argentina",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-01-20",
+        "goals_for": 4,
+        "goals_against": 1,
+        "date": "2026-03-22",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "Peru",
         "result": "W",
         "goals_for": 3,
         "goals_against": 2,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Uruguay",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 3,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -3328,7 +3398,7 @@
     "id": 35,
     "name": "Japan",
     "group": "L",
-    "fifa_rank": 15,
+    "fifa_rank": 18,
     "elo_rating": 1800,
     "flag_emoji": "🇯🇵",
     "flag_code": "jp",
@@ -3336,86 +3406,88 @@
     "confederation": "AFC",
     "is_host": false,
     "code": "JPN",
+    "lat": 36.2,
+    "lng": 138.3,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 2,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
+        "opponent": "Egypt",
         "result": "W",
         "goals_for": 3,
         "goals_against": 0,
-        "date": "2025-10-11",
+        "date": "2025-09-05",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "D",
-        "goals_for": 0,
-        "goals_against": 0,
-        "date": "2025-10-15",
-        "competition": "WC Qualifier"
+        "opponent": "Italy",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 3,
+        "date": "2025-09-10",
+        "competition": "Friendly"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Uruguay",
         "result": "W",
-        "goals_for": 4,
+        "goals_for": 3,
         "goals_against": 1,
-        "date": "2025-11-14",
+        "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
         "opponent": "Panama",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
-        "date": "2025-11-19",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Argentina",
-        "result": "D",
         "goals_for": 2,
-        "goals_against": 2,
-        "date": "2026-01-20",
-        "competition": "Friendly"
+        "goals_against": 0,
+        "date": "2025-10-15",
+        "competition": "WC Qualifier"
       },
       {
         "opponent": "Colombia",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2026-02-05",
+        "goals_for": 3,
+        "goals_against": 2,
+        "date": "2025-11-14",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "France",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2025-11-19",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "Morocco",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Ecuador",
         "result": "W",
         "goals_for": 4,
-        "goals_against": 1,
-        "date": "2026-03-22",
-        "competition": "Nations League"
+        "goals_against": 2,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
+        "opponent": "Mexico",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Algeria",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -3423,7 +3495,7 @@
     "id": 36,
     "name": "Austria",
     "group": "M",
-    "fifa_rank": 24,
+    "fifa_rank": 22,
     "elo_rating": 1800,
     "flag_emoji": "🇦🇹",
     "flag_code": "at",
@@ -3431,25 +3503,27 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "AUT",
+    "lat": 47.5,
+    "lng": 14.5,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 3,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "L",
+        "opponent": "Colombia",
+        "result": "D",
         "goals_for": 2,
-        "goals_against": 3,
-        "date": "2025-09-10",
-        "competition": "Nations League"
+        "goals_against": 2,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "USA",
         "result": "W",
         "goals_for": 3,
         "goals_against": 1,
@@ -3457,60 +3531,60 @@
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Peru",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 3,
+        "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Uruguay",
         "result": "W",
-        "goals_for": 4,
+        "goals_for": 1,
         "goals_against": 2,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 0,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Uruguay",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 3,
+        "goals_against": 1,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
+        "opponent": "Brazil",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 3,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "D",
+        "opponent": "Netherlands",
+        "result": "W",
         "goals_for": 1,
-        "goals_against": 1,
+        "goals_against": 0,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Uruguay",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
+        "opponent": "Australia",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -3526,86 +3600,88 @@
     "confederation": "CAF",
     "is_host": false,
     "code": "NGA",
+    "lat": 9.1,
+    "lng": 8.7,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "D",
+        "opponent": "Spain",
+        "result": "W",
         "goals_for": 1,
         "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
+        "opponent": "France",
         "result": "W",
         "goals_for": 4,
+        "goals_against": 0,
+        "date": "2025-09-10",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Panama",
+        "result": "D",
+        "goals_for": 0,
         "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Mexico",
         "result": "W",
-        "goals_for": 3,
+        "goals_for": 1,
         "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Argentina",
         "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-11-14",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Paraguay",
         "result": "W",
-        "goals_for": 2,
+        "goals_for": 1,
         "goals_against": 1,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "W",
+        "opponent": "England",
+        "result": "L",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 3,
         "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "Spain",
         "result": "L",
-        "goals_for": 0,
+        "goals_for": 1,
         "goals_against": 2,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "Ecuador",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 0,
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Peru",
         "result": "D",
         "goals_for": 0,
         "goals_against": 0,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -3621,86 +3697,88 @@
     "confederation": "CAF",
     "is_host": false,
     "code": "ALG",
+    "lat": 28.0,
+    "lng": 2.6,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Peru",
         "result": "L",
         "goals_for": 1,
-        "goals_against": 3,
+        "goals_against": 2,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 2,
+        "opponent": "USA",
+        "result": "D",
+        "goals_for": 0,
         "goals_against": 0,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Paraguay",
         "result": "W",
-        "goals_for": 2,
+        "goals_for": 1,
         "goals_against": 0,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Saudi Arabia",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 4,
+        "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 3,
+        "opponent": "Costa Rica",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 2,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "L",
-        "goals_for": 0,
+        "opponent": "Germany",
+        "result": "W",
+        "goals_for": 4,
         "goals_against": 1,
         "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
+        "opponent": "Chile",
         "result": "W",
         "goals_for": 1,
+        "goals_against": 0,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Portugal",
+        "result": "D",
+        "goals_for": 0,
         "goals_against": 0,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Uruguay",
-        "result": "W",
-        "goals_for": 4,
+        "opponent": "Colombia",
+        "result": "D",
+        "goals_for": 0,
         "goals_against": 0,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -3708,7 +3786,7 @@
     "id": 39,
     "name": "Ecuador",
     "group": "N",
-    "fifa_rank": 32,
+    "fifa_rank": 29,
     "elo_rating": 1720,
     "flag_emoji": "🇪🇨",
     "flag_code": "ec",
@@ -3716,84 +3794,86 @@
     "confederation": "CONMEBOL",
     "is_host": false,
     "code": "ECU",
+    "lat": -1.8,
+    "lng": -78.2,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Australia",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Netherlands",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2025-09-10",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Italy",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
+        "date": "2025-10-11",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "France",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 2,
+        "date": "2025-10-15",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "England",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 1,
+        "date": "2025-11-14",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Japan",
         "result": "W",
         "goals_for": 2,
         "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
-        "date": "2025-10-11",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Honduras",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 2,
-        "date": "2025-10-15",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Jamaica",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 3,
-        "date": "2025-11-14",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Panama",
-        "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2026-01-20",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Colombia",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 0,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
-        "date": "2026-03-22",
-        "competition": "Nations League"
-      },
-      {
         "opponent": "Uruguay",
         "result": "W",
-        "goals_for": 4,
+        "goals_for": 2,
         "goals_against": 2,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Australia",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 3,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Portugal",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2026-03-22",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Spain",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2026-03-26",
         "competition": "Friendly"
       }
@@ -3803,7 +3883,7 @@
     "id": 40,
     "name": "Norway",
     "group": "N",
-    "fifa_rank": 41,
+    "fifa_rank": 43,
     "elo_rating": 1760,
     "flag_emoji": "🇳🇴",
     "flag_code": "no",
@@ -3811,86 +3891,88 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "NOR",
+    "lat": 60.5,
+    "lng": 8.5,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "France",
         "result": "W",
-        "goals_for": 3,
+        "goals_for": 4,
         "goals_against": 2,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Canada",
+        "opponent": "Senegal",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 2,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 4,
+        "opponent": "Colombia",
+        "result": "L",
+        "goals_for": 1,
         "goals_against": 1,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Panama",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "opponent": "Algeria",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
-        "date": "2025-11-19",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Argentina",
+        "opponent": "England",
         "result": "W",
-        "goals_for": 3,
+        "goals_for": 2,
         "goals_against": 2,
-        "date": "2026-01-20",
+        "date": "2025-11-19",
         "competition": "Friendly"
       },
       {
         "opponent": "Colombia",
         "result": "L",
         "goals_for": 0,
-        "goals_against": 3,
+        "goals_against": 1,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Portugal",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
+        "opponent": "Colombia",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 2,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
-        "result": "D",
+        "opponent": "Chile",
+        "result": "W",
         "goals_for": 2,
-        "goals_against": 2,
+        "goals_against": 0,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -3898,49 +3980,51 @@
     "id": 41,
     "name": "Iraq",
     "group": "N",
-    "fifa_rank": 55,
-    "elo_rating": 1480,
+    "fifa_rank": 68,
+    "elo_rating": 1450,
     "flag_emoji": "🇮🇶",
     "flag_code": "iq",
     "squad_value_millions": 25,
     "confederation": "AFC",
     "is_host": false,
     "code": "IRQ",
+    "lat": 33.2,
+    "lng": 43.7,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
+        "opponent": "Panama",
         "result": "L",
         "goals_for": 1,
-        "goals_against": 2,
-        "date": "2025-09-10",
-        "competition": "Nations League"
+        "goals_against": 3,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Argentina",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 3,
+        "date": "2025-09-10",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "England",
         "result": "L",
         "goals_for": 1,
         "goals_against": 2,
         "date": "2025-10-11",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Honduras",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 2,
+        "opponent": "Australia",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Australia",
         "result": "L",
         "goals_for": 1,
         "goals_against": 2,
@@ -3948,42 +4032,42 @@
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Paraguay",
         "result": "L",
         "goals_for": 0,
-        "goals_against": 2,
+        "goals_against": 1,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
         "opponent": "Argentina",
         "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
-        "result": "W",
+        "opponent": "Spain",
+        "result": "L",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 1,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
+        "opponent": "France",
         "result": "L",
-        "goals_for": 0,
-        "goals_against": 3,
+        "goals_for": 1,
+        "goals_against": 2,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Uruguay",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 1,
+        "opponent": "France",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 3,
         "date": "2026-03-26",
         "competition": "Friendly"
       }
@@ -3993,7 +4077,7 @@
     "id": 42,
     "name": "Paraguay",
     "group": "O",
-    "fifa_rank": 44,
+    "fifa_rank": 48,
     "elo_rating": 1660,
     "flag_emoji": "🇵🇾",
     "flag_code": "py",
@@ -4001,86 +4085,88 @@
     "confederation": "CONMEBOL",
     "is_host": false,
     "code": "PAR",
+    "lat": -23.4,
+    "lng": -58.4,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Netherlands",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 2,
+        "goals_for": 2,
+        "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "opponent": "England",
+        "result": "D",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "Argentina",
         "result": "W",
-        "goals_for": 2,
+        "goals_for": 1,
         "goals_against": 0,
         "date": "2025-10-11",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Honduras",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 2,
+        "opponent": "Chile",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 3,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "D",
-        "goals_for": 0,
+        "opponent": "Egypt",
+        "result": "W",
+        "goals_for": 2,
         "goals_against": 0,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Uruguay",
         "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
+        "goals_for": 0,
+        "goals_against": 0,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "D",
-        "goals_for": 2,
+        "opponent": "Canada",
+        "result": "L",
+        "goals_for": 1,
         "goals_against": 2,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "Germany",
         "result": "W",
-        "goals_for": 2,
+        "goals_for": 4,
         "goals_against": 0,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
+        "opponent": "Saudi Arabia",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
+        "opponent": "Iran",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -4096,86 +4182,88 @@
     "confederation": "CONMEBOL",
     "is_host": false,
     "code": "PER",
+    "lat": -9.2,
+    "lng": -75.0,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "W",
-        "goals_for": 4,
-        "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
+        "opponent": "Algeria",
         "result": "L",
         "goals_for": 1,
+        "goals_against": 2,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Costa Rica",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Mexico",
+        "result": "L",
+        "goals_for": 0,
         "goals_against": 2,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "L",
-        "goals_for": 2,
-        "goals_against": 3,
+        "opponent": "Germany",
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
         "date": "2025-10-15",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Jamaica",
-        "result": "L",
-        "goals_for": 0,
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": 2,
         "goals_against": 2,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
-        "result": "L",
-        "goals_for": 1,
+        "opponent": "Paraguay",
+        "result": "W",
+        "goals_for": 3,
         "goals_against": 2,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Portugal",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
+        "goals_for": 4,
+        "goals_against": 0,
         "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
-        "result": "D",
-        "goals_for": 0,
-        "goals_against": 0,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 4,
+        "opponent": "Egypt",
+        "result": "L",
+        "goals_for": 1,
         "goals_against": 3,
-        "date": "2026-03-22",
-        "competition": "Nations League"
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Canada",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2026-03-22",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Egypt",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 2,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -4183,94 +4271,96 @@
     "id": 44,
     "name": "South Africa",
     "group": "O",
-    "fifa_rank": 50,
-    "elo_rating": 1580,
+    "fifa_rank": 57,
+    "elo_rating": 1560,
     "flag_emoji": "🇿🇦",
     "flag_code": "za",
     "squad_value_millions": 110,
     "confederation": "CAF",
     "is_host": false,
     "code": "RSA",
+    "lat": -30.6,
+    "lng": 22.9,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Nigeria",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Egypt",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Canada",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
         "date": "2025-09-10",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
+        "opponent": "South Korea",
         "result": "L",
         "goals_for": 0,
-        "goals_against": 2,
+        "goals_against": 1,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "W",
-        "goals_for": 2,
+        "opponent": "USA",
+        "result": "L",
+        "goals_for": 1,
         "goals_against": 1,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
-        "result": "W",
+        "opponent": "Netherlands",
+        "result": "D",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 1,
         "date": "2025-11-14",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Panama",
-        "result": "D",
-        "goals_for": 0,
+        "opponent": "Senegal",
+        "result": "W",
+        "goals_for": 3,
         "goals_against": 0,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Panama",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 2,
+        "goals_against": 2,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "Peru",
         "result": "W",
-        "goals_for": 1,
-        "goals_against": 0,
+        "goals_for": 4,
+        "goals_against": 1,
         "date": "2026-02-05",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "D",
+        "opponent": "Algeria",
+        "result": "L",
         "goals_for": 0,
-        "goals_against": 0,
+        "goals_against": 3,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
-        "result": "W",
+        "opponent": "USA",
+        "result": "D",
         "goals_for": 1,
-        "goals_against": 0,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -4278,7 +4368,7 @@
     "id": 45,
     "name": "Hungary",
     "group": "P",
-    "fifa_rank": 21,
+    "fifa_rank": 19,
     "elo_rating": 1760,
     "flag_emoji": "🇭🇺",
     "flag_code": "hu",
@@ -4286,86 +4376,88 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "HUN",
+    "lat": 47.2,
+    "lng": 19.5,
     "recent_form": [
       {
-        "opponent": "USA",
+        "opponent": "Ecuador",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
-        "result": "D",
+        "opponent": "Ecuador",
+        "result": "L",
         "goals_for": 1,
-        "goals_against": 1,
+        "goals_against": 3,
         "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
-        "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
-        "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 2,
-        "date": "2025-10-15",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Jamaica",
-        "result": "W",
-        "goals_for": 3,
-        "goals_against": 2,
-        "date": "2025-11-14",
-        "competition": "WC Qualifier"
-      },
-      {
-        "opponent": "Panama",
+        "opponent": "Brazil",
         "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
-        "date": "2025-11-19",
-        "competition": "WC Qualifier"
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2025-10-11",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Germany",
+        "result": "D",
+        "goals_for": 0,
+        "goals_against": 0,
+        "date": "2025-10-15",
+        "competition": "Friendly"
       },
       {
         "opponent": "Argentina",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 1,
-        "date": "2026-01-20",
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2025-11-14",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
+        "opponent": "Spain",
+        "result": "D",
+        "goals_for": 2,
+        "goals_against": 2,
+        "date": "2025-11-19",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 0,
+        "date": "2026-01-20",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 1,
+        "date": "2026-02-05",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "England",
         "result": "W",
         "goals_for": 2,
         "goals_against": 1,
-        "date": "2026-02-05",
-        "competition": "Friendly"
-      },
-      {
-        "opponent": "Costa Rica",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 3,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Peru",
         "result": "L",
-        "goals_for": 0,
-        "goals_against": 2,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -4373,7 +4465,7 @@
     "id": 46,
     "name": "Ukraine",
     "group": "P",
-    "fifa_rank": 18,
+    "fifa_rank": 23,
     "elo_rating": 1740,
     "flag_emoji": "🇺🇦",
     "flag_code": "ua",
@@ -4381,33 +4473,35 @@
     "confederation": "UEFA",
     "is_host": false,
     "code": "UKR",
+    "lat": 48.4,
+    "lng": 31.2,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "D",
+        "opponent": "South Korea",
+        "result": "W",
         "goals_for": 1,
         "goals_against": 1,
         "date": "2025-09-05",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Canada",
-        "result": "D",
-        "goals_for": 0,
-        "goals_against": 0,
-        "date": "2025-09-10",
-        "competition": "Nations League"
-      },
-      {
-        "opponent": "Cuba",
+        "opponent": "Egypt",
         "result": "L",
-        "goals_for": 0,
+        "goals_for": 1,
+        "goals_against": 2,
+        "date": "2025-09-10",
+        "competition": "WC Qualifier"
+      },
+      {
+        "opponent": "Egypt",
+        "result": "W",
+        "goals_for": 1,
         "goals_against": 1,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Uruguay",
         "result": "W",
         "goals_for": 1,
         "goals_against": 0,
@@ -4415,52 +4509,52 @@
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Germany",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 2,
+        "goals_against": 0,
         "date": "2025-11-14",
-        "competition": "WC Qualifier"
+        "competition": "Friendly"
       },
       {
-        "opponent": "Panama",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
+        "opponent": "South Korea",
+        "result": "W",
+        "goals_for": 1,
+        "goals_against": 0,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
+        "opponent": "Mexico",
         "result": "W",
-        "goals_for": 3,
+        "goals_for": 1,
         "goals_against": 0,
         "date": "2026-01-20",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Colombia",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 3,
+        "opponent": "Brazil",
+        "result": "W",
+        "goals_for": 2,
+        "goals_against": 0,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "L",
-        "goals_for": 1,
-        "goals_against": 2,
+        "opponent": "Algeria",
+        "result": "W",
+        "goals_for": 4,
+        "goals_against": 0,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Japan",
         "result": "W",
-        "goals_for": 2,
-        "goals_against": 0,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   },
@@ -4476,86 +4570,88 @@
     "confederation": "CONCACAF",
     "is_host": false,
     "code": "PAN",
+    "lat": 8.5,
+    "lng": -80.8,
     "recent_form": [
       {
-        "opponent": "USA",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2025-09-05",
-        "competition": "Nations League"
-      },
-      {
         "opponent": "Canada",
-        "result": "L",
-        "goals_for": 0,
-        "goals_against": 1,
-        "date": "2025-09-10",
-        "competition": "Nations League"
+        "result": "W",
+        "goals_for": 3,
+        "goals_against": 0,
+        "date": "2025-09-05",
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Cuba",
-        "result": "L",
+        "opponent": "Germany",
+        "result": "D",
         "goals_for": 0,
-        "goals_against": 2,
+        "goals_against": 0,
+        "date": "2025-09-10",
+        "competition": "Friendly"
+      },
+      {
+        "opponent": "Peru",
+        "result": "L",
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-10-11",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Honduras",
+        "opponent": "Algeria",
         "result": "W",
-        "goals_for": 4,
-        "goals_against": 2,
+        "goals_for": 1,
+        "goals_against": 0,
         "date": "2025-10-15",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Jamaica",
+        "opponent": "Japan",
         "result": "D",
-        "goals_for": 2,
-        "goals_against": 2,
+        "goals_for": 1,
+        "goals_against": 1,
         "date": "2025-11-14",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Panama",
+        "opponent": "Saudi Arabia",
         "result": "W",
         "goals_for": 3,
-        "goals_against": 2,
+        "goals_against": 1,
         "date": "2025-11-19",
         "competition": "WC Qualifier"
       },
       {
-        "opponent": "Argentina",
-        "result": "D",
-        "goals_for": 1,
-        "goals_against": 1,
+        "opponent": "England",
+        "result": "L",
+        "goals_for": 0,
+        "goals_against": 3,
         "date": "2026-01-20",
         "competition": "Friendly"
       },
       {
-        "opponent": "Colombia",
-        "result": "L",
-        "goals_for": 1,
+        "opponent": "Germany",
+        "result": "D",
+        "goals_for": 2,
         "goals_against": 2,
         "date": "2026-02-05",
         "competition": "Friendly"
       },
       {
-        "opponent": "Costa Rica",
-        "result": "W",
-        "goals_for": 3,
+        "opponent": "Japan",
+        "result": "L",
+        "goals_for": 0,
         "goals_against": 1,
         "date": "2026-03-22",
-        "competition": "Nations League"
+        "competition": "WC Qualifier"
       },
       {
-        "opponent": "Uruguay",
+        "opponent": "Senegal",
         "result": "W",
-        "goals_for": 3,
-        "goals_against": 2,
+        "goals_for": 2,
+        "goals_against": 1,
         "date": "2026-03-26",
-        "competition": "Friendly"
+        "competition": "WC Qualifier"
       }
     ]
   }

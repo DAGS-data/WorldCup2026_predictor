@@ -120,11 +120,16 @@ nav .nav-links button.active {
   font-size: 12px; color: var(--muted);
   display: inline-block; margin-top: 6px; font-weight: 500;
 }
-.team-card .rating { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 8px; }
-.rating-elite   { background: rgba(16,185,129,0.1); color: var(--green); }
-.rating-strong  { background: rgba(59,130,246,0.1); color: var(--accent); }
-.rating-average { background: rgba(245,158,11,0.1); color: var(--yellow); }
-.rating-weak    { background: rgba(239,68,68,0.08); color: var(--red); }
+.team-card .mini-form { display: flex; gap: 4px; align-items: center; margin-top: 8px; }
+.team-card .mini-form-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.team-card .mini-form-dot.W { background: #10B981; }
+.team-card .mini-form-dot.D { background: #9CA3AF; }
+.team-card .mini-form-dot.L { background: #EF4444; }
+.team-card .rating { font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; }
+.rating-elite   { background: #DCFCE7; color: #15803D; }
+.rating-strong  { background: #DBEAFE; color: #1D4ED8; }
+.rating-average { background: #FEF3C7; color: #B45309; }
+.rating-weak    { background: #FEE2E2; color: #B91C1C; }
 
 /* ── Match grid ── */
 .match-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -571,11 +576,16 @@ function renderTeams(filterGroup) {
     else if (r10 >= 4) ratingClass = 'rating-average';
 
     const svText = team.squad_value_millions > 0 ? ('  <span style="color:#9CA3AF">•</span>  €' + formatM(team.squad_value_millions)) : '';
+    const form = team.recent_form || [];
+    const formDots = form.length > 0
+      ? ('<div class="mini-form">' + form.slice(0, 5).map(m => '<span class="mini-form-dot ' + m.result + '" title="vs ' + esc(m.opponent) + ' ' + m.goals_for + '-' + m.goals_against + ' (' + m.date + ')"></span>').join('') + '</div>')
+      : '';
 
     return '<div class="team-card" onclick="navigate(\'detail\', ' + team.id + ')">' +
       flagImg(team) +
       '<div class="info"><div class="name">' + team.name + '</div>' +
       '<span class="code">#' + (team.fifa_rank || '?') + ' FIFA' + svText + '</span>' +
+      formDots +
       '</div>' +
       '<span class="rating ' + ratingClass + '">' + r10 + '/10</span>' +
       '</div>';

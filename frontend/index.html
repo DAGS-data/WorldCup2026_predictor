@@ -112,16 +112,14 @@ nav .nav-links button.active {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
-.team-card img.flag { width: 52px; height: 36px; border-radius: 6px; object-fit: cover; }
-.team-card .flag-fallback { display: none; font-size: 36px; }
-.team-card .info { flex: 1; }
+.team-card img.flag { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.team-card .flag-fallback { display: none; font-size: 44px; line-height: 44px; }
+.team-card .info { flex: 1; min-width: 0; }
 .team-card .name { font-weight: 600; font-size: 15px; color: var(--text); letter-spacing: -0.2px; }
 .team-card .code {
-  font-size: 11px; color: var(--muted);
-  background: #F3F4F6; padding: 3px 8px; border-radius: 6px;
+  font-size: 12px; color: var(--muted);
   display: inline-block; margin-top: 6px; font-weight: 500;
 }
-.team-card .squad-value { font-size: 11px; color: var(--accent); margin-top: 3px; font-weight: 500; }
 .team-card .rating { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 8px; }
 .rating-elite   { background: rgba(16,185,129,0.1); color: var(--green); }
 .rating-strong  { background: rgba(59,130,246,0.1); color: var(--accent); }
@@ -145,8 +143,8 @@ nav .nav-links button.active {
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
 .match-card .teams { display: flex; align-items: center; justify-content: center; gap: 16px; }
 .match-card .team { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
-.match-card .team img.flag { width: 44px; height: 30px; border-radius: 4px; object-fit: cover; }
-.match-card .team .flag-fallback { display: none; font-size: 30px; }
+.match-card .team img.flag { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+.match-card .team .flag-fallback { display: none; font-size: 38px; line-height: 38px; }
 .match-card .team .tname { font-size: 14px; font-weight: 600; text-align: center; }
 .match-card .score { font-size: 32px; font-weight: 800; letter-spacing: 2px; color: var(--text); }
 .match-card .vs { color: var(--muted); font-size: 15px; font-weight: 600; }
@@ -166,8 +164,8 @@ nav .nav-links button.active {
 }
 .back-btn:hover { border-color: var(--accent); color: var(--accent); }
 .detail-header { display: flex; align-items: center; gap: 28px; margin-bottom: 40px; }
-.detail-header img.flag { width: 128px; height: 86px; border-radius: var(--radius-sm); object-fit: cover; }
-.detail-header .flag-fallback { display: none; font-size: 72px; }
+.detail-header img.flag { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
+.detail-header .flag-fallback { display: none; font-size: 100px; line-height: 100px; }
 .detail-header h1 { font-size: 44px; font-weight: 800; color: #0A0A0A; letter-spacing: -1px; }
 .big-rating {
   font-size: 80px; font-weight: 800; color: var(--accent); line-height: 1;
@@ -256,8 +254,8 @@ nav .nav-links button.active {
   border-radius: var(--radius); padding: 28px;
   text-align: center; box-shadow: var(--shadow-sm);
 }
-.h2h-team-card img.flag { width: 88px; height: 60px; border-radius: 8px; object-fit: cover; margin-bottom: 12px; }
-.h2h-team-card .flag-fallback { font-size: 52px; }
+.h2h-team-card img.flag { width: 68px; height: 68px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; }
+.h2h-team-card .flag-fallback { font-size: 68px; line-height: 68px; }
 .h2h-team-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.3px; }
 .h2h-stats-row { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 12px; }
 .h2h-stat { text-align: center; }
@@ -334,8 +332,8 @@ nav .nav-links button.active {
   padding: 10px 12px; border-bottom: 1px solid var(--border); position: relative;
 }
 .bracket-team:last-child { border-bottom: none; }
-.bracket-team img.flag { width: 28px; height: 19px; border-radius: 3px; object-fit: cover; flex-shrink: 0; }
-.bracket-team .flag-fallback { font-size: 20px; flex-shrink: 0; display: none; }
+.bracket-team img.flag { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.bracket-team .flag-fallback { font-size: 24px; line-height: 24px; flex-shrink: 0; display: none; }
 .bracket-team .bt-name { font-size: 13px; font-weight: 500; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bracket-team .bt-prob { font-size: 12px; font-weight: 600; color: var(--muted); flex-shrink: 0; }
 .bracket-team.winner {
@@ -384,8 +382,8 @@ nav .nav-links button.active {
   font-size: 24px; font-weight: 800;
   box-shadow: 0 8px 32px rgba(245,158,11,0.35);
 }
-.bracket-champion-banner img.flag { width: 52px; height: 36px; border-radius: 6px; object-fit: cover; }
-.bracket-champion-banner .flag-fallback { font-size: 40px; }
+.bracket-champion-banner img.flag { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.bracket-champion-banner .flag-fallback { font-size: 48px; line-height: 48px; }
 .bracket-champion-banner .champ-prob { font-size: 15px; font-weight: 400; opacity: 0.85; }
 
 /* ── Legacy bracket ── */
@@ -572,13 +570,12 @@ function renderTeams(filterGroup) {
     else if (r10 >= 6) ratingClass = 'rating-strong';
     else if (r10 >= 4) ratingClass = 'rating-average';
 
-    const sv = team.squad_value_millions > 0 ? ('<div class="squad-value">€' + formatM(team.squad_value_millions) + '</div>') : '';
+    const svText = team.squad_value_millions > 0 ? ('  <span style="color:#9CA3AF">•</span>  €' + formatM(team.squad_value_millions)) : '';
 
     return '<div class="team-card" onclick="navigate(\'detail\', ' + team.id + ')">' +
       flagImg(team) +
       '<div class="info"><div class="name">' + team.name + '</div>' +
-      '<span class="code">#' + (team.fifa_rank || '?') + ' FIFA</span>' +
-      sv +
+      '<span class="code">#' + (team.fifa_rank || '?') + ' FIFA' + svText + '</span>' +
       '</div>' +
       '<span class="rating ' + ratingClass + '">' + r10 + '/10</span>' +
       '</div>';

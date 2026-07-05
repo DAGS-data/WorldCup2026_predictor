@@ -370,6 +370,31 @@ nav .nav-links button.active {
   text-transform: uppercase; letter-spacing: 0.5px;
 }
 
+/* Vertical match card (R16 — compact stacked teams) */
+.bracket-match-v {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 6px 8px;
+  box-shadow: var(--shadow-sm); transition: var(--transition);
+  flex: 0 0 135px;
+}
+.bracket-match-v .bv-team {
+  display: flex; align-items: center; gap: 4px;
+  padding: 2px 0;
+}
+.bracket-match-v .bv-team + .bv-team { border-top: 1px solid #F3F4F6; }
+.bracket-match-v .bv-team.winner .bv-name { font-weight: 700; color: #15803D; }
+.bracket-match-v .bv-team.winner .bv-prob { color: #15803D; font-weight: 700; }
+.bracket-match-v .bv-team.loser { opacity: 0.4; }
+.bracket-match-v .bv-team.loser img.flag { filter: grayscale(100%); }
+.bracket-match-v img.flag { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.bracket-match-v .flag-fallback { font-size: 16px; line-height: 16px; flex-shrink: 0; display: none; }
+.bracket-match-v .bv-name {
+  font-size: 11px; font-weight: 500; flex: 1;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.bracket-match-v .bv-prob { font-size: 10px; font-weight: 600; color: var(--muted); flex-shrink: 0; }
+.bracket-match-v .bv-advance { color: #10B981; font-size: 9px; flex-shrink: 0; }
+
 /* Connector SVG row */
 .bracket-connectors {
   display: flex; justify-content: center;
@@ -935,27 +960,47 @@ function renderBracket(data) {
     html += '<div class="bracket-round-label">' + roundLabels[roundName] + '</div>';
 
     // Matches row
-    html += '<div class="bracket-round-row"><div class="bracket-matches-row">';
+    const isR16 = roundName === 'round_of_16';
+    html += '<div class="bracket-round-row"><div class="bracket-matches-row"' + (isR16 ? ' style="gap:6px"' : '') + '>';
     matches.forEach(m => {
       const t1 = m.team1; const t2 = m.team2;
       const p1 = m.team1_prob; const p2 = m.team2_prob;
       const w1 = p1 >= p2; const w2 = p2 > p1;
 
-      html += '<div class="bracket-match-h' + (roundName === 'final' ? ' final' : '') + '">' +
-        '<div class="bm-team' + (w1 ? ' winner' : ' loser') + '">' +
-          (w1 ? '<span class="bm-advance">▶</span>' : '') +
-          flagImg(t1) +
-          '<span class="bm-name">' + esc(t1.name) + '</span>' +
-          '<span class="bm-prob">' + p1 + '%</span>' +
-        '</div>' +
-        '<div class="bm-vs">VS</div>' +
-        '<div class="bm-team' + (w2 ? ' winner' : ' loser') + '">' +
-          flagImg(t2) +
-          '<span class="bm-name">' + esc(t2.name) + '</span>' +
-          '<span class="bm-prob">' + p2 + '%</span>' +
-          (w2 ? '<span class="bm-advance">▶</span>' : '') +
-        '</div>' +
-      '</div>';
+      if (isR16) {
+        // Vertical compact cards for R16
+        html += '<div class="bracket-match-v">' +
+          '<div class="bv-team' + (w1 ? ' winner' : ' loser') + '">' +
+            (w1 ? '<span class="bv-advance">▶</span>' : '') +
+            flagImg(t1) +
+            '<span class="bv-name">' + esc(t1.abbr || t1.name) + '</span>' +
+            '<span class="bv-prob">' + p1 + '%</span>' +
+          '</div>' +
+          '<div class="bv-team' + (w2 ? ' winner' : ' loser') + '">' +
+            flagImg(t2) +
+            '<span class="bv-name">' + esc(t2.abbr || t2.name) + '</span>' +
+            '<span class="bv-prob">' + p2 + '%</span>' +
+            (w2 ? '<span class="bv-advance">▶</span>' : '') +
+          '</div>' +
+        '</div>';
+      } else {
+        // Horizontal cards for other rounds
+        html += '<div class="bracket-match-h' + (roundName === 'final' ? ' final' : '') + '">' +
+          '<div class="bm-team' + (w1 ? ' winner' : ' loser') + '">' +
+            (w1 ? '<span class="bm-advance">▶</span>' : '') +
+            flagImg(t1) +
+            '<span class="bm-name">' + esc(t1.name) + '</span>' +
+            '<span class="bm-prob">' + p1 + '%</span>' +
+          '</div>' +
+          '<div class="bm-vs">VS</div>' +
+          '<div class="bm-team' + (w2 ? ' winner' : ' loser') + '">' +
+            flagImg(t2) +
+            '<span class="bm-name">' + esc(t2.name) + '</span>' +
+            '<span class="bm-prob">' + p2 + '%</span>' +
+            (w2 ? '<span class="bm-advance">▶</span>' : '') +
+          '</div>' +
+        '</div>';
+      }
     });
     html += '</div></div>';
 

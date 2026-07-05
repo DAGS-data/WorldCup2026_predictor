@@ -165,11 +165,50 @@ nav .nav-links button.active { color: #fff; background: var(--accent); }
 .empty-state { text-align: center; padding: 48px; color: var(--muted); }
 .empty-state button { margin-top: 12px; background: var(--accent); color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; }
 
+/* ===================== BRACKET TREE ===================== */
+.bracket-tree { overflow-x: auto; padding: 16px 0 32px; }
+.bracket-tree .bracket-inner { display: flex; gap: 0; min-width: 1100px; justify-content: center; }
+.bracket-col { flex: 1; display: flex; flex-direction: column; justify-content: space-around; min-width: 220px; position: relative; }
+.bracket-col:first-child { min-width: 240px; }
+.bracket-col-title { text-align: center; font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding: 4px 0; border-bottom: 2px solid var(--accent); }
+.bracket-match { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 8px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: var(--transition); }
+.bracket-team { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-bottom: 1px solid var(--border); position: relative; }
+.bracket-team:last-child { border-bottom: none; }
+.bracket-team img.flag { width: 28px; height: 19px; border-radius: 3px; object-fit: cover; flex-shrink: 0; }
+.bracket-team .flag-fallback { font-size: 20px; flex-shrink: 0; display: none; }
+.bracket-team .bt-name { font-size: 13px; font-weight: 500; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bracket-team .bt-prob { font-size: 12px; font-weight: 600; color: var(--muted); flex-shrink: 0; }
+.bracket-team.winner { background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(255,193,7,0.12)); }
+.bracket-team.winner .bt-name { font-weight: 700; color: var(--accent); }
+.bracket-team.winner .bt-prob { color: var(--accent); font-weight: 700; }
+.bracket-team.winner::before { content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); width: 12px; height: 12px; background: var(--accent); border-radius: 50%; z-index: 2; }
+.bracket-team.loser { opacity: 0.45; }
+.bracket-team.champion { background: linear-gradient(135deg, rgba(255,193,7,0.2), rgba(255,107,53,0.15)); }
+.bracket-team.champion .bt-name { font-size: 16px; font-weight: 800; color: #d4a017; }
+.bracket-team.champion::after { content: '🏆'; font-size: 18px; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); }
+
+/* Connector lines drawn with borders */
+.bracket-col:not(:last-child)::after { content: ''; position: absolute; right: -1px; top: 0; bottom: 0; width: 1px; background: var(--border); }
+.bracket-col:not(:first-child)::before { content: ''; position: absolute; left: -1px; top: 0; bottom: 0; width: 1px; background: var(--border); }
+
+/* Bracket match: horizontal connector to next column */
+.bracket-match { position: relative; }
+.bracket-match::after { content: ''; position: absolute; right: -20px; top: 50%; width: 20px; height: 1px; background: var(--border); z-index: 1; }
+.bracket-col:last-child .bracket-match::after { display: none; }
+
+/* Champion banner */
+.bracket-champion-banner { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #ffd700, #ff8c00); color: #fff; padding: 16px 32px; border-radius: 16px; font-size: 22px; font-weight: 800; box-shadow: 0 4px 20px rgba(255,140,0,0.4); }
+.bracket-champion-banner img.flag { width: 48px; height: 32px; border-radius: 4px; object-fit: cover; }
+.bracket-champion-banner .flag-fallback { font-size: 36px; }
+.bracket-champion-banner .champ-prob { font-size: 14px; font-weight: 400; opacity: 0.9; }
+
+/* Round label for match groups in R16 */
+.bracket-match-label { font-size: 10px; color: var(--muted); text-align: center; padding: 4px 0; font-weight: 500; }
+
 /* Utility */
 .loading-text { text-align: center; padding: 48px; color: var(--muted); font-size: 14px; }
 .hidden { display: none !important; }
 </style>
-</head>
 <body>
 
 <nav>
@@ -178,6 +217,7 @@ nav .nav-links button.active { color: #fff; background: var(--accent); }
     <button onclick="navigate('teams')" class="active" data-page="teams">Teams</button>
     <button onclick="navigate('matches')" data-page="matches">Matches</button>
     <button onclick="navigate('h2h')" data-page="h2h">H2H</button>
+    <button onclick="navigate('bracket')" data-page="bracket">🏆 Bracket</button>
   </div>
 </nav>
 
@@ -216,6 +256,16 @@ nav .nav-links button.active { color: #fff; background: var(--accent); }
       </div>
       <div id="h2h-result-placeholder"></div>
       <div id="h2h-loading" class="loading-text">Loading teams...</div>
+    </div>
+  <!-- PAGE: Bracket Simulation -->
+  <div id="page-bracket" class="page">
+    <div style="text-align:center;margin-bottom:24px">
+      <h1 style="font-size:28px;margin-bottom:8px">🏆 Knockout Bracket Simulator</h1>
+      <p style="color:var(--muted);font-size:14px">XGBoost simulates every match — highest advance probability wins</p>
+    </div>
+    <div id="bracket-champion" style="text-align:center;margin-bottom:24px"></div>
+    <div id="bracket-container" class="bracket-tree">
+      <div id="bracket-loading" class="loading-text">Simulating tournament...</div>
     </div>
   </div>
 </div>
@@ -263,6 +313,7 @@ function navigate(page, teamId) {
   if (page === 'teams' && store.teams) renderTeams();
   if (page === 'matches' && store.matches) renderMatches();
   if (page === 'h2h') { if (store.teams) initH2H(); }
+  if (page === 'bracket') loadBracket();
 
   window.scrollTo(0, 0);
 }
@@ -652,6 +703,67 @@ function h2hTeamCard(team) {
     '<div class="h2h-stat"><div class="val">€' + sv + '</div><div class="lbl">Squad</div></div>' +
     '<div class="h2h-stat"><div class="val">' + (team.confederation || '?') + '</div><div class="lbl">Confed</div></div>' +
     '</div></div>';
+}
+
+// ===================== BRACKET SIMULATION =====================
+async function loadBracket() {
+  document.getElementById('bracket-champion').innerHTML = '';
+  document.getElementById('bracket-container').innerHTML = '<div class="loading-text">Simulating tournament with XGBoost...</div>';
+
+  try {
+    const data = await apiFetch('/api/bracket/v2');
+    renderBracket(data);
+  } catch(e) {
+    document.getElementById('bracket-container').innerHTML = '<div class="empty-state"><p>⚠️ Failed to load bracket</p><p style="font-size:12px;color:var(--muted);margin-top:8px">Is the API running?</p><button onclick="loadBracket()">Retry</button></div>';
+  }
+}
+
+function renderBracket(data) {
+  const rounds = data.rounds;
+  const roundOrder = ['round_of_16', 'quarter_finals', 'semi_finals', 'final'];
+  const roundLabels = { round_of_16: 'Round of 16', quarter_finals: 'Quarter-finals', semi_finals: 'Semi-finals', final: '🏆 Final' };
+
+  // Champion banner
+  const champ = data.champion;
+  document.getElementById('bracket-champion').innerHTML =
+    '<div class="bracket-champion-banner">' +
+    flagImg(champ) +
+    '<span>' + esc(champ.name) + '</span>' +
+    '<span class="champ-prob">🏆 Predicted Champion</span>' +
+    '</div>';
+
+  // Build bracket columns
+  let html = '<div class="bracket-inner">';
+
+  roundOrder.forEach(roundName => {
+    const matches = rounds[roundName] || [];
+    html += '<div class="bracket-col">';
+    html += '<div class="bracket-col-title">' + roundLabels[roundName] + '</div>';
+
+    matches.forEach((m, idx) => {
+      const t1 = m.team1; const t2 = m.team2;
+      const p1 = m.team1_prob; const p2 = m.team2_prob;
+      const w1 = p1 >= p2; const w2 = p2 > p1;
+
+      html += '<div class="bracket-match">';
+      html += '<div class="bracket-team' + (w1 ? ' winner' : ' loser') + '">' +
+        flagImg(t1) +
+        '<span class="bt-name">' + esc(t1.name) + '</span>' +
+        '<span class="bt-prob">' + p1 + '%</span>' +
+        '</div>';
+      html += '<div class="bracket-team' + (w2 ? ' winner' : ' loser') + '">' +
+        flagImg(t2) +
+        '<span class="bt-name">' + esc(t2.name) + '</span>' +
+        '<span class="bt-prob">' + p2 + '%</span>' +
+        '</div>';
+      html += '</div>';
+    });
+
+    html += '</div>';
+  });
+
+  html += '</div>';
+  document.getElementById('bracket-container').innerHTML = html;
 }
 
 // ===================== INIT =====================

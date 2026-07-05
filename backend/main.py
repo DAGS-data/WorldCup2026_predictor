@@ -298,6 +298,157 @@ def model_info():
         return {"status": "error", "message": str(e)}
 
 
+@app.get("/api/bracket/v2")
+def bracket_v2():
+    """Simulate the full knockout bracket using XGBoost dual-prediction.
+
+    Starts from R16 enriched matches, simulates QF → SF → Final
+    by calling the XGBoost predictor for each matchup. Returns the
+    complete bracket tree with winners, probabilities, and flags.
+    """
+    from feature_engineering import compute_match_features
+    from collections import defaultdict
+
+    teams_raw = load_teams_raw()
+    teams_lookup = {t["id"]: t for t in teams_raw}
+    matches_enriched = load_matches_enriched()
+    matches_raw = load_matches_raw()
+
+    # Build per-team history for feature computation
+    team_history = defaultdict(list)
+    completed = sorted(
+        [m for m in matches_raw if m.get("score") and m.get("status", "").startswith("completed")],
+        key=lambda m: m["date"]
+    )
+    for m in completed:
+        t1_id = m.get("team1_id"); t2_id = m.get("team2_id")
+        if not t1_id or not t2_id: continue
+        t1 = teams_lookup.get(t1_id); t2 = teams_lookup.get(t2_id)
+        if not t1 or not t2: continue
+        s1 = int(m["score"]["team1"]); s2 = int(m["score"]["team2"])
+        t1_won = s1 > s2; t2_won = s2 > s1
+        if m.get("status","").endswith("_penalties"):
+            pen = m["score"].get("penalties","")
+            if pen:
+                p1,p2 = map(int, pen.split("-"))
+                t1_won = p1 > p2; t2_won = p2 > p1
+        team_history[t1_id].append({
+            "score": m["score"], "stage": m.get("stage","group"),
+            "date": m["date"], "team_role": "home",
+            "team_elo": t1.get("elo_rating",1500),
+            "opponent_elo": t2.get("elo_rating",1500),
+            "status": m["status"], "clean_sheet": s2==0,
+            "comeback": s1<=s2 and t1_won, "advanced": t1_won,
+        })
+        team_history[t2_id].append({
+            "score": m["score"], "stage": m.get("stage","group"),
+            "date": m["date"], "team_role": "away",
+            "team_elo": t2.get("elo_rating",1500),
+            "opponent_elo": t1.get("elo_rating",1500),
+            "status": m["status"], "clean_sheet": s1==0,
+            "comeback": s2<=s1 and t2_won, "advanced": t2_won,
+        })
+
+    xgb = get_xgb_predictor()
+
+    def predict_match(team_a, team_b, stage, date):
+        """Return (prob_a_advances, prob_b_advances, winner_id)."""
+        aid = team_a["id"]; bid = team_b["id"]
+        h_a = team_history.get(aid, []); h_b = team_history.get(bid, [])
+        try:
+            fwd = compute_match_features(aid, bid, team_a, team_b, h_a, h_b, stage, date)
+            rev = compute_match_features(bid, aid, team_b, team_a, h_b, h_a, stage, date)
+            pf = xgb.predict(fwd); pr = xgb.predict(rev)
+            pa = round((pf + (1.0 - pr)) / 2.0, 4)
+            pb = round(1.0 - pa, 4)
+            return pa, pb, (aid if pa >= 0.5 else bid)
+        except Exception as e:
+            return 0.5, 0.5, aid  # fallback
+
+    # Get R16 matches
+    r16_matches = [m for m in matches_enriched if m.get("stage") == "round_of_16"]
+    # Sort by id for consistent ordering
+    r16_matches.sort(key=lambda m: m.get("id", 0))
+
+    rounds = {"round_of_16": [], "quarter_finals": [], "semi_finals": [], "final": []}
+
+    # --- R16: use pre-computed predictions ---
+    r16_winners = []
+    for m in r16_matches:
+        t1id = m.get("team1_id"); t2id = m.get("team2_id")
+        t1 = teams_lookup.get(t1id, {}); t2 = teams_lookup.get(t2id, {})
+        xgb_pred = m.get("xgb_prediction", {})
+        p1 = xgb_pred.get("team1_advance_prob", 50)
+        p2 = xgb_pred.get("team2_advance_prob", 50)
+        winner_id = t1id if p1 >= p2 else t2id
+        rounds["round_of_16"].append({
+            "match_id": m.get("id"),
+            "team1": team_info(t1),
+            "team2": team_info(t2),
+            "team1_prob": p1,
+            "team2_prob": p2,
+            "winner_id": winner_id,
+        })
+        r16_winners.append(teams_lookup.get(winner_id, teams_lookup.get(t1id)))
+
+    # --- QF: simulate from R16 winners ---
+    qf_winners = []
+    for i in range(0, 8, 2):
+        ta = r16_winners[i]; tb = r16_winners[i+1]
+        pa, pb, wid = predict_match(ta, tb, "quarter_finals", "2026-07-10")
+        rounds["quarter_finals"].append({
+            "team1": team_info(ta),
+            "team2": team_info(tb),
+            "team1_prob": round(pa*100, 1),
+            "team2_prob": round(pb*100, 1),
+            "winner_id": wid,
+        })
+        qf_winners.append(ta if wid == ta["id"] else tb)
+
+    # --- SF ---
+    sf_winners = []
+    for i in range(0, 4, 2):
+        ta = qf_winners[i]; tb = qf_winners[i+1]
+        pa, pb, wid = predict_match(ta, tb, "semi_finals", "2026-07-14")
+        rounds["semi_finals"].append({
+            "team1": team_info(ta),
+            "team2": team_info(tb),
+            "team1_prob": round(pa*100, 1),
+            "team2_prob": round(pb*100, 1),
+            "winner_id": wid,
+        })
+        sf_winners.append(ta if wid == ta["id"] else tb)
+
+    # --- Final ---
+    ta = sf_winners[0]; tb = sf_winners[1]
+    pa, pb, wid = predict_match(ta, tb, "final", "2026-07-19")
+    rounds["final"].append({
+        "team1": team_info(ta),
+        "team2": team_info(tb),
+        "team1_prob": round(pa*100, 1),
+        "team2_prob": round(pb*100, 1),
+        "winner_id": wid,
+    })
+    champion = ta if wid == ta["id"] else tb
+
+    return {
+        "model": "XGBoost (dual-prediction symmetrized)",
+        "champion": team_info(champion),
+        "rounds": rounds,
+    }
+
+
+def team_info(t: dict) -> dict:
+    return {
+        "id": t.get("id"),
+        "name": t.get("name", "TBD"),
+        "flag": t.get("flag_emoji", "🏳️"),
+        "flag_code": t.get("flag_code", ""),
+        "elo": t.get("elo_rating", 0),
+        "fifa_rank": t.get("fifa_rank", 0),
+    }
+
+
 @app.get("/")
 def root():
     return {"message": "WC 2026 Predictor API v2", "docs": "/docs"}

@@ -320,14 +320,21 @@ nav .nav-links button.active {
 .bracket-tree .bracket-inner { display: flex; gap: 0; min-width: 1140px; justify-content: center; }
 .bracket-col {
   flex: 1; display: flex; flex-direction: column;
-  justify-content: space-around; min-width: 230px; position: relative;
+  min-width: 230px; position: relative;
 }
 .bracket-col:first-child { min-width: 250px; }
 .bracket-col-title {
-  text-align: center; font-size: 12px; font-weight: 700; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 1.2px;
-  margin-bottom: 16px; padding: 6px 0;
-  border-bottom: 2px solid var(--accent);
+  flex-shrink: 0;
+  text-align: center; font-size: 11px; font-weight: 600; color: #6B7280;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  padding: 10px 12px; margin-bottom: 12px;
+  background: #F8F9FA;
+  border-radius: 8px;
+}
+.bracket-matches {
+  flex: 1;
+  display: flex; flex-direction: column;
+  justify-content: space-around;
 }
 .bracket-match {
   background: var(--card); border: 1px solid var(--border);
@@ -951,6 +958,7 @@ function renderBracket(data) {
     const matches = rounds[roundName] || [];
     html += '<div class="bracket-col">';
     html += '<div class="bracket-col-title">' + roundLabels[roundName] + '</div>';
+    html += '<div class="bracket-matches">';
 
     matches.forEach((m, idx) => {
       const t1 = m.team1; const t2 = m.team2;
@@ -971,7 +979,8 @@ function renderBracket(data) {
       html += '</div>';
     });
 
-    html += '</div>';
+    html += '</div>'; // close bracket-matches
+    html += '</div>'; // close bracket-col
   });
 
   html += '</div>';

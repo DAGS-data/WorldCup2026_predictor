@@ -336,12 +336,15 @@ nav .nav-links button.active {
 .bracket-match-h {
   display: flex; align-items: center;
   background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius-sm); padding: 10px 14px;
+  border-radius: var(--radius-sm); padding: 10px 12px;
   box-shadow: var(--shadow-sm); transition: var(--transition);
-  flex: 1; min-width: 0;
+  flex: 0 0 270px;
+}
+.bracket-match-h.final {
+  flex: 0 0 420px;
 }
 .bracket-match-h .bm-team {
-  display: flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; gap: 6px;
   flex: 1; min-width: 0;
 }
 .bracket-match-h .bm-team.winner { }
@@ -374,10 +377,10 @@ nav .nav-links button.active {
 }
 .bracket-connectors svg { display: block; }
 
-/* Champion at bottom */
-.bracket-champion-bottom {
-  text-align: center; margin-top: 32px; padding-top: 16px;
-  border-top: 2px solid #E5E7EB;
+/* Champion at top */
+.bracket-champion-top {
+  text-align: center; margin-bottom: 32px; padding-bottom: 16px;
+  border-bottom: 2px solid #E5E7EB;
 }
 
 /* ── Champion banner ── */
@@ -458,10 +461,10 @@ nav .nav-links button.active {
       <h1 style="font-size:32px;font-weight:800;margin-bottom:8px;letter-spacing:-0.5px;color:#0A0A0A">🏆 Knockout Bracket Simulator</h1>
       <p style="color:var(--muted);font-size:15px">XGBoost simulates every match — highest advance probability wins</p>
     </div>
+    <div id="bracket-champion" class="bracket-champion-top"></div>
     <div id="bracket-container" class="bracket-tree">
       <div id="bracket-loading" class="loading-text">Simulating tournament...</div>
     </div>
-    <div id="bracket-champion" class="bracket-champion-bottom"></div>
   </div>
 </div>
 
@@ -919,7 +922,7 @@ async function loadBracket() {
 
 function renderBracket(data) {
   const rounds = data.rounds;
-  const roundOrder = ['round_of_16', 'quarter_finals', 'semi_finals', 'final'];
+  const roundOrder = ['final', 'semi_finals', 'quarter_finals', 'round_of_16'];
   const roundLabels = { round_of_16: 'Round of 16', quarter_finals: 'Quarter-finals', semi_finals: 'Semi-finals', final: '🏆 Final' };
 
   let html = '';
@@ -938,7 +941,7 @@ function renderBracket(data) {
       const p1 = m.team1_prob; const p2 = m.team2_prob;
       const w1 = p1 >= p2; const w2 = p2 > p1;
 
-      html += '<div class="bracket-match-h">' +
+      html += '<div class="bracket-match-h' + (roundName === 'final' ? ' final' : '') + '">' +
         '<div class="bm-team' + (w1 ? ' winner' : ' loser') + '">' +
           (w1 ? '<span class="bm-advance">▶</span>' : '') +
           flagImg(t1) +
@@ -956,22 +959,24 @@ function renderBracket(data) {
     });
     html += '</div></div>';
 
-    // Connectors to next round
+    // Connectors: draw beneath current round, showing it feeds from the round below
     if (ri < roundOrder.length - 1) {
-      const nextMatches = rounds[roundOrder[ri + 1]] || [];
-      const groups = nextMatches.length;
+      const belowMatches = rounds[roundOrder[ri + 1]] || [];
+      const groups = Math.floor(belowMatches.length / 2);
       if (groups > 0) {
         const pctPerGroup = 100 / groups;
         html += '<div class="bracket-connectors">';
         for (let g = 0; g < groups; g++) {
           html += '<svg width="' + pctPerGroup + '%" height="48" viewBox="0 0 200 48" preserveAspectRatio="none">' +
-            '<line x1="50" y1="0" x2="50" y2="24" stroke="#CBD5E1" stroke-width="2"/>' +
-            '<line x1="150" y1="0" x2="150" y2="24" stroke="#CBD5E1" stroke-width="2"/>' +
-            '<line x1="50" y1="24" x2="150" y2="24" stroke="#CBD5E1" stroke-width="2"/>' +
-            '<circle cx="50" cy="24" r="3" fill="#CBD5E1"/>' +
-            '<circle cx="150" cy="24" r="3" fill="#CBD5E1"/>' +
-            '<line x1="100" y1="24" x2="100" y2="48" stroke="#CBD5E1" stroke-width="2"/>' +
-            '<circle cx="100" cy="48" r="3" fill="#CBD5E1"/>' +
+            '<line x1="100" y1="0" x2="100" y2="20" stroke="#CBD5E1" stroke-width="2"/>' +
+            '<circle cx="100" cy="0" r="3" fill="#CBD5E1"/>' +
+            '<line x1="50" y1="20" x2="150" y2="20" stroke="#CBD5E1" stroke-width="2"/>' +
+            '<circle cx="50" cy="20" r="3" fill="#CBD5E1"/>' +
+            '<circle cx="150" cy="20" r="3" fill="#CBD5E1"/>' +
+            '<line x1="50" y1="20" x2="50" y2="48" stroke="#CBD5E1" stroke-width="2"/>' +
+            '<line x1="150" y1="20" x2="150" y2="48" stroke="#CBD5E1" stroke-width="2"/>' +
+            '<circle cx="50" cy="48" r="3" fill="#CBD5E1"/>' +
+            '<circle cx="150" cy="48" r="3" fill="#CBD5E1"/>' +
           '</svg>';
         }
         html += '</div>';
@@ -981,7 +986,7 @@ function renderBracket(data) {
 
   document.getElementById('bracket-container').innerHTML = html;
 
-  // Champion banner at bottom
+  // Champion banner at top
   const champ = data.champion;
   document.getElementById('bracket-champion').innerHTML =
     '<div class="bracket-champion-banner">' +

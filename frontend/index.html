@@ -343,20 +343,23 @@ nav .nav-links button.active {
 .bracket-team img.flag { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .bracket-team .flag-fallback { font-size: 24px; line-height: 24px; flex-shrink: 0; display: none; }
 .bracket-team .bt-name { font-size: 13px; font-weight: 500; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bracket-team .bt-advance { color: #10B981; font-size: 9px; flex-shrink: 0; }
 .bracket-team .bt-prob { font-size: 12px; font-weight: 600; color: var(--muted); flex-shrink: 0; }
 .bracket-team.winner {
-  background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(59,130,246,0.12));
+  background: linear-gradient(135deg, rgba(16,185,129,0.06), rgba(16,185,129,0.10));
 }
-.bracket-team.winner .bt-name { font-weight: 700; color: var(--accent); }
-.bracket-team.winner .bt-prob { color: var(--accent); font-weight: 700; }
+.bracket-team.winner .bt-name { font-weight: 700; color: #15803D; }
+.bracket-team.winner .bt-prob { color: #15803D; font-weight: 700; }
 .bracket-team.winner::before {
   content: ''; position: absolute; right: -7px; top: 50%;
   transform: translateY(-50%);
-  width: 14px; height: 14px;
-  background: var(--accent); border-radius: 50%; z-index: 2;
-  box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
+  width: 12px; height: 12px;
+  background: #10B981; border-radius: 50%; z-index: 2;
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.2);
 }
-.bracket-team.loser { opacity: 0.4; }
+.bracket-team.loser { opacity: 0.35; }
+.bracket-team.loser img.flag { filter: grayscale(100%); }
+.bracket-team.loser .bt-prob { color: #9CA3AF; }
 .bracket-team.champion {
   background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(59,130,246,0.08));
 }
@@ -369,17 +372,25 @@ nav .nav-links button.active {
 /* Connector lines */
 .bracket-col:not(:last-child)::after {
   content: ''; position: absolute; right: -1px; top: 0; bottom: 0;
-  width: 1px; background: var(--border);
+  width: 2px; background: #CBD5E1; z-index: 0;
 }
 .bracket-col:not(:first-child)::before {
   content: ''; position: absolute; left: -1px; top: 0; bottom: 0;
-  width: 1px; background: var(--border);
+  width: 2px; background: #CBD5E1; z-index: 0;
 }
 .bracket-match::after {
   content: ''; position: absolute; right: -20px; top: 50%;
-  width: 20px; height: 1px; background: var(--border); z-index: 1;
+  width: 20px; height: 2px; background: #CBD5E1; z-index: 1;
 }
-.bracket-col:last-child .bracket-match::after { display: none; }
+/* Junction dot where horizontal line meets vertical */
+.bracket-match::before {
+  content: ''; position: absolute; right: -20px; top: 50%;
+  transform: translate(0, -50%);
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #CBD5E1; z-index: 2;
+}
+.bracket-col:last-child .bracket-match::after,
+.bracket-col:last-child .bracket-match::before { display: none; }
 .bracket-match-label { font-size: 10px; color: var(--muted); text-align: center; padding: 4px 0; font-weight: 500; }
 
 /* ── Champion banner ── */
@@ -949,12 +960,12 @@ function renderBracket(data) {
       html += '<div class="bracket-match">';
       html += '<div class="bracket-team' + (w1 ? ' winner' : ' loser') + '">' +
         flagImg(t1) +
-        '<span class="bt-name">' + esc(t1.name) + '</span>' +
+        '<span class="bt-name">' + (w1 ? '<span class="bt-advance">▶</span> ' : '') + esc(t1.name) + '</span>' +
         '<span class="bt-prob">' + p1 + '%</span>' +
         '</div>';
       html += '<div class="bracket-team' + (w2 ? ' winner' : ' loser') + '">' +
         flagImg(t2) +
-        '<span class="bt-name">' + esc(t2.name) + '</span>' +
+        '<span class="bt-name">' + (w2 ? '<span class="bt-advance">▶</span> ' : '') + esc(t2.name) + '</span>' +
         '<span class="bt-prob">' + p2 + '%</span>' +
         '</div>';
       html += '</div>';

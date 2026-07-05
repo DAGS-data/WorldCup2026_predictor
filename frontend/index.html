@@ -960,16 +960,17 @@ function renderBracket(data) {
     html += '<div class="bracket-round-label">' + roundLabels[roundName] + '</div>';
 
     // Matches row
-    const isR16 = roundName === 'round_of_16';
-    html += '<div class="bracket-round-row"><div class="bracket-matches-row"' + (isR16 ? ' style="gap:6px"' : '') + '>';
+    const isVertical = roundName === 'round_of_16' || roundName === 'quarter_finals';
+    const vWidth = roundName === 'round_of_16' ? 135 : 220;
+    html += '<div class="bracket-round-row"><div class="bracket-matches-row"' + (isVertical ? ' style="gap:6px"' : '') + '>';
     matches.forEach(m => {
       const t1 = m.team1; const t2 = m.team2;
       const p1 = m.team1_prob; const p2 = m.team2_prob;
       const w1 = p1 >= p2; const w2 = p2 > p1;
 
-      if (isR16) {
-        // Vertical compact cards for R16
-        html += '<div class="bracket-match-v">' +
+      if (isVertical) {
+        // Vertical compact cards for R16 & QF
+        html += '<div class="bracket-match-v" style="flex:0 0 ' + vWidth + 'px">' +
           '<div class="bv-team' + (w1 ? ' winner' : ' loser') + '">' +
             (w1 ? '<span class="bv-advance">▶</span>' : '') +
             flagImg(t1) +

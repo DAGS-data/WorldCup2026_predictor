@@ -15,14 +15,21 @@
     },
     "notes": "FIFA World Cup, Group A",
     "team1_name": "Mexico",
+    "team1_flag": "🇲🇽",
     "team2_name": "South Africa",
+    "team2_flag": "🇿🇦",
     "prediction": {
       "team1_win_prob": 76.9,
       "draw_prob": 15.5,
       "team2_win_prob": 7.6,
       "predicted_score": "2-0",
       "team1_xg": 2.36,
-      "team2_xg": 0.59
+      "team2_xg": 0.59,
+      "key_factors": [
+        "ELO advantage: Mexico (+303 pts)",
+        "Squad value edge: Mexico ($143M)",
+        "Home advantage: Mexico"
+      ]
     }
   },
   {
@@ -41,14 +48,19 @@
     },
     "notes": "FIFA World Cup, Group A",
     "team1_name": "South Korea",
+    "team1_flag": "🇰🇷",
     "team2_name": "Czechia",
+    "team2_flag": "🇨🇿",
     "prediction": {
       "team1_win_prob": 44.8,
       "draw_prob": 25.4,
       "team2_win_prob": 29.8,
       "predicted_score": "1-1",
       "team1_xg": 1.51,
-      "team2_xg": 1.19
+      "team2_xg": 1.19,
+      "key_factors": [
+        "ELO advantage: South Korea (+65 pts)"
+      ]
     }
   },
   {
@@ -67,14 +79,19 @@
     },
     "notes": "FIFA World Cup, Group B",
     "team1_name": "Canada",
+    "team1_flag": "🇨🇦",
     "team2_name": "Bosnia-Herzegovina",
+    "team2_flag": "🇧🇦",
     "prediction": {
       "team1_win_prob": 42.5,
       "draw_prob": 24.4,
       "team2_win_prob": 33.2,
       "predicted_score": "1-1",
       "team1_xg": 1.58,
-      "team2_xg": 1.37
+      "team2_xg": 1.37,
+      "key_factors": [
+        "Home advantage: Canada"
+      ]
     }
   },
   {
@@ -93,14 +110,21 @@
     },
     "notes": "FIFA World Cup, Group D",
     "team1_name": "United States",
+    "team1_flag": "🇺🇸",
     "team2_name": "Paraguay",
+    "team2_flag": "🇵🇾",
     "prediction": {
       "team1_win_prob": 61.9,
       "draw_prob": 21.0,
       "team2_win_prob": 17.1,
       "predicted_score": "2-0",
       "team1_xg": 2.0,
-      "team2_xg": 0.95
+      "team2_xg": 0.95,
+      "key_factors": [
+        "ELO advantage: United States (+162 pts)",
+        "Squad value edge: United States ($232M)",
+        "Home advantage: United States"
+      ]
     }
   },
   {
@@ -119,14 +143,20 @@
     },
     "notes": "FIFA World Cup, Group B",
     "team1_name": "Qatar",
+    "team1_flag": "🇶🇦",
     "team2_name": "Switzerland",
+    "team2_flag": "🇨🇭",
     "prediction": {
       "team1_win_prob": 4.9,
       "draw_prob": 14.5,
       "team2_win_prob": 80.6,
       "predicted_score": "0-2",
       "team1_xg": 0.4,
-      "team2_xg": 2.3
+      "team2_xg": 2.3,
+      "key_factors": [
+        "ELO advantage: Switzerland (+380 pts)",
+        "Squad value edge: Switzerland ($313M)"
+      ]
     }
   },
   {
@@ -145,14 +175,20 @@
     },
     "notes": "FIFA World Cup, Group C",
     "team1_name": "Brazil",
+    "team1_flag": "🇧🇷",
     "team2_name": "Morocco",
+    "team2_flag": "🇲🇦",
     "prediction": {
       "team1_win_prob": 63.7,
       "draw_prob": 21.4,
       "team2_win_prob": 14.8,
       "predicted_score": "1-0",
       "team1_xg": 1.91,
-      "team2_xg": 0.79
+      "team2_xg": 0.79,
+      "key_factors": [
+        "ELO advantage: Brazil (+223 pts)",
+        "Squad value edge: Brazil ($481M)"
+      ]
     }
   },
   {
@@ -171,14 +207,20 @@
     },
     "notes": "FIFA World Cup, Group C",
     "team1_name": "Haiti",
+    "team1_flag": "🇭🇹",
     "team2_name": "Scotland",
+    "team2_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
     "prediction": {
       "team1_win_prob": 16.2,
       "draw_prob": 22.0,
       "team2_win_prob": 61.8,
       "predicted_score": "0-1",
       "team1_xg": 0.83,
-      "team2_xg": 1.87
+      "team2_xg": 1.87,
+      "key_factors": [
+        "ELO advantage: Scotland (+207 pts)",
+        "Squad value edge: Scotland ($114M)"
+      ]
     }
   },
   {
@@ -197,14 +239,20 @@
     },
     "notes": "FIFA World Cup, Group D",
     "team1_name": "Australia",
-    "team2_name": "T\u00fcrkiye",
+    "team1_flag": "🇦🇺",
+    "team2_name": "Türkiye",
+    "team2_flag": "🇹🇷",
     "prediction": {
       "team1_win_prob": 32.7,
       "draw_prob": 25.7,
       "team2_win_prob": 41.6,
       "predicted_score": "1-1",
       "team1_xg": 1.25,
-      "team2_xg": 1.45
+      "team2_xg": 1.45,
+      "key_factors": [
+        "ELO advantage: Türkiye (+39 pts)",
+        "Squad value edge: Türkiye ($396M)"
+      ]
     }
   },
   {
@@ -223,14 +271,20 @@
     },
     "notes": "FIFA World Cup, Group E",
     "team1_name": "Germany",
-    "team2_name": "Cura\u00e7ao",
+    "team1_flag": "🇩🇪",
+    "team2_name": "Curaçao",
+    "team2_flag": "🇨🇼",
     "prediction": {
       "team1_win_prob": 88.3,
       "draw_prob": 9.6,
       "team2_win_prob": 2.1,
       "predicted_score": "2-0",
       "team1_xg": 2.67,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: Germany (+530 pts)",
+        "Squad value edge: Germany ($942M)"
+      ]
     }
   },
   {
@@ -249,14 +303,20 @@
     },
     "notes": "FIFA World Cup, Group F",
     "team1_name": "Netherlands",
+    "team1_flag": "🇳🇱",
     "team2_name": "Japan",
+    "team2_flag": "🇯🇵",
     "prediction": {
       "team1_win_prob": 56.4,
       "draw_prob": 23.4,
       "team2_win_prob": 20.1,
       "predicted_score": "1-0",
       "team1_xg": 1.75,
-      "team2_xg": 0.95
+      "team2_xg": 0.95,
+      "key_factors": [
+        "ELO advantage: Netherlands (+162 pts)",
+        "Squad value edge: Netherlands ($483M)"
+      ]
     }
   },
   {
@@ -275,14 +335,19 @@
     },
     "notes": "FIFA World Cup, Group E",
     "team1_name": "Ivory Coast",
+    "team1_flag": "🇨🇮",
     "team2_name": "Ecuador",
+    "team2_flag": "🇪🇨",
     "prediction": {
       "team1_win_prob": 34.2,
       "draw_prob": 25.8,
       "team2_win_prob": 40.0,
       "predicted_score": "1-1",
       "team1_xg": 1.29,
-      "team2_xg": 1.41
+      "team2_xg": 1.41,
+      "key_factors": [
+        "Squad value edge: Ivory Coast ($153M)"
+      ]
     }
   },
   {
@@ -301,14 +366,20 @@
     },
     "notes": "FIFA World Cup, Group F",
     "team1_name": "Sweden",
+    "team1_flag": "🇸🇪",
     "team2_name": "Tunisia",
+    "team2_flag": "🇹🇳",
     "prediction": {
       "team1_win_prob": 57.3,
       "draw_prob": 23.2,
       "team2_win_prob": 19.4,
       "predicted_score": "1-0",
       "team1_xg": 1.77,
-      "team2_xg": 0.93
+      "team2_xg": 0.93,
+      "key_factors": [
+        "ELO advantage: Sweden (+169 pts)",
+        "Squad value edge: Sweden ($339M)"
+      ]
     }
   },
   {
@@ -327,14 +398,20 @@
     },
     "notes": "FIFA World Cup, Group H",
     "team1_name": "Spain",
+    "team1_flag": "🇪🇸",
     "team2_name": "Cape Verde",
+    "team2_flag": "🇨🇻",
     "prediction": {
       "team1_win_prob": 88.9,
       "draw_prob": 9.2,
       "team2_win_prob": 2.0,
       "predicted_score": "2-0",
       "team1_xg": 2.73,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: Spain (+553 pts)",
+        "Squad value edge: Spain ($1166M)"
+      ]
     }
   },
   {
@@ -353,14 +430,20 @@
     },
     "notes": "FIFA World Cup, Group G",
     "team1_name": "Belgium",
+    "team1_flag": "🇧🇪",
     "team2_name": "Egypt",
+    "team2_flag": "🇪🇬",
     "prediction": {
       "team1_win_prob": 69.1,
       "draw_prob": 19.6,
       "team2_win_prob": 11.3,
       "predicted_score": "2-0",
       "team1_xg": 2.03,
-      "team2_xg": 0.67
+      "team2_xg": 0.67,
+      "key_factors": [
+        "ELO advantage: Belgium (+270 pts)",
+        "Squad value edge: Belgium ($431M)"
+      ]
     }
   },
   {
@@ -379,14 +462,20 @@
     },
     "notes": "FIFA World Cup, Group H",
     "team1_name": "Saudi Arabia",
+    "team1_flag": "🇸🇦",
     "team2_name": "Uruguay",
+    "team2_flag": "🇺🇾",
     "prediction": {
       "team1_win_prob": 12.8,
       "draw_prob": 20.4,
       "team2_win_prob": 66.8,
       "predicted_score": "0-1",
       "team1_xg": 0.72,
-      "team2_xg": 1.98
+      "team2_xg": 1.98,
+      "key_factors": [
+        "ELO advantage: Uruguay (+250 pts)",
+        "Squad value edge: Uruguay ($319M)"
+      ]
     }
   },
   {
@@ -405,14 +494,19 @@
     },
     "notes": "FIFA World Cup, Group G",
     "team1_name": "Iran",
+    "team1_flag": "🇮🇷",
     "team2_name": "New Zealand",
+    "team2_flag": "🇳🇿",
     "prediction": {
       "team1_win_prob": 75.1,
       "draw_prob": 17.1,
       "team2_win_prob": 7.8,
       "predicted_score": "2-0",
       "team1_xg": 2.16,
-      "team2_xg": 0.54
+      "team2_xg": 0.54,
+      "key_factors": [
+        "ELO advantage: Iran (+325 pts)"
+      ]
     }
   },
   {
@@ -431,14 +525,20 @@
     },
     "notes": "FIFA World Cup, Group I",
     "team1_name": "France",
+    "team1_flag": "🇫🇷",
     "team2_name": "Senegal",
+    "team2_flag": "🇸🇳",
     "prediction": {
       "team1_win_prob": 79.8,
       "draw_prob": 14.9,
       "team2_win_prob": 5.3,
       "predicted_score": "2-0",
       "team1_xg": 2.28,
-      "team2_xg": 0.42
+      "team2_xg": 0.42,
+      "key_factors": [
+        "ELO advantage: France (+372 pts)",
+        "Squad value edge: France ($1042M)"
+      ]
     }
   },
   {
@@ -457,14 +557,20 @@
     },
     "notes": "FIFA World Cup, Group I",
     "team1_name": "Iraq",
+    "team1_flag": "🇮🇶",
     "team2_name": "Norway",
+    "team2_flag": "🇳🇴",
     "prediction": {
       "team1_win_prob": 6.8,
       "draw_prob": 16.3,
       "team2_win_prob": 76.9,
       "predicted_score": "0-2",
       "team1_xg": 0.49,
-      "team2_xg": 2.21
+      "team2_xg": 2.21,
+      "key_factors": [
+        "ELO advantage: Norway (+343 pts)",
+        "Squad value edge: Norway ($569M)"
+      ]
     }
   },
   {
@@ -483,14 +589,20 @@
     },
     "notes": "FIFA World Cup, Group J",
     "team1_name": "Argentina",
+    "team1_flag": "🇦🇷",
     "team2_name": "Algeria",
+    "team2_flag": "🇩🇿",
     "prediction": {
       "team1_win_prob": 86.9,
       "draw_prob": 10.8,
       "team2_win_prob": 2.4,
       "predicted_score": "2-0",
       "team1_xg": 2.53,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: Argentina (+473 pts)",
+        "Squad value edge: Argentina ($556M)"
+      ]
     }
   },
   {
@@ -509,14 +621,20 @@
     },
     "notes": "FIFA World Cup, Group J",
     "team1_name": "Austria",
+    "team1_flag": "🇦🇹",
     "team2_name": "Jordan",
+    "team2_flag": "🇯🇴",
     "prediction": {
       "team1_win_prob": 79.7,
       "draw_prob": 14.9,
       "team2_win_prob": 5.4,
       "predicted_score": "2-0",
       "team1_xg": 2.28,
-      "team2_xg": 0.42
+      "team2_xg": 0.42,
+      "key_factors": [
+        "ELO advantage: Austria (+371 pts)",
+        "Squad value edge: Austria ($225M)"
+      ]
     }
   },
   {
@@ -535,14 +653,20 @@
     },
     "notes": "FIFA World Cup, Group K",
     "team1_name": "Portugal",
+    "team1_flag": "🇵🇹",
     "team2_name": "Congo DR",
+    "team2_flag": "🇨🇩",
     "prediction": {
       "team1_win_prob": 84.3,
       "draw_prob": 12.5,
       "team2_win_prob": 3.2,
       "predicted_score": "2-0",
       "team1_xg": 2.4,
-      "team2_xg": 0.3
+      "team2_xg": 0.3,
+      "key_factors": [
+        "ELO advantage: Portugal (+420 pts)",
+        "Squad value edge: Portugal ($866M)"
+      ]
     }
   },
   {
@@ -561,14 +685,20 @@
     },
     "notes": "FIFA World Cup, Group L",
     "team1_name": "England",
+    "team1_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "team2_name": "Croatia",
+    "team2_flag": "🇭🇷",
     "prediction": {
       "team1_win_prob": 56.4,
       "draw_prob": 23.5,
       "team2_win_prob": 20.2,
       "predicted_score": "1-0",
       "team1_xg": 1.75,
-      "team2_xg": 0.95
+      "team2_xg": 0.95,
+      "key_factors": [
+        "ELO advantage: England (+161 pts)",
+        "Squad value edge: England ($973M)"
+      ]
     }
   },
   {
@@ -587,14 +717,20 @@
     },
     "notes": "FIFA World Cup, Group L",
     "team1_name": "Ghana",
+    "team1_flag": "🇬🇭",
     "team2_name": "Panama",
+    "team2_flag": "🇵🇦",
     "prediction": {
       "team1_win_prob": 42.6,
       "draw_prob": 25.6,
       "team2_win_prob": 31.8,
       "predicted_score": "1-1",
       "team1_xg": 1.47,
-      "team2_xg": 1.23
+      "team2_xg": 1.23,
+      "key_factors": [
+        "ELO advantage: Ghana (+47 pts)",
+        "Squad value edge: Ghana ($200M)"
+      ]
     }
   },
   {
@@ -613,14 +749,20 @@
     },
     "notes": "FIFA World Cup, Group K",
     "team1_name": "Uzbekistan",
+    "team1_flag": "🇺🇿",
     "team2_name": "Colombia",
+    "team2_flag": "🇨🇴",
     "prediction": {
       "team1_win_prob": 2.5,
       "draw_prob": 11.2,
       "team2_win_prob": 86.3,
       "predicted_score": "0-2",
       "team1_xg": 0.25,
-      "team2_xg": 2.48
+      "team2_xg": 2.48,
+      "key_factors": [
+        "ELO advantage: Colombia (+454 pts)",
+        "Squad value edge: Colombia ($217M)"
+      ]
     }
   },
   {
@@ -639,14 +781,20 @@
     },
     "notes": "FIFA World Cup, Group A",
     "team1_name": "Czechia",
+    "team1_flag": "🇨🇿",
     "team2_name": "South Africa",
+    "team2_flag": "🇿🇦",
     "prediction": {
       "team1_win_prob": 51.3,
       "draw_prob": 24.5,
       "team2_win_prob": 24.2,
       "predicted_score": "1-1",
       "team1_xg": 1.65,
-      "team2_xg": 1.05
+      "team2_xg": 1.05,
+      "key_factors": [
+        "ELO advantage: Czechia (+119 pts)",
+        "Squad value edge: Czechia ($139M)"
+      ]
     }
   },
   {
@@ -665,14 +813,20 @@
     },
     "notes": "FIFA World Cup, Group B",
     "team1_name": "Switzerland",
+    "team1_flag": "🇨🇭",
     "team2_name": "Bosnia-Herzegovina",
+    "team2_flag": "🇧🇦",
     "prediction": {
       "team1_win_prob": 57.3,
       "draw_prob": 23.2,
       "team2_win_prob": 19.5,
       "predicted_score": "1-0",
       "team1_xg": 1.77,
-      "team2_xg": 0.93
+      "team2_xg": 0.93,
+      "key_factors": [
+        "ELO advantage: Switzerland (+169 pts)",
+        "Squad value edge: Switzerland ($186M)"
+      ]
     }
   },
   {
@@ -691,14 +845,21 @@
     },
     "notes": "FIFA World Cup, Group B",
     "team1_name": "Canada",
+    "team1_flag": "🇨🇦",
     "team2_name": "Qatar",
+    "team2_flag": "🇶🇦",
     "prediction": {
       "team1_win_prob": 66.6,
       "draw_prob": 19.6,
       "team2_win_prob": 13.9,
       "predicted_score": "2-0",
       "team1_xg": 2.11,
-      "team2_xg": 0.84
+      "team2_xg": 0.84,
+      "key_factors": [
+        "ELO advantage: Canada (+203 pts)",
+        "Squad value edge: Canada ($179M)",
+        "Home advantage: Canada"
+      ]
     }
   },
   {
@@ -717,14 +878,20 @@
     },
     "notes": "FIFA World Cup, Group A",
     "team1_name": "Mexico",
+    "team1_flag": "🇲🇽",
     "team2_name": "South Korea",
+    "team2_flag": "🇰🇷",
     "prediction": {
       "team1_win_prob": 57.0,
       "draw_prob": 22.2,
       "team2_win_prob": 20.7,
       "predicted_score": "1-1",
       "team1_xg": 1.9,
-      "team2_xg": 1.05
+      "team2_xg": 1.05,
+      "key_factors": [
+        "ELO advantage: Mexico (+118 pts)",
+        "Home advantage: Mexico"
+      ]
     }
   },
   {
@@ -743,14 +910,21 @@
     },
     "notes": "FIFA World Cup, Group D",
     "team1_name": "United States",
+    "team1_flag": "🇺🇸",
     "team2_name": "Australia",
+    "team2_flag": "🇦🇺",
     "prediction": {
       "team1_win_prob": 66.4,
       "draw_prob": 19.6,
       "team2_win_prob": 14.0,
       "predicted_score": "2-0",
       "team1_xg": 2.1,
-      "team2_xg": 0.85
+      "team2_xg": 0.85,
+      "key_factors": [
+        "ELO advantage: United States (+202 pts)",
+        "Squad value edge: United States ($308M)",
+        "Home advantage: United States"
+      ]
     }
   },
   {
@@ -769,14 +943,20 @@
     },
     "notes": "FIFA World Cup, Group C",
     "team1_name": "Scotland",
+    "team1_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
     "team2_name": "Morocco",
+    "team2_flag": "🇲🇦",
     "prediction": {
       "team1_win_prob": 19.9,
       "draw_prob": 23.4,
       "team2_win_prob": 56.7,
       "predicted_score": "0-1",
       "team1_xg": 0.94,
-      "team2_xg": 1.76
+      "team2_xg": 1.76,
+      "key_factors": [
+        "ELO advantage: Morocco (+164 pts)",
+        "Squad value edge: Morocco ($277M)"
+      ]
     }
   },
   {
@@ -795,14 +975,20 @@
     },
     "notes": "FIFA World Cup, Group C",
     "team1_name": "Brazil",
+    "team1_flag": "🇧🇷",
     "team2_name": "Haiti",
+    "team2_flag": "🇭🇹",
     "prediction": {
       "team1_win_prob": 89.7,
       "draw_prob": 8.5,
       "team2_win_prob": 1.8,
       "predicted_score": "2-0",
       "team1_xg": 2.84,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: Brazil (+594 pts)",
+        "Squad value edge: Brazil ($872M)"
+      ]
     }
   },
   {
@@ -820,15 +1006,20 @@
       "team2": "1"
     },
     "notes": "FIFA World Cup, Group D",
-    "team1_name": "T\u00fcrkiye",
+    "team1_name": "Türkiye",
+    "team1_flag": "🇹🇷",
     "team2_name": "Paraguay",
+    "team2_flag": "🇵🇾",
     "prediction": {
       "team1_win_prob": 37.0,
       "draw_prob": 25.8,
       "team2_win_prob": 37.2,
       "predicted_score": "1-1",
       "team1_xg": 1.35,
-      "team2_xg": 1.35
+      "team2_xg": 1.35,
+      "key_factors": [
+        "Squad value edge: Türkiye ($320M)"
+      ]
     }
   },
   {
@@ -847,14 +1038,20 @@
     },
     "notes": "FIFA World Cup, Group F",
     "team1_name": "Netherlands",
+    "team1_flag": "🇳🇱",
     "team2_name": "Sweden",
+    "team2_flag": "🇸🇪",
     "prediction": {
       "team1_win_prob": 60.1,
       "draw_prob": 22.5,
       "team2_win_prob": 17.4,
       "predicted_score": "1-0",
       "team1_xg": 1.83,
-      "team2_xg": 0.87
+      "team2_xg": 0.87,
+      "key_factors": [
+        "ELO advantage: Netherlands (+192 pts)",
+        "Squad value edge: Netherlands ($345M)"
+      ]
     }
   },
   {
@@ -873,14 +1070,20 @@
     },
     "notes": "FIFA World Cup, Group E",
     "team1_name": "Germany",
+    "team1_flag": "🇩🇪",
     "team2_name": "Ivory Coast",
+    "team2_flag": "🇨🇮",
     "prediction": {
       "team1_win_prob": 66.9,
       "draw_prob": 20.4,
       "team2_win_prob": 12.7,
       "predicted_score": "1-0",
       "team1_xg": 1.98,
-      "team2_xg": 0.72
+      "team2_xg": 0.72,
+      "key_factors": [
+        "ELO advantage: Germany (+251 pts)",
+        "Squad value edge: Germany ($425M)"
+      ]
     }
   },
   {
@@ -899,14 +1102,20 @@
     },
     "notes": "FIFA World Cup, Group E",
     "team1_name": "Ecuador",
-    "team2_name": "Cura\u00e7ao",
+    "team1_flag": "🇪🇨",
+    "team2_name": "Curaçao",
+    "team2_flag": "🇨🇼",
     "prediction": {
       "team1_win_prob": 72.8,
       "draw_prob": 18.1,
       "team2_win_prob": 9.1,
       "predicted_score": "2-0",
       "team1_xg": 2.11,
-      "team2_xg": 0.59
+      "team2_xg": 0.59,
+      "key_factors": [
+        "ELO advantage: Ecuador (+304 pts)",
+        "Squad value edge: Ecuador ($364M)"
+      ]
     }
   },
   {
@@ -925,14 +1134,20 @@
     },
     "notes": "FIFA World Cup, Group F",
     "team1_name": "Tunisia",
+    "team1_flag": "🇹🇳",
     "team2_name": "Japan",
+    "team2_flag": "🇯🇵",
     "prediction": {
       "team1_win_prob": 16.8,
       "draw_prob": 22.2,
       "team2_win_prob": 61.0,
       "predicted_score": "0-1",
       "team1_xg": 0.85,
-      "team2_xg": 1.85
+      "team2_xg": 1.85,
+      "key_factors": [
+        "ELO advantage: Japan (+200 pts)",
+        "Squad value edge: Japan ($201M)"
+      ]
     }
   },
   {
@@ -951,14 +1166,20 @@
     },
     "notes": "FIFA World Cup, Group H",
     "team1_name": "Spain",
+    "team1_flag": "🇪🇸",
     "team2_name": "Saudi Arabia",
+    "team2_flag": "🇸🇦",
     "prediction": {
       "team1_win_prob": 87.5,
       "draw_prob": 10.3,
       "team2_win_prob": 2.2,
       "predicted_score": "2-0",
       "team1_xg": 2.59,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: Spain (+496 pts)",
+        "Squad value edge: Spain ($1179M)"
+      ]
     }
   },
   {
@@ -977,14 +1198,20 @@
     },
     "notes": "FIFA World Cup, Group G",
     "team1_name": "Belgium",
+    "team1_flag": "🇧🇪",
     "team2_name": "Iran",
+    "team2_flag": "🇮🇷",
     "prediction": {
       "team1_win_prob": 63.5,
       "draw_prob": 21.5,
       "team2_win_prob": 15.0,
       "predicted_score": "1-0",
       "team1_xg": 1.9,
-      "team2_xg": 0.8
+      "team2_xg": 0.8,
+      "key_factors": [
+        "ELO advantage: Belgium (+222 pts)",
+        "Squad value edge: Belgium ($515M)"
+      ]
     }
   },
   {
@@ -1003,14 +1230,20 @@
     },
     "notes": "FIFA World Cup, Group H",
     "team1_name": "Uruguay",
+    "team1_flag": "🇺🇾",
     "team2_name": "Cape Verde",
+    "team2_flag": "🇨🇻",
     "prediction": {
       "team1_win_prob": 73.2,
       "draw_prob": 17.9,
       "team2_win_prob": 8.9,
       "predicted_score": "2-0",
       "team1_xg": 2.12,
-      "team2_xg": 0.58
+      "team2_xg": 0.58,
+      "key_factors": [
+        "ELO advantage: Uruguay (+307 pts)",
+        "Squad value edge: Uruguay ($305M)"
+      ]
     }
   },
   {
@@ -1029,14 +1262,20 @@
     },
     "notes": "FIFA World Cup, Group G",
     "team1_name": "New Zealand",
+    "team1_flag": "🇳🇿",
     "team2_name": "Egypt",
+    "team2_flag": "🇪🇬",
     "prediction": {
       "team1_win_prob": 10.9,
       "draw_prob": 19.3,
       "team2_win_prob": 69.8,
       "predicted_score": "0-2",
       "team1_xg": 0.66,
-      "team2_xg": 2.04
+      "team2_xg": 2.04,
+      "key_factors": [
+        "ELO advantage: Egypt (+276 pts)",
+        "Squad value edge: Egypt ($82M)"
+      ]
     }
   },
   {
@@ -1055,14 +1294,20 @@
     },
     "notes": "FIFA World Cup, Group J",
     "team1_name": "Argentina",
+    "team1_flag": "🇦🇷",
     "team2_name": "Austria",
+    "team2_flag": "🇦🇹",
     "prediction": {
       "team1_win_prob": 77.4,
       "draw_prob": 16.1,
       "team2_win_prob": 6.6,
       "predicted_score": "2-0",
       "team1_xg": 2.22,
-      "team2_xg": 0.48
+      "team2_xg": 0.48,
+      "key_factors": [
+        "ELO advantage: Argentina (+348 pts)",
+        "Squad value edge: Argentina ($562M)"
+      ]
     }
   },
   {
@@ -1081,14 +1326,20 @@
     },
     "notes": "FIFA World Cup, Group I",
     "team1_name": "France",
+    "team1_flag": "🇫🇷",
     "team2_name": "Iraq",
+    "team2_flag": "🇮🇶",
     "prediction": {
       "team1_win_prob": 90.8,
       "draw_prob": 7.6,
       "team2_win_prob": 1.6,
       "predicted_score": "2-0",
       "team1_xg": 2.96,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: France (+646 pts)",
+        "Squad value edge: France ($1499M)"
+      ]
     }
   },
   {
@@ -1107,14 +1358,20 @@
     },
     "notes": "FIFA World Cup, Group I",
     "team1_name": "Norway",
+    "team1_flag": "🇳🇴",
     "team2_name": "Senegal",
+    "team2_flag": "🇸🇳",
     "prediction": {
       "team1_win_prob": 45.3,
       "draw_prob": 25.4,
       "team2_win_prob": 29.3,
       "predicted_score": "1-1",
       "team1_xg": 1.52,
-      "team2_xg": 1.18
+      "team2_xg": 1.18,
+      "key_factors": [
+        "ELO advantage: Norway (+70 pts)",
+        "Squad value edge: Norway ($112M)"
+      ]
     }
   },
   {
@@ -1133,14 +1390,20 @@
     },
     "notes": "FIFA World Cup, Group J",
     "team1_name": "Jordan",
+    "team1_flag": "🇯🇴",
     "team2_name": "Algeria",
+    "team2_flag": "🇩🇿",
     "prediction": {
       "team1_win_prob": 13.1,
       "draw_prob": 20.6,
       "team2_win_prob": 66.3,
       "predicted_score": "0-1",
       "team1_xg": 0.74,
-      "team2_xg": 1.96
+      "team2_xg": 1.96,
+      "key_factors": [
+        "ELO advantage: Algeria (+246 pts)",
+        "Squad value edge: Algeria ($232M)"
+      ]
     }
   },
   {
@@ -1159,14 +1422,20 @@
     },
     "notes": "FIFA World Cup, Group K",
     "team1_name": "Portugal",
+    "team1_flag": "🇵🇹",
     "team2_name": "Uzbekistan",
+    "team2_flag": "🇺🇿",
     "prediction": {
       "team1_win_prob": 88.8,
       "draw_prob": 9.2,
       "team2_win_prob": 2.0,
       "predicted_score": "2-0",
       "team1_xg": 2.73,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: Portugal (+551 pts)",
+        "Squad value edge: Portugal ($925M)"
+      ]
     }
   },
   {
@@ -1185,14 +1454,20 @@
     },
     "notes": "FIFA World Cup, Group L",
     "team1_name": "England",
+    "team1_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "team2_name": "Ghana",
+    "team2_flag": "🇬🇭",
     "prediction": {
       "team1_win_prob": 86.9,
       "draw_prob": 10.7,
       "team2_win_prob": 2.3,
       "predicted_score": "2-0",
       "team1_xg": 2.54,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: England (+476 pts)",
+        "Squad value edge: England ($1126M)"
+      ]
     }
   },
   {
@@ -1211,14 +1486,20 @@
     },
     "notes": "FIFA World Cup, Group L",
     "team1_name": "Panama",
+    "team1_flag": "🇵🇦",
     "team2_name": "Croatia",
+    "team2_flag": "🇭🇷",
     "prediction": {
       "team1_win_prob": 5.9,
       "draw_prob": 15.4,
       "team2_win_prob": 78.7,
       "predicted_score": "0-2",
       "team1_xg": 0.45,
-      "team2_xg": 2.25
+      "team2_xg": 2.25,
+      "key_factors": [
+        "ELO advantage: Croatia (+361 pts)",
+        "Squad value edge: Croatia ($353M)"
+      ]
     }
   },
   {
@@ -1237,14 +1518,20 @@
     },
     "notes": "FIFA World Cup, Group K",
     "team1_name": "Colombia",
+    "team1_flag": "🇨🇴",
     "team2_name": "Congo DR",
+    "team2_flag": "🇨🇩",
     "prediction": {
       "team1_win_prob": 74.8,
       "draw_prob": 17.2,
       "team2_win_prob": 8.0,
       "predicted_score": "2-0",
       "team1_xg": 2.16,
-      "team2_xg": 0.54
+      "team2_xg": 0.54,
+      "key_factors": [
+        "ELO advantage: Colombia (+323 pts)",
+        "Squad value edge: Colombia ($158M)"
+      ]
     }
   },
   {
@@ -1263,14 +1550,20 @@
     },
     "notes": "FIFA World Cup, Group B",
     "team1_name": "Bosnia-Herzegovina",
+    "team1_flag": "🇧🇦",
     "team2_name": "Qatar",
+    "team2_flag": "🇶🇦",
     "prediction": {
       "team1_win_prob": 62.3,
       "draw_prob": 21.9,
       "team2_win_prob": 15.8,
       "predicted_score": "1-0",
       "team1_xg": 1.88,
-      "team2_xg": 0.82
+      "team2_xg": 0.82,
+      "key_factors": [
+        "ELO advantage: Bosnia-Herzegovina (+211 pts)",
+        "Squad value edge: Bosnia-Herzegovina ($126M)"
+      ]
     }
   },
   {
@@ -1289,14 +1582,21 @@
     },
     "notes": "FIFA World Cup, Group B",
     "team1_name": "Switzerland",
+    "team1_flag": "🇨🇭",
     "team2_name": "Canada",
+    "team2_flag": "🇨🇦",
     "prediction": {
       "team1_win_prob": 52.2,
       "draw_prob": 23.2,
       "team2_win_prob": 24.6,
       "predicted_score": "1-1",
       "team1_xg": 1.79,
-      "team2_xg": 1.16
+      "team2_xg": 1.16,
+      "key_factors": [
+        "ELO advantage: Switzerland (+177 pts)",
+        "Squad value edge: Switzerland ($134M)",
+        "Home advantage: Canada"
+      ]
     }
   },
   {
@@ -1315,14 +1615,20 @@
     },
     "notes": "FIFA World Cup, Group C",
     "team1_name": "Morocco",
+    "team1_flag": "🇲🇦",
     "team2_name": "Haiti",
+    "team2_flag": "🇭🇹",
     "prediction": {
       "team1_win_prob": 79.7,
       "draw_prob": 14.9,
       "team2_win_prob": 5.4,
       "predicted_score": "2-0",
       "team1_xg": 2.28,
-      "team2_xg": 0.42
+      "team2_xg": 0.42,
+      "key_factors": [
+        "ELO advantage: Morocco (+371 pts)",
+        "Squad value edge: Morocco ($392M)"
+      ]
     }
   },
   {
@@ -1341,14 +1647,20 @@
     },
     "notes": "FIFA World Cup, Group C",
     "team1_name": "Scotland",
+    "team1_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
     "team2_name": "Brazil",
+    "team2_flag": "🇧🇷",
     "prediction": {
       "team1_win_prob": 4.6,
       "draw_prob": 14.1,
       "team2_win_prob": 81.3,
       "predicted_score": "0-2",
       "team1_xg": 0.38,
-      "team2_xg": 2.32
+      "team2_xg": 2.32,
+      "key_factors": [
+        "ELO advantage: Brazil (+387 pts)",
+        "Squad value edge: Brazil ($758M)"
+      ]
     }
   },
   {
@@ -1367,14 +1679,20 @@
     },
     "notes": "FIFA World Cup, Group A",
     "team1_name": "Czechia",
+    "team1_flag": "🇨🇿",
     "team2_name": "Mexico",
+    "team2_flag": "🇲🇽",
     "prediction": {
       "team1_win_prob": 15.3,
       "draw_prob": 20.3,
       "team2_win_prob": 64.4,
       "predicted_score": "0-2",
       "team1_xg": 0.89,
-      "team2_xg": 2.06
+      "team2_xg": 2.06,
+      "key_factors": [
+        "ELO advantage: Mexico (+184 pts)",
+        "Home advantage: Mexico"
+      ]
     }
   },
   {
@@ -1393,14 +1711,20 @@
     },
     "notes": "FIFA World Cup, Group A",
     "team1_name": "South Africa",
+    "team1_flag": "🇿🇦",
     "team2_name": "South Korea",
+    "team2_flag": "🇰🇷",
     "prediction": {
       "team1_win_prob": 18.1,
       "draw_prob": 22.8,
       "team2_win_prob": 59.2,
       "predicted_score": "0-1",
       "team1_xg": 0.89,
-      "team2_xg": 1.81
+      "team2_xg": 1.81,
+      "key_factors": [
+        "ELO advantage: South Korea (+185 pts)",
+        "Squad value edge: South Korea ($90M)"
+      ]
     }
   },
   {
@@ -1418,15 +1742,21 @@
       "team2": "2"
     },
     "notes": "FIFA World Cup, Group E",
-    "team1_name": "Cura\u00e7ao",
+    "team1_name": "Curaçao",
+    "team1_flag": "🇨🇼",
     "team2_name": "Ivory Coast",
+    "team2_flag": "🇨🇮",
     "prediction": {
       "team1_win_prob": 10.8,
       "draw_prob": 19.2,
       "team2_win_prob": 70.1,
       "predicted_score": "0-2",
       "team1_xg": 0.65,
-      "team2_xg": 2.05
+      "team2_xg": 2.05,
+      "key_factors": [
+        "ELO advantage: Ivory Coast (+279 pts)",
+        "Squad value edge: Ivory Coast ($517M)"
+      ]
     }
   },
   {
@@ -1445,14 +1775,20 @@
     },
     "notes": "FIFA World Cup, Group E",
     "team1_name": "Ecuador",
+    "team1_flag": "🇪🇨",
     "team2_name": "Germany",
+    "team2_flag": "🇩🇪",
     "prediction": {
       "team1_win_prob": 14.7,
       "draw_prob": 21.3,
       "team2_win_prob": 64.0,
       "predicted_score": "0-1",
       "team1_xg": 0.79,
-      "team2_xg": 1.91
+      "team2_xg": 1.91,
+      "key_factors": [
+        "ELO advantage: Germany (+226 pts)",
+        "Squad value edge: Germany ($578M)"
+      ]
     }
   },
   {
@@ -1471,14 +1807,20 @@
     },
     "notes": "FIFA World Cup, Group F",
     "team1_name": "Japan",
+    "team1_flag": "🇯🇵",
     "team2_name": "Sweden",
+    "team2_flag": "🇸🇪",
     "prediction": {
       "team1_win_prob": 40.7,
       "draw_prob": 25.7,
       "team2_win_prob": 33.6,
       "predicted_score": "1-1",
       "team1_xg": 1.43,
-      "team2_xg": 1.27
+      "team2_xg": 1.27,
+      "key_factors": [
+        "ELO advantage: Japan (+31 pts)",
+        "Squad value edge: Sweden ($138M)"
+      ]
     }
   },
   {
@@ -1497,14 +1839,20 @@
     },
     "notes": "FIFA World Cup, Group F",
     "team1_name": "Tunisia",
+    "team1_flag": "🇹🇳",
     "team2_name": "Netherlands",
+    "team2_flag": "🇳🇱",
     "prediction": {
       "team1_win_prob": 5.8,
       "draw_prob": 15.4,
       "team2_win_prob": 78.8,
       "predicted_score": "0-2",
       "team1_xg": 0.45,
-      "team2_xg": 2.25
+      "team2_xg": 2.25,
+      "key_factors": [
+        "ELO advantage: Netherlands (+362 pts)",
+        "Squad value edge: Netherlands ($684M)"
+      ]
     }
   },
   {
@@ -1523,14 +1871,19 @@
     },
     "notes": "FIFA World Cup, Group D",
     "team1_name": "Paraguay",
+    "team1_flag": "🇵🇾",
     "team2_name": "Australia",
+    "team2_flag": "🇦🇺",
     "prediction": {
       "team1_win_prob": 41.8,
       "draw_prob": 25.7,
       "team2_win_prob": 32.6,
       "predicted_score": "1-1",
       "team1_xg": 1.45,
-      "team2_xg": 1.25
+      "team2_xg": 1.25,
+      "key_factors": [
+        "ELO advantage: Paraguay (+40 pts)"
+      ]
     }
   },
   {
@@ -1548,15 +1901,22 @@
       "team2": "2"
     },
     "notes": "FIFA World Cup, Group D",
-    "team1_name": "T\u00fcrkiye",
+    "team1_name": "Türkiye",
+    "team1_flag": "🇹🇷",
     "team2_name": "United States",
+    "team2_flag": "🇺🇸",
     "prediction": {
       "team1_win_prob": 17.0,
       "draw_prob": 20.9,
       "team2_win_prob": 62.1,
       "predicted_score": "0-2",
       "team1_xg": 0.94,
-      "team2_xg": 2.01
+      "team2_xg": 2.01,
+      "key_factors": [
+        "ELO advantage: United States (+163 pts)",
+        "Squad value edge: Türkiye ($88M)",
+        "Home advantage: United States"
+      ]
     }
   },
   {
@@ -1575,14 +1935,20 @@
     },
     "notes": "FIFA World Cup, Group I",
     "team1_name": "Norway",
+    "team1_flag": "🇳🇴",
     "team2_name": "France",
+    "team2_flag": "🇫🇷",
     "prediction": {
       "team1_win_prob": 9.2,
       "draw_prob": 18.2,
       "team2_win_prob": 72.6,
       "predicted_score": "0-2",
       "team1_xg": 0.59,
-      "team2_xg": 2.11
+      "team2_xg": 2.11,
+      "key_factors": [
+        "ELO advantage: France (+302 pts)",
+        "Squad value edge: France ($930M)"
+      ]
     }
   },
   {
@@ -1601,14 +1967,20 @@
     },
     "notes": "FIFA World Cup, Group I",
     "team1_name": "Senegal",
+    "team1_flag": "🇸🇳",
     "team2_name": "Iraq",
+    "team2_flag": "🇮🇶",
     "prediction": {
       "team1_win_prob": 69.5,
       "draw_prob": 19.4,
       "team2_win_prob": 11.1,
       "predicted_score": "2-0",
       "team1_xg": 2.03,
-      "team2_xg": 0.67
+      "team2_xg": 0.67,
+      "key_factors": [
+        "ELO advantage: Senegal (+274 pts)",
+        "Squad value edge: Senegal ($457M)"
+      ]
     }
   },
   {
@@ -1627,14 +1999,19 @@
     },
     "notes": "FIFA World Cup, Group H",
     "team1_name": "Cape Verde",
+    "team1_flag": "🇨🇻",
     "team2_name": "Saudi Arabia",
+    "team2_flag": "🇸🇦",
     "prediction": {
       "team1_win_prob": 30.7,
       "draw_prob": 25.5,
       "team2_win_prob": 43.8,
       "predicted_score": "1-1",
       "team1_xg": 1.21,
-      "team2_xg": 1.49
+      "team2_xg": 1.49,
+      "key_factors": [
+        "ELO advantage: Saudi Arabia (+57 pts)"
+      ]
     }
   },
   {
@@ -1653,14 +2030,20 @@
     },
     "notes": "FIFA World Cup, Group H",
     "team1_name": "Uruguay",
+    "team1_flag": "🇺🇾",
     "team2_name": "Spain",
+    "team2_flag": "🇪🇸",
     "prediction": {
       "team1_win_prob": 13.1,
       "draw_prob": 20.6,
       "team2_win_prob": 66.3,
       "predicted_score": "0-1",
       "team1_xg": 0.74,
-      "team2_xg": 1.97
+      "team2_xg": 1.97,
+      "key_factors": [
+        "ELO advantage: Spain (+246 pts)",
+        "Squad value edge: Spain ($861M)"
+      ]
     }
   },
   {
@@ -1679,14 +2062,20 @@
     },
     "notes": "FIFA World Cup, Group G",
     "team1_name": "Egypt",
+    "team1_flag": "🇪🇬",
     "team2_name": "Iran",
+    "team2_flag": "🇮🇷",
     "prediction": {
       "team1_win_prob": 31.6,
       "draw_prob": 25.6,
       "team2_win_prob": 42.8,
       "predicted_score": "1-1",
       "team1_xg": 1.23,
-      "team2_xg": 1.47
+      "team2_xg": 1.47,
+      "key_factors": [
+        "ELO advantage: Iran (+49 pts)",
+        "Squad value edge: Egypt ($84M)"
+      ]
     }
   },
   {
@@ -1705,14 +2094,20 @@
     },
     "notes": "FIFA World Cup, Group G",
     "team1_name": "New Zealand",
+    "team1_flag": "🇳🇿",
     "team2_name": "Belgium",
+    "team2_flag": "🇧🇪",
     "prediction": {
       "team1_win_prob": 2.0,
       "draw_prob": 9.3,
       "team2_win_prob": 88.7,
       "predicted_score": "0-2",
       "team1_xg": 0.25,
-      "team2_xg": 2.72
+      "team2_xg": 2.72,
+      "key_factors": [
+        "ELO advantage: Belgium (+547 pts)",
+        "Squad value edge: Belgium ($513M)"
+      ]
     }
   },
   {
@@ -1731,14 +2126,20 @@
     },
     "notes": "FIFA World Cup, Group L",
     "team1_name": "Croatia",
+    "team1_flag": "🇭🇷",
     "team2_name": "Ghana",
+    "team2_flag": "🇬🇭",
     "prediction": {
       "team1_win_prob": 73.9,
       "draw_prob": 17.6,
       "team2_win_prob": 8.5,
       "predicted_score": "2-0",
       "team1_xg": 2.14,
-      "team2_xg": 0.56
+      "team2_xg": 0.56,
+      "key_factors": [
+        "ELO advantage: Croatia (+314 pts)",
+        "Squad value edge: Croatia ($153M)"
+      ]
     }
   },
   {
@@ -1757,14 +2158,20 @@
     },
     "notes": "FIFA World Cup, Group L",
     "team1_name": "Panama",
+    "team1_flag": "🇵🇦",
     "team2_name": "England",
+    "team2_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "prediction": {
       "team1_win_prob": 2.1,
       "draw_prob": 9.8,
       "team2_win_prob": 88.1,
       "predicted_score": "0-2",
       "team1_xg": 0.25,
-      "team2_xg": 2.66
+      "team2_xg": 2.66,
+      "key_factors": [
+        "ELO advantage: England (+522 pts)",
+        "Squad value edge: England ($1325M)"
+      ]
     }
   },
   {
@@ -1783,14 +2190,20 @@
     },
     "notes": "FIFA World Cup, Group K",
     "team1_name": "Colombia",
+    "team1_flag": "🇨🇴",
     "team2_name": "Portugal",
+    "team2_flag": "🇵🇹",
     "prediction": {
       "team1_win_prob": 26.4,
       "draw_prob": 24.9,
       "team2_win_prob": 48.7,
       "predicted_score": "1-1",
       "team1_xg": 1.11,
-      "team2_xg": 1.59
+      "team2_xg": 1.59,
+      "key_factors": [
+        "ELO advantage: Portugal (+98 pts)",
+        "Squad value edge: Portugal ($708M)"
+      ]
     }
   },
   {
@@ -1809,14 +2222,19 @@
     },
     "notes": "FIFA World Cup, Group K",
     "team1_name": "Congo DR",
+    "team1_flag": "🇨🇩",
     "team2_name": "Uzbekistan",
+    "team2_flag": "🇺🇿",
     "prediction": {
       "team1_win_prob": 52.7,
       "draw_prob": 24.2,
       "team2_win_prob": 23.1,
       "predicted_score": "1-1",
       "team1_xg": 1.68,
-      "team2_xg": 1.02
+      "team2_xg": 1.02,
+      "key_factors": [
+        "ELO advantage: Congo DR (+131 pts)"
+      ]
     }
   },
   {
@@ -1835,14 +2253,19 @@
     },
     "notes": "FIFA World Cup, Group J",
     "team1_name": "Algeria",
+    "team1_flag": "🇩🇿",
     "team2_name": "Austria",
+    "team2_flag": "🇦🇹",
     "prediction": {
       "team1_win_prob": 23.6,
       "draw_prob": 24.4,
       "team2_win_prob": 52.0,
       "predicted_score": "1-1",
       "team1_xg": 1.04,
-      "team2_xg": 1.66
+      "team2_xg": 1.66,
+      "key_factors": [
+        "ELO advantage: Austria (+126 pts)"
+      ]
     }
   },
   {
@@ -1861,14 +2284,20 @@
     },
     "notes": "FIFA World Cup, Group J",
     "team1_name": "Jordan",
+    "team1_flag": "🇯🇴",
     "team2_name": "Argentina",
+    "team2_flag": "🇦🇷",
     "prediction": {
       "team1_win_prob": 1.4,
       "draw_prob": 6.6,
       "team2_win_prob": 92.1,
       "predicted_score": "0-3",
       "team1_xg": 0.25,
-      "team2_xg": 3.15
+      "team2_xg": 3.15,
+      "key_factors": [
+        "ELO advantage: Argentina (+719 pts)",
+        "Squad value edge: Argentina ($787M)"
+      ]
     }
   },
   {
@@ -1887,14 +2316,26 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "South Africa",
+    "team1_flag": "🇿🇦",
     "team2_name": "Canada",
+    "team2_flag": "🇨🇦",
     "prediction": {
       "team1_win_prob": 21.8,
       "draw_prob": 22.5,
       "team2_win_prob": 55.7,
       "predicted_score": "1-1",
       "team1_xg": 1.08,
-      "team2_xg": 1.87
+      "team2_xg": 1.87,
+      "key_factors": [
+        "ELO advantage: Canada (+107 pts)",
+        "Squad value edge: Canada ($149M)",
+        "Home advantage: Canada"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 21.0,
+      "team2_advance_prob": 79.0,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -1913,14 +2354,25 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Brazil",
+    "team1_flag": "🇧🇷",
     "team2_name": "Japan",
+    "team2_flag": "🇯🇵",
     "prediction": {
       "team1_win_prob": 68.3,
       "draw_prob": 19.9,
       "team2_win_prob": 11.9,
       "predicted_score": "2-0",
       "team1_xg": 2.01,
-      "team2_xg": 0.69
+      "team2_xg": 0.69,
+      "key_factors": [
+        "ELO advantage: Brazil (+263 pts)",
+        "Squad value edge: Brazil ($657M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 87.4,
+      "team2_advance_prob": 12.6,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -1939,14 +2391,25 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Germany",
+    "team1_flag": "🇩🇪",
     "team2_name": "Paraguay",
+    "team2_flag": "🇵🇾",
     "prediction": {
       "team1_win_prob": 63.7,
       "draw_prob": 21.4,
       "team2_win_prob": 14.9,
       "predicted_score": "1-0",
       "team1_xg": 1.91,
-      "team2_xg": 0.79
+      "team2_xg": 0.79,
+      "key_factors": [
+        "ELO advantage: Germany (+223 pts)",
+        "Squad value edge: Germany ($793M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 76.5,
+      "team2_advance_prob": 23.5,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -1965,14 +2428,25 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Netherlands",
+    "team1_flag": "🇳🇱",
     "team2_name": "Morocco",
+    "team2_flag": "🇲🇦",
     "prediction": {
       "team1_win_prob": 51.7,
       "draw_prob": 24.4,
       "team2_win_prob": 23.9,
       "predicted_score": "1-1",
       "team1_xg": 1.66,
-      "team2_xg": 1.04
+      "team2_xg": 1.04,
+      "key_factors": [
+        "ELO advantage: Netherlands (+122 pts)",
+        "Squad value edge: Netherlands ($307M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 79.0,
+      "team2_advance_prob": 21.0,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -1991,14 +2465,24 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Ivory Coast",
+    "team1_flag": "🇨🇮",
     "team2_name": "Norway",
+    "team2_flag": "🇳🇴",
     "prediction": {
       "team1_win_prob": 26.2,
       "draw_prob": 24.9,
       "team2_win_prob": 48.9,
       "predicted_score": "1-1",
       "team1_xg": 1.1,
-      "team2_xg": 1.6
+      "team2_xg": 1.6,
+      "key_factors": [
+        "ELO advantage: Norway (+100 pts)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 25.1,
+      "team2_advance_prob": 74.8,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2017,14 +2501,25 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "France",
+    "team1_flag": "🇫🇷",
     "team2_name": "Sweden",
+    "team2_flag": "🇸🇪",
     "prediction": {
       "team1_win_prob": 74.1,
       "draw_prob": 17.6,
       "team2_win_prob": 8.4,
       "predicted_score": "2-0",
       "team1_xg": 2.14,
-      "team2_xg": 0.56
+      "team2_xg": 0.56,
+      "key_factors": [
+        "ELO advantage: France (+316 pts)",
+        "Squad value edge: France ($1111M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 86.2,
+      "team2_advance_prob": 13.8,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2043,14 +2538,26 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Mexico",
+    "team1_flag": "🇲🇽",
     "team2_name": "Ecuador",
+    "team2_flag": "🇪🇨",
     "prediction": {
       "team1_win_prob": 62.6,
       "draw_prob": 20.8,
       "team2_win_prob": 16.6,
       "predicted_score": "2-0",
       "team1_xg": 2.02,
-      "team2_xg": 0.93
+      "team2_xg": 0.93,
+      "key_factors": [
+        "ELO advantage: Mexico (+168 pts)",
+        "Squad value edge: Ecuador ($177M)",
+        "Home advantage: Mexico"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 76.3,
+      "team2_advance_prob": 23.7,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2069,14 +2576,25 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "England",
+    "team1_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "team2_name": "Congo DR",
+    "team2_flag": "🇨🇩",
     "prediction": {
       "team1_win_prob": 86.7,
       "draw_prob": 10.9,
       "team2_win_prob": 2.4,
       "predicted_score": "2-0",
       "team1_xg": 2.52,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: England (+467 pts)",
+        "Squad value edge: England ($1216M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 87.5,
+      "team2_advance_prob": 12.5,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2095,14 +2613,24 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Belgium",
+    "team1_flag": "🇧🇪",
     "team2_name": "Senegal",
+    "team2_flag": "🇸🇳",
     "prediction": {
       "team1_win_prob": 63.2,
       "draw_prob": 21.6,
       "team2_win_prob": 15.2,
       "predicted_score": "1-0",
       "team1_xg": 1.9,
-      "team2_xg": 0.8
+      "team2_xg": 0.8,
+      "key_factors": [
+        "ELO advantage: Belgium (+219 pts)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 80.0,
+      "team2_advance_prob": 20.0,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2121,14 +2649,26 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "United States",
+    "team1_flag": "🇺🇸",
     "team2_name": "Bosnia-Herzegovina",
+    "team2_flag": "🇧🇦",
     "prediction": {
       "team1_win_prob": 64.5,
       "draw_prob": 20.2,
       "team2_win_prob": 15.3,
       "predicted_score": "2-0",
       "team1_xg": 2.06,
-      "team2_xg": 0.89
+      "team2_xg": 0.89,
+      "key_factors": [
+        "ELO advantage: United States (+185 pts)",
+        "Squad value edge: United States ($239M)",
+        "Home advantage: United States"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 85.7,
+      "team2_advance_prob": 14.3,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2147,14 +2687,25 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Spain",
+    "team1_flag": "🇪🇸",
     "team2_name": "Austria",
+    "team2_flag": "🇦🇹",
     "prediction": {
       "team1_win_prob": 72.0,
       "draw_prob": 18.4,
       "team2_win_prob": 9.6,
       "predicted_score": "2-0",
       "team1_xg": 2.09,
-      "team2_xg": 0.61
+      "team2_xg": 0.61,
+      "key_factors": [
+        "ELO advantage: Spain (+297 pts)",
+        "Squad value edge: Spain ($975M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 82.9,
+      "team2_advance_prob": 17.1,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2173,14 +2724,25 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Portugal",
+    "team1_flag": "🇵🇹",
     "team2_name": "Croatia",
+    "team2_flag": "🇭🇷",
     "prediction": {
       "team1_win_prob": 50.7,
       "draw_prob": 24.6,
       "team2_win_prob": 24.7,
       "predicted_score": "1-1",
       "team1_xg": 1.64,
-      "team2_xg": 1.06
+      "team2_xg": 1.06,
+      "key_factors": [
+        "ELO advantage: Portugal (+115 pts)",
+        "Squad value edge: Portugal ($623M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 77.3,
+      "team2_advance_prob": 22.7,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2199,14 +2761,25 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Switzerland",
+    "team1_flag": "🇨🇭",
     "team2_name": "Algeria",
+    "team2_flag": "🇩🇿",
     "prediction": {
       "team1_win_prob": 60.9,
       "draw_prob": 22.3,
       "team2_win_prob": 16.9,
       "predicted_score": "1-0",
       "team1_xg": 1.85,
-      "team2_xg": 0.85
+      "team2_xg": 0.85,
+      "key_factors": [
+        "ELO advantage: Switzerland (+199 pts)",
+        "Squad value edge: Switzerland ($81M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 81.8,
+      "team2_advance_prob": 18.2,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2225,14 +2798,22 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Australia",
+    "team1_flag": "🇦🇺",
     "team2_name": "Egypt",
+    "team2_flag": "🇪🇬",
     "prediction": {
       "team1_win_prob": 38.1,
       "draw_prob": 25.8,
       "team2_win_prob": 36.1,
       "predicted_score": "1-1",
       "team1_xg": 1.37,
-      "team2_xg": 1.33
+      "team2_xg": 1.33,
+      "key_factors": []
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 42.5,
+      "team2_advance_prob": 57.5,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2251,14 +2832,25 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Argentina",
+    "team1_flag": "🇦🇷",
     "team2_name": "Cape Verde",
+    "team2_flag": "🇨🇻",
     "prediction": {
       "team1_win_prob": 90.0,
       "draw_prob": 8.3,
       "team2_win_prob": 1.8,
       "predicted_score": "2-0",
       "team1_xg": 2.86,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: Argentina (+604 pts)",
+        "Squad value edge: Argentina ($753M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 89.2,
+      "team2_advance_prob": 10.8,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2277,14 +2869,24 @@
     },
     "notes": "FIFA World Cup, Round of 32",
     "team1_name": "Colombia",
+    "team1_flag": "🇨🇴",
     "team2_name": "Ghana",
+    "team2_flag": "🇬🇭",
     "prediction": {
       "team1_win_prob": 75.7,
       "draw_prob": 16.8,
       "team2_win_prob": 7.5,
       "predicted_score": "2-0",
       "team1_xg": 2.18,
-      "team2_xg": 0.52
+      "team2_xg": 0.52,
+      "key_factors": [
+        "ELO advantage: Colombia (+331 pts)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 90.0,
+      "team2_advance_prob": 10.1,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2300,14 +2902,26 @@
     "score": null,
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Canada",
+    "team1_flag": "🇨🇦",
     "team2_name": "Morocco",
+    "team2_flag": "🇲🇦",
     "prediction": {
       "team1_win_prob": 26.2,
       "draw_prob": 23.5,
       "team2_win_prob": 50.3,
       "predicted_score": "1-1",
       "team1_xg": 1.2,
-      "team2_xg": 1.75
+      "team2_xg": 1.75,
+      "key_factors": [
+        "ELO advantage: Morocco (+160 pts)",
+        "Squad value edge: Morocco ($249M)",
+        "Home advantage: Canada"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 15.5,
+      "team2_advance_prob": 84.5,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2323,14 +2937,25 @@
     "score": null,
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Paraguay",
+    "team1_flag": "🇵🇾",
     "team2_name": "France",
+    "team2_flag": "🇫🇷",
     "prediction": {
       "team1_win_prob": 5.2,
       "draw_prob": 14.8,
       "team2_win_prob": 80.0,
       "predicted_score": "0-2",
       "team1_xg": 0.41,
-      "team2_xg": 2.29
+      "team2_xg": 2.29,
+      "key_factors": [
+        "ELO advantage: France (+374 pts)",
+        "Squad value edge: France ($1366M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 12.9,
+      "team2_advance_prob": 87.1,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2342,21 +2967,29 @@
     "venue": "MetLife Stadium",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "completed",
-    "score": {
-      "team1": "1",
-      "team2": "2"
-    },
-    "notes": "FIFA World Cup, Round of 16 \u2014 Norway advances",
+    "status": "scheduled",
+    "score": null,
+    "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Brazil",
+    "team1_flag": "🇧🇷",
     "team2_name": "Norway",
+    "team2_flag": "🇳🇴",
     "prediction": {
       "team1_win_prob": 70.2,
       "draw_prob": 19.1,
       "team2_win_prob": 10.7,
       "predicted_score": "2-0",
       "team1_xg": 2.05,
-      "team2_xg": 0.65
+      "team2_xg": 0.65,
+      "key_factors": [
+        "ELO advantage: Brazil (+280 pts)",
+        "Squad value edge: Brazil ($338M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 88.9,
+      "team2_advance_prob": 11.1,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2372,14 +3005,26 @@
     "score": null,
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Mexico",
+    "team1_flag": "🇲🇽",
     "team2_name": "England",
+    "team2_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "prediction": {
       "team1_win_prob": 25.6,
       "draw_prob": 23.4,
       "team2_win_prob": 51.0,
       "predicted_score": "1-1",
       "team1_xg": 1.18,
-      "team2_xg": 1.77
+      "team2_xg": 1.77,
+      "key_factors": [
+        "ELO advantage: England (+166 pts)",
+        "Squad value edge: England ($1168M)",
+        "Home advantage: Mexico"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 18.6,
+      "team2_advance_prob": 81.4,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2395,14 +3040,25 @@
     "score": null,
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Portugal",
+    "team1_flag": "🇵🇹",
     "team2_name": "Spain",
+    "team2_flag": "🇪🇸",
     "prediction": {
       "team1_win_prob": 27.7,
       "draw_prob": 25.2,
       "team2_win_prob": 47.1,
       "predicted_score": "1-1",
       "team1_xg": 1.14,
-      "team2_xg": 1.56
+      "team2_xg": 1.56,
+      "key_factors": [
+        "ELO advantage: Spain (+85 pts)",
+        "Squad value edge: Spain ($210M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 24.2,
+      "team2_advance_prob": 75.8,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2418,14 +3074,26 @@
     "score": null,
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "United States",
+    "team1_flag": "🇺🇸",
     "team2_name": "Belgium",
+    "team2_flag": "🇧🇪",
     "prediction": {
       "team1_win_prob": 36.6,
       "draw_prob": 24.5,
       "team2_win_prob": 38.9,
       "predicted_score": "1-1",
       "team1_xg": 1.45,
-      "team2_xg": 1.5
+      "team2_xg": 1.5,
+      "key_factors": [
+        "ELO advantage: Belgium (+60 pts)",
+        "Squad value edge: Belgium ($162M)",
+        "Home advantage: United States"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 26.5,
+      "team2_advance_prob": 73.5,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2441,14 +3109,25 @@
     "score": null,
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Argentina",
+    "team1_flag": "🇦🇷",
     "team2_name": "Egypt",
+    "team2_flag": "🇪🇬",
     "prediction": {
       "team1_win_prob": 86.7,
       "draw_prob": 10.9,
       "team2_win_prob": 2.4,
       "predicted_score": "2-0",
       "team1_xg": 2.52,
-      "team2_xg": 0.25
+      "team2_xg": 0.25,
+      "key_factors": [
+        "ELO advantage: Argentina (+468 pts)",
+        "Squad value edge: Argentina ($691M)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 88.5,
+      "team2_advance_prob": 11.5,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {
@@ -2464,14 +3143,24 @@
     "score": null,
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Switzerland",
+    "team1_flag": "🇨🇭",
     "team2_name": "Colombia",
+    "team2_flag": "🇨🇴",
     "prediction": {
       "team1_win_prob": 32.5,
       "draw_prob": 25.7,
       "team2_win_prob": 41.9,
       "predicted_score": "1-1",
       "team1_xg": 1.25,
-      "team2_xg": 1.45
+      "team2_xg": 1.45,
+      "key_factors": [
+        "ELO advantage: Colombia (+41 pts)"
+      ]
+    },
+    "xgb_prediction": {
+      "team1_advance_prob": 48.0,
+      "team2_advance_prob": 52.0,
+      "model": "XGBoost (symmetric dual-prediction)"
     }
   },
   {

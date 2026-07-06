@@ -495,7 +495,7 @@ nav .nav-links button.active {
 
 <script>
 // ===================== DATA STORE =====================
-const API = 'http://localhost:8000';
+const API = window.location.origin;
 const FETCH_TIMEOUT = 5000; // 5s timeout — fail fast, don't hang
 let store = { teams: null, matches: null, groups: null };
 let currentPage = 'teams';

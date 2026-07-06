@@ -13,15 +13,23 @@ from fastapi.staticfiles import StaticFiles
 from performance import calculate_performance_rating
 from predictor import calculate_match_probabilities, get_prediction_factors, simulate_tournament
 from models.xgboost_predictor import KnockoutPredictor
+from models.logistic_predictor import LogisticPredictor
 
-# Init XGBoost predictor (lazy load)
+# Init predictors (lazy load)
 _xgb_predictor = None
+_logistic_predictor = None
 
 def get_xgb_predictor():
     global _xgb_predictor
     if _xgb_predictor is None:
         _xgb_predictor = KnockoutPredictor()
     return _xgb_predictor
+
+def get_logistic_predictor():
+    global _logistic_predictor
+    if _logistic_predictor is None:
+        _logistic_predictor = LogisticPredictor()
+    return _logistic_predictor
 
 DATA_DIR = Path(__file__).parent / "data"
 
@@ -284,6 +292,86 @@ def predict_match_v2(team1_id: int, team2_id: int):
     }
 
 
+@app.get("/api/predict/v3")
+def predict_match_v3(team1_id: int, team2_id: int):
+    """Logistic Regression prediction: P(team advances) + feature contributions.
+    
+    Replaces XGBoost with L2-regularized logistic regression.
+    No overfitting, naturally calibrated probabilities, interpretable.
+    """
+    teams = load_teams_enriched()
+    t1 = next((t for t in teams if t["id"] == team1_id), None)
+    t2 = next((t for t in teams if t["id"] == team2_id), None)
+    if not t1 or not t2:
+        raise HTTPException(status_code=404, detail="Team not found")
+
+    matches = load_matches_raw()
+    from collections import defaultdict
+    from feature_engineering import compute_match_features
+
+    t1_hist, t2_hist = [], []
+    for m in sorted(
+        [m for m in matches if m.get("score") and m.get("status", "").startswith("completed")],
+        key=lambda x: x["date"]
+    ):
+        if m.get("team1_id") == team1_id or m.get("team2_id") == team1_id:
+            role = "home" if m["team1_id"] == team1_id else "away"
+            t1_hist.append({
+                "score": m["score"], "stage": m.get("stage", "group"),
+                "date": m["date"], "team_role": role,
+                "team_elo": t1["elo_rating"], "opponent_elo": t2["elo_rating"],
+                "status": m["status"],
+                "clean_sheet": int(m["score"]["team2" if role == "home" else "team1"]) == 0,
+                "comeback": False, "advanced": False,
+            })
+        if m.get("team1_id") == team2_id or m.get("team2_id") == team2_id:
+            role = "home" if m["team1_id"] == team2_id else "away"
+            t2_hist.append({
+                "score": m["score"], "stage": m.get("stage", "group"),
+                "date": m["date"], "team_role": role,
+                "team_elo": t2["elo_rating"], "opponent_elo": t1["elo_rating"],
+                "status": m["status"],
+                "clean_sheet": int(m["score"]["team2" if role == "home" else "team1"]) == 0,
+                "comeback": False, "advanced": False,
+            })
+
+    features_fwd = compute_match_features(
+        team1_id, team2_id, t1, t2, t1_hist, t2_hist, "round_of_16", "2026-07-04")
+    features_rev = compute_match_features(
+        team2_id, team1_id, t2, t1, t2_hist, t1_hist, "round_of_16", "2026-07-04")
+
+    try:
+        lr = get_logistic_predictor()
+        prob_fwd = lr.predict(features_fwd)
+        prob_rev = lr.predict(features_rev)
+        prob = round((prob_fwd + (1.0 - prob_rev)) / 2.0, 4)
+        explanation = lr.explain(features_fwd)
+    except Exception as e:
+        prob = None
+        explanation = {"error": str(e)}
+
+    poisson = calculate_match_probabilities(
+        t1["elo_rating"], t2["elo_rating"],
+        t1.get("is_host", False), t2.get("is_host", False))
+
+    return {
+        "team1": {"name": t1["name"], "flag": t1["flag_emoji"], "elo": t1["elo_rating"], "fifa_rank": t1.get("fifa_rank")},
+        "team2": {"name": t2["name"], "flag": t2["flag_emoji"], "elo": t2["elo_rating"], "fifa_rank": t2.get("fifa_rank")},
+        "v3_prediction": {
+            "team1_advance_prob": prob,
+            "model": "Logistic Regression (L2, C=0.1, 38 features)",
+            "features_used": len(features_fwd),
+        },
+        "v1_baseline": {
+            "team1_win_prob": poisson["team1_win_prob"],
+            "draw_prob": poisson["draw_prob"],
+            "team2_win_prob": poisson["team2_win_prob"],
+            "model": "ELO + Poisson",
+        },
+        "explanation": explanation,
+    }
+
+
 @app.get("/api/model-info")
 def model_info():
     try:
@@ -434,6 +522,134 @@ def bracket_v2():
 
     return {
         "model": "XGBoost (dual-prediction symmetrized)",
+        "champion": team_info(champion),
+        "rounds": rounds,
+    }
+
+
+@app.get("/api/bracket/v3")
+def bracket_v3():
+    """Simulate knockout bracket using Logistic Regression dual-prediction.
+    
+    Same logic as bracket/v2 but uses L2-regularized logistic regression
+    instead of XGBoost. More honest probabilities, less overfitting.
+    """
+    from feature_engineering import compute_match_features
+    from collections import defaultdict
+
+    teams_raw = load_teams_raw()
+    teams_lookup = {t["id"]: t for t in teams_raw}
+    matches_enriched = load_matches_enriched()
+    matches_raw = load_matches_raw()
+
+    team_history = defaultdict(list)
+    completed = sorted(
+        [m for m in matches_raw if m.get("score") and m.get("status", "").startswith("completed")],
+        key=lambda m: m["date"]
+    )
+    for m in completed:
+        t1_id = m.get("team1_id"); t2_id = m.get("team2_id")
+        if not t1_id or not t2_id: continue
+        t1 = teams_lookup.get(t1_id); t2 = teams_lookup.get(t2_id)
+        if not t1 or not t2: continue
+        s1 = int(m["score"]["team1"]); s2 = int(m["score"]["team2"])
+        t1_won = s1 > s2; t2_won = s2 > s1
+        if m.get("status","").endswith("_penalties"):
+            pen = m["score"].get("penalties","")
+            if pen:
+                p1,p2 = map(int, pen.split("-"))
+                t1_won = p1 > p2; t2_won = p2 > p1
+        team_history[t1_id].append({
+            "score": m["score"], "stage": m.get("stage","group"),
+            "date": m["date"], "team_role": "home",
+            "team_elo": t1.get("elo_rating",1500),
+            "opponent_elo": t2.get("elo_rating",1500),
+            "status": m["status"], "clean_sheet": s2==0,
+            "comeback": s1<=s2 and t1_won, "advanced": t1_won,
+        })
+        team_history[t2_id].append({
+            "score": m["score"], "stage": m.get("stage","group"),
+            "date": m["date"], "team_role": "away",
+            "team_elo": t2.get("elo_rating",1500),
+            "opponent_elo": t1.get("elo_rating",1500),
+            "status": m["status"], "clean_sheet": s1==0,
+            "comeback": s2<=s1 and t2_won, "advanced": t2_won,
+        })
+
+    lr = get_logistic_predictor()
+
+    def predict_match(team_a, team_b, stage, date):
+        aid = team_a["id"]; bid = team_b["id"]
+        h_a = team_history.get(aid, []); h_b = team_history.get(bid, [])
+        try:
+            fwd = compute_match_features(aid, bid, team_a, team_b, h_a, h_b, stage, date)
+            rev = compute_match_features(bid, aid, team_b, team_a, h_b, h_a, stage, date)
+            pf = lr.predict(fwd); pr = lr.predict(rev)
+            pa = round((pf + (1.0 - pr)) / 2.0, 4)
+            pb = round(1.0 - pa, 4)
+            return pa, pb, (aid if pa >= 0.5 else bid)
+        except Exception:
+            return 0.5, 0.5, aid
+
+    r16_matches = [m for m in matches_enriched if m.get("stage") == "round_of_16"]
+    r16_matches.sort(key=lambda m: m.get("id", 0))
+
+    rounds = {"round_of_16": [], "quarter_finals": [], "semi_finals": [], "final": []}
+
+    r16_winners = []
+    for m in r16_matches:
+        t1id = m.get("team1_id"); t2id = m.get("team2_id")
+        t1 = teams_lookup.get(t1id, {}); t2 = teams_lookup.get(t2id, {})
+        # Use logistic regression live for R16 too
+        try:
+            pa, pb, wid = predict_match(t1, t2, "round_of_16", m.get("date", "2026-07-05"))
+        except:
+            pa, pb = 50, 50
+            wid = t1id
+        winner_id = t1id if pa >= pb else t2id
+        rounds["round_of_16"].append({
+            "match_id": m.get("id"),
+            "team1": team_info(t1),
+            "team2": team_info(t2),
+            "team1_prob": round(pa*100, 1),
+            "team2_prob": round(pb*100, 1),
+            "winner_id": winner_id,
+        })
+        r16_winners.append(teams_lookup.get(winner_id, teams_lookup.get(t1id)))
+
+    qf_winners = []
+    for i in range(0, 8, 2):
+        ta = r16_winners[i]; tb = r16_winners[i+1]
+        pa, pb, wid = predict_match(ta, tb, "quarter_finals", "2026-07-10")
+        rounds["quarter_finals"].append({
+            "team1": team_info(ta), "team2": team_info(tb),
+            "team1_prob": round(pa*100, 1), "team2_prob": round(pb*100, 1),
+            "winner_id": wid,
+        })
+        qf_winners.append(ta if wid == ta["id"] else tb)
+
+    sf_winners = []
+    for i in range(0, 4, 2):
+        ta = qf_winners[i]; tb = qf_winners[i+1]
+        pa, pb, wid = predict_match(ta, tb, "semi_finals", "2026-07-14")
+        rounds["semi_finals"].append({
+            "team1": team_info(ta), "team2": team_info(tb),
+            "team1_prob": round(pa*100, 1), "team2_prob": round(pb*100, 1),
+            "winner_id": wid,
+        })
+        sf_winners.append(ta if wid == ta["id"] else tb)
+
+    ta = sf_winners[0]; tb = sf_winners[1]
+    pa, pb, wid = predict_match(ta, tb, "final", "2026-07-19")
+    rounds["final"].append({
+        "team1": team_info(ta), "team2": team_info(tb),
+        "team1_prob": round(pa*100, 1), "team2_prob": round(pb*100, 1),
+        "winner_id": wid,
+    })
+    champion = ta if wid == ta["id"] else tb
+
+    return {
+        "model": "Logistic Regression (L2, C=0.1, dual-prediction symmetrized)",
         "champion": team_info(champion),
         "rounds": rounds,
     }

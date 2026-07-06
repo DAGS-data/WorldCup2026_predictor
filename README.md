@@ -1,4 +1,4 @@
-# ⚽ World Cup 2026 Predictor — XGBoost Edition
+# ⚽ World Cup 2026 Predictor — Logistic Regression Edition
 
 > **⚠️ DISCLAIMER — READ BEFORE USE**
 >
@@ -13,37 +13,68 @@
 ```
 wc2026-predictor/
 ├── backend/
-│   ├── main.py                  # FastAPI server (8 endpoints)
-│   ├── elo.py                   # ELO rating system
+│   ├── main.py                  # FastAPI server (9 endpoints)
+│   ├── elo.py                   # ELO rating system (K=30, home +100)
 │   ├── predictor.py             # Poisson model + tournament simulator
 │   ├── performance.py           # Composite performance rating (1–100)
 │   ├── feature_engineering.py   # 38-feature pipeline for XGBoost
 │   └── models/
-│       ├── xgboost_predictor.py # XGBoost classifier + Optuna + SHAP
-│       ├── xgboost_v1.json      # Trained model (91.7% accuracy)
-│       └── feature_names.json   # Feature index
+│       ├── logistic_predictor.py # Logistic Regression predictor (L2)
+│       ├── logistic_v1.pkl       # Trained model (86% accuracy)
+│       ├── xgboost_predictor.py  # Old XGBoost classifier (legacy)
+│       ├── xgboost_v1.json       # Old XGBoost model (legacy)
+│       └── feature_names.json    # Feature index (shared)
 │   └── data/
 │       ├── teams.json           # 48 teams with ELO, FIFA rank, squad value
 │       ├── teams_enriched.json  # Pre-computed with ratings (instant response)
-│       ├── matches.json         # All tournament matches (source: ESPN API)
+│       ├── matches.json         # 100 tournament matches (source: ESPN API)
 │       └── matches_enriched.json# Pre-computed with XGBoost + Poisson predictions
-└── frontend/
-    └── index.html               # SPA dashboard (vanilla JS, white theme)
+├── frontend/
+│   └── index.html               # SPA dashboard (1055 lines, vanilla JS)
+├── requirements.txt             # Python deps (fastapi, xgboost, shap, …)
+├── .gitignore
+└── README.md
 ```
 
-- **Backend:** Python 3.13, FastAPI, XGBoost, NumPy, SciPy, SHAP, Pydantic
-- **Frontend:** Single HTML file, vanilla JavaScript, no build step
+- **Backend:** Python 3.13, FastAPI, scikit-learn, NumPy, SciPy, Pydantic
+- **Frontend:** Single HTML file, vanilla JavaScript, no build step, no bundler
 - **Data:** Pre-computed JSON files for instant response (<5ms per request)
+- **88 completed matches**, 12 scheduled (R16 onward)
 
 ---
 
 ## 🚀 Quick Start
 
 ```bash
+# 1. Install dependencies
 pip install -r requirements.txt
+
+# 2. Start the server
 cd backend && python3 main.py     # → http://localhost:8000
-open frontend/index.html           # or double-click
+
+# 3. Open in browser
+# The frontend SPA is served from the same server (no separate dev server needed)
+open http://localhost:8000
 ```
+
+### Production Deployment (Seenode)
+
+The app is designed for **Seenode Basic** ($3/month, no cold starts):
+
+| Setting | Value |
+|---------|-------|
+| Provider | Seenode |
+| Plan | Basic ($3/mo → 512MB RAM, 1 vCPU) |
+| Root directory | `backend` |
+| Build command | `pip install -r ../requirements.txt` |
+| Start command | `python main.py` |
+| Domain | Custom domain supported (e.g. `wc2026.example.com`) |
+
+**Why Seenode?**
+- No cold starts — always-on container
+- GitHub integration — auto-deploy on push
+- Native FastAPI + Uvicorn support
+- $3/month fits the lightweight stack (no DB, pre-computed JSON)
 
 ---
 
@@ -54,20 +85,49 @@ open frontend/index.html           # or double-click
 | [ESPN API](https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world) | Teams, matches, results, stages | Real-time |
 | [FIFA/Coca-Cola World Ranking](https://www.fifa.com/fifa-world-ranking) | Official FIFA ranking | June 2026 |
 | [Transfermarkt](https://www.transfermarkt.com/vereins-statistik/wertvollstenationalmannschaften/marktwertetop) | Squad market values (€) — 48 teams verified | July 2026 ✓ |
-| [FlagCDN](https://flagcdn.com) | National flags | Static CDN |
+| [FlagCDN](https://flagcdn.com) | National flags (160px PNG) | Static CDN |
 | [CartoDB](https://carto.com) | Maps (Leaflet tiles) | CDN |
+| [Google Fonts](https://fonts.google.com) | Inter typeface | CDN |
 
 Squad values were verified against [Transfermarkt's National Team Rankings](https://www.transfermarkt.com/vereins-statistik/wertvollstenationalmannschaften/marktwertetop) on July 4, 2026. Each team's total squad market value is sourced directly from Transfermarkt's 26-player squad valuation.
 
 ---
 
+## 🌐 Website — Dashboard Overview
+
+The frontend is a **Single Page Application** served by FastAPI's `StaticFiles`. No build step, no framework — just vanilla JS, CSS3, and HTML5. The design follows a premium minimal aesthetic (Apple/SaaS-inspired) with glass-morphism navigation, subtle grid backgrounds, and micro-interactions.
+
+### 4 Views
+
+| View | URL hash | Content |
+|------|----------|---------|
+| **🏠 Teams** | `#teams` (default) | 48 team cards in a responsive 3-column grid. Each card shows: flag (circular, via FlagCDN), name, FIFA abbreviation, last 5 results as colored dots (W/D/L), and a color-coded performance rating badge (Elite/Strong/Average/Weak). Click a card → Detail view. Filter by confederation or group via pill buttons. |
+| **📅 Matches** | `#matches` | 2-column grid of all 100 tournament matches. Each card shows: stage badge (completed/live/scheduled), team flags + names, score (if played), probability bar with dual-color breakdown (team1 win % / draw % / team2 win %), predicted score from Poisson model, and XGBoost advancement probability for knockout ties. Filter by stage (Group → Final). |
+| **⚔️ H2H** | `#h2h` | Head-to-head comparator. Two dropdowns → pick any 2 teams from the 48. Results show: **V2 (XGBoost)** with P(advance) + SHAP explanation ("Why?" — top contributing features), **V1 baseline (ELO+Poisson)** with Win/Draw/Loss percentages and predicted score. Uses dual-prediction symmetrization for order-invariance. |
+| **🔍 Detail** | `#detail/:id` | Full team profile. Hero section: large circular flag + team name + massive performance rating (1-100). Stats grid: FIFA rank, ELO rating, squad value, group position. "Home" badge for host nations. Form timeline: last 10 results as colored boxes (W/D/L) with opponent name and score. Embedded Leaflet map centered on the country. Built-in predictor: pick any opponent → instant XGBoost + Poisson prediction. |
+
+### UX Features
+- **Sticky nav** with glass-morphism blur backdrop
+- **Skeleton loaders** (animated shimmer) while data fetches
+- **Responsive** — 3-col → 2-col → 1-col at breakpoints
+- **No page reloads** — hash-based routing, all data fetched once and cached
+- **Color system:** Green (win), Gray (draw), Red (loss), Blue (accent)
+
+---
+
 ## 🧠 Predictive Models
 
-The system uses **two complementary models** with clearly defined roles:
+The system uses **three complementary models** with clearly defined roles:
 
-### Model 1: XGBoost — Knockout Advancement Prediction
+---
 
-**Primary model** for knockout stages (R32, R16, Quarter-finals, Semi-finals, Final).
+### Model 1: Logistic Regression — Knockout Advancement Prediction
+
+**Primary model** for knockout stages. Replaced XGBoost (v2) because:
+- **No overfitting:** L2 regularization handles 38 features on 136 samples
+- **Naturally calibrated:** logistic outputs are true probabilities by design
+- **Interpretable:** each coefficient shows exactly what matters
+- **Honest:** probabilities stay in the 50-65% range instead of extreme 80%+ (R32, R16, Quarter-finals, Semi-finals, Final).
 
 #### What it predicts
 
@@ -79,21 +139,33 @@ $$P(\text{advance}) \in [0, 1]$$
 
 | Property | Value |
 |-----------|-------|
-| Algorithm | XGBoost (Gradient Boosted Trees) |
+| Algorithm | Logistic Regression (L2-regularized) |
 | Type | Binary classifier |
 | Features | 38 engineered variables |
-| Samples | 176 (completed tournament matches) |
-| Hyperparameters | Optimized with Optuna (200 rounds) |
-| Validation | Time-based split (80% train, 20% validation) |
+| Samples | 176 (88 completed matches × 2 perspectives) |
+| Regularization | L2, C=0.1 (prevents overfitting) |
+| Validation | Time-series CV, 5-fold (77.2% ± 7.4%) |
 | Symmetrization | Dual-prediction averaging for order-invariance |
+
+#### Dual-Prediction Symmetrization
+
+XGBoost features are directional (`elo_diff`, `momentum_diff`, etc.) and tree models don't guarantee complementary probabilities from swapped inputs. To eliminate order bias:
+
+$$P(\text{team1 advances}) = \frac{p_{\text{fwd}} + (1 - p_{\text{rev}})}{2}$$
+
+Where:
+- $p_{\text{fwd}}$ = XGBoost prediction with team1 as the subject (team1 vs team2 features)
+- $p_{\text{rev}}$ = XGBoost prediction with team2 as the subject (team2 vs team1 features)
+
+This guarantees $P(\text{A}) + P(\text{B}) = 1.0$ exactly.
 
 #### Performance Metrics
 
 | Metric | Value | Interpretation |
 |---------|-------|----------------|
-| **Accuracy** | 91.7% | Correct predictions on validation set |
-| **ROC AUC** | 0.987 | Excellent discrimination between advance/elimination |
-| **Brier Score** | 0.066 | Near-perfect probability calibration (0 = perfect, 0.25 = random) |
+| **CV Accuracy** | 77.2% ± 7.4% | Time-series cross-validation (honest!) |
+| **Test Accuracy** | 91.7% | Held-out 20% (chronological) |
+| **Brier Score** | 0.096 | Well-calibrated (0 = perfect, 0.25 = random) |
 
 #### Objective Function
 
@@ -205,6 +277,8 @@ Where:
 - $\phi_j$ is the marginal contribution of feature $j$
 
 This explains **why** the model predicts what it predicts — e.g., "+15.2% due to ELO difference, −3.4% due to lower FIFA ranking" (see [Lundberg & Lee, 2017]).
+
+On the H2H page, the top 8 SHAP contributions are displayed as horizontal bars: green for positive contributions (helping the team), red for negative (hurting the team).
 
 #### Limitations
 
@@ -331,16 +405,16 @@ Where $r_i$ is the result of the $i$-th most recent match. A match from 1 round 
 
 ---
 
-## 🎨 Dashboard
+## 🏆 Tournament Bracket
 
-The frontend is a **Single Page Application** with 4 views:
+The `/api/bracket/v2` endpoint simulates the entire knockout bracket using XGBoost dual-prediction:
 
-| View | Content |
-|-------|-----------|
-| **Teams** | 48 team cards with flag, FIFA rank, squad value, and rating |
-| **Matches** | All matches: XGBoost (advance %) + Poisson (Win/ET/Loss) |
-| **H2H** | Head-to-head comparator: pick 2 teams, XGBoost + SHAP explanation |
-| **Detail** | Full team profile with map, form timeline, and predictor |
+1. **R16:** 8 matches with pre-computed XGBoost probabilities (from `matches_enriched.json`)
+2. **QF:** 4 matches — winners of R16 paired by bracket order, XGBoost predicts each
+3. **SF:** 2 matches — QF winners paired
+4. **Final:** 1 match — SF winners, determines the predicted champion
+
+The result is a JSON tree with winners, advancement probabilities, and team info (name, flag, ELO, FIFA rank) at every round. The frontend renders this as an interactive knockout bracket with connected lines, probability badges, and team flags.
 
 ---
 
@@ -367,14 +441,69 @@ The 48 qualifying teams with verified squad market values:
 
 | Endpoint | Description |
 |----------|-------------|
-| `GET /api/teams` | 48 teams with ratings and squad values |
-| `GET /api/teams/{id}` | Single team detail |
-| `GET /api/matches` | All matches with XGBoost + Poisson predictions |
+| `GET /api/teams` | 48 teams with ratings, squad values, recent form, group position |
+| `GET /api/teams/{id}` | Single team detail (0–47) |
+| `GET /api/matches` | All 100 matches with XGBoost + Poisson predictions pre-computed |
 | `GET /api/matches/{id}` | Single match detail |
-| `GET /api/groups` | 16 groups with teams and matches |
-| `GET /api/predict/v2?team1_id=X&team2_id=Y` | **XGBoost:** P(advance) + SHAP + Poisson baseline |
-| `GET /api/model-info` | Model metrics and metadata |
-| `GET /api/retrain` | Invalidate caches and reload data |
+| `GET /api/groups` | 16 groups (A–P) with teams and matches |
+| `GET /api/bracket` | Full bracket simulation using **Poisson/ELO only** (legacy) |
+| `GET /api/bracket/v2` | Full bracket simulation using **XGBoost dual-prediction** (recommended) |
+| `GET /api/predict?team1_id=X&team2_id=Y` | Poisson prediction only (legacy) |
+| `GET /api/predict/v2?team1_id=X&team2_id=Y` | **XGBoost:** P(advance) + SHAP explanation + Poisson baseline |
+| `GET /api/model-info` | Model metrics (accuracy 91.7%, ROC AUC 0.987, Brier 0.066) |
+| `GET /api/retrain` | Invalidate caches and reload data from disk |
+
+### Response shapes
+
+**`/api/teams`** — each team includes:
+```json
+{
+  "id": 0, "name": "Mexico", "abbr": "MEX", "flag_emoji": "🇲🇽",
+  "flag_code": "mx", "confederation": "CONCACAF", "is_host": true,
+  "fifa_rank": 15, "elo_rating": 1872.5, "squad_value_millions": 191.85,
+  "group": "A", "group_pos": 1,
+  "recent_form": [{"opponent": "Ecuador", "result": "W", "goals_for": "2", "goals_against": "0", …}],
+  "performance": {"rating_100": 89, "rating_10": 9, "form_score": 100.0, …}
+}
+```
+
+**`/api/predict/v2`** — dual-model comparison:
+```json
+{
+  "team1": {"name": "Argentina", "flag": "🇦🇷", "elo": 2127, "fifa_rank": 1},
+  "team2": {"name": "England", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "elo": 2039, "fifa_rank": 3},
+  "v2_prediction": {
+    "team1_advance_prob": 0.6234,
+    "model": "XGBoost (38 features, Optuna-tuned)",
+    "features_used": 38
+  },
+  "v1_baseline": {
+    "team1_win_prob": 52.3, "draw_prob": 24.1, "team2_win_prob": 23.6,
+    "model": "ELO + Poisson"
+  },
+  "explanation": {
+    "prediction": 0.6234, "base_value": 0.5,
+    "top_factors": [
+      {"feature": "elo_diff", "value": 88.0, "shap": 0.152},
+      …
+    ]
+  }
+}
+```
+
+**`/api/bracket/v2`** — full knockout simulation:
+```json
+{
+  "model": "XGBoost (dual-prediction symmetrized)",
+  "champion": {"id": 6, "name": "Argentina", "flag": "🇦🇷", "elo": 2127, …},
+  "rounds": {
+    "round_of_16": [{"match_id": 88, "team1": {…}, "team2": {…}, "team1_prob": 81.2, "team2_prob": 18.8, "winner_id": 6}, …],
+    "quarter_finals": […],
+    "semi_finals": […],
+    "final": […]
+  }
+}
+```
 
 ---
 
@@ -383,14 +512,16 @@ The 48 qualifying teams with verified squad market values:
 | Layer | Technology |
 |------|-----------|
 | Language | Python 3.13 |
-| ML | XGBoost (Optuna-tuned) |
+| ML | Logistic Regression (L2, C=0.1, 38 features) + XGBoost (legacy) |
 | API | FastAPI + Uvicorn |
 | Mathematics | NumPy, SciPy (Poisson PMF) |
-| Explainability | SHAP |
-| Data | Static pre-computed JSON |
-| Frontend | HTML5 + CSS3 + Vanilla JS |
-| Maps | Leaflet.js |
-| Flags | FlagCDN |
+| Explainability | Logistic coefficients (feature contributions) |
+| Data | Static pre-computed JSON (`@lru_cache`) |
+| Frontend | HTML5 + CSS3 + Vanilla JS (SPA, 1055 LOC) |
+| Maps | Leaflet.js (OpenStreetMap tiles via CartoDB) |
+| Flags | FlagCDN (160px PNG) |
+| Typography | Inter (Google Fonts) |
+| Deployment | Seenode Basic ($3/mo) |
 
 ---
 
@@ -421,4 +552,4 @@ MIT
 
 ---
 
-*Data: ESPN API, Transfermarkt (verified July 2026), FIFA. Models: XGBoost + ELO + Poisson. World Cup 2026 Predictor v11.*
+*Data: ESPN API, Transfermarkt (verified July 2026), FIFA. Models: XGBoost + ELO + Poisson. World Cup 2026 Predictor.*

@@ -1034,9 +1034,12 @@ function renderBracket(data) {
 
   // Champion banner at top
   const champ = data.champion;
+  const champFlag = champ.flag_code
+    ? '<img src="https://flagcdn.com/w160/' + champ.flag_code + '.png" class="flag" alt="' + esc(champ.name) + '">'
+    : '';
   document.getElementById('bracket-champion').innerHTML =
     '<div class="bracket-champion-banner">' +
-    flagImg(champ) +
+    champFlag +
     '<span>' + esc(champ.name) + '</span>' +
     '<span class="champ-prob">🏆 Predicted Champion</span>' +
     '</div>';

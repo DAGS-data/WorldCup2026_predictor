@@ -667,7 +667,7 @@ def team_info(t: dict) -> dict:
 
 
 # Serve frontend SPA — must be last (after all /api routes)
-FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
+FRONTEND_DIR = Path(__file__).parent / "frontend"
 app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
 
 

@@ -8,6 +8,7 @@ from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from performance import calculate_performance_rating
 from predictor import calculate_match_probabilities, get_prediction_factors, simulate_tournament
@@ -449,9 +450,9 @@ def team_info(t: dict) -> dict:
     }
 
 
-@app.get("/")
-def root():
-    return {"message": "WC 2026 Predictor API v2", "docs": "/docs"}
+# Serve frontend SPA — must be last (after all /api routes)
+FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
+app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
 
 
 if __name__ == "__main__":

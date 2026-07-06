@@ -582,7 +582,7 @@ function flagImg(team) {
   if (!team || !team.flag_code) return '🏳️';
   return `<img src="https://flagcdn.com/w160/${team.flag_code}.png" class="flag" loading="lazy"
     onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-    alt="${team.name}"><span class="flag-fallback">${team.flag_emoji || '🏳️'}</span>`;
+    alt="${team.name}"><span class="flag-fallback">${team.flag || team.flag_emoji || '🏳️'}</span>`;
 }
 
 // ===================== RENDER: TEAMS =====================

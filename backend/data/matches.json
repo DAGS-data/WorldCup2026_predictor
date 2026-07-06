@@ -1442,9 +1442,12 @@
     "venue": "MetLife Stadium",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
-    "notes": "FIFA World Cup, Round of 16"
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "2"
+    },
+    "notes": "FIFA World Cup, Round of 16 — Norway advances"
   },
   {
     "id": 91,

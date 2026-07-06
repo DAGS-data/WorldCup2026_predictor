@@ -494,6 +494,15 @@
     "squad_value_millions": 928.2,
     "recent_form": [
       {
+        "opponent": "Norway",
+        "result": "L",
+        "goals_for": "1",
+        "goals_against": "2",
+        "date": "2026-07-05",
+        "competition": "WC 2026 round_of_16",
+        "venue": "MetLife Stadium"
+      },
+      {
         "opponent": "Japan",
         "result": "W",
         "goals_for": "2",
@@ -2113,6 +2122,15 @@
     "elo_rating": 1779.6,
     "squad_value_millions": 589.9,
     "recent_form": [
+      {
+        "opponent": "Brazil",
+        "result": "W",
+        "goals_for": "2",
+        "goals_against": "1",
+        "date": "2026-07-05",
+        "competition": "WC 2026 round_of_16",
+        "venue": "MetLife Stadium"
+      },
       {
         "opponent": "Ivory Coast",
         "result": "W",

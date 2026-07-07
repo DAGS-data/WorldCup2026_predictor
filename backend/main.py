@@ -9,11 +9,30 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.requests import Request
+from starlette.responses import Response
 
 from performance import calculate_performance_rating
 from predictor import calculate_match_probabilities, get_prediction_factors, simulate_tournament
 from models.xgboost_predictor import KnockoutPredictor
 from models.logistic_predictor import LogisticPredictor
+
+# --- Environment ---
+IS_PRODUCTION = os.environ.get("ENV", "").lower() in ("production", "prod")
+ALLOWED_ORIGINS = os.environ.get("ALLOWED_ORIGINS", "https://worldcup2026-predictor.seenode.app").split(",")
+
+# --- Security headers middleware ---
+class SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        response: Response = await call_next(request)
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
+        if IS_PRODUCTION:
+            response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+        return response
 
 # Init predictors (lazy load)
 _xgb_predictor = None
@@ -33,12 +52,21 @@ def get_logistic_predictor():
 
 DATA_DIR = Path(__file__).parent / "data"
 
-app = FastAPI(title="WC 2026 Predictor API", version="2.0.0")
+app = FastAPI(
+    title="WC 2026 Predictor API",
+    version="2.0.0",
+    docs_url=None if IS_PRODUCTION else "/docs",
+    redoc_url=None if IS_PRODUCTION else "/redoc",
+    openapi_url=None if IS_PRODUCTION else "/openapi.json",
+)
+
+# Security headers (applied to every response)
+app.add_middleware(SecurityHeadersMiddleware)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
+    allow_origins=ALLOWED_ORIGINS,
+    allow_methods=["GET", "HEAD", "OPTIONS"],
     allow_headers=["*"],
 )
 

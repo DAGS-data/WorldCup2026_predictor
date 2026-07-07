@@ -10,7 +10,7 @@
 
 ## 🎥 Demo
 
-https://github.com/user-attachments/assets/COLOCAR_URL_DEL_VIDEO_AQUI
+https://raw.githubusercontent.com/DAGS-data/WorldCup2026_predictor/master/docs/demo.mp4
 
 *(El video muestra la app completa: Teams, Matches, H2H, Bracket y la simulación del torneo.)*
 

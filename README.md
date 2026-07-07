@@ -169,15 +169,23 @@ La **mecánica de actualización es 100% estándar** (Elo, 1978). La **inicializ
 
 #### Inicialización de ELO — Feature Engineering
 
-No existe un sistema ELO preexistente para las 48 selecciones del Mundial. Los ELO iniciales se asignaron a partir del **ranking FIFA pre-torneo (junio 2026)** con el siguiente criterio:
+No existe un sistema ELO preexistente para las 48 selecciones del Mundial. Los ELO iniciales se derivaron del **ranking FIFA pre-torneo (junio 2026)** mediante un mapeo lineal aproximado:
 
-- **Rango objetivo:** ~1400 (peor equipo) a ~2100 (mejor equipo), consistente con la escala ELO del ajedrez (~1000–2850)
-- **Mapeo:** el ranking FIFA (#1 a #90) se distribuyó proporcionalmente en ese rango. Por ejemplo, México (#15 FIFA) recibió ~1850, Argentina (#1) ~2100, Nueva Zelanda (#88) ~1400
-- **Correlación resultante:** −0.900 entre ranking FIFA y ELO inicial
+$$\text{ELO}_{\text{inicial}} \approx 2100 - \frac{700}{89} \times (\text{Ranking FIFA} - 1)$$
 
-Esto es feature engineering: el ranking FIFA es la fuente de datos real; el mapeo a escala ELO es una transformación para alimentar el modelo. No es una fórmula publicada — es una decisión de diseño.
+Es decir, el equipo #1 del ranking FIFA arranca en ~2100, el #90 en ~1400, y los intermedios se distribuyen proporcionalmente. Con ejemplos concretos:
 
-Luego, **los 88 partidos reales del torneo** actualizaron estos valores con la fórmula estándar de Elo (K=30), produciendo el rango final **1382–2127**. Los equipos que ganaron partidos subieron (Argentina: ~2100 → 2127); los que perdieron bajaron (Nueva Zelanda: ~1400 → 1382).
+| Equipo | Ranking FIFA | ELO inicial estimado |
+|--------|:-----------:|:--------------------:|
+| 🇦🇷 Argentina | #1 | ~2100 |
+| 🇲🇽 México | #15 | ~1990 |
+| 🇺🇾 Uruguay | #16 | ~1982 |
+| 🇨🇻 Cabo Verde | #54 | ~1683 |
+| 🇳🇿 Nueva Zelanda | #88 | ~1416 |
+
+Esto es feature engineering: el ranking FIFA es la fuente de datos real; el mapeo lineal a una escala ELO (~1400–2100) es la transformación que alimenta al modelo. No es una metodología publicada — es una decisión de diseño para ubicar a los equipos en un rango numérico comparable.
+
+Luego, **los 88 partidos reales del torneo** actualizaron estos valores con la fórmula estándar de Elo (K=30). Los equipos que ganaron subieron; los que perdieron bajaron. El rango final es **1382–2127** (Argentina subió de ~2100 a 2127; Nueva Zelanda bajó de ~1416 a 1382).
 
 #### Fórmula estándar de actualización (Elo, 1978)
 

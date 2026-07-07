@@ -169,11 +169,9 @@ La **mecánica de actualización es 100% estándar** (Elo, 1978). La **inicializ
 
 #### Inicialización de ELO — Feature Engineering
 
-Para el fútbol no existe un sistema ELO preexistente que cubra las 48 selecciones del Mundial con la escala deseada (~1300–2150, consistente con la escala ELO del ajedrez). Los ELO iniciales se derivaron del **ranking FIFA pre-torneo (junio 2026)** como punto de partida. La correlación resultante es de **−0.900** (a mejor ranking, mayor ELO), con:
+Para el fútbol no existe un sistema ELO preexistente que cubra las 48 selecciones del Mundial con la escala deseada. Los ELO iniciales se derivaron del **ranking FIFA pre-torneo (junio 2026)** como punto de partida — a mejor ranking, mayor ELO (correlación −0.900). No hay una fórmula fija: es feature engineering: cada equipo recibió un valor en un rango plausible (~1300–2150, consistente con la escala ELO del ajedrez), proporcional a su posición en el ranking FIFA.
 
-$$\text{ELO} = 1982.5 - 8.4 \times \text{Ranking FIFA} \quad (R^2 = 0.81)$$
-
-Esto **no es una fórmula académica publicada** — es feature engineering: una transformación de los datos reales de FIFA para ubicar a los equipos en una escala ELO plausible. Luego, **los 88 partidos reales del torneo** actualizaron estos valores con la fórmula estándar (K=30), produciendo el rango final **1382–2127**.
+Luego, **los 88 partidos reales del torneo** actualizaron estos valores con la fórmula estándar (K=30), produciendo el rango final **1382–2127**.
 
 #### Fórmula estándar de actualización (Elo, 1978)
 

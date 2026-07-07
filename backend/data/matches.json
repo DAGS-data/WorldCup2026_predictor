@@ -1416,8 +1416,11 @@
     "venue": "NRG Stadium",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "3"
+    },
     "notes": "FIFA World Cup, Round of 16"
   },
   {
@@ -1429,8 +1432,11 @@
     "venue": "Lincoln Financial Field",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "1"
+    },
     "notes": "FIFA World Cup, Round of 16"
   },
   {
@@ -1442,8 +1448,11 @@
     "venue": "MetLife Stadium",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "2"
+    },
     "notes": "FIFA World Cup, Round of 16"
   },
   {
@@ -1455,8 +1464,11 @@
     "venue": "Estadio Banorte",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "3"
+    },
     "notes": "FIFA World Cup, Round of 16"
   },
   {
@@ -1468,8 +1480,11 @@
     "venue": "AT&T Stadium",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "1"
+    },
     "notes": "FIFA World Cup, Round of 16"
   },
   {
@@ -1481,8 +1496,11 @@
     "venue": "Lumen Field",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "4"
+    },
     "notes": "FIFA World Cup, Round of 16"
   },
   {
@@ -1494,8 +1512,11 @@
     "venue": "Mercedes-Benz Stadium",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "2"
+    },
     "notes": "FIFA World Cup, Round of 16"
   },
   {
@@ -1507,8 +1528,12 @@
     "venue": "BC Place",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed_penalties",
+    "score": {
+      "team1": "0",
+      "team2": "0",
+      "penalties": "4-3"
+    },
     "notes": "FIFA World Cup, Round of 16"
   },
   {

@@ -19,14 +19,14 @@
     "team2_name": "South Africa",
     "team2_flag": "🇿🇦",
     "prediction": {
-      "team1_win_prob": 76.9,
-      "draw_prob": 15.5,
+      "team1_win_prob": 76.8,
+      "draw_prob": 15.6,
       "team2_win_prob": 7.6,
       "predicted_score": "2-0",
-      "team1_xg": 2.36,
-      "team2_xg": 0.59,
+      "team1_xg": 2.35,
+      "team2_xg": 0.6,
       "key_factors": [
-        "ELO advantage: Mexico (+303 pts)",
+        "ELO advantage: Mexico (+302 pts)",
         "Squad value edge: Mexico ($143M)",
         "Home advantage: Mexico"
       ]
@@ -52,14 +52,14 @@
     "team2_name": "Czechia",
     "team2_flag": "🇨🇿",
     "prediction": {
-      "team1_win_prob": 44.8,
+      "team1_win_prob": 45.3,
       "draw_prob": 25.4,
-      "team2_win_prob": 29.8,
+      "team2_win_prob": 29.3,
       "predicted_score": "1-1",
-      "team1_xg": 1.51,
-      "team2_xg": 1.19,
+      "team1_xg": 1.53,
+      "team2_xg": 1.18,
       "key_factors": [
-        "ELO advantage: South Korea (+65 pts)"
+        "ELO advantage: South Korea (+70 pts)"
       ]
     }
   },
@@ -83,9 +83,9 @@
     "team2_name": "Bosnia-Herzegovina",
     "team2_flag": "🇧🇦",
     "prediction": {
-      "team1_win_prob": 42.5,
+      "team1_win_prob": 42.3,
       "draw_prob": 24.4,
-      "team2_win_prob": 33.2,
+      "team2_win_prob": 33.3,
       "predicted_score": "1-1",
       "team1_xg": 1.58,
       "team2_xg": 1.37,
@@ -114,14 +114,14 @@
     "team2_name": "Paraguay",
     "team2_flag": "🇵🇾",
     "prediction": {
-      "team1_win_prob": 61.9,
-      "draw_prob": 21.0,
-      "team2_win_prob": 17.1,
-      "predicted_score": "2-0",
-      "team1_xg": 2.0,
-      "team2_xg": 0.95,
+      "team1_win_prob": 58.7,
+      "draw_prob": 21.8,
+      "team2_win_prob": 19.5,
+      "predicted_score": "1-1",
+      "team1_xg": 1.93,
+      "team2_xg": 1.02,
       "key_factors": [
-        "ELO advantage: United States (+162 pts)",
+        "ELO advantage: United States (+133 pts)",
         "Squad value edge: United States ($232M)",
         "Home advantage: United States"
       ]
@@ -147,14 +147,14 @@
     "team2_name": "Switzerland",
     "team2_flag": "🇨🇭",
     "prediction": {
-      "team1_win_prob": 4.9,
-      "draw_prob": 14.5,
-      "team2_win_prob": 80.6,
+      "team1_win_prob": 3.5,
+      "draw_prob": 12.8,
+      "team2_win_prob": 83.7,
       "predicted_score": "0-2",
-      "team1_xg": 0.4,
-      "team2_xg": 2.3,
+      "team1_xg": 0.32,
+      "team2_xg": 2.38,
       "key_factors": [
-        "ELO advantage: Switzerland (+380 pts)",
+        "ELO advantage: Switzerland (+414 pts)",
         "Squad value edge: Switzerland ($313M)"
       ]
     }
@@ -179,14 +179,14 @@
     "team2_name": "Morocco",
     "team2_flag": "🇲🇦",
     "prediction": {
-      "team1_win_prob": 63.7,
-      "draw_prob": 21.4,
-      "team2_win_prob": 14.8,
+      "team1_win_prob": 58.2,
+      "draw_prob": 23.0,
+      "team2_win_prob": 18.8,
       "predicted_score": "1-0",
-      "team1_xg": 1.91,
-      "team2_xg": 0.79,
+      "team1_xg": 1.79,
+      "team2_xg": 0.91,
       "key_factors": [
-        "ELO advantage: Brazil (+223 pts)",
+        "ELO advantage: Brazil (+177 pts)",
         "Squad value edge: Brazil ($481M)"
       ]
     }
@@ -211,14 +211,14 @@
     "team2_name": "Scotland",
     "team2_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
     "prediction": {
-      "team1_win_prob": 16.2,
-      "draw_prob": 22.0,
-      "team2_win_prob": 61.8,
+      "team1_win_prob": 15.7,
+      "draw_prob": 21.8,
+      "team2_win_prob": 62.5,
       "predicted_score": "0-1",
-      "team1_xg": 0.83,
-      "team2_xg": 1.87,
+      "team1_xg": 0.82,
+      "team2_xg": 1.88,
       "key_factors": [
-        "ELO advantage: Scotland (+207 pts)",
+        "ELO advantage: Scotland (+213 pts)",
         "Squad value edge: Scotland ($114M)"
       ]
     }
@@ -243,14 +243,13 @@
     "team2_name": "Türkiye",
     "team2_flag": "🇹🇷",
     "prediction": {
-      "team1_win_prob": 32.7,
-      "draw_prob": 25.7,
-      "team2_win_prob": 41.6,
+      "team1_win_prob": 34.8,
+      "draw_prob": 25.8,
+      "team2_win_prob": 39.4,
       "predicted_score": "1-1",
-      "team1_xg": 1.25,
-      "team2_xg": 1.45,
+      "team1_xg": 1.3,
+      "team2_xg": 1.4,
       "key_factors": [
-        "ELO advantage: Türkiye (+39 pts)",
         "Squad value edge: Türkiye ($396M)"
       ]
     }
@@ -275,14 +274,14 @@
     "team2_name": "Curaçao",
     "team2_flag": "🇨🇼",
     "prediction": {
-      "team1_win_prob": 88.3,
-      "draw_prob": 9.6,
-      "team2_win_prob": 2.1,
+      "team1_win_prob": 87.6,
+      "draw_prob": 10.2,
+      "team2_win_prob": 2.2,
       "predicted_score": "2-0",
-      "team1_xg": 2.67,
+      "team1_xg": 2.61,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: Germany (+530 pts)",
+        "ELO advantage: Germany (+503 pts)",
         "Squad value edge: Germany ($942M)"
       ]
     }
@@ -307,14 +306,14 @@
     "team2_name": "Japan",
     "team2_flag": "🇯🇵",
     "prediction": {
-      "team1_win_prob": 56.4,
+      "team1_win_prob": 56.7,
       "draw_prob": 23.4,
-      "team2_win_prob": 20.1,
+      "team2_win_prob": 19.9,
       "predicted_score": "1-0",
-      "team1_xg": 1.75,
-      "team2_xg": 0.95,
+      "team1_xg": 1.76,
+      "team2_xg": 0.94,
       "key_factors": [
-        "ELO advantage: Netherlands (+162 pts)",
+        "ELO advantage: Netherlands (+164 pts)",
         "Squad value edge: Netherlands ($483M)"
       ]
     }
@@ -339,12 +338,12 @@
     "team2_name": "Ecuador",
     "team2_flag": "🇪🇨",
     "prediction": {
-      "team1_win_prob": 34.2,
+      "team1_win_prob": 35.6,
       "draw_prob": 25.8,
-      "team2_win_prob": 40.0,
+      "team2_win_prob": 38.6,
       "predicted_score": "1-1",
-      "team1_xg": 1.29,
-      "team2_xg": 1.41,
+      "team1_xg": 1.32,
+      "team2_xg": 1.38,
       "key_factors": [
         "Squad value edge: Ivory Coast ($153M)"
       ]
@@ -370,14 +369,14 @@
     "team2_name": "Tunisia",
     "team2_flag": "🇹🇳",
     "prediction": {
-      "team1_win_prob": 57.3,
-      "draw_prob": 23.2,
-      "team2_win_prob": 19.4,
+      "team1_win_prob": 58.5,
+      "draw_prob": 22.9,
+      "team2_win_prob": 18.6,
       "predicted_score": "1-0",
-      "team1_xg": 1.77,
-      "team2_xg": 0.93,
+      "team1_xg": 1.8,
+      "team2_xg": 0.9,
       "key_factors": [
-        "ELO advantage: Sweden (+169 pts)",
+        "ELO advantage: Sweden (+179 pts)",
         "Squad value edge: Sweden ($339M)"
       ]
     }
@@ -402,14 +401,14 @@
     "team2_name": "Cape Verde",
     "team2_flag": "🇨🇻",
     "prediction": {
-      "team1_win_prob": 88.9,
-      "draw_prob": 9.2,
+      "team1_win_prob": 88.5,
+      "draw_prob": 9.5,
       "team2_win_prob": 2.0,
       "predicted_score": "2-0",
-      "team1_xg": 2.73,
+      "team1_xg": 2.69,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: Spain (+553 pts)",
+        "ELO advantage: Spain (+536 pts)",
         "Squad value edge: Spain ($1166M)"
       ]
     }
@@ -434,14 +433,14 @@
     "team2_name": "Egypt",
     "team2_flag": "🇪🇬",
     "prediction": {
-      "team1_win_prob": 69.1,
-      "draw_prob": 19.6,
-      "team2_win_prob": 11.3,
+      "team1_win_prob": 68.8,
+      "draw_prob": 19.7,
+      "team2_win_prob": 11.5,
       "predicted_score": "2-0",
-      "team1_xg": 2.03,
-      "team2_xg": 0.67,
+      "team1_xg": 2.02,
+      "team2_xg": 0.68,
       "key_factors": [
-        "ELO advantage: Belgium (+270 pts)",
+        "ELO advantage: Belgium (+268 pts)",
         "Squad value edge: Belgium ($431M)"
       ]
     }
@@ -466,14 +465,14 @@
     "team2_name": "Uruguay",
     "team2_flag": "🇺🇾",
     "prediction": {
-      "team1_win_prob": 12.8,
-      "draw_prob": 20.4,
-      "team2_win_prob": 66.8,
+      "team1_win_prob": 15.0,
+      "draw_prob": 21.5,
+      "team2_win_prob": 63.6,
       "predicted_score": "0-1",
-      "team1_xg": 0.72,
-      "team2_xg": 1.98,
+      "team1_xg": 0.8,
+      "team2_xg": 1.91,
       "key_factors": [
-        "ELO advantage: Uruguay (+250 pts)",
+        "ELO advantage: Uruguay (+222 pts)",
         "Squad value edge: Uruguay ($319M)"
       ]
     }
@@ -498,14 +497,14 @@
     "team2_name": "New Zealand",
     "team2_flag": "🇳🇿",
     "prediction": {
-      "team1_win_prob": 75.1,
-      "draw_prob": 17.1,
-      "team2_win_prob": 7.8,
+      "team1_win_prob": 73.7,
+      "draw_prob": 17.7,
+      "team2_win_prob": 8.6,
       "predicted_score": "2-0",
-      "team1_xg": 2.16,
-      "team2_xg": 0.54,
+      "team1_xg": 2.13,
+      "team2_xg": 0.57,
       "key_factors": [
-        "ELO advantage: Iran (+325 pts)"
+        "ELO advantage: Iran (+312 pts)"
       ]
     }
   },
@@ -529,14 +528,14 @@
     "team2_name": "Senegal",
     "team2_flag": "🇸🇳",
     "prediction": {
-      "team1_win_prob": 79.8,
-      "draw_prob": 14.9,
-      "team2_win_prob": 5.3,
+      "team1_win_prob": 83.3,
+      "draw_prob": 13.0,
+      "team2_win_prob": 3.7,
       "predicted_score": "2-0",
-      "team1_xg": 2.28,
-      "team2_xg": 0.42,
+      "team1_xg": 2.38,
+      "team2_xg": 0.33,
       "key_factors": [
-        "ELO advantage: France (+372 pts)",
+        "ELO advantage: France (+410 pts)",
         "Squad value edge: France ($1042M)"
       ]
     }
@@ -561,14 +560,14 @@
     "team2_name": "Norway",
     "team2_flag": "🇳🇴",
     "prediction": {
-      "team1_win_prob": 6.8,
-      "draw_prob": 16.3,
-      "team2_win_prob": 76.9,
+      "team1_win_prob": 4.3,
+      "draw_prob": 13.8,
+      "team2_win_prob": 82.0,
       "predicted_score": "0-2",
-      "team1_xg": 0.49,
-      "team2_xg": 2.21,
+      "team1_xg": 0.36,
+      "team2_xg": 2.34,
       "key_factors": [
-        "ELO advantage: Norway (+343 pts)",
+        "ELO advantage: Norway (+395 pts)",
         "Squad value edge: Norway ($569M)"
       ]
     }
@@ -593,14 +592,14 @@
     "team2_name": "Algeria",
     "team2_flag": "🇩🇿",
     "prediction": {
-      "team1_win_prob": 86.9,
-      "draw_prob": 10.8,
-      "team2_win_prob": 2.4,
+      "team1_win_prob": 87.2,
+      "draw_prob": 10.5,
+      "team2_win_prob": 2.3,
       "predicted_score": "2-0",
-      "team1_xg": 2.53,
+      "team1_xg": 2.57,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: Argentina (+473 pts)",
+        "ELO advantage: Argentina (+487 pts)",
         "Squad value edge: Argentina ($556M)"
       ]
     }
@@ -625,14 +624,14 @@
     "team2_name": "Jordan",
     "team2_flag": "🇯🇴",
     "prediction": {
-      "team1_win_prob": 79.7,
-      "draw_prob": 14.9,
-      "team2_win_prob": 5.4,
+      "team1_win_prob": 79.0,
+      "draw_prob": 15.3,
+      "team2_win_prob": 5.7,
       "predicted_score": "2-0",
-      "team1_xg": 2.28,
-      "team2_xg": 0.42,
+      "team1_xg": 2.26,
+      "team2_xg": 0.44,
       "key_factors": [
-        "ELO advantage: Austria (+371 pts)",
+        "ELO advantage: Austria (+364 pts)",
         "Squad value edge: Austria ($225M)"
       ]
     }
@@ -657,14 +656,14 @@
     "team2_name": "Congo DR",
     "team2_flag": "🇨🇩",
     "prediction": {
-      "team1_win_prob": 84.3,
-      "draw_prob": 12.5,
-      "team2_win_prob": 3.2,
+      "team1_win_prob": 81.7,
+      "draw_prob": 13.9,
+      "team2_win_prob": 4.4,
       "predicted_score": "2-0",
-      "team1_xg": 2.4,
-      "team2_xg": 0.3,
+      "team1_xg": 2.33,
+      "team2_xg": 0.37,
       "key_factors": [
-        "ELO advantage: Portugal (+420 pts)",
+        "ELO advantage: Portugal (+392 pts)",
         "Squad value edge: Portugal ($866M)"
       ]
     }
@@ -689,14 +688,14 @@
     "team2_name": "Croatia",
     "team2_flag": "🇭🇷",
     "prediction": {
-      "team1_win_prob": 56.4,
-      "draw_prob": 23.5,
-      "team2_win_prob": 20.2,
+      "team1_win_prob": 59.7,
+      "draw_prob": 22.6,
+      "team2_win_prob": 17.7,
       "predicted_score": "1-0",
-      "team1_xg": 1.75,
-      "team2_xg": 0.95,
+      "team1_xg": 1.82,
+      "team2_xg": 0.88,
       "key_factors": [
-        "ELO advantage: England (+161 pts)",
+        "ELO advantage: England (+189 pts)",
         "Squad value edge: England ($973M)"
       ]
     }
@@ -721,14 +720,14 @@
     "team2_name": "Panama",
     "team2_flag": "🇵🇦",
     "prediction": {
-      "team1_win_prob": 42.6,
-      "draw_prob": 25.6,
-      "team2_win_prob": 31.8,
+      "team1_win_prob": 46.4,
+      "draw_prob": 25.2,
+      "team2_win_prob": 28.3,
       "predicted_score": "1-1",
-      "team1_xg": 1.47,
-      "team2_xg": 1.23,
+      "team1_xg": 1.55,
+      "team2_xg": 1.15,
       "key_factors": [
-        "ELO advantage: Ghana (+47 pts)",
+        "ELO advantage: Ghana (+79 pts)",
         "Squad value edge: Ghana ($200M)"
       ]
     }
@@ -753,14 +752,14 @@
     "team2_name": "Colombia",
     "team2_flag": "🇨🇴",
     "prediction": {
-      "team1_win_prob": 2.5,
-      "draw_prob": 11.2,
-      "team2_win_prob": 86.3,
+      "team1_win_prob": 2.4,
+      "draw_prob": 11.0,
+      "team2_win_prob": 86.6,
       "predicted_score": "0-2",
       "team1_xg": 0.25,
-      "team2_xg": 2.48,
+      "team2_xg": 2.51,
       "key_factors": [
-        "ELO advantage: Colombia (+454 pts)",
+        "ELO advantage: Colombia (+463 pts)",
         "Squad value edge: Colombia ($217M)"
       ]
     }
@@ -785,14 +784,14 @@
     "team2_name": "South Africa",
     "team2_flag": "🇿🇦",
     "prediction": {
-      "team1_win_prob": 51.3,
-      "draw_prob": 24.5,
-      "team2_win_prob": 24.2,
+      "team1_win_prob": 47.1,
+      "draw_prob": 25.1,
+      "team2_win_prob": 27.7,
       "predicted_score": "1-1",
-      "team1_xg": 1.65,
-      "team2_xg": 1.05,
+      "team1_xg": 1.56,
+      "team2_xg": 1.14,
       "key_factors": [
-        "ELO advantage: Czechia (+119 pts)",
+        "ELO advantage: Czechia (+85 pts)",
         "Squad value edge: Czechia ($139M)"
       ]
     }
@@ -817,14 +816,14 @@
     "team2_name": "Bosnia-Herzegovina",
     "team2_flag": "🇧🇦",
     "prediction": {
-      "team1_win_prob": 57.3,
-      "draw_prob": 23.2,
-      "team2_win_prob": 19.5,
+      "team1_win_prob": 62.2,
+      "draw_prob": 21.9,
+      "team2_win_prob": 15.9,
       "predicted_score": "1-0",
-      "team1_xg": 1.77,
-      "team2_xg": 0.93,
+      "team1_xg": 1.88,
+      "team2_xg": 0.83,
       "key_factors": [
-        "ELO advantage: Switzerland (+169 pts)",
+        "ELO advantage: Switzerland (+210 pts)",
         "Squad value edge: Switzerland ($186M)"
       ]
     }
@@ -849,14 +848,14 @@
     "team2_name": "Qatar",
     "team2_flag": "🇶🇦",
     "prediction": {
-      "team1_win_prob": 66.6,
-      "draw_prob": 19.6,
-      "team2_win_prob": 13.9,
+      "team1_win_prob": 65.7,
+      "draw_prob": 19.9,
+      "team2_win_prob": 14.5,
       "predicted_score": "2-0",
-      "team1_xg": 2.11,
-      "team2_xg": 0.84,
+      "team1_xg": 2.09,
+      "team2_xg": 0.86,
       "key_factors": [
-        "ELO advantage: Canada (+203 pts)",
+        "ELO advantage: Canada (+195 pts)",
         "Squad value edge: Canada ($179M)",
         "Home advantage: Canada"
       ]
@@ -882,14 +881,14 @@
     "team2_name": "South Korea",
     "team2_flag": "🇰🇷",
     "prediction": {
-      "team1_win_prob": 57.0,
-      "draw_prob": 22.2,
-      "team2_win_prob": 20.7,
-      "predicted_score": "1-1",
-      "team1_xg": 1.9,
-      "team2_xg": 1.05,
+      "team1_win_prob": 60.3,
+      "draw_prob": 21.4,
+      "team2_win_prob": 18.3,
+      "predicted_score": "1-0",
+      "team1_xg": 1.97,
+      "team2_xg": 0.98,
       "key_factors": [
-        "ELO advantage: Mexico (+118 pts)",
+        "ELO advantage: Mexico (+147 pts)",
         "Home advantage: Mexico"
       ]
     }
@@ -914,14 +913,14 @@
     "team2_name": "Australia",
     "team2_flag": "🇦🇺",
     "prediction": {
-      "team1_win_prob": 66.4,
-      "draw_prob": 19.6,
-      "team2_win_prob": 14.0,
+      "team1_win_prob": 62.7,
+      "draw_prob": 20.8,
+      "team2_win_prob": 16.6,
       "predicted_score": "2-0",
-      "team1_xg": 2.1,
-      "team2_xg": 0.85,
+      "team1_xg": 2.02,
+      "team2_xg": 0.93,
       "key_factors": [
-        "ELO advantage: United States (+202 pts)",
+        "ELO advantage: United States (+168 pts)",
         "Squad value edge: United States ($308M)",
         "Home advantage: United States"
       ]
@@ -947,14 +946,14 @@
     "team2_name": "Morocco",
     "team2_flag": "🇲🇦",
     "prediction": {
-      "team1_win_prob": 19.9,
-      "draw_prob": 23.4,
-      "team2_win_prob": 56.7,
+      "team1_win_prob": 17.4,
+      "draw_prob": 22.5,
+      "team2_win_prob": 60.2,
       "predicted_score": "0-1",
-      "team1_xg": 0.94,
-      "team2_xg": 1.76,
+      "team1_xg": 0.87,
+      "team2_xg": 1.83,
       "key_factors": [
-        "ELO advantage: Morocco (+164 pts)",
+        "ELO advantage: Morocco (+193 pts)",
         "Squad value edge: Morocco ($277M)"
       ]
     }
@@ -979,14 +978,14 @@
     "team2_name": "Haiti",
     "team2_flag": "🇭🇹",
     "prediction": {
-      "team1_win_prob": 89.7,
-      "draw_prob": 8.5,
+      "team1_win_prob": 89.5,
+      "draw_prob": 8.6,
       "team2_win_prob": 1.8,
       "predicted_score": "2-0",
-      "team1_xg": 2.84,
+      "team1_xg": 2.81,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: Brazil (+594 pts)",
+        "ELO advantage: Brazil (+583 pts)",
         "Squad value edge: Brazil ($872M)"
       ]
     }
@@ -1011,12 +1010,12 @@
     "team2_name": "Paraguay",
     "team2_flag": "🇵🇾",
     "prediction": {
-      "team1_win_prob": 37.0,
+      "team1_win_prob": 35.4,
       "draw_prob": 25.8,
-      "team2_win_prob": 37.2,
+      "team2_win_prob": 38.8,
       "predicted_score": "1-1",
-      "team1_xg": 1.35,
-      "team2_xg": 1.35,
+      "team1_xg": 1.31,
+      "team2_xg": 1.39,
       "key_factors": [
         "Squad value edge: Türkiye ($320M)"
       ]
@@ -1042,14 +1041,14 @@
     "team2_name": "Sweden",
     "team2_flag": "🇸🇪",
     "prediction": {
-      "team1_win_prob": 60.1,
-      "draw_prob": 22.5,
-      "team2_win_prob": 17.4,
+      "team1_win_prob": 61.3,
+      "draw_prob": 22.1,
+      "team2_win_prob": 16.5,
       "predicted_score": "1-0",
-      "team1_xg": 1.83,
-      "team2_xg": 0.87,
+      "team1_xg": 1.86,
+      "team2_xg": 0.84,
       "key_factors": [
-        "ELO advantage: Netherlands (+192 pts)",
+        "ELO advantage: Netherlands (+203 pts)",
         "Squad value edge: Netherlands ($345M)"
       ]
     }
@@ -1074,14 +1073,14 @@
     "team2_name": "Ivory Coast",
     "team2_flag": "🇨🇮",
     "prediction": {
-      "team1_win_prob": 66.9,
-      "draw_prob": 20.4,
-      "team2_win_prob": 12.7,
+      "team1_win_prob": 63.9,
+      "draw_prob": 21.4,
+      "team2_win_prob": 14.7,
       "predicted_score": "1-0",
-      "team1_xg": 1.98,
-      "team2_xg": 0.72,
+      "team1_xg": 1.91,
+      "team2_xg": 0.79,
       "key_factors": [
-        "ELO advantage: Germany (+251 pts)",
+        "ELO advantage: Germany (+225 pts)",
         "Squad value edge: Germany ($425M)"
       ]
     }
@@ -1106,14 +1105,14 @@
     "team2_name": "Curaçao",
     "team2_flag": "🇨🇼",
     "prediction": {
-      "team1_win_prob": 72.8,
-      "draw_prob": 18.1,
-      "team2_win_prob": 9.1,
+      "team1_win_prob": 71.4,
+      "draw_prob": 18.7,
+      "team2_win_prob": 9.9,
       "predicted_score": "2-0",
-      "team1_xg": 2.11,
-      "team2_xg": 0.59,
+      "team1_xg": 2.08,
+      "team2_xg": 0.62,
       "key_factors": [
-        "ELO advantage: Ecuador (+304 pts)",
+        "ELO advantage: Ecuador (+291 pts)",
         "Squad value edge: Ecuador ($364M)"
       ]
     }
@@ -1138,14 +1137,14 @@
     "team2_name": "Japan",
     "team2_flag": "🇯🇵",
     "prediction": {
-      "team1_win_prob": 16.8,
-      "draw_prob": 22.2,
-      "team2_win_prob": 61.0,
+      "team1_win_prob": 15.3,
+      "draw_prob": 21.6,
+      "team2_win_prob": 63.1,
       "predicted_score": "0-1",
-      "team1_xg": 0.85,
-      "team2_xg": 1.85,
+      "team1_xg": 0.81,
+      "team2_xg": 1.9,
       "key_factors": [
-        "ELO advantage: Japan (+200 pts)",
+        "ELO advantage: Japan (+218 pts)",
         "Squad value edge: Japan ($201M)"
       ]
     }
@@ -1171,13 +1170,13 @@
     "team2_flag": "🇸🇦",
     "prediction": {
       "team1_win_prob": 87.5,
-      "draw_prob": 10.3,
+      "draw_prob": 10.2,
       "team2_win_prob": 2.2,
       "predicted_score": "2-0",
-      "team1_xg": 2.59,
+      "team1_xg": 2.6,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: Spain (+496 pts)",
+        "ELO advantage: Spain (+499 pts)",
         "Squad value edge: Spain ($1179M)"
       ]
     }
@@ -1202,14 +1201,14 @@
     "team2_name": "Iran",
     "team2_flag": "🇮🇷",
     "prediction": {
-      "team1_win_prob": 63.5,
-      "draw_prob": 21.5,
-      "team2_win_prob": 15.0,
+      "team1_win_prob": 65.1,
+      "draw_prob": 21.0,
+      "team2_win_prob": 13.9,
       "predicted_score": "1-0",
-      "team1_xg": 1.9,
-      "team2_xg": 0.8,
+      "team1_xg": 1.94,
+      "team2_xg": 0.76,
       "key_factors": [
-        "ELO advantage: Belgium (+222 pts)",
+        "ELO advantage: Belgium (+235 pts)",
         "Squad value edge: Belgium ($515M)"
       ]
     }
@@ -1234,14 +1233,14 @@
     "team2_name": "Cape Verde",
     "team2_flag": "🇨🇻",
     "prediction": {
-      "team1_win_prob": 73.2,
-      "draw_prob": 17.9,
-      "team2_win_prob": 8.9,
-      "predicted_score": "2-0",
-      "team1_xg": 2.12,
-      "team2_xg": 0.58,
+      "team1_win_prob": 67.8,
+      "draw_prob": 20.0,
+      "team2_win_prob": 12.1,
+      "predicted_score": "1-0",
+      "team1_xg": 2.0,
+      "team2_xg": 0.7,
       "key_factors": [
-        "ELO advantage: Uruguay (+307 pts)",
+        "ELO advantage: Uruguay (+259 pts)",
         "Squad value edge: Uruguay ($305M)"
       ]
     }
@@ -1266,14 +1265,14 @@
     "team2_name": "Egypt",
     "team2_flag": "🇪🇬",
     "prediction": {
-      "team1_win_prob": 10.9,
-      "draw_prob": 19.3,
-      "team2_win_prob": 69.8,
+      "team1_win_prob": 10.7,
+      "draw_prob": 19.2,
+      "team2_win_prob": 70.1,
       "predicted_score": "0-2",
-      "team1_xg": 0.66,
-      "team2_xg": 2.04,
+      "team1_xg": 0.65,
+      "team2_xg": 2.05,
       "key_factors": [
-        "ELO advantage: Egypt (+276 pts)",
+        "ELO advantage: Egypt (+279 pts)",
         "Squad value edge: Egypt ($82M)"
       ]
     }
@@ -1298,14 +1297,14 @@
     "team2_name": "Austria",
     "team2_flag": "🇦🇹",
     "prediction": {
-      "team1_win_prob": 77.4,
-      "draw_prob": 16.1,
-      "team2_win_prob": 6.6,
+      "team1_win_prob": 80.1,
+      "draw_prob": 14.7,
+      "team2_win_prob": 5.2,
       "predicted_score": "2-0",
-      "team1_xg": 2.22,
-      "team2_xg": 0.48,
+      "team1_xg": 2.29,
+      "team2_xg": 0.41,
       "key_factors": [
-        "ELO advantage: Argentina (+348 pts)",
+        "ELO advantage: Argentina (+375 pts)",
         "Squad value edge: Argentina ($562M)"
       ]
     }
@@ -1330,14 +1329,14 @@
     "team2_name": "Iraq",
     "team2_flag": "🇮🇶",
     "prediction": {
-      "team1_win_prob": 90.8,
-      "draw_prob": 7.6,
-      "team2_win_prob": 1.6,
-      "predicted_score": "2-0",
-      "team1_xg": 2.96,
+      "team1_win_prob": 91.2,
+      "draw_prob": 7.2,
+      "team2_win_prob": 1.5,
+      "predicted_score": "3-0",
+      "team1_xg": 3.03,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: France (+646 pts)",
+        "ELO advantage: France (+671 pts)",
         "Squad value edge: France ($1499M)"
       ]
     }
@@ -1362,14 +1361,14 @@
     "team2_name": "Senegal",
     "team2_flag": "🇸🇳",
     "prediction": {
-      "team1_win_prob": 45.3,
-      "draw_prob": 25.4,
-      "team2_win_prob": 29.3,
+      "team1_win_prob": 53.1,
+      "draw_prob": 24.2,
+      "team2_win_prob": 22.8,
       "predicted_score": "1-1",
-      "team1_xg": 1.52,
-      "team2_xg": 1.18,
+      "team1_xg": 1.69,
+      "team2_xg": 1.02,
       "key_factors": [
-        "ELO advantage: Norway (+70 pts)",
+        "ELO advantage: Norway (+134 pts)",
         "Squad value edge: Norway ($112M)"
       ]
     }
@@ -1394,14 +1393,14 @@
     "team2_name": "Algeria",
     "team2_flag": "🇩🇿",
     "prediction": {
-      "team1_win_prob": 13.1,
-      "draw_prob": 20.6,
-      "team2_win_prob": 66.3,
+      "team1_win_prob": 12.7,
+      "draw_prob": 20.3,
+      "team2_win_prob": 67.0,
       "predicted_score": "0-1",
-      "team1_xg": 0.74,
-      "team2_xg": 1.96,
+      "team1_xg": 0.72,
+      "team2_xg": 1.98,
       "key_factors": [
-        "ELO advantage: Algeria (+246 pts)",
+        "ELO advantage: Algeria (+252 pts)",
         "Squad value edge: Algeria ($232M)"
       ]
     }
@@ -1433,7 +1432,7 @@
       "team1_xg": 2.73,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: Portugal (+551 pts)",
+        "ELO advantage: Portugal (+550 pts)",
         "Squad value edge: Portugal ($925M)"
       ]
     }
@@ -1458,14 +1457,14 @@
     "team2_name": "Ghana",
     "team2_flag": "🇬🇭",
     "prediction": {
-      "team1_win_prob": 86.9,
-      "draw_prob": 10.7,
-      "team2_win_prob": 2.3,
+      "team1_win_prob": 86.8,
+      "draw_prob": 10.8,
+      "team2_win_prob": 2.4,
       "predicted_score": "2-0",
-      "team1_xg": 2.54,
+      "team1_xg": 2.53,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: England (+476 pts)",
+        "ELO advantage: England (+472 pts)",
         "Squad value edge: England ($1126M)"
       ]
     }
@@ -1490,14 +1489,14 @@
     "team2_name": "Croatia",
     "team2_flag": "🇭🇷",
     "prediction": {
-      "team1_win_prob": 5.9,
+      "team1_win_prob": 5.8,
       "draw_prob": 15.4,
-      "team2_win_prob": 78.7,
+      "team2_win_prob": 78.8,
       "predicted_score": "0-2",
       "team1_xg": 0.45,
       "team2_xg": 2.25,
       "key_factors": [
-        "ELO advantage: Croatia (+361 pts)",
+        "ELO advantage: Croatia (+362 pts)",
         "Squad value edge: Croatia ($353M)"
       ]
     }
@@ -1522,14 +1521,14 @@
     "team2_name": "Congo DR",
     "team2_flag": "🇨🇩",
     "prediction": {
-      "team1_win_prob": 74.8,
-      "draw_prob": 17.2,
-      "team2_win_prob": 8.0,
+      "team1_win_prob": 72.9,
+      "draw_prob": 18.0,
+      "team2_win_prob": 9.0,
       "predicted_score": "2-0",
-      "team1_xg": 2.16,
-      "team2_xg": 0.54,
+      "team1_xg": 2.11,
+      "team2_xg": 0.59,
       "key_factors": [
-        "ELO advantage: Colombia (+323 pts)",
+        "ELO advantage: Colombia (+305 pts)",
         "Squad value edge: Colombia ($158M)"
       ]
     }
@@ -1554,14 +1553,14 @@
     "team2_name": "Qatar",
     "team2_flag": "🇶🇦",
     "prediction": {
-      "team1_win_prob": 62.3,
-      "draw_prob": 21.9,
-      "team2_win_prob": 15.8,
+      "team1_win_prob": 61.5,
+      "draw_prob": 22.1,
+      "team2_win_prob": 16.4,
       "predicted_score": "1-0",
-      "team1_xg": 1.88,
-      "team2_xg": 0.82,
+      "team1_xg": 1.86,
+      "team2_xg": 0.84,
       "key_factors": [
-        "ELO advantage: Bosnia-Herzegovina (+211 pts)",
+        "ELO advantage: Bosnia-Herzegovina (+204 pts)",
         "Squad value edge: Bosnia-Herzegovina ($126M)"
       ]
     }
@@ -1586,14 +1585,14 @@
     "team2_name": "Canada",
     "team2_flag": "🇨🇦",
     "prediction": {
-      "team1_win_prob": 52.2,
-      "draw_prob": 23.2,
-      "team2_win_prob": 24.6,
+      "team1_win_prob": 57.1,
+      "draw_prob": 22.2,
+      "team2_win_prob": 20.7,
       "predicted_score": "1-1",
-      "team1_xg": 1.79,
-      "team2_xg": 1.16,
+      "team1_xg": 1.9,
+      "team2_xg": 1.05,
       "key_factors": [
-        "ELO advantage: Switzerland (+177 pts)",
+        "ELO advantage: Switzerland (+219 pts)",
         "Squad value edge: Switzerland ($134M)",
         "Home advantage: Canada"
       ]
@@ -1619,14 +1618,14 @@
     "team2_name": "Haiti",
     "team2_flag": "🇭🇹",
     "prediction": {
-      "team1_win_prob": 79.7,
-      "draw_prob": 14.9,
-      "team2_win_prob": 5.4,
+      "team1_win_prob": 83.0,
+      "draw_prob": 13.2,
+      "team2_win_prob": 3.8,
       "predicted_score": "2-0",
-      "team1_xg": 2.28,
-      "team2_xg": 0.42,
+      "team1_xg": 2.37,
+      "team2_xg": 0.34,
       "key_factors": [
-        "ELO advantage: Morocco (+371 pts)",
+        "ELO advantage: Morocco (+406 pts)",
         "Squad value edge: Morocco ($392M)"
       ]
     }
@@ -1651,14 +1650,14 @@
     "team2_name": "Brazil",
     "team2_flag": "🇧🇷",
     "prediction": {
-      "team1_win_prob": 4.6,
-      "draw_prob": 14.1,
-      "team2_win_prob": 81.3,
+      "team1_win_prob": 5.4,
+      "draw_prob": 15.0,
+      "team2_win_prob": 79.6,
       "predicted_score": "0-2",
-      "team1_xg": 0.38,
-      "team2_xg": 2.32,
+      "team1_xg": 0.43,
+      "team2_xg": 2.28,
       "key_factors": [
-        "ELO advantage: Brazil (+387 pts)",
+        "ELO advantage: Brazil (+370 pts)",
         "Squad value edge: Brazil ($758M)"
       ]
     }
@@ -1683,14 +1682,14 @@
     "team2_name": "Mexico",
     "team2_flag": "🇲🇽",
     "prediction": {
-      "team1_win_prob": 15.3,
-      "draw_prob": 20.3,
-      "team2_win_prob": 64.4,
+      "team1_win_prob": 12.9,
+      "draw_prob": 19.1,
+      "team2_win_prob": 68.1,
       "predicted_score": "0-2",
-      "team1_xg": 0.89,
-      "team2_xg": 2.06,
+      "team1_xg": 0.81,
+      "team2_xg": 2.14,
       "key_factors": [
-        "ELO advantage: Mexico (+184 pts)",
+        "ELO advantage: Mexico (+217 pts)",
         "Home advantage: Mexico"
       ]
     }
@@ -1715,14 +1714,14 @@
     "team2_name": "South Korea",
     "team2_flag": "🇰🇷",
     "prediction": {
-      "team1_win_prob": 18.1,
-      "draw_prob": 22.8,
-      "team2_win_prob": 59.2,
+      "team1_win_prob": 20.8,
+      "draw_prob": 23.6,
+      "team2_win_prob": 55.6,
       "predicted_score": "0-1",
-      "team1_xg": 0.89,
-      "team2_xg": 1.81,
+      "team1_xg": 0.96,
+      "team2_xg": 1.74,
       "key_factors": [
-        "ELO advantage: South Korea (+185 pts)",
+        "ELO advantage: South Korea (+155 pts)",
         "Squad value edge: South Korea ($90M)"
       ]
     }
@@ -1749,12 +1748,12 @@
     "prediction": {
       "team1_win_prob": 10.8,
       "draw_prob": 19.2,
-      "team2_win_prob": 70.1,
+      "team2_win_prob": 70.0,
       "predicted_score": "0-2",
-      "team1_xg": 0.65,
-      "team2_xg": 2.05,
+      "team1_xg": 0.66,
+      "team2_xg": 2.04,
       "key_factors": [
-        "ELO advantage: Ivory Coast (+279 pts)",
+        "ELO advantage: Ivory Coast (+278 pts)",
         "Squad value edge: Ivory Coast ($517M)"
       ]
     }
@@ -1779,14 +1778,14 @@
     "team2_name": "Germany",
     "team2_flag": "🇩🇪",
     "prediction": {
-      "team1_win_prob": 14.7,
-      "draw_prob": 21.3,
-      "team2_win_prob": 64.0,
+      "team1_win_prob": 15.8,
+      "draw_prob": 21.8,
+      "team2_win_prob": 62.4,
       "predicted_score": "0-1",
-      "team1_xg": 0.79,
-      "team2_xg": 1.91,
+      "team1_xg": 0.82,
+      "team2_xg": 1.88,
       "key_factors": [
-        "ELO advantage: Germany (+226 pts)",
+        "ELO advantage: Germany (+212 pts)",
         "Squad value edge: Germany ($578M)"
       ]
     }
@@ -1811,14 +1810,14 @@
     "team2_name": "Sweden",
     "team2_flag": "🇸🇪",
     "prediction": {
-      "team1_win_prob": 40.7,
+      "team1_win_prob": 41.6,
       "draw_prob": 25.7,
-      "team2_win_prob": 33.6,
+      "team2_win_prob": 32.7,
       "predicted_score": "1-1",
-      "team1_xg": 1.43,
-      "team2_xg": 1.27,
+      "team1_xg": 1.45,
+      "team2_xg": 1.25,
       "key_factors": [
-        "ELO advantage: Japan (+31 pts)",
+        "ELO advantage: Japan (+39 pts)",
         "Squad value edge: Sweden ($138M)"
       ]
     }
@@ -1843,14 +1842,14 @@
     "team2_name": "Netherlands",
     "team2_flag": "🇳🇱",
     "prediction": {
-      "team1_win_prob": 5.8,
-      "draw_prob": 15.4,
-      "team2_win_prob": 78.8,
+      "team1_win_prob": 4.9,
+      "draw_prob": 14.4,
+      "team2_win_prob": 80.7,
       "predicted_score": "0-2",
-      "team1_xg": 0.45,
-      "team2_xg": 2.25,
+      "team1_xg": 0.4,
+      "team2_xg": 2.31,
       "key_factors": [
-        "ELO advantage: Netherlands (+362 pts)",
+        "ELO advantage: Netherlands (+382 pts)",
         "Squad value edge: Netherlands ($684M)"
       ]
     }
@@ -1875,14 +1874,14 @@
     "team2_name": "Australia",
     "team2_flag": "🇦🇺",
     "prediction": {
-      "team1_win_prob": 41.8,
+      "team1_win_prob": 41.2,
       "draw_prob": 25.7,
-      "team2_win_prob": 32.6,
+      "team2_win_prob": 33.1,
       "predicted_score": "1-1",
-      "team1_xg": 1.45,
-      "team2_xg": 1.25,
+      "team1_xg": 1.44,
+      "team2_xg": 1.26,
       "key_factors": [
-        "ELO advantage: Paraguay (+40 pts)"
+        "ELO advantage: Paraguay (+35 pts)"
       ]
     }
   },
@@ -1906,14 +1905,14 @@
     "team2_name": "United States",
     "team2_flag": "🇺🇸",
     "prediction": {
-      "team1_win_prob": 17.0,
-      "draw_prob": 20.9,
-      "team2_win_prob": 62.1,
-      "predicted_score": "0-2",
-      "team1_xg": 0.94,
-      "team2_xg": 2.01,
+      "team1_win_prob": 18.2,
+      "draw_prob": 21.4,
+      "team2_win_prob": 60.4,
+      "predicted_score": "0-1",
+      "team1_xg": 0.98,
+      "team2_xg": 1.97,
       "key_factors": [
-        "ELO advantage: United States (+163 pts)",
+        "ELO advantage: United States (+148 pts)",
         "Squad value edge: Türkiye ($88M)",
         "Home advantage: United States"
       ]
@@ -1939,14 +1938,14 @@
     "team2_name": "France",
     "team2_flag": "🇫🇷",
     "prediction": {
-      "team1_win_prob": 9.2,
-      "draw_prob": 18.2,
-      "team2_win_prob": 72.6,
+      "team1_win_prob": 10.9,
+      "draw_prob": 19.3,
+      "team2_win_prob": 69.7,
       "predicted_score": "0-2",
-      "team1_xg": 0.59,
-      "team2_xg": 2.11,
+      "team1_xg": 0.66,
+      "team2_xg": 2.04,
       "key_factors": [
-        "ELO advantage: France (+302 pts)",
+        "ELO advantage: France (+276 pts)",
         "Squad value edge: France ($930M)"
       ]
     }
@@ -1971,14 +1970,14 @@
     "team2_name": "Iraq",
     "team2_flag": "🇮🇶",
     "prediction": {
-      "team1_win_prob": 69.5,
-      "draw_prob": 19.4,
-      "team2_win_prob": 11.1,
+      "team1_win_prob": 68.1,
+      "draw_prob": 19.9,
+      "team2_win_prob": 12.0,
       "predicted_score": "2-0",
-      "team1_xg": 2.03,
-      "team2_xg": 0.67,
+      "team1_xg": 2.0,
+      "team2_xg": 0.7,
       "key_factors": [
-        "ELO advantage: Senegal (+274 pts)",
+        "ELO advantage: Senegal (+261 pts)",
         "Squad value edge: Senegal ($457M)"
       ]
     }
@@ -2003,14 +2002,14 @@
     "team2_name": "Saudi Arabia",
     "team2_flag": "🇸🇦",
     "prediction": {
-      "team1_win_prob": 30.7,
-      "draw_prob": 25.5,
-      "team2_win_prob": 43.8,
+      "team1_win_prob": 32.9,
+      "draw_prob": 25.7,
+      "team2_win_prob": 41.4,
       "predicted_score": "1-1",
-      "team1_xg": 1.21,
-      "team2_xg": 1.49,
+      "team1_xg": 1.26,
+      "team2_xg": 1.44,
       "key_factors": [
-        "ELO advantage: Saudi Arabia (+57 pts)"
+        "ELO advantage: Saudi Arabia (+37 pts)"
       ]
     }
   },
@@ -2034,14 +2033,14 @@
     "team2_name": "Spain",
     "team2_flag": "🇪🇸",
     "prediction": {
-      "team1_win_prob": 13.1,
-      "draw_prob": 20.6,
-      "team2_win_prob": 66.3,
-      "predicted_score": "0-1",
-      "team1_xg": 0.74,
-      "team2_xg": 1.97,
+      "team1_win_prob": 10.9,
+      "draw_prob": 19.3,
+      "team2_win_prob": 69.9,
+      "predicted_score": "0-2",
+      "team1_xg": 0.66,
+      "team2_xg": 2.04,
       "key_factors": [
-        "ELO advantage: Spain (+246 pts)",
+        "ELO advantage: Spain (+277 pts)",
         "Squad value edge: Spain ($861M)"
       ]
     }
@@ -2066,14 +2065,14 @@
     "team2_name": "Iran",
     "team2_flag": "🇮🇷",
     "prediction": {
-      "team1_win_prob": 31.6,
-      "draw_prob": 25.6,
-      "team2_win_prob": 42.8,
+      "team1_win_prob": 33.3,
+      "draw_prob": 25.7,
+      "team2_win_prob": 40.9,
       "predicted_score": "1-1",
-      "team1_xg": 1.23,
-      "team2_xg": 1.47,
+      "team1_xg": 1.27,
+      "team2_xg": 1.43,
       "key_factors": [
-        "ELO advantage: Iran (+49 pts)",
+        "ELO advantage: Iran (+33 pts)",
         "Squad value edge: Egypt ($84M)"
       ]
     }
@@ -2130,14 +2129,14 @@
     "team2_name": "Ghana",
     "team2_flag": "🇬🇭",
     "prediction": {
-      "team1_win_prob": 73.9,
-      "draw_prob": 17.6,
-      "team2_win_prob": 8.5,
+      "team1_win_prob": 70.5,
+      "draw_prob": 19.0,
+      "team2_win_prob": 10.5,
       "predicted_score": "2-0",
-      "team1_xg": 2.14,
-      "team2_xg": 0.56,
+      "team1_xg": 2.06,
+      "team2_xg": 0.64,
       "key_factors": [
-        "ELO advantage: Croatia (+314 pts)",
+        "ELO advantage: Croatia (+283 pts)",
         "Squad value edge: Croatia ($153M)"
       ]
     }
@@ -2162,14 +2161,14 @@
     "team2_name": "England",
     "team2_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "prediction": {
-      "team1_win_prob": 2.1,
-      "draw_prob": 9.8,
-      "team2_win_prob": 88.1,
+      "team1_win_prob": 2.0,
+      "draw_prob": 9.2,
+      "team2_win_prob": 88.8,
       "predicted_score": "0-2",
       "team1_xg": 0.25,
-      "team2_xg": 2.66,
+      "team2_xg": 2.73,
       "key_factors": [
-        "ELO advantage: England (+522 pts)",
+        "ELO advantage: England (+551 pts)",
         "Squad value edge: England ($1325M)"
       ]
     }
@@ -2194,14 +2193,14 @@
     "team2_name": "Portugal",
     "team2_flag": "🇵🇹",
     "prediction": {
-      "team1_win_prob": 26.4,
-      "draw_prob": 24.9,
-      "team2_win_prob": 48.7,
+      "team1_win_prob": 27.5,
+      "draw_prob": 25.1,
+      "team2_win_prob": 47.4,
       "predicted_score": "1-1",
-      "team1_xg": 1.11,
-      "team2_xg": 1.59,
+      "team1_xg": 1.13,
+      "team2_xg": 1.57,
       "key_factors": [
-        "ELO advantage: Portugal (+98 pts)",
+        "ELO advantage: Portugal (+87 pts)",
         "Squad value edge: Portugal ($708M)"
       ]
     }
@@ -2226,14 +2225,14 @@
     "team2_name": "Uzbekistan",
     "team2_flag": "🇺🇿",
     "prediction": {
-      "team1_win_prob": 52.7,
-      "draw_prob": 24.2,
-      "team2_win_prob": 23.1,
-      "predicted_score": "1-1",
-      "team1_xg": 1.68,
-      "team2_xg": 1.02,
+      "team1_win_prob": 56.0,
+      "draw_prob": 23.5,
+      "team2_win_prob": 20.5,
+      "predicted_score": "1-0",
+      "team1_xg": 1.75,
+      "team2_xg": 0.96,
       "key_factors": [
-        "ELO advantage: Congo DR (+131 pts)"
+        "ELO advantage: Congo DR (+158 pts)"
       ]
     }
   },
@@ -2257,14 +2256,14 @@
     "team2_name": "Austria",
     "team2_flag": "🇦🇹",
     "prediction": {
-      "team1_win_prob": 23.6,
-      "draw_prob": 24.4,
-      "team2_win_prob": 52.0,
+      "team1_win_prob": 24.9,
+      "draw_prob": 24.7,
+      "team2_win_prob": 50.4,
       "predicted_score": "1-1",
-      "team1_xg": 1.04,
-      "team2_xg": 1.66,
+      "team1_xg": 1.07,
+      "team2_xg": 1.63,
       "key_factors": [
-        "ELO advantage: Austria (+126 pts)"
+        "ELO advantage: Austria (+112 pts)"
       ]
     }
   },
@@ -2288,14 +2287,14 @@
     "team2_name": "Argentina",
     "team2_flag": "🇦🇷",
     "prediction": {
-      "team1_win_prob": 1.4,
-      "draw_prob": 6.6,
-      "team2_win_prob": 92.1,
+      "team1_win_prob": 1.3,
+      "draw_prob": 6.3,
+      "team2_win_prob": 92.4,
       "predicted_score": "0-3",
       "team1_xg": 0.25,
-      "team2_xg": 3.15,
+      "team2_xg": 3.2,
       "key_factors": [
-        "ELO advantage: Argentina (+719 pts)",
+        "ELO advantage: Argentina (+739 pts)",
         "Squad value edge: Argentina ($787M)"
       ]
     }
@@ -2320,21 +2319,21 @@
     "team2_name": "Canada",
     "team2_flag": "🇨🇦",
     "prediction": {
-      "team1_win_prob": 21.8,
-      "draw_prob": 22.5,
-      "team2_win_prob": 55.7,
+      "team1_win_prob": 23.7,
+      "draw_prob": 23.0,
+      "team2_win_prob": 53.3,
       "predicted_score": "1-1",
-      "team1_xg": 1.08,
-      "team2_xg": 1.87,
+      "team1_xg": 1.14,
+      "team2_xg": 1.82,
       "key_factors": [
-        "ELO advantage: Canada (+107 pts)",
+        "ELO advantage: Canada (+86 pts)",
         "Squad value edge: Canada ($149M)",
         "Home advantage: Canada"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 21.0,
-      "team2_advance_prob": 79.0,
+      "team1_advance_prob": 26.3,
+      "team2_advance_prob": 73.7,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2358,20 +2357,20 @@
     "team2_name": "Japan",
     "team2_flag": "🇯🇵",
     "prediction": {
-      "team1_win_prob": 68.3,
-      "draw_prob": 19.9,
-      "team2_win_prob": 11.9,
-      "predicted_score": "2-0",
-      "team1_xg": 2.01,
-      "team2_xg": 0.69,
+      "team1_win_prob": 65.9,
+      "draw_prob": 20.7,
+      "team2_win_prob": 13.4,
+      "predicted_score": "1-0",
+      "team1_xg": 1.96,
+      "team2_xg": 0.75,
       "key_factors": [
-        "ELO advantage: Brazil (+263 pts)",
+        "ELO advantage: Brazil (+242 pts)",
         "Squad value edge: Brazil ($657M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 87.4,
-      "team2_advance_prob": 12.6,
+      "team1_advance_prob": 90.4,
+      "team2_advance_prob": 9.6,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2395,20 +2394,20 @@
     "team2_name": "Paraguay",
     "team2_flag": "🇵🇾",
     "prediction": {
-      "team1_win_prob": 63.7,
-      "draw_prob": 21.4,
-      "team2_win_prob": 14.9,
+      "team1_win_prob": 60.4,
+      "draw_prob": 22.4,
+      "team2_win_prob": 17.2,
       "predicted_score": "1-0",
-      "team1_xg": 1.91,
-      "team2_xg": 0.79,
+      "team1_xg": 1.84,
+      "team2_xg": 0.86,
       "key_factors": [
-        "ELO advantage: Germany (+223 pts)",
+        "ELO advantage: Germany (+195 pts)",
         "Squad value edge: Germany ($793M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 76.5,
-      "team2_advance_prob": 23.5,
+      "team1_advance_prob": 74.3,
+      "team2_advance_prob": 25.7,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2432,20 +2431,20 @@
     "team2_name": "Morocco",
     "team2_flag": "🇲🇦",
     "prediction": {
-      "team1_win_prob": 51.7,
-      "draw_prob": 24.4,
-      "team2_win_prob": 23.9,
+      "team1_win_prob": 48.8,
+      "draw_prob": 24.9,
+      "team2_win_prob": 26.3,
       "predicted_score": "1-1",
-      "team1_xg": 1.66,
-      "team2_xg": 1.04,
+      "team1_xg": 1.6,
+      "team2_xg": 1.1,
       "key_factors": [
-        "ELO advantage: Netherlands (+122 pts)",
+        "ELO advantage: Netherlands (+99 pts)",
         "Squad value edge: Netherlands ($307M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 79.0,
-      "team2_advance_prob": 21.0,
+      "team1_advance_prob": 64.6,
+      "team2_advance_prob": 35.4,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2469,19 +2468,19 @@
     "team2_name": "Norway",
     "team2_flag": "🇳🇴",
     "prediction": {
-      "team1_win_prob": 26.2,
-      "draw_prob": 24.9,
-      "team2_win_prob": 48.9,
+      "team1_win_prob": 22.3,
+      "draw_prob": 24.0,
+      "team2_win_prob": 53.7,
       "predicted_score": "1-1",
-      "team1_xg": 1.1,
-      "team2_xg": 1.6,
+      "team1_xg": 1.0,
+      "team2_xg": 1.7,
       "key_factors": [
-        "ELO advantage: Norway (+100 pts)"
+        "ELO advantage: Norway (+139 pts)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 25.1,
-      "team2_advance_prob": 74.8,
+      "team1_advance_prob": 32.0,
+      "team2_advance_prob": 68.0,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2505,20 +2504,20 @@
     "team2_name": "Sweden",
     "team2_flag": "🇸🇪",
     "prediction": {
-      "team1_win_prob": 74.1,
-      "draw_prob": 17.6,
-      "team2_win_prob": 8.4,
+      "team1_win_prob": 76.6,
+      "draw_prob": 16.4,
+      "team2_win_prob": 7.0,
       "predicted_score": "2-0",
-      "team1_xg": 2.14,
-      "team2_xg": 0.56,
+      "team1_xg": 2.2,
+      "team2_xg": 0.5,
       "key_factors": [
-        "ELO advantage: France (+316 pts)",
+        "ELO advantage: France (+340 pts)",
         "Squad value edge: France ($1111M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 86.2,
-      "team2_advance_prob": 13.8,
+      "team1_advance_prob": 90.6,
+      "team2_advance_prob": 9.4,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2542,21 +2541,21 @@
     "team2_name": "Ecuador",
     "team2_flag": "🇪🇨",
     "prediction": {
-      "team1_win_prob": 62.6,
-      "draw_prob": 20.8,
-      "team2_win_prob": 16.6,
+      "team1_win_prob": 64.7,
+      "draw_prob": 20.2,
+      "team2_win_prob": 15.2,
       "predicted_score": "2-0",
-      "team1_xg": 2.02,
-      "team2_xg": 0.93,
+      "team1_xg": 2.06,
+      "team2_xg": 0.89,
       "key_factors": [
-        "ELO advantage: Mexico (+168 pts)",
+        "ELO advantage: Mexico (+186 pts)",
         "Squad value edge: Ecuador ($177M)",
         "Home advantage: Mexico"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 76.3,
-      "team2_advance_prob": 23.7,
+      "team1_advance_prob": 82.4,
+      "team2_advance_prob": 17.6,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2580,20 +2579,20 @@
     "team2_name": "Congo DR",
     "team2_flag": "🇨🇩",
     "prediction": {
-      "team1_win_prob": 86.7,
-      "draw_prob": 10.9,
+      "team1_win_prob": 86.6,
+      "draw_prob": 11.0,
       "team2_win_prob": 2.4,
       "predicted_score": "2-0",
-      "team1_xg": 2.52,
+      "team1_xg": 2.51,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: England (+467 pts)",
+        "ELO advantage: England (+465 pts)",
         "Squad value edge: England ($1216M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 87.5,
-      "team2_advance_prob": 12.5,
+      "team1_advance_prob": 85.4,
+      "team2_advance_prob": 14.6,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2617,19 +2616,19 @@
     "team2_name": "Senegal",
     "team2_flag": "🇸🇳",
     "prediction": {
-      "team1_win_prob": 63.2,
-      "draw_prob": 21.6,
-      "team2_win_prob": 15.2,
+      "team1_win_prob": 66.5,
+      "draw_prob": 20.5,
+      "team2_win_prob": 13.0,
       "predicted_score": "1-0",
-      "team1_xg": 1.9,
-      "team2_xg": 0.8,
+      "team1_xg": 1.97,
+      "team2_xg": 0.73,
       "key_factors": [
-        "ELO advantage: Belgium (+219 pts)"
+        "ELO advantage: Belgium (+247 pts)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 80.0,
-      "team2_advance_prob": 20.0,
+      "team1_advance_prob": 86.0,
+      "team2_advance_prob": 14.0,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2653,21 +2652,21 @@
     "team2_name": "Bosnia-Herzegovina",
     "team2_flag": "🇧🇦",
     "prediction": {
-      "team1_win_prob": 64.5,
-      "draw_prob": 20.2,
-      "team2_win_prob": 15.3,
+      "team1_win_prob": 63.0,
+      "draw_prob": 20.7,
+      "team2_win_prob": 16.3,
       "predicted_score": "2-0",
-      "team1_xg": 2.06,
-      "team2_xg": 0.89,
+      "team1_xg": 2.03,
+      "team2_xg": 0.92,
       "key_factors": [
-        "ELO advantage: United States (+185 pts)",
+        "ELO advantage: United States (+171 pts)",
         "Squad value edge: United States ($239M)",
         "Home advantage: United States"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 85.7,
-      "team2_advance_prob": 14.3,
+      "team1_advance_prob": 86.3,
+      "team2_advance_prob": 13.7,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2691,20 +2690,20 @@
     "team2_name": "Austria",
     "team2_flag": "🇦🇹",
     "prediction": {
-      "team1_win_prob": 72.0,
-      "draw_prob": 18.4,
-      "team2_win_prob": 9.6,
+      "team1_win_prob": 74.4,
+      "draw_prob": 17.4,
+      "team2_win_prob": 8.2,
       "predicted_score": "2-0",
-      "team1_xg": 2.09,
-      "team2_xg": 0.61,
+      "team1_xg": 2.15,
+      "team2_xg": 0.55,
       "key_factors": [
-        "ELO advantage: Spain (+297 pts)",
+        "ELO advantage: Spain (+319 pts)",
         "Squad value edge: Spain ($975M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 82.9,
-      "team2_advance_prob": 17.1,
+      "team1_advance_prob": 89.1,
+      "team2_advance_prob": 10.9,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2728,20 +2727,20 @@
     "team2_name": "Croatia",
     "team2_flag": "🇭🇷",
     "prediction": {
-      "team1_win_prob": 50.7,
+      "team1_win_prob": 50.9,
       "draw_prob": 24.6,
-      "team2_win_prob": 24.7,
+      "team2_win_prob": 24.5,
       "predicted_score": "1-1",
       "team1_xg": 1.64,
       "team2_xg": 1.06,
       "key_factors": [
-        "ELO advantage: Portugal (+115 pts)",
+        "ELO advantage: Portugal (+116 pts)",
         "Squad value edge: Portugal ($623M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 77.3,
-      "team2_advance_prob": 22.7,
+      "team1_advance_prob": 70.2,
+      "team2_advance_prob": 29.8,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2765,20 +2764,20 @@
     "team2_name": "Algeria",
     "team2_flag": "🇩🇿",
     "prediction": {
-      "team1_win_prob": 60.9,
-      "draw_prob": 22.3,
-      "team2_win_prob": 16.9,
+      "team1_win_prob": 64.7,
+      "draw_prob": 21.1,
+      "team2_win_prob": 14.2,
       "predicted_score": "1-0",
-      "team1_xg": 1.85,
-      "team2_xg": 0.85,
+      "team1_xg": 1.93,
+      "team2_xg": 0.77,
       "key_factors": [
-        "ELO advantage: Switzerland (+199 pts)",
+        "ELO advantage: Switzerland (+232 pts)",
         "Squad value edge: Switzerland ($81M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 81.8,
-      "team2_advance_prob": 18.2,
+      "team1_advance_prob": 83.9,
+      "team2_advance_prob": 16.1,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2802,12 +2801,12 @@
     "team2_name": "Egypt",
     "team2_flag": "🇪🇬",
     "prediction": {
-      "team1_win_prob": 38.1,
+      "team1_win_prob": 38.4,
       "draw_prob": 25.8,
-      "team2_win_prob": 36.1,
+      "team2_win_prob": 35.8,
       "predicted_score": "1-1",
-      "team1_xg": 1.37,
-      "team2_xg": 1.33,
+      "team1_xg": 1.38,
+      "team2_xg": 1.32,
       "key_factors": []
     },
     "xgb_prediction": {
@@ -2836,20 +2835,20 @@
     "team2_name": "Cape Verde",
     "team2_flag": "🇨🇻",
     "prediction": {
-      "team1_win_prob": 90.0,
-      "draw_prob": 8.3,
+      "team1_win_prob": 89.7,
+      "draw_prob": 8.5,
       "team2_win_prob": 1.8,
       "predicted_score": "2-0",
-      "team1_xg": 2.86,
+      "team1_xg": 2.83,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: Argentina (+604 pts)",
+        "ELO advantage: Argentina (+592 pts)",
         "Squad value edge: Argentina ($753M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 89.2,
-      "team2_advance_prob": 10.8,
+      "team1_advance_prob": 90.3,
+      "team2_advance_prob": 9.7,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2873,19 +2872,19 @@
     "team2_name": "Ghana",
     "team2_flag": "🇬🇭",
     "prediction": {
-      "team1_win_prob": 75.7,
-      "draw_prob": 16.8,
-      "team2_win_prob": 7.5,
+      "team1_win_prob": 73.7,
+      "draw_prob": 17.7,
+      "team2_win_prob": 8.6,
       "predicted_score": "2-0",
-      "team1_xg": 2.18,
-      "team2_xg": 0.52,
+      "team1_xg": 2.13,
+      "team2_xg": 0.57,
       "key_factors": [
-        "ELO advantage: Colombia (+331 pts)"
+        "ELO advantage: Colombia (+312 pts)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 90.0,
-      "team2_advance_prob": 10.1,
+      "team1_advance_prob": 92.3,
+      "team2_advance_prob": 7.7,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2898,29 +2897,32 @@
     "venue": "NRG Stadium",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "3"
+    },
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Canada",
     "team1_flag": "🇨🇦",
     "team2_name": "Morocco",
     "team2_flag": "🇲🇦",
     "prediction": {
-      "team1_win_prob": 26.2,
-      "draw_prob": 23.5,
-      "team2_win_prob": 50.3,
+      "team1_win_prob": 22.8,
+      "draw_prob": 22.8,
+      "team2_win_prob": 54.4,
       "predicted_score": "1-1",
-      "team1_xg": 1.2,
-      "team2_xg": 1.75,
+      "team1_xg": 1.11,
+      "team2_xg": 1.84,
       "key_factors": [
-        "ELO advantage: Morocco (+160 pts)",
+        "ELO advantage: Morocco (+196 pts)",
         "Squad value edge: Morocco ($249M)",
         "Home advantage: Canada"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 15.5,
-      "team2_advance_prob": 84.5,
+      "team1_advance_prob": 12.7,
+      "team2_advance_prob": 87.3,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2933,28 +2935,31 @@
     "venue": "Lincoln Financial Field",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "1"
+    },
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Paraguay",
     "team1_flag": "🇵🇾",
     "team2_name": "France",
     "team2_flag": "🇫🇷",
     "prediction": {
-      "team1_win_prob": 5.2,
-      "draw_prob": 14.8,
-      "team2_win_prob": 80.0,
+      "team1_win_prob": 4.7,
+      "draw_prob": 14.2,
+      "team2_win_prob": 81.0,
       "predicted_score": "0-2",
-      "team1_xg": 0.41,
-      "team2_xg": 2.29,
+      "team1_xg": 0.39,
+      "team2_xg": 2.31,
       "key_factors": [
-        "ELO advantage: France (+374 pts)",
+        "ELO advantage: France (+385 pts)",
         "Squad value edge: France ($1366M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 12.9,
-      "team2_advance_prob": 87.1,
+      "team1_advance_prob": 15.2,
+      "team2_advance_prob": 84.8,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2967,28 +2972,31 @@
     "venue": "MetLife Stadium",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "2"
+    },
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Brazil",
     "team1_flag": "🇧🇷",
     "team2_name": "Norway",
     "team2_flag": "🇳🇴",
     "prediction": {
-      "team1_win_prob": 70.2,
-      "draw_prob": 19.1,
-      "team2_win_prob": 10.7,
-      "predicted_score": "2-0",
-      "team1_xg": 2.05,
-      "team2_xg": 0.65,
+      "team1_win_prob": 63.0,
+      "draw_prob": 21.7,
+      "team2_win_prob": 15.4,
+      "predicted_score": "1-0",
+      "team1_xg": 1.89,
+      "team2_xg": 0.81,
       "key_factors": [
-        "ELO advantage: Brazil (+280 pts)",
+        "ELO advantage: Brazil (+217 pts)",
         "Squad value edge: Brazil ($338M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 88.9,
-      "team2_advance_prob": 11.1,
+      "team1_advance_prob": 87.8,
+      "team2_advance_prob": 12.2,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3001,29 +3009,32 @@
     "venue": "Estadio Banorte",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "2",
+      "team2": "3"
+    },
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Mexico",
     "team1_flag": "🇲🇽",
     "team2_name": "England",
     "team2_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "prediction": {
-      "team1_win_prob": 25.6,
+      "team1_win_prob": 25.4,
       "draw_prob": 23.4,
-      "team2_win_prob": 51.0,
+      "team2_win_prob": 51.2,
       "predicted_score": "1-1",
       "team1_xg": 1.18,
       "team2_xg": 1.77,
       "key_factors": [
-        "ELO advantage: England (+166 pts)",
+        "ELO advantage: England (+168 pts)",
         "Squad value edge: England ($1168M)",
         "Home advantage: Mexico"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 18.6,
-      "team2_advance_prob": 81.4,
+      "team1_advance_prob": 36.3,
+      "team2_advance_prob": 63.7,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3036,28 +3047,31 @@
     "venue": "AT&T Stadium",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "0",
+      "team2": "1"
+    },
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Portugal",
     "team1_flag": "🇵🇹",
     "team2_name": "Spain",
     "team2_flag": "🇪🇸",
     "prediction": {
-      "team1_win_prob": 27.7,
-      "draw_prob": 25.2,
-      "team2_win_prob": 47.1,
+      "team1_win_prob": 25.4,
+      "draw_prob": 24.8,
+      "team2_win_prob": 49.8,
       "predicted_score": "1-1",
-      "team1_xg": 1.14,
-      "team2_xg": 1.56,
+      "team1_xg": 1.08,
+      "team2_xg": 1.62,
       "key_factors": [
-        "ELO advantage: Spain (+85 pts)",
+        "ELO advantage: Spain (+107 pts)",
         "Squad value edge: Spain ($210M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 24.2,
-      "team2_advance_prob": 75.8,
+      "team1_advance_prob": 36.7,
+      "team2_advance_prob": 63.3,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3070,29 +3084,32 @@
     "venue": "Lumen Field",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "1",
+      "team2": "4"
+    },
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "United States",
     "team1_flag": "🇺🇸",
     "team2_name": "Belgium",
     "team2_flag": "🇧🇪",
     "prediction": {
-      "team1_win_prob": 36.6,
-      "draw_prob": 24.5,
-      "team2_win_prob": 38.9,
+      "team1_win_prob": 33.5,
+      "draw_prob": 24.4,
+      "team2_win_prob": 42.1,
       "predicted_score": "1-1",
-      "team1_xg": 1.45,
-      "team2_xg": 1.5,
+      "team1_xg": 1.38,
+      "team2_xg": 1.57,
       "key_factors": [
-        "ELO advantage: Belgium (+60 pts)",
+        "ELO advantage: Belgium (+89 pts)",
         "Squad value edge: Belgium ($162M)",
         "Home advantage: United States"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 26.5,
-      "team2_advance_prob": 73.5,
+      "team1_advance_prob": 37.2,
+      "team2_advance_prob": 62.8,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3105,28 +3122,31 @@
     "venue": "Mercedes-Benz Stadium",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed",
+    "score": {
+      "team1": "3",
+      "team2": "2"
+    },
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Argentina",
     "team1_flag": "🇦🇷",
     "team2_name": "Egypt",
     "team2_flag": "🇪🇬",
     "prediction": {
-      "team1_win_prob": 86.7,
-      "draw_prob": 10.9,
+      "team1_win_prob": 86.9,
+      "draw_prob": 10.8,
       "team2_win_prob": 2.4,
       "predicted_score": "2-0",
-      "team1_xg": 2.52,
+      "team1_xg": 2.53,
       "team2_xg": 0.25,
       "key_factors": [
-        "ELO advantage: Argentina (+468 pts)",
+        "ELO advantage: Argentina (+473 pts)",
         "Squad value edge: Argentina ($691M)"
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 88.5,
-      "team2_advance_prob": 11.5,
+      "team1_advance_prob": 90.6,
+      "team2_advance_prob": 9.4,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3139,27 +3159,29 @@
     "venue": "BC Place",
     "stage": "round_of_16",
     "matchday": null,
-    "status": "scheduled",
-    "score": null,
+    "status": "completed_penalties",
+    "score": {
+      "team1": "0",
+      "team2": "0",
+      "penalties": "4-3"
+    },
     "notes": "FIFA World Cup, Round of 16",
     "team1_name": "Switzerland",
     "team1_flag": "🇨🇭",
     "team2_name": "Colombia",
     "team2_flag": "🇨🇴",
     "prediction": {
-      "team1_win_prob": 32.5,
-      "draw_prob": 25.7,
-      "team2_win_prob": 41.9,
+      "team1_win_prob": 36.5,
+      "draw_prob": 25.8,
+      "team2_win_prob": 37.7,
       "predicted_score": "1-1",
-      "team1_xg": 1.25,
-      "team2_xg": 1.45,
-      "key_factors": [
-        "ELO advantage: Colombia (+41 pts)"
-      ]
+      "team1_xg": 1.34,
+      "team2_xg": 1.36,
+      "key_factors": []
     },
     "xgb_prediction": {
-      "team1_advance_prob": 48.0,
-      "team2_advance_prob": 52.0,
+      "team1_advance_prob": 50.9,
+      "team2_advance_prob": 49.1,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },

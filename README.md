@@ -10,9 +10,9 @@
 
 ## 🎥 Demo
 
-https://raw.githubusercontent.com/DAGS-data/WorldCup2026_predictor/master/docs/demo.mp4
+<video src="https://raw.githubusercontent.com/DAGS-data/WorldCup2026_predictor/master/docs/demo.mp4" controls width="100%" style="max-width:800px;border-radius:12px"></video>
 
----
+*(Si no se reproduce, clic derecho → "Abrir video en nueva pestaña")*
 
 ## 📡 Fuentes de datos (100% reales)
 

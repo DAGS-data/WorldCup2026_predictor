@@ -1539,8 +1539,8 @@
   {
     "id": 96,
     "group": null,
-    "team1_id": null,
-    "team2_id": null,
+    "team1_id": 32,
+    "team2_id": 9,
     "date": "2026-07-09",
     "venue": "Gillette Stadium",
     "stage": "quarter_finals",
@@ -1552,8 +1552,8 @@
   {
     "id": 97,
     "group": null,
-    "team1_id": null,
-    "team2_id": null,
+    "team1_id": 28,
+    "team2_id": 24,
     "date": "2026-07-10",
     "venue": "SoFi Stadium",
     "stage": "quarter_finals",
@@ -1565,8 +1565,8 @@
   {
     "id": 98,
     "group": null,
-    "team1_id": null,
-    "team2_id": null,
+    "team1_id": 35,
+    "team2_id": 44,
     "date": "2026-07-11",
     "venue": "Hard Rock Stadium",
     "stage": "quarter_finals",
@@ -1578,8 +1578,8 @@
   {
     "id": 99,
     "group": null,
-    "team1_id": null,
-    "team2_id": null,
+    "team1_id": 36,
+    "team2_id": 7,
     "date": "2026-07-12",
     "venue": "GEHA Field at Arrowhead Stadium",
     "stage": "quarter_finals",

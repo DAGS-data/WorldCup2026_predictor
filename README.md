@@ -169,9 +169,15 @@ La **mecánica de actualización es 100% estándar** (Elo, 1978). La **inicializ
 
 #### Inicialización de ELO — Feature Engineering
 
-Para el fútbol no existe un sistema ELO preexistente que cubra las 48 selecciones del Mundial con la escala deseada. Los ELO iniciales se derivaron del **ranking FIFA pre-torneo (junio 2026)** como punto de partida — a mejor ranking, mayor ELO (correlación −0.900). No hay una fórmula fija: es feature engineering: cada equipo recibió un valor en un rango plausible (~1300–2150, consistente con la escala ELO del ajedrez), proporcional a su posición en el ranking FIFA.
+No existe un sistema ELO preexistente para las 48 selecciones del Mundial. Los ELO iniciales se asignaron a partir del **ranking FIFA pre-torneo (junio 2026)** con el siguiente criterio:
 
-Luego, **los 88 partidos reales del torneo** actualizaron estos valores con la fórmula estándar (K=30), produciendo el rango final **1382–2127**.
+- **Rango objetivo:** ~1400 (peor equipo) a ~2100 (mejor equipo), consistente con la escala ELO del ajedrez (~1000–2850)
+- **Mapeo:** el ranking FIFA (#1 a #90) se distribuyó proporcionalmente en ese rango. Por ejemplo, México (#15 FIFA) recibió ~1850, Argentina (#1) ~2100, Nueva Zelanda (#88) ~1400
+- **Correlación resultante:** −0.900 entre ranking FIFA y ELO inicial
+
+Esto es feature engineering: el ranking FIFA es la fuente de datos real; el mapeo a escala ELO es una transformación para alimentar el modelo. No es una fórmula publicada — es una decisión de diseño.
+
+Luego, **los 88 partidos reales del torneo** actualizaron estos valores con la fórmula estándar de Elo (K=30), produciendo el rango final **1382–2127**. Los equipos que ganaron partidos subieron (Argentina: ~2100 → 2127); los que perdieron bajaron (Nueva Zelanda: ~1400 → 1382).
 
 #### Fórmula estándar de actualización (Elo, 1978)
 

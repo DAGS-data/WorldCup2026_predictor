@@ -489,11 +489,53 @@ def bracket_v2():
 
     rounds = {"round_of_16": [], "quarter_finals": [], "semi_finals": [], "final": []}
 
-    # --- R16: use pre-computed predictions ---
+    # Helper: determine real winner from completed match
+    def get_match_result(raw):
+        """Return (winner_id, score_str, status_str) from a completed match, or None."""
+        if not raw or not raw.get("score"):
+            return None
+        s1 = int(raw["score"]["team1"]); s2 = int(raw["score"]["team2"])
+        status = raw.get("status", "")
+        t1_won = s1 > s2
+        if status.endswith("_penalties"):
+            pen = raw["score"].get("penalties", "")
+            if pen:
+                p1, p2 = map(int, pen.split("-"))
+                t1_won = p1 > p2
+                return (raw["team1_id"] if t1_won else raw["team2_id"],
+                        f"{s1}-{s2} ({p1}-{p2} pen)", status)
+        if status.endswith("_aet"):
+            return (raw["team1_id"] if t1_won else raw["team2_id"],
+                    f"{s1}-{s2} (aet)", status)
+        return (raw["team1_id"] if t1_won else raw["team2_id"],
+                f"{s1}-{s2}", status)
+
+    # --- R16: use real results if completed, else prediction ---
     r16_winners = []
     for m in r16_matches:
         t1id = m.get("team1_id"); t2id = m.get("team2_id")
         t1 = teams_lookup.get(t1id, {}); t2 = teams_lookup.get(t2id, {})
+        raw = next((rm for rm in matches_raw if rm.get("id") == m.get("id")), None)
+        is_completed = raw and raw.get("status", "").startswith("completed")
+        
+        if is_completed:
+            result = get_match_result(raw)
+            if result:
+                winner_id, score_display, match_status = result
+                rounds["round_of_16"].append({
+                    "match_id": m.get("id"),
+                    "team1": team_info(t1),
+                    "team2": team_info(t2),
+                    "team1_prob": 100 if winner_id == t1id else 0,
+                    "team2_prob": 0 if winner_id == t1id else 100,
+                    "winner_id": winner_id,
+                    "score": score_display,
+                    "status": match_status,
+                })
+                r16_winners.append(teams_lookup.get(winner_id, t1))
+                continue
+        
+        # Fallback to prediction
         xgb_pred = m.get("xgb_prediction", {})
         p1 = xgb_pred.get("team1_advance_prob", 50)
         p2 = xgb_pred.get("team2_advance_prob", 50)
@@ -505,22 +547,47 @@ def bracket_v2():
             "team1_prob": p1,
             "team2_prob": p2,
             "winner_id": winner_id,
+            "status": "scheduled",
         })
         r16_winners.append(teams_lookup.get(winner_id, teams_lookup.get(t1id)))
 
-    # --- QF: simulate from R16 winners ---
+    # --- QF: use actual matchups from matches_enriched (IDs 96-99) ---
+    qf_matches = sorted(
+        [m for m in matches_enriched if m.get("stage") == "quarter_finals" and m.get("team1_id")],
+        key=lambda m: m.get("id", 0)
+    )
     qf_winners = []
-    for i in range(0, 8, 2):
-        ta = r16_winners[i]; tb = r16_winners[i+1]
-        pa, pb, wid = predict_match(ta, tb, "quarter_finals", "2026-07-10")
-        rounds["quarter_finals"].append({
-            "team1": team_info(ta),
-            "team2": team_info(tb),
-            "team1_prob": round(pa*100, 1),
-            "team2_prob": round(pb*100, 1),
-            "winner_id": wid,
-        })
-        qf_winners.append(ta if wid == ta["id"] else tb)
+    if qf_matches:
+        for m in qf_matches:
+            t1id = m.get("team1_id"); t2id = m.get("team2_id")
+            t1 = teams_lookup.get(t1id, {}); t2 = teams_lookup.get(t2id, {})
+            if not t1 or not t2:
+                continue
+            pa, pb, wid = predict_match(t1, t2, "quarter_finals", m.get("date", "2026-07-10"))
+            rounds["quarter_finals"].append({
+                "match_id": m.get("id"),
+                "team1": team_info(t1),
+                "team2": team_info(t2),
+                "team1_prob": round(pa*100, 1),
+                "team2_prob": round(pb*100, 1),
+                "winner_id": wid,
+                "status": "scheduled",
+            })
+            qf_winners.append(t1 if wid == t1["id"] else t2)
+    else:
+        # Fallback: chain from R16 winners
+        for i in range(0, 8, 2):
+            ta = r16_winners[i]; tb = r16_winners[i+1]
+            pa, pb, wid = predict_match(ta, tb, "quarter_finals", "2026-07-10")
+            rounds["quarter_finals"].append({
+                "team1": team_info(ta),
+                "team2": team_info(tb),
+                "team1_prob": round(pa*100, 1),
+                "team2_prob": round(pb*100, 1),
+                "winner_id": wid,
+                "status": "scheduled",
+            })
+            qf_winners.append(ta if wid == ta["id"] else tb)
 
     # --- SF ---
     sf_winners = []

@@ -169,11 +169,19 @@ La **mecánica de actualización es 100% estándar** (Elo, 1978). La **inicializ
 
 #### Inicialización de ELO — Feature Engineering
 
-No existe un sistema ELO preexistente para las 48 selecciones del Mundial. Los ELO iniciales se derivaron del **ranking FIFA pre-torneo (junio 2026)** mediante un mapeo lineal aproximado:
+No existe un sistema ELO preexistente para las 48 selecciones del Mundial. Los ELO iniciales se derivaron del **ranking FIFA pre-torneo (junio 2026)** mediante interpolación lineal entre dos puntos extremos:
 
 $$\text{ELO}_{\text{inicial}} \approx 2100 - \frac{700}{89} \times (\text{Ranking FIFA} - 1)$$
 
-Es decir, el equipo #1 del ranking FIFA arranca en ~2100, el #90 en ~1400, y los intermedios se distribuyen proporcionalmente. Con ejemplos concretos:
+**¿Por qué 2100 para el #1?** En ajedrez, un campeón mundial ronda los 2850. Para fútbol se eligió un techo más bajo por tres razones: (1) no hay décadas de historial ELO en fútbol — empezar más bajo deja margen para que los ratings crezcan con los partidos; (2) con 700 puntos de diferencia entre #1 y #90, Argentina le gana a Nueva Zelanda con ~98% de probabilidad, lo cual es realista; (3) 2100 arranca apenas debajo del máximo real post-torneo (2127), dejando espacio para que los ganadores suban.
+
+**¿Por qué 1400 para el #90?** Es el piso de la escala ELO del ajedrez para un jugador amateur serio (~1200–1400). No se usó 1000 (principiante absoluto) porque todos los equipos del Mundial tienen nivel profesional.
+
+**¿Por qué `(rank − 1)`?** Para que el #1 no reste nada. Si la fórmula usara solo `rank`, Argentina (#1) perdería ~7.87 puntos innecesariamente. El `−1` ancla el primer puesto en exactamente 2100.
+
+**¿Por qué 700/89?** Son 700 puntos de diferencia entre los extremos (2100 − 1400) repartidos en 89 posiciones de ranking (del #1 al #90). Cada puesto del ranking FIFA "vale" ~7.87 puntos ELO. Es la recta más simple que une los dos puntos elegidos, usando el ranking FIFA como eje X.
+
+Con ejemplos concretos:
 
 | Equipo | Ranking FIFA | ELO inicial estimado |
 |--------|:-----------:|:--------------------:|
@@ -183,7 +191,7 @@ Es decir, el equipo #1 del ranking FIFA arranca en ~2100, el #90 en ~1400, y los
 | 🇨🇻 Cabo Verde | #54 | ~1683 |
 | 🇳🇿 Nueva Zelanda | #88 | ~1416 |
 
-Esto es feature engineering: el ranking FIFA es la fuente de datos real; el mapeo lineal a una escala ELO (~1400–2100) es la transformación que alimenta al modelo. No es una metodología publicada — es una decisión de diseño para ubicar a los equipos en un rango numérico comparable.
+Esto es feature engineering: el ranking FIFA es la fuente de datos real; la interpolación lineal a una escala ELO (~1400–2100) es la transformación que alimenta al modelo.
 
 Luego, **los 88 partidos reales del torneo** actualizaron estos valores con la fórmula estándar de Elo (K=30). Los equipos que ganaron subieron; los que perdieron bajaron. El rango final es **1382–2127** (Argentina subió de ~2100 a 2127; Nueva Zelanda bajó de ~1416 a 1382).
 

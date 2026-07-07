@@ -10,7 +10,7 @@
 
 ## 🎥 Demo
 
-<video src="https://raw.githubusercontent.com/DAGS-data/WorldCup2026_predictor/master/docs/demo.mp4" controls width="100%" style="max-width:800px;border-radius:12px"></video>
+![World Cup 2026 Predictor Demo](docs/demo.gif)
 
 ## 📡 Fuentes de datos (100% reales)
 

@@ -12,8 +12,6 @@
 
 <video src="https://raw.githubusercontent.com/DAGS-data/WorldCup2026_predictor/master/docs/demo.mp4" controls width="100%" style="max-width:800px;border-radius:12px"></video>
 
-*(Si no se reproduce, clic derecho → "Abrir video en nueva pestaña")*
-
 ## 📡 Fuentes de datos (100% reales)
 
 Cada número en este proyecto tiene una fuente verificable. **No hay datos sintéticos ni inventados.**
@@ -171,8 +169,25 @@ El sistema ELO fue creado por Arpad Elo en 1960 para el ajedrez. La idea es simp
 
 Tomamos el sistema ELO clásico y lo adaptamos al fútbol con tres modificaciones:
 
-**1. Escala de ratings**
-En ajedrez, los ratings van de ~1000 (principiante) a ~2850 (campeón mundial). En nuestro fútbol, usamos un rango competitivo de 1380 a 2127. Un equipo 100 puntos arriba gana aproximadamente 64% de las veces.
+**1. Escala de ratings y cálculo inicial**
+
+En ajedrez, los ratings van de ~1000 (principiante) a ~2850 (campeón mundial). En nuestro fútbol, el rango resultante es **1382 a 2127**. Este rango no fue elegido arbitrariamente — emergió naturalmente del proceso:
+
+**¿Cómo se calcularon los ELO iniciales?**
+
+Cada equipo recibió un ELO base derivado de su ranking FIFA pre-torneo (junio 2026). La correlación entre ranking FIFA y ELO inicial es de **-0.900** (relación muy fuerte: a mejor ranking, mayor ELO). La fórmula aproximada usada fue:
+
+$$\text{ELO}_{\text{inicial}} \approx 2200 - 20 \times \text{Ranking FIFA}$$
+
+Esto coloca al #1 del ranking cerca de 2180 y al #48 cerca de 1240. Luego, **cada uno de los 88 partidos jugados** actualizó los ELO con K=30, haciendo que el rango se ajustara naturalmente al rendimiento real en el torneo:
+
+- 🇦🇷 Argentina (#1 FIFA) empezó cerca de 2180 y tras ganar sus partidos subió a **2127**
+- 🇳🇿 Nueva Zelanda (#48 FIFA) empezó cerca de 1240 y tras perder bajó a **1382**
+- Equipos que dieron la sorpresa (como Cabo Verde) vieron su ELO subir más de lo esperado
+
+El rango final 1382–2127 refleja **quiÉn jugó bien en este Mundial**, no solo el ranking pre-torneo.
+
+Un equipo con 100 puntos ELO más que su rival tiene aproximadamente 64% de probabilidad de ganar.
 
 **2. Ventaja de localía (+100 ELO)**
 Ser local en un Mundial importa. Las tres naciones anfitrionas (México, Canadá, EE.UU.) reciben +100 puntos ELO cuando juegan en casa. Esto refleja el apoyo del público, familiaridad con el estadio y menor desgaste de viaje.
@@ -251,7 +266,7 @@ $$\text{rating} = 1 + 99 \times (0.65 \cdot \text{ELO}_{\text{norm}} + 0.25 \cdo
 
 | Componente | Peso | Cálculo |
 |-----------|:----:|---------|
-| ELO normalizado | 65% | $\frac{\text{ELO} - 1380}{2127 - 1380}$ |
+| ELO normalizado | 65% | $\frac{\text{ELO} - 1380}{2130 - 1380}$ |
 | Forma reciente | 25% | Promedio ponderado de últimos 10 partidos ($\alpha = 0.93$) |
 | Diferencia de gol | 10% | GD promedio, acotado a $[-3, +3]$, normalizado a $[0,1]$ |
 

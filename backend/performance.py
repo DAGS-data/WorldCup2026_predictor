@@ -46,7 +46,7 @@ def calculate_performance_rating(elo_rating: float, recent_form: list[dict[str, 
     Returns rating_100 (1-100), rating_10 (1-10), plus component breakdown.
     """
     # ELO component: typical competitive range 1400-2000
-    min_elo, max_elo = 1380, 1960
+    min_elo, max_elo = 1380, 2130
     elo_norm = max(0.0, min(1.0, (elo_rating - min_elo) / (max_elo - min_elo)))
 
     form = calculate_form_score(recent_form)

@@ -5,8 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>World Cup 2026 Predictor — XGBoost</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643XkcjV4jFm59GO5HfB6k4Fq5f5r9fG5lfHpm643Xk"
+      crossorigin="anonymous" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH"
+        crossorigin="anonymous"></script>
 <style>
 /* ===================== PREMIUM MINIMALIST — Apple / SaaS Modern ===================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -435,10 +439,10 @@ nav .nav-links button.active {
 <nav>
   <div class="logo">⚽ World Cup 2026 Predictor</div>
   <div class="nav-links">
-    <button onclick="navigate('teams')" class="active" data-page="teams">Teams</button>
-    <button onclick="navigate('matches')" data-page="matches">Matches</button>
-    <button onclick="navigate('h2h')" data-page="h2h">H2H</button>
-    <button onclick="navigate('bracket')" data-page="bracket">🏆 Bracket</button>
+    <button class="active" data-page="teams">Teams</button>
+    <button data-page="matches">Matches</button>
+    <button data-page="h2h">H2H</button>
+    <button data-page="bracket">🏆 Bracket</button>
   </div>
 </nav>
 
@@ -448,7 +452,7 @@ nav .nav-links button.active {
     <div id="teams-filters" class="filters"></div>
     <div id="teams-grid" class="team-grid"></div>
     <div id="teams-loading" class="loading-text">Loading teams...</div>
-    <div id="teams-error" class="empty-state hidden"><p>Failed to load teams</p><button onclick="loadAllData()">Retry</button></div>
+    <div id="teams-error" class="empty-state hidden"><p>Failed to load teams</p><button data-action="retry">Retry</button></div>
   </div>
 
   <!-- PAGE: Matches -->
@@ -457,7 +461,7 @@ nav .nav-links button.active {
     <div id="matches-group-filters" class="filters" style="display:none"></div>
     <div id="matches-grid" class="match-grid"></div>
     <div id="matches-loading" class="loading-text">Loading matches...</div>
-    <div id="matches-error" class="empty-state hidden"><p>Failed to load matches</p><button onclick="loadAllData()">Retry</button></div>
+    <div id="matches-error" class="empty-state hidden"><p>Failed to load matches</p><button data-action="retry">Retry</button></div>
   </div>
 
   <!-- PAGE: Team Detail -->
@@ -494,6 +498,32 @@ nav .nav-links button.active {
 </div>
 
 <script>
+/* === Event Delegation (replaces inline onclick) === */
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('button');
+  if (!btn) { var card = e.target.closest('[data-nav]'); if (card) { btn = card; } else return; }
+  
+  var action = btn.getAttribute('data-action');
+  var nav = btn.getAttribute('data-nav');
+  var group = btn.getAttribute('data-group');
+  var stage = btn.getAttribute('data-stage');
+  var id = btn.getAttribute('data-id');
+  
+  if (action === 'retry') { loadAllData(); return; }
+  if (action === 'retry-bracket') { loadBracket(); return; }
+  if (action === 'filter-teams') { renderTeams(group || null); return; }
+  if (action === 'filter-matches') { renderMatches(stage || null, group || null); return; }
+  if (nav) { navigate(nav, id ? parseInt(id) : undefined); return; }
+});
+
+/* === Navigation (from event delegation) === */
+document.querySelector('.nav-links').addEventListener('click', function(e) {
+  var btn = e.target.closest('button');
+  if (!btn) return;
+  var page = btn.getAttribute('data-page');
+  if (page) navigate(page);
+});
+
 // ===================== DATA STORE =====================
 const API = window.location.origin;
 const FETCH_TIMEOUT = 5000; // 5s timeout — fail fast, don't hang
@@ -556,7 +586,7 @@ async function loadAllData() {
   } catch(e) {
     document.getElementById('teams-loading').style.display = 'none';
     const errDiv = document.getElementById('teams-error');
-    errDiv.innerHTML = '<p>⚠️ Cannot reach API at ' + API + '</p><p style="font-size:12px;color:var(--muted);margin-top:8px">Run: <code>cd backend && python3 main.py</code></p><button onclick="loadAllData()">Retry</button>';
+    errDiv.innerHTML = '<p>⚠️ Cannot reach API at ' + API + '</p><p style="font-size:12px;color:var(--muted);margin-top:8px">Run: <code>cd backend && python3 main.py</code></p><button data-action="retry">Retry</button>';
     errDiv.classList.remove('hidden');
   }
 
@@ -592,8 +622,8 @@ function renderTeams(filterGroup) {
 
   const filtersDiv = document.getElementById('teams-filters');
   let groups = [...new Set(t.map(x => x.group))].sort();
-  filtersDiv.innerHTML = '<button class="active" onclick="renderTeams(null)">All</button>' +
-    groups.map(g => '<button onclick="renderTeams(\'' + g + '\')">' + g + '</button>').join('');
+  filtersDiv.innerHTML = '<button class="active" data-action="filter-teams" data-group="">All</button>' +
+    groups.map(g => '<button data-action="filter-teams" data-group="' + g + '">' + g + '</button>').join('');
 
   const filtered = filterGroup ? t.filter(x => x.group === filterGroup) : t;
   const grid = document.getElementById('teams-grid');
@@ -610,7 +640,7 @@ function renderTeams(filterGroup) {
       ? ('<div class="mini-form">' + form.slice(0, 5).map(m => '<span class="mini-form-dot ' + m.result + '" title="vs ' + esc(m.opponent) + ' ' + m.goals_for + '-' + m.goals_against + ' (' + m.date + ')"></span>').join('') + '</div>')
       : '';
 
-    return '<div class="team-card" onclick="navigate(\'detail\', ' + team.id + ')">' +
+    return '<div class="team-card" data-nav="detail" data-id="' + team.id + '">' +
       flagImg(team) +
       '<div class="info"><div class="name">' + team.name + '</div>' +
       '<span class="code">#' + (team.fifa_rank || '?') + ' FIFA' + svText + '</span>' +
@@ -633,16 +663,16 @@ function renderMatches(stage, filterGroup) {
   if (!m) return;
 
   const stageDiv = document.getElementById('matches-stage-filters');
-  stageDiv.innerHTML = '<button class="active" onclick="renderMatches(null)">All</button>' +
-    '<button onclick="renderMatches(\'group\')">Group Stage</button>' +
-    '<button onclick="renderMatches(\'knockout\')">Knockout</button>';
+  stageDiv.innerHTML = '<button class="active" data-action="filter-matches" data-stage="">All</button>' +
+    '<button data-action="filter-matches" data-stage="group">Group Stage</button>' +
+    '<button data-action="filter-matches" data-stage="knockout">Knockout</button>';
 
   const groupDiv = document.getElementById('matches-group-filters');
   if (stage === 'group' || !stage) {
     groupDiv.style.display = 'flex';
     let groups = [...new Set(m.filter(x=>x.group).map(x=>x.group))].sort();
-    groupDiv.innerHTML = '<button class="active" onclick="renderMatches(\''+(stage||'null')+'\',null)">All</button>' +
-      groups.map(g => '<button onclick="renderMatches(\''+(stage||'null')+'\',\''+g+'\')">' + g + '</button>').join('');
+    groupDiv.innerHTML = '<button class="active" data-action="filter-matches" data-group="">All</button>' +
+      groups.map(g => '<button data-action="filter-matches" data-stage="'+(stage||'')+'" data-group="'+g+'">' + g + '</button>').join('');
   } else { groupDiv.style.display = 'none'; }
 
   let filtered = m;
@@ -746,7 +776,7 @@ function renderTeamDetail(teamId) {
 
   document.getElementById('detail-content').innerHTML =
     '<div class="team-detail">' +
-    '<button class="back-btn" onclick="navigate(\'teams\')">← Back to Teams</button>' +
+    '<button class="back-btn" data-nav="teams">← Back to Teams</button>' +
     (t.is_host ? '<div class="host-badge">🏠 Host Nation</div>' : '') +
     '<div class="detail-header">' +
     flagImg(t) +
@@ -941,7 +971,7 @@ async function loadBracket() {
     const data = await apiFetch('/api/bracket/v2');
     renderBracket(data);
   } catch(e) {
-    document.getElementById('bracket-container').innerHTML = '<div class="empty-state"><p>⚠️ Failed to load bracket</p><p style="font-size:12px;color:var(--muted);margin-top:8px">Is the API running?</p><button onclick="loadBracket()">Retry</button></div>';
+    document.getElementById('bracket-container').innerHTML = '<div class="empty-state"><p>⚠️ Failed to load bracket</p><p style="font-size:12px;color:var(--muted);margin-top:8px">Is the API running?</p><button data-action="retry-bracket">Retry</button></div>';
   }
 }
 

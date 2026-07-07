@@ -1,10 +1,10 @@
 # ⚽ World Cup 2026 Predictor — XGBoost Edition
 
-> **⚠️ AVISO LEGAL — LEER ANTES DE USAR**
+> **⚠️ LEGAL DISCLAIMER — READ BEFORE USE**
 >
-> Este sistema es una herramienta **académica y experimental**. Las predicciones son estimaciones estadísticas basadas en modelos matemáticos y datos históricos reales. **NO constituyen consejo de apuestas, recomendaciones financieras ni garantía de resultados.** El fútbol es inherentemente impredecible y ningún modelo puede considerar todos los factores (lesiones, decisiones arbitrales, clima, moral del equipo, etc.).
+> This system is an **academic and experimental** tool. Predictions are statistical estimates based on mathematical models and real historical data. **They do NOT constitute betting advice, financial recommendations, or guarantees of results.** Football is inherently unpredictable and no model can account for all factors (injuries, referee decisions, weather, team morale, etc.).
 >
-> **No nos hacemos responsables del mal uso de estas predicciones.** Si decides usar esta información para apuestas, lo haces bajo tu propio riesgo. Las apuestas pueden causar adicción y pérdidas financieras significativas. Juega con responsabilidad.
+> **We are not responsible for any misuse of these predictions.** If you choose to use this information for betting, you do so at your own risk. Gambling can cause addiction and significant financial losses. Play responsibly.
 
 ---
 
@@ -12,380 +12,380 @@
 
 ![World Cup 2026 Predictor Demo](docs/demo.gif)
 
-## 📡 Fuentes de datos (100% reales)
+## 📡 Data Sources (100% real)
 
-Cada número en este proyecto tiene una fuente verificable. **No hay datos sintéticos ni inventados.**
+Every number in this project has a verifiable source. **No synthetic or made-up data.**
 
-| Fuente | Qué obtenemos | Verificación |
+| Source | What we get | Verification |
 |--------|--------------|-------------|
-| [ESPN API](https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world) | 48 equipos, 100 partidos, fechas, scores, etapas | Tiempo real |
-| [FIFA/Coca-Cola World Ranking](https://www.fifa.com/fifa-world-ranking) | Ranking oficial de las 48 selecciones | Junio 2026 |
-| [Transfermarkt](https://www.transfermarkt.com/vereins-statistik/wertvollstenationalmannschaften/marktwertetop) | Valor de mercado del plantel (26 jugadores por selección) | Julio 4, 2026 ✓ |
-| [FlagCDN](https://flagcdn.com) | Banderas nacionales (PNG 160px) | CDN |
-| [CartoDB](https://carto.com) | Mapas Leaflet (OpenStreetMap) | CDN |
+| [ESPN API](https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world) | 48 teams, 100 matches, dates, scores, stages | Real-time |
+| [FIFA/Coca-Cola World Ranking](https://www.fifa.com/fifa-world-ranking) | Official ranking of all 48 teams | June 2026 |
+| [Transfermarkt](https://www.transfermarkt.com/vereins-statistik/wertvollstenationalmannschaften/marktwertetop) | Squad market value (26 players per team) | July 4, 2026 ✓ |
+| [FlagCDN](https://flagcdn.com) | National flags (PNG 160px) | CDN |
+| [CartoDB](https://carto.com) | Leaflet maps (OpenStreetMap) | CDN |
 
-**Valores de plantel verificados manualmente:**
+**Manually verified squad values:**
 
-| # | Equipo | Valor |
+| # | Team | Value |
 |---|--------|-------|
-| 1 | 🇫🇷 Francia | €1,520M |
-| 2 | 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra | €1,360M |
-| 3 | 🇪🇸 España | €1,220M |
+| 1 | 🇫🇷 France | €1,520M |
+| 2 | 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England | €1,360M |
+| 3 | 🇪🇸 Spain | €1,220M |
 | 4 | 🇵🇹 Portugal | €1,010M |
-| 5 | 🇩🇪 Alemania | €947M |
-| 6 | 🇧🇷 Brasil | €928M |
+| 5 | 🇩🇪 Germany | €947M |
+| 6 | 🇧🇷 Brazil | €928M |
 | 7 | 🇦🇷 Argentina | €808M |
-| 8 | 🇳🇱 Países Bajos | €754M |
-| 9 | 🇳🇴 Noruega | €590M |
-| 10 | 🇧🇪 Bélgica | €548M |
+| 8 | 🇳🇱 Netherlands | €754M |
+| 9 | 🇳🇴 Norway | €590M |
+| 10 | 🇧🇪 Belgium | €548M |
 
 ---
 
-## 🏗 Arquitectura
+## 🏗 Architecture
 
 ```
 wc2026-predictor/
 ├── backend/
 │   ├── main.py                  # FastAPI server (11 endpoints)
-│   ├── elo.py                   # Sistema ELO adaptado a fútbol
-│   ├── predictor.py             # Modelo Poisson + simulador de torneo
-│   ├── performance.py           # Rating compuesto de rendimiento (1–100)
-│   ├── feature_engineering.py   # Pipeline de 38 features
-│   ├── requirements.txt         # Dependencias
-│   ├── frontend/                # SPA servida estáticamente
-│   │   └── index.html           # Dashboard (1055 líneas, vanilla JS)
+│   ├── elo.py                   # ELO system adapted for football
+│   ├── predictor.py             # Poisson model + tournament simulator
+│   ├── performance.py           # Composite performance rating (1–100)
+│   ├── feature_engineering.py   # 38-feature pipeline
+│   ├── requirements.txt         # Dependencies
+│   ├── frontend/                # SPA served statically
+│   │   └── index.html           # Dashboard (1055 lines, vanilla JS)
 │   ├── models/
-│   │   ├── xgboost_predictor.py # Clasificador XGBoost + Optuna + SHAP
-│   │   ├── xgboost_v1.json      # Modelo entrenado (91.7% accuracy)
-│   │   └── feature_names.json   # Índice de features
+│   │   ├── xgboost_predictor.py # XGBoost classifier + Optuna + SHAP
+│   │   ├── xgboost_v1.json      # Trained model (91.7% accuracy)
+│   │   └── feature_names.json   # Feature index
 │   └── data/
-│       ├── teams.json           # 48 equipos (ELO, FIFA, valor plantel)
-│       ├── teams_enriched.json  # Precomputado con ratings (respuesta <5ms)
-│       ├── matches.json         # 100 partidos (ESPN API)
-│       └── matches_enriched.json# Precomputado con predicciones
+│       ├── teams.json           # 48 teams (ELO, FIFA, squad value)
+│       ├── teams_enriched.json  # Precomputed ratings (response <5ms)
+│       ├── matches.json         # 100 matches (ESPN API)
+│       └── matches_enriched.json# Precomputed with predictions
 ├── frontend/
-│   └── index.html               # Copia para desarrollo local
+│   └── index.html               # Copy for local development
 ├── docs/
-│   └── demo.mp4                 # Video demo
+│   └── demo.mp4                 # Demo video
 ├── requirements.txt
 └── README.md
 ```
 
 - **Backend:** Python 3.13, FastAPI, XGBoost, NumPy, SciPy, SHAP, Pydantic
-- **Frontend:** HTML5 + CSS3 + Vanilla JS, sin build step
-- **Datos:** JSON precomputados con `@lru_cache` (respuesta <5ms)
-- **88 partidos completados**, 12 programados (R16 → Final)
+- **Frontend:** HTML5 + CSS3 + Vanilla JS, no build step
+- **Data:** Precomputed JSON with `@lru_cache` (response <5ms)
+- **88 completed matches**, 12 scheduled (R16 → Final)
 
 ---
 
-## 🧠 Modelos Predictivos
+## 🧠 Predictive Models
 
-El sistema usa **tres modelos complementarios** con roles claramente definidos:
+The system uses **three complementary models** with clearly defined roles:
 
-| Modelo | ¿Qué predice? | ¿Cuándo se usa? |
+| Model | What it predicts | When it's used |
 |--------|---------------|-----------------|
-| **XGBoost** | Probabilidad de avanzar en eliminatoria | Fases knockout (R32 → Final) |
-| **ELO + Poisson** | Win / Draw / Loss + marcador más probable | Todos los partidos |
-| **Performance Rating** | Rating compuesto 1–100 | Vista de equipos, comparaciones |
+| **XGBoost** | Knockout advancement probability | Knockout stages (R32 → Final) |
+| **ELO + Poisson** | Win / Draw / Loss + most likely scoreline | All matches |
+| **Performance Rating** | Composite rating 1–100 | Team view, comparisons |
 
 ---
 
-## Modelo 1: XGBoost — Probabilidad de Avance
+## Model 1: XGBoost — Advancement Probability
 
-### Qué predice
+### What it predicts
 
-$$P(\text{equipo avanza}) \in [0, 1]$$
+$$P(\text{team advances}) \in [0, 1]$$
 
-Para cada cruce eliminatorio, el modelo estima qué probabilidad tiene cada equipo de pasar a la siguiente ronda (en tiempo regular, tiempo extra o penales).
+For each knockout matchup, the model estimates each team's probability of advancing to the next round (in regular time, extra time, or penalties).
 
-### Cómo funciona
+### How it works
 
-XGBoost (eXtreme Gradient Boosting) es un ensemble de árboles de decisión que construye modelos secuencialmente, donde cada nuevo árbol corrige los errores del anterior. En lugar de "comparar" dos equipos directamente, el modelo recibe **38 características numéricas** que describen la diferencia entre ambos equipos y devuelve una probabilidad.
+XGBoost (eXtreme Gradient Boosting) is an ensemble of decision trees that builds models sequentially, where each new tree corrects the errors of the previous one. Instead of "comparing" two teams directly, the model receives **38 numerical features** describing the difference between both teams and outputs a probability.
 
 ```
-features(elo_diff, momentum, squad_value, ...) → XGBoost → P(avance)
+features(elo_diff, momentum, squad_value, ...) → XGBoost → P(advance)
 ```
 
-El modelo **no sabe quiénes son los equipos**. Ve diferencias numéricas:
+The model **doesn't know who the teams are**. It sees numerical differences:
 
-| Feature de ejemplo | Argentina vs Inglaterra |
+| Example feature | Argentina vs England |
 |-------------------|------------------------|
-| `elo_diff` | +88.5 (Argentina mejor) |
-| `squad_value_ratio` | −0.52 (Inglaterra plantel más caro) |
-| `momentum_diff` | +0.13 (Argentina mejor racha) |
-| `rest_days_diff` | 0 (mismo descanso) |
+| `elo_diff` | +88.5 (Argentina better) |
+| `squad_value_ratio` | −0.52 (England pricier squad) |
+| `momentum_diff` | +0.13 (Argentina better form) |
+| `rest_days_diff` | 0 (same rest) |
 
-Con estos 38 números, XGBoost predice la probabilidad de que el equipo A avance. Para eliminar el sesgo de orden (que el resultado cambie si intercambias los equipos), usamos **simetrización dual**:
+With these 38 numbers, XGBoost predicts team A's advancement probability. To eliminate order bias (the result changing if you swap teams), we use **dual symmetrization**:
 
-$$P(\text{A avanza}) = \frac{p_{\text{A vs B}} + (1 - p_{\text{B vs A}})}{2}$$
+$$P(\text{A advances}) = \frac{p_{\text{A vs B}} + (1 - p_{\text{B vs A}})}{2}$$
 
-Esto garantiza $P(\text{A}) + P(\text{B}) = 1.0$ siempre.
+This guarantees $P(\text{A}) + P(\text{B}) = 1.0$ always.
 
-### Arquitectura
+### Architecture
 
-| Propiedad | Valor |
+| Property | Value |
 |-----------|-------|
-| Algoritmo | XGBoost (Gradient Boosted Trees) |
-| Tipo | Clasificador binario |
-| Features | 38 variables engineered |
-| Muestras | 176 (88 partidos × 2 perspectivas) |
-| Optimización | Optuna (200 rondas, TPE sampler) |
-| Validación | Time-based split (80% train, 20% validación) |
+| Algorithm | XGBoost (Gradient Boosted Trees) |
+| Type | Binary classifier |
+| Features | 38 engineered variables |
+| Samples | 176 (88 matches × 2 perspectives) |
+| Optimization | Optuna (200 rounds, TPE sampler) |
+| Validation | Time-based split (80% train, 20% validation) |
 
-### Métricas
+### Metrics
 
-| Métrica | Valor |
+| Metric | Value |
 |---------|-------|
 | Accuracy | 91.7% |
 | ROC AUC | 0.987 |
 | Brier Score | 0.066 |
 
-### ¿Por qué XGBoost?
+### Why XGBoost?
 
-1. **No lineal:** Captura interacciones complejas entre features que modelos lineales no pueden (ej: "ELO alto SOLO importa si el equipo también tiene momentum positivo")
-2. **Regularización incorporada:** L1 + L2 en los árboles evita overfitting automático
-3. **Maneja features correlacionados:** Si `elo_diff` y `elo_ratio` miden cosas similares, XGBoost usa el más informativo sin confundirse
-4. **SHAP:** Cada predicción viene con una explicación de qué features contribuyeron más
+1. **Non-linear:** Captures complex feature interactions that linear models can't (e.g., "high ELO ONLY matters if the team also has positive momentum")
+2. **Built-in regularization:** L1 + L2 on trees prevents automatic overfitting
+3. **Handles correlated features:** If `elo_diff` and `elo_ratio` measure similar things, XGBoost uses the most informative one without confusion
+4. **SHAP:** Every prediction comes with an explanation of which features contributed the most
 
-### Explicabilidad con SHAP
+### Explainability with SHAP
 
-Cada predicción incluye valores SHAP (SHapley Additive exPlanations), basados en teoría de juegos cooperativos:
+Every prediction includes SHAP values (SHapley Additive exPlanations), based on cooperative game theory:
 
 $$\phi_j = \sum_{S \subseteq F \setminus \{j\}} \frac{|S|!\,(|F| - |S| - 1)!}{|F|!} \Bigl[f(S \cup \{j\}) - f(S)\Bigr]$$
 
-Donde $\phi_j$ es la contribución marginal del feature $j$ a la predicción. En el frontend, los features se muestran como barras: **verde** si ayudan al equipo, **rojo** si lo perjudican.
+Where $\phi_j$ is the marginal contribution of feature $j$ to the prediction. In the frontend, features are shown as bars: **green** if they help the team, **red** if they hurt it.
 
 ---
 
-## Modelo 2: ELO + Poisson — Goles y Marcador
+## Model 2: ELO + Poisson — Goals and Scoreline
 
-### El Sistema ELO — Adaptado al Fútbol
+### The ELO System — Adapted for Football
 
-#### Metodología
+#### Methodology
 
-El sistema ELO fue creado por Arpad Elo en 1960 para el ajedrez y está documentado en su libro *The Rating of Chessplayers, Past and Present* (1978). La idea es simple: cada jugador (o equipo) tiene un rating numérico $R$ que representa su fuerza relativa. Después de cada partido, los ratings se actualizan según el resultado esperado vs el real.
+The ELO system was created by Arpad Elo in 1960 for chess and is documented in his book *The Rating of Chessplayers, Past and Present* (1978). The idea is simple: each player (or team) has a numerical rating $R$ representing their relative strength. After each match, ratings are updated based on expected vs actual result.
 
-La **mecánica de actualización es 100% estándar** (Elo, 1978). La **inicialización de ratings** es feature engineering basado en el ranking FIFA.
+The **update mechanism is 100% standard** (Elo, 1978). The **rating initialization** is feature engineering based on FIFA ranking.
 
-#### Inicialización de ELO — Feature Engineering
+#### ELO Initialization — Feature Engineering
 
-No existe un sistema ELO preexistente para las 48 selecciones del Mundial. Los ELO iniciales se derivaron del **ranking FIFA pre-torneo (junio 2026)** mediante interpolación lineal entre dos puntos extremos:
+There is no pre-existing ELO system covering all 48 World Cup teams. Initial ELO ratings were derived from the **FIFA pre-tournament ranking (June 2026)** via linear interpolation between two endpoints:
 
-$$\text{ELO}_{\text{inicial}} \approx 2100 - \frac{700}{89} \times (\text{Ranking FIFA} - 1)$$
+$$\text{ELO}_{\text{initial}} \approx 2100 - \frac{700}{89} \times (\text{FIFA Ranking} - 1)$$
 
-**¿Por qué 2100 para el #1?** En ajedrez, un campeón mundial ronda los 2850. Para fútbol se eligió un techo más bajo por tres razones: (1) no hay décadas de historial ELO en fútbol — empezar más bajo deja margen para que los ratings crezcan con los partidos; (2) con 700 puntos de diferencia entre #1 y #90, Argentina le gana a Nueva Zelanda con ~98% de probabilidad, lo cual es realista; (3) 2100 arranca apenas debajo del máximo real post-torneo (2127), dejando espacio para que los ganadores suban.
+**Why 2100 for #1?** In chess, a world champion is around 2850. A lower ceiling was chosen for football for three reasons: (1) there are no decades of ELO history in football — starting lower leaves room for ratings to grow with match results; (2) with a 700-point gap between #1 and #90, Argentina beats New Zealand with ~98% probability, which is realistic; (3) 2100 starts just below the actual post-tournament maximum (2127), leaving room for winners to climb.
 
-**¿Por qué 1400 para el #90?** Es el piso de la escala ELO del ajedrez para un jugador amateur serio (~1200–1400). No se usó 1000 (principiante absoluto) porque todos los equipos del Mundial tienen nivel profesional.
+**Why 1400 for #90?** This is the ELO chess floor for a serious amateur (~1200–1400). 1000 (absolute beginner) was not used because all World Cup teams are professional level.
 
-**¿Por qué `(rank − 1)`?** Para que el #1 no reste nada. Si la fórmula usara solo `rank`, Argentina (#1) perdería ~7.87 puntos innecesariamente. El `−1` ancla el primer puesto en exactamente 2100.
+**Why `(rank − 1)`?** So #1 doesn't lose any points. If the formula used just `rank`, Argentina (#1) would unnecessarily lose ~7.87 points. The `−1` anchors the first position at exactly 2100.
 
-**¿Por qué 700/89?** Son 700 puntos de diferencia entre los extremos (2100 − 1400) repartidos en 89 posiciones de ranking (del #1 al #90). Cada puesto del ranking FIFA "vale" ~7.87 puntos ELO. Es la recta más simple que une los dos puntos elegidos, usando el ranking FIFA como eje X.
+**Why 700/89?** That's 700 points of difference between the endpoints (2100 − 1400) spread across 89 ranking positions (#1 to #90). Each FIFA ranking position is "worth" ~7.87 ELO points. It's the simplest straight line connecting the two chosen endpoints, using FIFA ranking as the X axis.
 
-Con ejemplos concretos:
+With concrete examples:
 
-| Equipo | Ranking FIFA | ELO inicial estimado |
+| Team | FIFA Ranking | Estimated initial ELO |
 |--------|:-----------:|:--------------------:|
 | 🇦🇷 Argentina | #1 | ~2100 |
-| 🇲🇽 México | #15 | ~1990 |
+| 🇲🇽 Mexico | #15 | ~1990 |
 | 🇺🇾 Uruguay | #16 | ~1982 |
-| 🇨🇻 Cabo Verde | #54 | ~1683 |
-| 🇳🇿 Nueva Zelanda | #88 | ~1416 |
+| 🇨🇻 Cape Verde | #54 | ~1683 |
+| 🇳🇿 New Zealand | #88 | ~1416 |
 
-Esto es feature engineering: el ranking FIFA es la fuente de datos real; la interpolación lineal a una escala ELO (~1400–2100) es la transformación que alimenta al modelo.
+This is feature engineering: FIFA ranking is the real data source; the linear interpolation to an ELO scale (~1400–2100) is the transformation that feeds the model.
 
-Luego, **los 88 partidos reales del torneo** actualizaron estos valores con la fórmula estándar de Elo (K=30). Los equipos que ganaron subieron; los que perdieron bajaron. El rango final es **1382–2127** (Argentina subió de ~2100 a 2127; Nueva Zelanda bajó de ~1416 a 1382).
+Then, **the 88 real tournament matches** updated these values using the standard Elo formula (K=30). Teams that won rose; teams that lost fell. The final range is **1382–2127** (Argentina rose from ~2100 to 2127; New Zealand fell from ~1416 to 1382).
 
-#### Fórmula estándar de actualización (Elo, 1978)
+#### Standard Update Formula (Elo, 1978)
 
-**Resultado esperado:**
+**Expected score:**
 $$E_A = \frac{1}{1 + 10^{(R_B - R_A)/400}}$$
 
-**Actualización post-partido:**
+**Post-match update:**
 $$R'_A = R_A + K \cdot (S_A - E_A)$$
 
-Donde:
-- $S_A = 1.0$ (victoria), $0.5$ (empate), $0.0$ (derrota)
-- $K = 30$ (factor de sensibilidad para torneo corto)
-- Un equipo con 100 puntos ELO más que su rival tiene ~64% de probabilidad de ganar
+Where:
+- $S_A = 1.0$ (win), $0.5$ (draw), $0.0$ (loss)
+- $K = 30$ (sensitivity factor for a short tournament)
+- A team with 100 more ELO than its opponent has ~64% win probability
 
-#### Ventaja de localía (+100 ELO)
+#### Home Advantage (+100 ELO)
 
-Las tres naciones anfitrionas (México, Canadá, EE.UU.) reciben +100 puntos ELO cuando juegan en casa:
+The three host nations (Mexico, Canada, USA) receive +100 ELO points when playing at home:
 
-$$E_A^{\text{local}} = \frac{1}{1 + 10^{(R_B - (R_A + 100))/400}}$$
+$$E_A^{\text{home}} = \frac{1}{1 + 10^{(R_B - (R_A + 100))/400}}$$
 
-Este ajuste es una práctica común en modelos ELO de fútbol (Hvattum & Arntzen, 2010; *Forecasting Association Football Outcomes*).
+This adjustment is common practice in football ELO models (Hvattum & Arntzen, 2010; *Forecasting Association Football Outcomes*).
 
-#### Uso en XGBoost
+#### Usage in XGBoost
 
-El modelo XGBoost usa **3 de sus 38 features** derivados del ELO:
+The XGBoost model uses **3 of its 38 features** derived from ELO:
 
-| Feature | Cálculo | Rol en el modelo |
+| Feature | Formula | Role in the model |
 |---------|---------|-----------------|
-| `elo_diff` | $R_A - R_B$ | Feature #0 — diferencial directo |
-| `elo_diff_abs` | $|R_A - R_B|$ | Feature #33 — magnitud de la diferencia |
-| `elo_ratio` | $\frac{R_A}{R_B} - 1$ | Feature #34 — ventaja relativa |
+| `elo_diff` | $R_A - R_B$ | Feature #0 — direct differential |
+| `elo_diff_abs` | $|R_A - R_B|$ | Feature #33 — magnitude of the gap |
+| `elo_ratio` | $\frac{R_A}{R_B} - 1$ | Feature #34 — relative advantage |
 
-### Modelo Poisson de Goles
+### Poisson Goal Model
 
-Los goles en fútbol son eventos raros y discretos. La distribución de Poisson es el modelo estándar para este tipo de eventos (Maher, 1982; Dixon & Coles, 1997).
+Goals in football are rare, discrete events. The Poisson distribution is the standard model for this type of event (Maher, 1982; Dixon & Coles, 1997).
 
-#### Goles esperados (xG)
+#### Expected Goals (xG)
 
 $$\lambda_A = \max\left(0.25,\; 1.35 + \frac{R_A - R_B}{400}\right)$$
 
-- $\lambda_{\text{base}} = 1.35$ — promedio empírico de goles por equipo en fase de grupos
-- Cada 100 puntos ELO de diferencia = ±0.25 goles esperados
-- Piso de 0.25 para evitar predicciones de cero goles
+- $\lambda_{\text{base}} = 1.35$ — empirical average goals per team in the group stage
+- Every 100 ELO points of difference = ±0.25 expected goals
+- Floor of 0.25 to avoid predicting zero goals
 
-Con localía: $R_A \leftarrow R_A + 100$
+With home advantage: $R_A \leftarrow R_A + 100$
 
-#### Probabilidad de marcador exacto
+#### Exact Scoreline Probability
 
 $$P(g_A, g_B) = \frac{\lambda_A^{g_A} e^{-\lambda_A}}{g_A!} \times \frac{\lambda_B^{g_B} e^{-\lambda_B}}{g_B!}$$
 
-Los goles de ambos equipos se asumen **procesos de Poisson independientes** — el supuesto estándar en analítica de fútbol.
+Both teams' goals are assumed to be **independent Poisson processes** — the standard assumption in football analytics.
 
-#### Probabilidades agregadas
+#### Aggregate Probabilities
 
-$$P(\text{A gana}) = \sum_{g_A=0}^{8} \sum_{g_B=0}^{g_A-1} P(g_A, g_B)$$
-$$P(\text{Empate}) = \sum_{g=0}^{8} P(g, g)$$
-$$P(\text{B gana}) = \sum_{g_B=0}^{8} \sum_{g_A=0}^{g_B-1} P(g_A, g_B)$$
+$$P(\text{A wins}) = \sum_{g_A=0}^{8} \sum_{g_B=0}^{g_A-1} P(g_A, g_B)$$
+$$P(\text{Draw}) = \sum_{g=0}^{8} P(g, g)$$
+$$P(\text{B wins}) = \sum_{g_B=0}^{8} \sum_{g_A=0}^{g_B-1} P(g_A, g_B)$$
 
-Se truncan marcadores arriba de 8 goles (probabilidad combinada $< 0.001\%$).
+Scorelines above 8 goals are truncated (combined probability $< 0.001\%$).
 
-#### Marcador más probable
+#### Most Likely Scoreline
 
 $$s_{\text{pred}} = \underset{g_A, g_B}{\arg\max}\; P(g_A, g_B)$$
 
-### Ejemplo: Argentina vs Inglaterra
+### Example: Argentina vs England
 
 | | ELO | xG |
 |---|-----|----|
 | 🇦🇷 Argentina | 2127 | 1.78 |
-| 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra | 2039 | 1.42 |
+| 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England | 2039 | 1.42 |
 
-- Argentina gana: 52.3%
-- Empate / Tiempo Extra: 24.1%
-- Inglaterra gana: 23.6%
-- Marcador más probable: 2–1
+- Argentina wins: 52.3%
+- Draw / Extra Time: 24.1%
+- England wins: 23.6%
+- Most likely scoreline: 2–1
 
 ---
 
-## Modelo 3: Rating Compuesto de Rendimiento
+## Model 3: Composite Performance Rating
 
-Rating de **1–100** que combina tres factores:
+Rating from **1–100** combining three factors:
 
-$$\text{rating} = 1 + 99 \times (0.65 \cdot \text{ELO}_{\text{norm}} + 0.25 \cdot \text{Forma} + 0.10 \cdot \text{GD}_{\text{factor}})$$
+$$\text{rating} = 1 + 99 \times (0.65 \cdot \text{ELO}_{\text{norm}} + 0.25 \cdot \text{Form} + 0.10 \cdot \text{GD}_{\text{factor}})$$
 
-| Componente | Peso | Cálculo |
+| Component | Weight | Formula |
 |-----------|:----:|---------|
-| ELO normalizado | 65% | $\frac{\text{ELO} - 1380}{2130 - 1380}$ |
-| Forma reciente | 25% | Promedio ponderado de últimos 10 partidos ($\alpha = 0.93$) |
-| Diferencia de gol | 10% | GD promedio, acotado a $[-3, +3]$, normalizado a $[0,1]$ |
+| Normalized ELO | 65% | $\frac{\text{ELO} - 1380}{2130 - 1380}$ |
+| Recent form | 25% | Weighted average of last 10 matches ($\alpha = 0.93$) |
+| Goal difference | 10% | Average GD, capped at $[-3, +3]$, normalized to $[0,1]$ |
 
-La forma usa decaimiento exponencial: un partido de hace 1 fecha pesa ~2× más que uno de hace 10 fechas.
+Form uses exponential decay: a match from 1 round ago weighs ~2× more than one from 10 rounds ago.
 
 ---
 
-## 📊 Los 38 Features en Detalle
+## 📊 The 38 Features in Detail
 
-### 1. Diferenciales Básicos (5)
+### 1. Basic Differentials (5)
 
-| Feature | Fórmula | Descripción |
+| Feature | Formula | Description |
 |---------|---------|-------------|
-| `elo_diff` | $R_A - R_B$ | Diferencia de ELO |
-| `fifa_rank_diff` | $\frac{R_{\text{fifa},B} - R_{\text{fifa},A}}{50}$ | Diferencia normalizada de ranking FIFA |
-| `squad_value_ratio` | $\ln\left(\frac{V_A}{\max(1, V_B)}\right)$ | Log-ratio de valor de plantel |
-| `host_advantage` | $\mathbf{1}[A \text{ es anfitrión}]$ | Indicador de localía |
-| `host_vs_away` | $\mathbf{1}[A \text{ local} \land \neg B \text{ local}]$ | Local puro vs visitante |
+| `elo_diff` | $R_A - R_B$ | ELO difference |
+| `fifa_rank_diff` | $\frac{R_{\text{fifa},B} - R_{\text{fifa},A}}{50}$ | Normalized FIFA ranking difference |
+| `squad_value_ratio` | $\ln\left(\frac{V_A}{\max(1, V_B)}\right)$ | Log-ratio of squad value |
+| `host_advantage` | $\mathbf{1}[A \text{ is host}]$ | Home indicator |
+| `host_vs_away` | $\mathbf{1}[A \text{ home} \land \neg B \text{ home}]$ | Pure home vs away |
 
-### 2. Momentum del Torneo (3)
+### 2. Tournament Momentum (3)
 
 $$M_A = \frac{\sum_{i=0}^{n-1} r_i \cdot w_i \cdot 0.85^{i}}{\sum_{i=0}^{n-1} w_i \cdot 0.85^{i}}$$
 
-Donde:
-- $r_i$: 1.0 (victoria), 0.5 (empate), 0.35 (derrota por 1 gol vs rival fuerte), 0.20 (derrota ajustada), 0.0 (derrota clara)
-- $w_i$: importancia del partido (grupo=1.0, R32=2.0, ..., Final=6.0)
+Where:
+- $r_i$: 1.0 (win), 0.5 (draw), 0.35 (1-goal loss vs strong opponent), 0.20 (narrow loss), 0.0 (clear loss)
+- $w_i$: match importance (group=1.0, R32=2.0, ..., Final=6.0)
 
-### 3. Sobre-rendimiento (3)
+### 3. Overperformance (3)
 
-Captura el "efecto Cabo Verde" — equipos que sistemáticamente superan expectativas:
+Captures the "Cape Verde effect" — teams that systematically exceed expectations:
 
 $$O_A = \frac{1}{n}\sum (g_i - \mathbb{E}[g_i]) \cdot \left(1 - 0.3 \cdot \frac{R_{\text{opp}} - 1500}{400}\right)$$
 
-### 4. Factores Físicos (3)
+### 4. Physical Factors (3)
 
 `rest_days_diff`, `extra_time_diff`, `cumulative_mins_ratio`
 
-### 5. Métricas de Rendimiento (5)
+### 5. Performance Metrics (5)
 
 `goals_scored_per_match`, `goals_conceded_per_match`, `goal_diff_per_match`, `clean_sheet_rate`, `comeback_rate`
 
-### 6. Consistencia de Gol (1)
+### 6. Goal Consistency (1)
 
 $$C_A = \sqrt{\frac{1}{n-1}\sum(g_i - \bar{g})^2}$$
 
-### 7. Etapa y Grupo (7)
+### 7. Stage and Group (7)
 
 `stage_importance`, `stage_is_knockout`, `stage_is_r16`, `stage_is_qf`, `stage_is_sf`, `group_pts`, `group_pts_per_match`, `group_position`
 
-### 8. Confederación y Meta-features (11)
+### 8. Confederation and Meta-features (11)
 
 `same_confederation`, `team_is_uefa`, `team_is_conmebol`, `opp_is_uefa`, `opp_is_conmebol`, `elo_diff_abs`, `elo_ratio`, `is_top5`, `opp_is_top5`, `coming_off_close_loss`
 
 ---
 
-## 🏆 Bracket del Torneo
+## 🏆 Tournament Bracket
 
-El endpoint `/api/bracket/v2` simula todo el cuadro eliminatorio con XGBoost:
+The `/api/bracket/v2` endpoint simulates the entire knockout bracket with XGBoost:
 
-1. **R16:** 8 partidos con predicciones precomputadas
-2. **QF:** Ganadores de R16 emparejados por orden de bracket → XGBoost predice cada cruce
-3. **SF:** Ganadores de QF → XGBoost
-4. **Final:** Ganadores de SF → determina el campeón predicho
+1. **R16:** 8 matches with precomputed predictions
+2. **QF:** R16 winners paired by bracket order → XGBoost predicts each matchup
+3. **SF:** QF winners → XGBoost
+4. **Final:** SF winners → determines the predicted champion
 
-El resultado es un árbol JSON con ganadores, probabilidades e información de cada equipo en cada ronda. El frontend lo renderiza como un bracket interactivo.
+The result is a JSON tree with winners, probabilities, and team info at each round. The frontend renders it as an interactive bracket.
 
 ---
 
 ## 🎨 Dashboard (Frontend)
 
-SPA de una sola página. Diseño premium minimalista con glass-morphism.
+Single-page application. Premium minimalist design with glass-morphism.
 
-### 4 Vistas
+### 4 Views
 
-| Vista | Hash | Contenido |
+| View | Hash | Content |
 |-------|------|-----------|
-| **🏠 Teams** | `#teams` | 48 tarjetas con bandera, ranking FIFA, valor plantel, forma reciente (W/D/L) y rating. Filtros por grupo. |
-| **📅 Matches** | `#matches` | 100 partidos con scores reales, barras de probabilidad (XGBoost + Poisson) y marcador predicho. Filtros por etapa. |
-| **⚔️ H2H** | `#h2h` | Comparador: elegí 2 equipos → XGBoost + SHAP + Poisson. |
-| **🏆 Bracket** | `#bracket` | Simulación completa R16 → Final con XGBoost. |
+| **🏠 Teams** | `#teams` | 48 cards with flag, FIFA ranking, squad value, recent form (W/D/L), and rating. Group filters. |
+| **📅 Matches** | `#matches` | 100 matches with real scores, probability bars (XGBoost + Poisson), and predicted scoreline. Stage filters. |
+| **⚔️ H2H** | `#h2h` | Comparator: pick 2 teams → XGBoost + SHAP + Poisson. |
+| **🏆 Bracket** | `#bracket` | Full R16 → Final simulation with XGBoost. |
 
 ### UX
 
-- Nav con vidrio esmerilado (backdrop-filter blur)
-- Skeleton loaders animados
-- Responsive (3 → 2 → 1 columna)
-- Sin recargas (routing por hash)
-- Verde = victoria, Gris = empate, Rojo = derrota
+- Frosted glass nav (backdrop-filter blur)
+- Animated skeleton loaders
+- Responsive (3 → 2 → 1 column)
+- No reloads (hash-based routing)
+- Green = win, Gray = draw, Red = loss
 
 ---
 
 ## 📡 API Reference
 
-| Endpoint | Descripción |
+| Endpoint | Description |
 |----------|-------------|
-| `GET /api/teams` | 48 equipos con ratings y valor de plantel |
-| `GET /api/teams/{id}` | Detalle de un equipo |
-| `GET /api/matches` | 100 partidos con predicciones precomputadas |
-| `GET /api/matches/{id}` | Detalle de un partido |
-| `GET /api/groups` | 16 grupos (A–P) con equipos y partidos |
-| `GET /api/bracket/v2` | Simulación del bracket con **XGBoost** |
-| `GET /api/predict/v2` | **XGBoost:** P(avance) + SHAP + baseline Poisson |
-| `GET /api/predict` | Predicción Poisson (legacy) |
-| `GET /api/model-info` | Métricas del modelo |
-| `GET /api/retrain` | Invalidar cachés |
+| `GET /api/teams` | 48 teams with ratings and squad value |
+| `GET /api/teams/{id}` | Team detail |
+| `GET /api/matches` | 100 matches with precomputed predictions |
+| `GET /api/matches/{id}` | Match detail |
+| `GET /api/groups` | 16 groups (A–P) with teams and matches |
+| `GET /api/bracket/v2` | Bracket simulation with **XGBoost** |
+| `GET /api/predict/v2` | **XGBoost:** P(advance) + SHAP + Poisson baseline |
+| `GET /api/predict` | Poisson prediction (legacy) |
+| `GET /api/model-info` | Model metrics |
+| `GET /api/retrain` | Invalidate caches |
 
 ---
 
@@ -398,10 +398,10 @@ cd backend && python3 main.py    # → http://localhost:8000
 
 ### Deployment (Seenode)
 
-| Campo | Valor |
+| Field | Value |
 |-------|-------|
 | Provider | Seenode Basic ($3/mo) |
-| Root directory | *(vacío)* |
+| Root directory | *(empty)* |
 | Build command | `pip install -r requirements.txt` |
 | Start command | `cd backend && python main.py` |
 | Port | 8000 |
@@ -410,24 +410,24 @@ cd backend && python3 main.py    # → http://localhost:8000
 
 ## 🛠 Tech Stack
 
-| Capa | Tecnología |
+| Layer | Technology |
 |------|-----------|
-| Lenguaje | Python 3.13 |
+| Language | Python 3.13 |
 | ML | XGBoost (Optuna-tuned, 38 features) |
 | API | FastAPI + Uvicorn |
-| Matemáticas | NumPy, SciPy |
+| Math | NumPy, SciPy |
 | Explainability | SHAP (TreeExplainer) |
-| Datos | JSON estático + `@lru_cache` |
+| Data | Static JSON + `@lru_cache` |
 | Frontend | HTML5 + CSS3 + Vanilla JS |
-| Mapas | Leaflet.js + CartoDB |
-| Banderas | FlagCDN |
+| Maps | Leaflet.js + CartoDB |
+| Flags | FlagCDN |
 | Deployment | Seenode |
 
 ---
 
-## 📚 Referencias
+## 📚 References
 
-| # | Referencia | Link |
+| # | Reference | Link |
 |---|-----------|------|
 | 1 | Chen, T. & Guestrin, C. (2016). *XGBoost: A Scalable Tree Boosting System*. | [DOI](https://doi.org/10.1145/2939672.2939785) |
 | 2 | Lundberg, S. M. & Lee, S.-I. (2017). *SHAP: A Unified Approach to Interpreting Model Predictions*. | [Paper](https://papers.nips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html) |
@@ -439,10 +439,10 @@ cd backend && python3 main.py    # → http://localhost:8000
 
 ---
 
-## 📝 Licencia
+## 📝 License
 
 MIT
 
 ---
 
-*Datos: ESPN API, Transfermarkt (julio 2026), FIFA. Modelos: XGBoost + ELO + Poisson. 88 partidos completados, 12 por jugarse.*
+*Data: ESPN API, Transfermarkt (July 2026), FIFA. Models: XGBoost + ELO + Poisson. 88 matches completed, 12 remaining.*

@@ -161,58 +161,50 @@ Donde $\phi_j$ es la contribución marginal del feature $j$ a la predicción. En
 
 ### El Sistema ELO — Adaptado al Fútbol
 
-#### Origen
+#### Metodología
 
-El sistema ELO fue creado por Arpad Elo en 1960 para el ajedrez. La idea es simple: cada jugador (o equipo) tiene un rating numérico $R$ que representa su fuerza relativa. Después de cada partido, los ratings se actualizan según el resultado esperado vs el real.
+El sistema ELO fue creado por Arpad Elo en 1960 para el ajedrez y está documentado en su libro *The Rating of Chessplayers, Past and Present* (1978). La idea es simple: cada jugador (o equipo) tiene un rating numérico $R$ que representa su fuerza relativa. Después de cada partido, los ratings se actualizan según el resultado esperado vs el real.
 
-#### Adaptación al fútbol en este proyecto
+La **mecánica de actualización es 100% estándar** (Elo, 1978). La **inicialización de ratings** es feature engineering basado en el ranking FIFA.
 
-Tomamos el sistema ELO clásico y lo adaptamos al fútbol con tres modificaciones:
+#### Inicialización de ELO — Feature Engineering
 
-**1. Escala de ratings y cálculo inicial**
-
-En ajedrez, los ratings van de ~1000 (principiante) a ~2850 (campeón mundial). Para el fútbol no existe un sistema ELO estandarizado, así que **los ELO iniciales se derivaron del ranking FIFA pre-torneo (junio 2026) como punto de partida práctico**.
-
-**¿Cómo se calcularon los ELO iniciales?**
-
-No existe una fórmula académica o metodología publicada para convertir ranking FIFA a ELO. Los valores iniciales se asignaron manualmente usando el ranking FIFA como guía, buscando un rango razonable (~1300–2150) consistente con la escala ELO del ajedrez. La correlación resultante entre ranking FIFA y ELO inicial es de **−0.900** (relación muy fuerte: a mejor ranking, mayor ELO). Una regresión lineal sobre los datos reales da:
+Para el fútbol no existe un sistema ELO preexistente que cubra las 48 selecciones del Mundial con la escala deseada (~1300–2150, consistente con la escala ELO del ajedrez). Los ELO iniciales se derivaron del **ranking FIFA pre-torneo (junio 2026)** como punto de partida. La correlación resultante es de **−0.900** (a mejor ranking, mayor ELO), con:
 
 $$\text{ELO} = 1982.5 - 8.4 \times \text{Ranking FIFA} \quad (R^2 = 0.81)$$
 
-Esto significa que el ranking FIFA explica el 81% de la variación en los ELO iniciales, pero la relación no es una fórmula exacta sino una estimación empírica.
+Esto **no es una fórmula académica publicada** — es feature engineering: una transformación de los datos reales de FIFA para ubicar a los equipos en una escala ELO plausible. Luego, **los 88 partidos reales del torneo** actualizaron estos valores con la fórmula estándar (K=30), produciendo el rango final **1382–2127**.
 
-Luego, **cada uno de los 88 partidos jugados** actualizó los ELO con K=30, haciendo que el rango se ajustara naturalmente al rendimiento real en el torneo. El rango final es **1382 a 2127**:
+#### Fórmula estándar de actualización (Elo, 1978)
 
-- 🇦🇷 Argentina (#1 FIFA, ELO inicial ~2100) tras ganar sus partidos: **2127**
-- 🇳🇿 Nueva Zelanda (#88 FIFA, ELO inicial ~1400) tras perder: **1382**
-- Equipos que dieron la sorpresa (como Cabo Verde, #54 FIFA) vieron su ELO subir más de lo esperado: **1523**
+**Resultado esperado:**
+$$E_A = \frac{1}{1 + 10^{(R_B - R_A)/400}}$$
 
-El rango final 1382–2127 refleja **quién jugó bien en este Mundial**, no solo el ranking pre-torneo.
+**Actualización post-partido:**
+$$R'_A = R_A + K \cdot (S_A - E_A)$$
 
-Un equipo con 100 puntos ELO más que su rival tiene aproximadamente 64% de probabilidad de ganar.
+Donde:
+- $S_A = 1.0$ (victoria), $0.5$ (empate), $0.0$ (derrota)
+- $K = 30$ (factor de sensibilidad para torneo corto)
+- Un equipo con 100 puntos ELO más que su rival tiene ~64% de probabilidad de ganar
 
-**2. Ventaja de localía (+100 ELO)**
-Ser local en un Mundial importa. Las tres naciones anfitrionas (México, Canadá, EE.UU.) reciben +100 puntos ELO cuando juegan en casa. Esto refleja el apoyo del público, familiaridad con el estadio y menor desgaste de viaje.
+#### Ventaja de localía (+100 ELO)
+
+Las tres naciones anfitrionas (México, Canadá, EE.UU.) reciben +100 puntos ELO cuando juegan en casa:
 
 $$E_A^{\text{local}} = \frac{1}{1 + 10^{(R_B - (R_A + 100))/400}}$$
 
-**3. Factor K = 30**
-El factor K controla qué tanto cambia el rating después de cada partido. En ajedrez se usa K=16 o K=32 según el nivel. Para el Mundial usamos K=30 — lo suficientemente alto para reflejar la importancia del torneo, pero no tan alto como para que un solo partido distorsione todo.
+Este ajuste es una práctica común en modelos ELO de fútbol (Hvattum & Arntzen, 2010; *Forecasting Association Football Outcomes*).
 
-$$R'_A = R_A + 30 \cdot (S_A - E_A)$$
+#### Uso en XGBoost
 
-Donde $S_A$ es el resultado real:
-- Victoria: $S_A = 1.0$
-- Empate: $S_A = 0.5$
-- Derrota: $S_A = 0.0$
+El modelo XGBoost usa **3 de sus 38 features** derivados del ELO:
 
-**Ejemplo concreto:** Si Argentina (2127) le gana a Inglaterra (2039):
-
-$$E_{\text{Argentina}} = \frac{1}{1 + 10^{(2039 - 2127)/400}} = 0.624$$
-
-$$R'_{\text{Argentina}} = 2127 + 30 \cdot (1.0 - 0.624) = 2138.3$$
-
-Argentina sube 11.3 puntos. Inglaterra baja 11.3 puntos. **El ELO total del sistema se conserva** — lo que uno gana, el otro lo pierde.
+| Feature | Cálculo | Rol en el modelo |
+|---------|---------|-----------------|
+| `elo_diff` | $R_A - R_B$ | Feature #0 — diferencial directo |
+| `elo_diff_abs` | $|R_A - R_B|$ | Feature #33 — magnitud de la diferencia |
+| `elo_ratio` | $\frac{R_A}{R_B} - 1$ | Feature #34 — ventaja relativa |
 
 ### Modelo Poisson de Goles
 

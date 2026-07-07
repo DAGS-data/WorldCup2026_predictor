@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>World Cup 2026 Predictor — Logistic Regression</title>
+<title>World Cup 2026 Predictor — XGBoost</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -469,7 +469,7 @@ nav .nav-links button.active {
   <div id="page-h2h" class="page">
     <div id="h2h-content" class="h2h-container">
       <h1 style="text-align:center;margin-bottom:12px;font-size:32px;font-weight:800;letter-spacing:-0.5px;color:#0A0A0A">⚡ Head-to-Head Predictor</h1>
-      <p style="text-align:center;color:var(--muted);margin-bottom:32px;font-size:15px">Pick any two teams to see their stats and Logistic Regression prediction</p>
+      <p style="text-align:center;color:var(--muted);margin-bottom:32px;font-size:15px">Pick any two teams to see their stats and XGBoost prediction</p>
       <div id="h2h-pickers-placeholder" class="h2h-pickers">
         <div class="h2h-picker"><label>Team 1</label><select id="h2h-team1" disabled><option>Loading...</option></select></div>
         <div class="h2h-vs">VS</div>
@@ -484,7 +484,7 @@ nav .nav-links button.active {
   <div id="page-bracket" class="page">
     <div style="text-align:center;margin-bottom:24px">
       <h1 style="font-size:32px;font-weight:800;margin-bottom:8px;letter-spacing:-0.5px;color:#0A0A0A">🏆 Knockout Bracket Simulator</h1>
-      <p style="color:var(--muted);font-size:15px">Logistic Regression simulates every match — highest advance probability wins</p>
+      <p style="color:var(--muted);font-size:15px">XGBoost simulates every match — highest advance probability wins</p>
     </div>
     <div id="bracket-champion" class="bracket-champion-top"></div>
     <div id="bracket-container" class="bracket-tree">
@@ -678,10 +678,10 @@ function renderMatches(stage, filterGroup) {
       const t1s = t1 ? (t1.abbr || t1Name) : 'T1';
       const t2s = t2 ? (t2.abbr || t2Name) : 'T2';
 
-      // === PRIMARY: Logistic (knockout) or Poisson W/D/L (group) ===
+      // === PRIMARY: XGBoost (knockout) or Poisson W/D/L (group) ===
       if (isKnockout && match.xgb_prediction) {
         const xp = match.xgb_prediction;
-        probHtml = '<div style="font-size:11px;color:var(--accent);margin-top:8px;margin-bottom:4px;font-weight:600">📊 Logistic · Advance Probability</div>' +
+        probHtml = '<div style="font-size:11px;color:var(--accent);margin-top:8px;margin-bottom:4px;font-weight:600">🤖 XGBoost · Advance Probability</div>' +
           '<div class="prob-bar" style="height:8px">' +
           '<div style="background:var(--green);width:'+xp.team1_advance_prob+'%"></div>' +
           '<div style="background:var(--red);width:'+xp.team2_advance_prob+'%"></div>' +
@@ -797,15 +797,15 @@ function renderTeamDetail(teamId) {
     resultDiv.innerHTML = '<div class="loading-text">Predicting...</div>';
 
     try {
-      const data = await apiFetch('/api/predict/v3?team1_id='+teamId+'&team2_id='+oppId);
+      const data = await apiFetch('/api/predict/v2?team1_id='+teamId+'&team2_id='+oppId);
       const opp = store.teams.find(x => x.id === parseInt(oppId));
 
       let html = '<div style="text-align:center;margin-bottom:12px;font-weight:700;font-size:16px"><strong>' + data.team1.name + '</strong> vs <strong>' + data.team2.name + '</strong></div>';
 
-      // === PRIMARY: Logistic Regression ===
-      if (data.v3_prediction && data.v3_prediction.team1_advance_prob != null) {
-        const p = (data.v3_prediction.team1_advance_prob * 100).toFixed(1);
-        html += '<div style="font-size:12px;color:var(--accent);margin-bottom:6px;font-weight:700">📊 Logistic · Advance Probability</div>';
+      // === PRIMARY: XGBoost ===
+      if (data.v2_prediction && data.v2_prediction.team1_advance_prob != null) {
+        const p = (data.v2_prediction.team1_advance_prob * 100).toFixed(1);
+        html += '<div style="font-size:12px;color:var(--accent);margin-bottom:6px;font-weight:700">🤖 XGBoost · Advance Probability</div>';
         html += '<div class="prob-bar" style="height:10px"><div style="background:var(--green);width:'+p+'%"></div><div style="background:var(--red);width:'+(100-p)+'%"></div></div>';
         html += '<div class="prob-labels"><span><strong>'+data.team1.name+': '+p+'%</strong></span><span><strong>'+data.team2.name+': '+(100-p).toFixed(1)+'%</strong></span></div>';
       }
@@ -861,38 +861,37 @@ async function runH2H() {
     '<div class="h2h-compare">' +
     h2hTeamCard(t1) + h2hTeamCard(t2) +
     '</div>' +
-    '<div class="h2h-result"><div class="loading-text">Predicting with Logistic Regression...</div></div>';
+    '<div class="h2h-result"><div class="loading-text">Predicting with XGBoost...</div></div>';
 
   // Fetch prediction
   try {
-    const data = await apiFetch('/api/predict/v3?team1_id='+id1+'&team2_id='+id2);
+    const data = await apiFetch('/api/predict/v2?team1_id='+id1+'&team2_id='+id2);
     
 
     let resultHtml = '';
 
-    // === PRIMARY: Logistic advance probability ===
-    if (data.v3_prediction && data.v3_prediction.team1_advance_prob != null) {
-      const p1 = data.v3_prediction.team1_advance_prob;
+    // === PRIMARY: XGBoost advance probability ===
+    if (data.v2_prediction && data.v2_prediction.team1_advance_prob != null) {
+      const p1 = data.v2_prediction.team1_advance_prob;
       const p2 = 1 - p1;
       const winner = p1 >= 0.5 ? data.team1.name : data.team2.name;
       const wpct = (Math.max(p1, p2) * 100).toFixed(1);
 
-      resultHtml += '<div class="winner">📊 Logistic: 🏆 ' + winner + ' advances (' + wpct + '%)</div>';
+      resultHtml += '<div class="winner">🤖 XGBoost: 🏆 ' + winner + ' advances (' + wpct + '%)</div>';
       resultHtml += '<div class="prob-bar-wrap"><div class="prob-bar" style="height:14px">' +
         '<div style="background:var(--green);width:'+(p1*100)+'%"></div>' +
         '<div style="background:var(--red);width:'+(p2*100)+'%"></div>' +
         '</div>' +
         '<div class="prob-labels"><span><strong>'+t1.name+': '+(p1*100).toFixed(1)+'%</strong></span><span><strong>'+t2.name+': '+(p2*100).toFixed(1)+'%</strong></span></div></div>';
-      resultHtml += '<div class="model-tag">L2-regularized · 38 features · 86% accuracy · no overfitting</div>';
+      resultHtml += '<div class="model-tag">38 features · Optuna-tuned · 91.7% accuracy · 0.977 AUC</div>';
 
       // Explanation (logistic coefficients)
       if (data.explanation && data.explanation.top_factors) {
-        resultHtml += '<div class="h2h-explanation"><h4>🔍 Why? (feature contributions)</h4>';
+        resultHtml += '<div class="h2h-explanation"><h4>🔍 Why? </h4>';
         data.explanation.top_factors.slice(0, 5).forEach(f => {
-          const cls = f.contribution > 0 ? 'shap-pos' : 'shap-neg';
-          const sign = f.contribution > 0 ? '+' : '';
-          const featLabel = f.feature.replace(/_/g, ' ');
-          resultHtml += '<div class="shap-row"><span>'+featLabel+'</span><span style="color:var(--muted);font-size:11px">coef: '+f.coefficient.toFixed(3)+'</span><span class="'+cls+'">'+sign+f.contribution.toFixed(3)+'</span></div>';
+          const cls = f.shap > 0 ? 'shap-pos' : 'shap-neg';
+          const sign = f.shap > 0 ? '+' : '';
+          resultHtml += '<div class="shap-row"><span>'+f.feature+'</span><span style="color:var(--muted);font-size:11px">val: '+f.value.toFixed(2)+'</span><span class="'+cls+'">'+sign+f.shap.toFixed(3)+'</span></div>';
         });
         resultHtml += '</div>';
     }} else {
@@ -936,10 +935,10 @@ function h2hTeamCard(team) {
 // ===================== BRACKET SIMULATION =====================
 async function loadBracket() {
   document.getElementById('bracket-champion').innerHTML = '';
-  document.getElementById('bracket-container').innerHTML = '<div class="loading-text">Simulating tournament with Logistic Regression...</div>';
+  document.getElementById('bracket-container').innerHTML = '<div class="loading-text">Simulating tournament with XGBoost...</div>';
 
   try {
-    const data = await apiFetch('/api/bracket/v3');
+    const data = await apiFetch('/api/bracket/v2');
     renderBracket(data);
   } catch(e) {
     document.getElementById('bracket-container').innerHTML = '<div class="empty-state"><p>⚠️ Failed to load bracket</p><p style="font-size:12px;color:var(--muted);margin-top:8px">Is the API running?</p><button onclick="loadBracket()">Retry</button></div>';

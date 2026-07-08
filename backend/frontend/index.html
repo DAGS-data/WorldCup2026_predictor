@@ -441,8 +441,6 @@ nav .nav-links button.active {
 .comp-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: var(--accent); }
 .comp-card-full { grid-column: 1 / -1; }
 .comp-chart-wrap { position: relative; width: 100%; height: 420px; }
-.comp-scroll { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; }
-.comp-scroll canvas { min-width: 2000px; height: 380px; }
 </style>
 <body>
 
@@ -514,13 +512,17 @@ nav .nav-links button.active {
       <p style="color:var(--muted);font-size:14px">ELO ratings, squad values, and tournament stage reached</p>
     </div>
     <div class="comp-grid">
-      <div class="comp-card">
+      <div class="comp-card comp-card-full">
         <h3>ELO vs Squad Value</h3>
         <div class="comp-chart-wrap"><canvas id="chart-scatter"></canvas></div>
       </div>
-      <div class="comp-card comp-card-full">
-        <h3>Squad Value &amp; ELO by Team</h3>
-        <div class="comp-scroll"><canvas id="chart-bars"></canvas></div>
+      <div class="comp-card">
+        <h3>Squad Value by Team</h3>
+        <div class="comp-chart-wrap"><canvas id="chart-bars-value"></canvas></div>
+      </div>
+      <div class="comp-card">
+        <h3>ELO Rating by Team</h3>
+        <div class="comp-chart-wrap"><canvas id="chart-bars-elo"></canvas></div>
       </div>
       <div class="comp-card comp-card-full">
         <h3>Squad Value by Stage Reached</h3>
@@ -1129,7 +1131,7 @@ function renderCompetitiveness() {
   if (!store.teams) return;
   var teams = store.teams;
 
-  // --- Chart 1: ELO vs Squad Value scatter ---
+  // --- Chart 1: ELO vs Squad Value scatter (full width) ---
   var scatterData = teams.map(function(t) {
     return {x: t.elo_rating, y: t.squad_value_millions, label: t.flag_emoji + ' ' + t.name};
   });
@@ -1138,7 +1140,7 @@ function renderCompetitiveness() {
   var ctx1 = document.getElementById('chart-scatter').getContext('2d');
   compCharts.scatter = new Chart(ctx1, {
     type: 'scatter',
-    data: {datasets: [{data: scatterData, backgroundColor: '#2563EB33', borderColor: '#2563EB', pointRadius: 7, pointHoverRadius: 10}]},
+    data: {datasets: [{data: scatterData, backgroundColor: '#2563EB33', borderColor: '#2563EB', pointRadius: 8, pointHoverRadius: 12}]},
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: {
@@ -1159,86 +1161,108 @@ function renderCompetitiveness() {
           var pt = meta.data[i];
           if (!pt) return;
           ctx.save();
-          ctx.font = '16px sans-serif';
+          ctx.font = '14px sans-serif';
           ctx.textAlign = 'center';
-          ctx.fillText(teams[i].flag_emoji, pt.x, pt.y - 12);
+          ctx.fillText(teams[i].flag_emoji, pt.x, pt.y - 14);
           ctx.restore();
         });
       }
     }]
   });
 
-  // --- Chart 2: Double bar chart (scrollable) ---
-  var sorted = teams.slice().sort(function(a,b) {return b.squad_value_millions - a.squad_value_millions;});
-  var labels2 = sorted.map(function(t) {return t.flag_emoji + ' ' + t.name;});
-  var squadVals = sorted.map(function(t) {return t.squad_value_millions;});
-  var eloVals = sorted.map(function(t) {return t.elo_rating;});
+  // --- Chart 2a: Squad Value by Team (left) ---
+  var byValue = teams.slice().sort(function(a,b) {return b.squad_value_millions - a.squad_value_millions;});
+  var labelsV = byValue.map(function(t) {return t.flag_emoji;});
+  var valsV = byValue.map(function(t) {return t.squad_value_millions;});
 
-  if (compCharts.bars) compCharts.bars.destroy();
-  var ctx2 = document.getElementById('chart-bars').getContext('2d');
-  compCharts.bars = new Chart(ctx2, {
+  if (compCharts.barsValue) compCharts.barsValue.destroy();
+  var ctxV = document.getElementById('chart-bars-value').getContext('2d');
+  compCharts.barsValue = new Chart(ctxV, {
     type: 'bar',
-    data: {
-      labels: labels2,
-      datasets: [
-        {label: 'Squad Value (M USD)', data: squadVals, backgroundColor: '#2563EB88', borderColor: '#2563EB', borderWidth: 1, yAxisID: 'y'},
-        {label: 'ELO Rating', data: eloVals, backgroundColor: '#F59E0B88', borderColor: '#F59E0B', borderWidth: 1, yAxisID: 'y1'}
-      ]
-    },
+    data: {labels: labelsV, datasets: [{data: valsV, backgroundColor: '#2563EB99', borderColor: '#2563EB', borderWidth: 1, borderRadius: 2}]},
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: {legend: {position: 'top'}},
+      plugins: {legend: {display: false}},
       scales: {
-        y: {type: 'linear', position: 'left', title: {display: true, text: 'Squad Value (M USD)'}, grid: {color: '#F3F4F6'}},
-        y1: {type: 'linear', position: 'right', title: {display: true, text: 'ELO Rating'}, grid: {drawOnChartArea: false}}
+        x: {ticks: {font: {size: 10}, maxRotation: 90}, grid: {display: false}},
+        y: {title: {display: true, text: 'M USD'}, grid: {color: '#F3F4F6'}}
       }
     }
   });
 
-  // --- Chart 3: Stage vs Squad Value (one bar per team, colored by stage) ---
-  var stages = ['group','round_of_32','round_of_16','quarter_finals'];
-  var stageNames = {'group':'Group','round_of_32':'Round of 32','round_of_16':'Round of 16','quarter_finals':'Quarter-Finals'};
+  // --- Chart 2b: ELO Rating by Team (right) ---
+  var byElo = teams.slice().sort(function(a,b) {return b.elo_rating - a.elo_rating;});
+  var labelsE = byElo.map(function(t) {return t.flag_emoji;});
+  var valsE = byElo.map(function(t) {return t.elo_rating;});
+
+  if (compCharts.barsElo) compCharts.barsElo.destroy();
+  var ctxE = document.getElementById('chart-bars-elo').getContext('2d');
+  compCharts.barsElo = new Chart(ctxE, {
+    type: 'bar',
+    data: {labels: labelsE, datasets: [{data: valsE, backgroundColor: '#F59E0B99', borderColor: '#F59E0B', borderWidth: 1, borderRadius: 2}]},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {legend: {display: false}},
+      scales: {
+        x: {ticks: {font: {size: 10}, maxRotation: 90}, grid: {display: false}},
+        y: {title: {display: true, text: 'ELO'}, grid: {color: '#F3F4F6'}}
+      }
+    }
+  });
+
+  // --- Chart 3: Stage vs Squad Value (scatter with flags) ---
+  var stageOrder = ['group','round_of_32','round_of_16','quarter_finals'];
+  var stageNames = {'group':'Group','round_of_32':'R32','round_of_16':'R16','quarter_finals':'QF'};
   var stageColors = {'group':'#9CA3AF','round_of_32':'#F59E0B','round_of_16':'#EF4444','quarter_finals':'#2563EB'};
-  
-  // Sort teams by stage then by squad value within each stage
-  var stageData = [];
-  teams.forEach(function(t) {
+
+  var scatterStage = teams.map(function(t) {
     var stg = getTeamStage(t.id);
-    stageData.push({team: t, stage: stg});
+    return {x: stageOrder.indexOf(stg), y: t.squad_value_millions, label: t.flag_emoji + ' ' + t.name, stage: stg};
   });
-  stageData.sort(function(a,b) {
-    var so = {'group':0,'round_of_32':1,'round_of_16':2,'quarter_finals':3};
-    if (so[a.stage] !== so[b.stage]) return so[a.stage] - so[b.stage];
-    return b.team.squad_value_millions - a.team.squad_value_millions;
-  });
-
-  var labels3 = stageData.map(function(d) {return d.team.flag_emoji;});
-  var values3 = stageData.map(function(d) {return d.team.squad_value_millions;});
-  var colors3 = stageData.map(function(d) {return stageColors[d.stage] + 'CC';});
-
-  // Legend: create one dataset per stage for the legend, all with 0 data
-  var legendDatasets = stages.map(function(s) {
-    return {label: stageNames[s], data: [], backgroundColor: stageColors[s] + 'CC'};
-  });
-  // Main dataset has all the bars colored individually
-  legendDatasets.unshift({label: '', data: values3, backgroundColor: colors3, borderWidth: 0, borderRadius: 4});
 
   if (compCharts.stage) compCharts.stage.destroy();
   var ctx3 = document.getElementById('chart-stage').getContext('2d');
   compCharts.stage = new Chart(ctx3, {
-    type: 'bar',
-    data: {labels: labels3, datasets: legendDatasets},
+    type: 'scatter',
+    data: {datasets: [{
+      data: scatterStage,
+      backgroundColor: scatterStage.map(function(d) {return stageColors[d.stage] + '99';}),
+      borderColor: scatterStage.map(function(d) {return stageColors[d.stage];}),
+      pointRadius: 8, pointHoverRadius: 12
+    }]},
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: {
-        legend: {position: 'top', labels: {filter: function(item) {return item.text !== '';}}},
-        tooltip: {callbacks: {label: function(c) {return c.dataset.label || (c.raw + 'M');}}}
+        tooltip: {callbacks: {label: function(c) {return c.raw.label + ' (' + c.raw.y + 'M)';}}},
+        legend: {display: false}
       },
       scales: {
-        x: {ticks: {maxRotation: 0, font: {size: 14}}},
+        x: {
+          type: 'linear',
+          title: {display: true, text: 'Stage Reached'},
+          ticks: {stepSize: 1, callback: function(v) {return stageNames[stageOrder[v]] || '';}},
+          min: -0.5, max: 3.5,
+          grid: {color: '#F3F4F6'}
+        },
         y: {title: {display: true, text: 'Squad Value (M USD)'}, grid: {color: '#F3F4F6'}}
       }
-    }
+    },
+    plugins: [{
+      id: 'stageFlags',
+      afterDraw: function(chart) {
+        var ctx = chart.ctx;
+        chart.data.datasets[0].data.forEach(function(p, i) {
+          var meta = chart.getDatasetMeta(0);
+          var pt = meta.data[i];
+          if (!pt) return;
+          ctx.save();
+          ctx.font = '14px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(teams[i].flag_emoji, pt.x, pt.y - 14);
+          ctx.restore();
+        });
+      }
+    }]
   });
 }
 

@@ -11,6 +11,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH"
         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <style>
 /* ===================== PREMIUM MINIMALIST — Apple / SaaS Modern ===================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -433,6 +434,15 @@ nav .nav-links button.active {
 /* ── Loading ── */
 .loading-text { text-align: center; padding: 64px; color: var(--muted); font-size: 14px; }
 .hidden { display: none !important; }
+
+/* ── Competitiveness Dashboard ── */
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+.comp-card { background: #fff; border-radius: 16px; padding: 20px; border: 1px solid var(--border); }
+.comp-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: var(--accent); }
+.comp-card-full { grid-column: 1 / -1; }
+.comp-chart-wrap { position: relative; width: 100%; height: 420px; }
+.comp-scroll { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; }
+.comp-scroll canvas { min-width: 2000px; height: 380px; }
 </style>
 <body>
 
@@ -443,6 +453,7 @@ nav .nav-links button.active {
     <button data-page="matches">Matches</button>
     <button data-page="h2h">H2H</button>
     <button data-page="bracket">🏆 Bracket</button>
+    <button data-page="competitiveness">📊 Competitiveness</button>
   </div>
 </nav>
 
@@ -493,6 +504,28 @@ nav .nav-links button.active {
     <div id="bracket-champion" class="bracket-champion-top"></div>
     <div id="bracket-container" class="bracket-tree">
       <div id="bracket-loading" class="loading-text">Simulating tournament...</div>
+    </div>
+  </div>
+
+  <!-- PAGE: Competitiveness Dashboard -->
+  <div id="page-competitiveness" class="page">
+    <div style="text-align:center;margin-bottom:8px">
+      <h1 style="font-size:28px;font-weight:800;margin-bottom:4px;letter-spacing:-0.5px">📊 Competitiveness Dashboard</h1>
+      <p style="color:var(--muted);font-size:14px">ELO ratings, squad values, and tournament stage reached</p>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <h3>ELO vs Squad Value</h3>
+        <div class="comp-chart-wrap"><canvas id="chart-scatter"></canvas></div>
+      </div>
+      <div class="comp-card comp-card-full">
+        <h3>Squad Value &amp; ELO by Team</h3>
+        <div class="comp-scroll"><canvas id="chart-bars"></canvas></div>
+      </div>
+      <div class="comp-card comp-card-full">
+        <h3>Squad Value by Stage Reached</h3>
+        <div class="comp-chart-wrap"><canvas id="chart-stage"></canvas></div>
+      </div>
     </div>
   </div>
 </div>
@@ -567,6 +600,7 @@ function navigate(page, teamId) {
   if (page === 'matches' && store.matches) renderMatches();
   if (page === 'h2h') { if (store.teams) initH2H(); }
   if (page === 'bracket') loadBracket();
+  if (page === 'competitiveness') { if (store.teams) renderCompetitiveness(); }
 
   window.scrollTo(0, 0);
 }
@@ -1073,6 +1107,139 @@ function renderBracket(data) {
     '<span>' + esc(champ.name) + '</span>' +
     '<span class="champ-prob">🏆 Predicted Champion</span>' +
     '</div>';
+}
+
+// ===================== COMPETITIVENESS DASHBOARD =====================
+var compCharts = {};
+
+function getTeamStage(teamId) {
+  if (!store.matches) return 'group';
+  var best = 'group';
+  var order = {'group':0,'round_of_32':1,'round_of_16':2,'quarter_finals':3,'semi_finals':4,'final':5};
+  store.matches.forEach(function(m) {
+    if ((m.team1_id === teamId || m.team2_id === teamId) && m.status && m.status.startsWith('completed')) {
+      var s = m.stage || 'group';
+      if (order[s] > order[best]) best = s;
+    }
+  });
+  return best;
+}
+
+function renderCompetitiveness() {
+  if (!store.teams) return;
+  var teams = store.teams;
+
+  // --- Chart 1: ELO vs Squad Value scatter ---
+  var scatterData = teams.map(function(t) {
+    return {x: t.elo_rating, y: t.squad_value_millions, label: t.flag_emoji + ' ' + t.name};
+  });
+
+  if (compCharts.scatter) compCharts.scatter.destroy();
+  var ctx1 = document.getElementById('chart-scatter').getContext('2d');
+  compCharts.scatter = new Chart(ctx1, {
+    type: 'scatter',
+    data: {datasets: [{data: scatterData, backgroundColor: '#2563EB33', borderColor: '#2563EB', pointRadius: 7, pointHoverRadius: 10}]},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        tooltip: {callbacks: {label: function(c) {return c.raw.label;}}},
+        legend: {display: false}
+      },
+      scales: {
+        x: {title: {display: true, text: 'ELO Rating'}, grid: {color: '#F3F4F6'}},
+        y: {title: {display: true, text: 'Squad Value (M USD)'}, grid: {color: '#F3F4F6'}}
+      }
+    },
+    plugins: [{
+      id: 'flags',
+      afterDraw: function(chart) {
+        var ctx = chart.ctx;
+        chart.data.datasets[0].data.forEach(function(p, i) {
+          var meta = chart.getDatasetMeta(0);
+          var pt = meta.data[i];
+          if (!pt) return;
+          ctx.save();
+          ctx.font = '16px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(teams[i].flag_emoji, pt.x, pt.y - 12);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+
+  // --- Chart 2: Double bar chart (scrollable) ---
+  var sorted = teams.slice().sort(function(a,b) {return b.squad_value_millions - a.squad_value_millions;});
+  var labels2 = sorted.map(function(t) {return t.flag_emoji + ' ' + t.name;});
+  var squadVals = sorted.map(function(t) {return t.squad_value_millions;});
+  var eloVals = sorted.map(function(t) {return t.elo_rating;});
+
+  if (compCharts.bars) compCharts.bars.destroy();
+  var ctx2 = document.getElementById('chart-bars').getContext('2d');
+  compCharts.bars = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: labels2,
+      datasets: [
+        {label: 'Squad Value (M USD)', data: squadVals, backgroundColor: '#2563EB88', borderColor: '#2563EB', borderWidth: 1, yAxisID: 'y'},
+        {label: 'ELO Rating', data: eloVals, backgroundColor: '#F59E0B88', borderColor: '#F59E0B', borderWidth: 1, yAxisID: 'y1'}
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {legend: {position: 'top'}},
+      scales: {
+        y: {type: 'linear', position: 'left', title: {display: true, text: 'Squad Value (M USD)'}, grid: {color: '#F3F4F6'}},
+        y1: {type: 'linear', position: 'right', title: {display: true, text: 'ELO Rating'}, grid: {drawOnChartArea: false}}
+      }
+    }
+  });
+
+  // --- Chart 3: Stage vs Squad Value (one bar per team, colored by stage) ---
+  var stages = ['group','round_of_32','round_of_16','quarter_finals'];
+  var stageNames = {'group':'Group','round_of_32':'Round of 32','round_of_16':'Round of 16','quarter_finals':'Quarter-Finals'};
+  var stageColors = {'group':'#9CA3AF','round_of_32':'#F59E0B','round_of_16':'#EF4444','quarter_finals':'#2563EB'};
+  
+  // Sort teams by stage then by squad value within each stage
+  var stageData = [];
+  teams.forEach(function(t) {
+    var stg = getTeamStage(t.id);
+    stageData.push({team: t, stage: stg});
+  });
+  stageData.sort(function(a,b) {
+    var so = {'group':0,'round_of_32':1,'round_of_16':2,'quarter_finals':3};
+    if (so[a.stage] !== so[b.stage]) return so[a.stage] - so[b.stage];
+    return b.team.squad_value_millions - a.team.squad_value_millions;
+  });
+
+  var labels3 = stageData.map(function(d) {return d.team.flag_emoji;});
+  var values3 = stageData.map(function(d) {return d.team.squad_value_millions;});
+  var colors3 = stageData.map(function(d) {return stageColors[d.stage] + 'CC';});
+
+  // Legend: create one dataset per stage for the legend, all with 0 data
+  var legendDatasets = stages.map(function(s) {
+    return {label: stageNames[s], data: [], backgroundColor: stageColors[s] + 'CC'};
+  });
+  // Main dataset has all the bars colored individually
+  legendDatasets.unshift({label: '', data: values3, backgroundColor: colors3, borderWidth: 0, borderRadius: 4});
+
+  if (compCharts.stage) compCharts.stage.destroy();
+  var ctx3 = document.getElementById('chart-stage').getContext('2d');
+  compCharts.stage = new Chart(ctx3, {
+    type: 'bar',
+    data: {labels: labels3, datasets: legendDatasets},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: {position: 'top', labels: {filter: function(item) {return item.text !== '';}}},
+        tooltip: {callbacks: {label: function(c) {return c.dataset.label || (c.raw + 'M');}}}
+      },
+      scales: {
+        x: {ticks: {maxRotation: 0, font: {size: 14}}},
+        y: {title: {display: true, text: 'Squad Value (M USD)'}, grid: {color: '#F3F4F6'}}
+      }
+    }
+  });
 }
 
 // ===================== INIT =====================

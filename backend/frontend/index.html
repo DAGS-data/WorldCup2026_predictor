@@ -513,8 +513,14 @@ nav .nav-links button.active {
     </div>
     <div class="comp-grid">
       <div class="comp-card comp-card-full">
-        <h3>ELO vs Squad Value</h3>
+        <h3>⚡ Competitiveness Ratio: ELO vs Squad Value</h3>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:8px">Line = expected ELO for each squad value. 🟢 above = overperforms, 🔴 below = underperforms.</p>
         <div class="comp-chart-wrap"><canvas id="chart-scatter"></canvas></div>
+      </div>
+      <div class="comp-card comp-card-full" id="ratio-ranking-card" style="display:none">
+        <h3>📋 Ratio Ranking — All 48 Teams</h3>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:8px">Ratio = ELO ÷ Expected ELO. >1 = overperforms, <1 = underperforms.</p>
+        <div id="ratio-ranking-table" style="overflow-x:auto;font-size:12px"></div>
       </div>
       <div class="comp-card">
         <h3>Squad Value by Team</h3>
@@ -1134,41 +1140,77 @@ function renderCompetitiveness() {
   if (!store.teams) return;
   var teams = store.teams;
 
-  // --- Chart 1: ELO vs Squad Value scatter (full width) ---
-  var scatterData = teams.map(function(t) {
-    return {x: t.elo_rating, y: t.squad_value_millions, label: t.flag_emoji + ' ' + t.name};
+  // --- Pre-compute regression & ratios ---
+  var REG_A = 0.3225, REG_B = 1748.2;
+  var teamRatios = teams.map(function(t) {
+    var eloExp = REG_A * t.squad_value_millions + REG_B;
+    var ratio = t.elo_rating / eloExp;
+    var pct = ((ratio - 1) * 100).toFixed(1);
+    var sign = ratio >= 1 ? '+' : '';
+    return {team: t, eloExp: eloExp, ratio: ratio, label: sign + pct + '%'};
   });
+  // Color: green >1.03, yellow 0.97-1.03, red <0.97
+  var ratioColor = function(r) { return r > 1.03 ? '#10B981' : r >= 0.97 ? '#F59E0B' : '#EF4444'; };
+
+  // --- Chart 1: Squad Value vs ELO  +  regression line + ratio coloring ---
+  var scDataA = [], scDataB = [], scDataC = [];
+  teamRatios.forEach(function(d, i) {
+    var pt = {x: d.team.squad_value_millions, y: d.team.elo_rating, label: d.team.flag_emoji + ' ' + d.team.name, ratioLabel: d.label, eloExp: Math.round(d.eloExp), idx: i};
+    if (d.ratio > 1.03) scDataA.push(pt);
+    else if (d.ratio >= 0.97) scDataB.push(pt);
+    else scDataC.push(pt);
+  });
+
+  // Regression line data
+  var svMin = Math.min.apply(null, teams.map(function(t){return t.squad_value_millions;}));
+  var svMax = Math.max.apply(null, teams.map(function(t){return t.squad_value_millions;}));
+  var regLine = [{x: svMin, y: REG_A * svMin + REG_B}, {x: svMax, y: REG_A * svMax + REG_B}];
 
   if (compCharts.scatter) compCharts.scatter.destroy();
   var ctx1 = document.getElementById('chart-scatter').getContext('2d');
   compCharts.scatter = new Chart(ctx1, {
     type: 'scatter',
-    data: {datasets: [{data: scatterData, backgroundColor: '#2563EB33', borderColor: '#2563EB', pointRadius: 8, pointHoverRadius: 12}]},
+    data: {datasets: [
+      {label: 'Overperforms (+3%)',   data: scDataA, backgroundColor: '#10B98199', borderColor: '#10B981', pointRadius: 7, pointHoverRadius: 11},
+      {label: 'On par (±3%)',          data: scDataB, backgroundColor: '#F59E0B99', borderColor: '#F59E0B', pointRadius: 7, pointHoverRadius: 11},
+      {label: 'Underperforms (−3%)',   data: scDataC, backgroundColor: '#EF444499', borderColor: '#EF4444', pointRadius: 7, pointHoverRadius: 11},
+      {label: 'Expected (regression)', data: regLine,  borderColor: '#6B7280', borderWidth: 2, borderDash: [8,4], pointRadius: 0, showLine: true, fill: false}
+    ]},
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: {
-        tooltip: {callbacks: {label: function(c) {return c.raw.label;}}},
-        legend: {display: false}
+        tooltip: {
+          callbacks: {
+            label: function(c) {
+              if (c.datasetIndex === 3) return 'Expected ELO (regression)';
+              return c.raw.label + '  ·  ELO ' + Math.round(c.raw.y) + '  ·  Value €' + Math.round(c.raw.x) + 'M  ·  exp ELO ' + c.raw.eloExp + '  ·  ' + c.raw.ratioLabel;
+            }
+          }
+        },
+        legend: {position: 'bottom', labels: {usePointStyle: true, boxWidth: 10, font: {size: 11}}}
       },
       scales: {
-        x: {title: {display: true, text: 'ELO Rating'}, grid: {color: '#F3F4F6'}},
-        y: {title: {display: true, text: 'Squad Value (M USD)'}, grid: {color: '#F3F4F6'}}
+        x: {title: {display: true, text: 'Squad Value (M USD)'}, grid: {color: '#F3F4F6'}},
+        y: {title: {display: true, text: 'ELO Rating'}, grid: {color: '#F3F4F6'}}
       }
     },
     plugins: [{
       id: 'flags',
       afterDraw: function(chart) {
         var ctx = chart.ctx;
-        chart.data.datasets[0].data.forEach(function(p, i) {
-          var meta = chart.getDatasetMeta(0);
-          var pt = meta.data[i];
-          if (!pt) return;
-          ctx.save();
-          ctx.font = '14px sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText(teams[i].flag_emoji, pt.x, pt.y - 14);
-          ctx.restore();
-        });
+        // Draw flags only for the first 3 datasets (points, not line)
+        for (var d = 0; d < 3; d++) {
+          var meta = chart.getDatasetMeta(d);
+          chart.data.datasets[d].data.forEach(function(p) {
+            var pt = meta.data[p.idx];
+            if (!pt) return;
+            ctx.save();
+            ctx.font = '14px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(teams[p.idx].flag_emoji, pt.x, pt.y - 14);
+            ctx.restore();
+          });
+        }
       }
     }]
   });
@@ -1267,6 +1309,29 @@ function renderCompetitiveness() {
       }
     }]
   });
+
+  // --- Ratio Ranking Table ---
+  var sortedRatios = teamRatios.slice().sort(function(a,b){return b.ratio - a.ratio;});
+  var tableHtml = '<table style="width:100%;border-collapse:collapse">';
+  tableHtml += '<thead><tr style="border-bottom:1px solid #E5E7EB;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:0.5px">';
+  tableHtml += '<th style="text-align:left;padding:6px 8px">#</th><th style="text-align:left;padding:6px 8px">Team</th>';
+  tableHtml += '<th style="text-align:right;padding:6px 8px">Value M€</th><th style="text-align:right;padding:6px 8px">ELO</th>';
+  tableHtml += '<th style="text-align:right;padding:6px 8px">Exp ELO</th><th style="text-align:right;padding:6px 8px">Ratio</th>';
+  tableHtml += '</tr></thead><tbody>';
+  sortedRatios.forEach(function(d, i) {
+    var clr = ratioColor(d.ratio);
+    tableHtml += '<tr style="border-bottom:1px solid #F3F4F6">';
+    tableHtml += '<td style="padding:4px 8px;font-weight:600">' + (i+1) + '</td>';
+    tableHtml += '<td style="padding:4px 8px">' + d.team.flag_emoji + ' ' + d.team.name + '</td>';
+    tableHtml += '<td style="padding:4px 8px;text-align:right">' + Math.round(d.team.squad_value_millions) + '</td>';
+    tableHtml += '<td style="padding:4px 8px;text-align:right;font-weight:600">' + d.team.elo_rating + '</td>';
+    tableHtml += '<td style="padding:4px 8px;text-align:right;color:var(--muted)">' + Math.round(d.eloExp) + '</td>';
+    tableHtml += '<td style="padding:4px 8px;text-align:right;font-weight:700;color:' + clr + '">' + d.ratio.toFixed(3) + '</td>';
+    tableHtml += '</tr>';
+  });
+  tableHtml += '</tbody></table>';
+  document.getElementById('ratio-ranking-table').innerHTML = tableHtml;
+  document.getElementById('ratio-ranking-card').style.display = 'block';
 }
 
 // ===================== INIT =====================

@@ -1119,9 +1119,12 @@ function getTeamStage(teamId) {
   var best = 'group';
   var order = {'group':0,'round_of_32':1,'round_of_16':2,'quarter_finals':3,'semi_finals':4,'final':5};
   store.matches.forEach(function(m) {
-    if ((m.team1_id === teamId || m.team2_id === teamId) && m.status && m.status.startsWith('completed')) {
+    if (m.team1_id === teamId || m.team2_id === teamId) {
       var s = m.stage || 'group';
-      if (order[s] > order[best]) best = s;
+      // Completed match: use it. Scheduled QF+ match: team already qualified.
+      if ((m.status && m.status.startsWith('completed')) || (order[s] >= 3 && m.status === 'scheduled')) {
+        if (order[s] > order[best]) best = s;
+      }
     }
   });
   return best;
@@ -1205,7 +1208,7 @@ function renderCompetitiveness() {
       plugins: {legend: {display: false}},
       scales: {
         x: {ticks: {font: {size: 10}, maxRotation: 90}, grid: {display: false}},
-        y: {title: {display: true, text: 'ELO'}, grid: {color: '#F3F4F6'}}
+        y: {title: {display: true, text: 'ELO'}, min: 1350, grid: {color: '#F3F4F6'}}
       }
     }
   });

@@ -69,7 +69,7 @@ class PoissonGoalPredictor:
         lam_away = float(self.model_away.predict(X)[0])
 
         # Compute top scorelines
-        top_scorelines = self._top_scorelines(lam_home, lam_away, n=5)
+        top_scorelines = self._top_scorelines(lam_home, lam_away, n=10)
 
         return {
             "home_lambda": round(lam_home, 3),

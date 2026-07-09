@@ -18,7 +18,6 @@ from predictor import calculate_match_probabilities, get_prediction_factors, sim
 from models.xgboost_predictor import KnockoutPredictor
 from models.logistic_predictor import LogisticPredictor
 from models.goals_predictor import get_goals_predictor
-from models.goal_features import get_goal_features, build_match_history
 
 # --- Environment ---
 IS_PRODUCTION = os.environ.get("ENV", "").lower() in ("production", "prod")
@@ -404,23 +403,16 @@ def predict_match_v3(team1_id: int, team2_id: int):
 
 @app.get("/api/goals/predict")
 def predict_goals(team1_id: int, team2_id: int):
-    """CatBoost + Poisson: predict expected goals and most likely scorelines."""
+    """Dixon-Coles Bayesian: predict expected goals and top scorelines."""
     teams = load_teams_enriched()
     t1 = next((t for t in teams if t["id"] == team1_id), None)
     t2 = next((t for t in teams if t["id"] == team2_id), None)
     if not t1 or not t2:
         raise HTTPException(status_code=404, detail="Team not found")
 
-    matches = load_matches_raw()
-    hist1 = build_match_history(team1_id, matches, teams)
-    hist2 = build_match_history(team2_id, matches, teams)
-
-    f1 = get_goal_features(t1, t2, hist1, stage="round_of_16", is_home=True)
-    f2 = get_goal_features(t2, t1, hist2, stage="round_of_16", is_home=False)
-
     try:
         gpred = get_goals_predictor()
-        result = gpred.predict(f1, f2)
+        result = gpred.predict(team1_id, team2_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Goal prediction failed: {e}")
 

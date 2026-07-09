@@ -985,7 +985,7 @@ async function runH2H() {
     // === GOALS: CatBoost + Poisson scorelines ===
     if (goalsData && goalsData.goals_prediction) {
       var gp = goalsData.goals_prediction;
-      resultHtml += '<div style="margin-top:16px;font-size:11px;color:var(--muted);margin-bottom:6px;text-align:center">⚽ CatBoost + Poisson · Expected Goals: λ=' + gp.home_lambda.toFixed(1) + ' – ' + gp.away_lambda.toFixed(1) + '</div>';
+      resultHtml += '<div style="margin-top:16px;font-size:11px;color:var(--muted);margin-bottom:6px;text-align:center">⚽ Dixon-Coles · Expected Goals: λ=' + gp.home_lambda.toFixed(1) + ' – ' + gp.away_lambda.toFixed(1) + '</div>';
       resultHtml += '<div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">';
       (gp.top_scorelines && gp.top_scorelines.top || gp.top_scorelines || []).slice(0, 5).forEach(function(sl, idx) {
         var pct = sl.probability.toFixed(1);

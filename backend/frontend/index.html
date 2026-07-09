@@ -998,29 +998,21 @@ async function runH2H() {
       });
       resultHtml += '</div>';
 
-      // Heatmap: 0-5 goals grid
-      var matrix = gp.top_scorelines && gp.top_scorelines.matrix_7x7;
-      if (matrix) {
-        resultHtml += '<div style="overflow-x:auto;margin-top:8px">';
-        resultHtml += '<table style="margin:0 auto;border-collapse:collapse;font-size:10px">';
-        resultHtml += '<tr><th style="padding:2px 6px;color:var(--muted)"></th>';
-        for (var a = 0; a <= 5; a++) resultHtml += '<th style="padding:2px 6px;color:var(--muted);font-weight:500">' + a + '</th>';
-        resultHtml += '</tr>';
-        for (var h = 0; h <= 5; h++) {
-          resultHtml += '<tr><td style="padding:2px 6px;color:var(--muted);font-weight:500;text-align:right">' + h + '</td>';
-          for (var a = 0; a <= 5; a++) {
-            var key = h + '-' + a;
-            var p = matrix[key] || 0;
-            var intensity = Math.min(p / 15, 1); // normalize: 15%+ = max opacity
-            var bg = p > 8 ? 'rgba(16,185,129,' + intensity.toFixed(2) + ')' :
-                      p > 3 ? 'rgba(245,158,11,' + intensity.toFixed(2) + ')' :
-                      p > 0 ? 'rgba(156,163,175,' + (intensity * 0.5).toFixed(2) + ')' : 'transparent';
-            resultHtml += '<td style="padding:3px 6px;text-align:center;background:' + bg + ';border-radius:3px;font-weight:' + (p > 8 ? '700' : '400') + ';color:' + (p > 8 ? '#065F46' : 'var(--text)') + '">' + p.toFixed(1) + '%</td>';
-          }
-          resultHtml += '</tr>';
-        }
-        resultHtml += '</table>';
-        resultHtml += '<div style="text-align:center;font-size:9px;color:var(--muted);margin-top:4px">Rows = ' + esc(t1.name) + ' goals · Columns = ' + esc(t2.name) + ' goals</div>';
+      // Top 10 scorelines bar chart
+      var top10 = (gp.top_scorelines && gp.top_scorelines.top || gp.top_scorelines || []).slice(0, 10);
+      if (top10.length > 0) {
+        var maxP = top10[0].probability;
+        resultHtml += '<div style="margin-top:8px;max-width:320px;margin-left:auto;margin-right:auto">';
+        top10.forEach(function(sl, idx) {
+          var barW = (sl.probability / maxP * 100).toFixed(0);
+          var barColor = idx === 0 ? '#10B981' : idx <= 2 ? '#34D399' : idx <= 5 ? '#F59E0B' : '#D1D5DB';
+          resultHtml += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">';
+          resultHtml += '<span style="width:38px;text-align:right;font-weight:' + (idx===0?'800':'500') + ';font-size:12px;color:var(--text)">' + sl.home_goals + '-' + sl.away_goals + '</span>';
+          resultHtml += '<div style="flex:1;height:16px;background:#F3F4F6;border-radius:4px;overflow:hidden">';
+          resultHtml += '<div style="height:100%;width:' + barW + '%;background:' + barColor + ';border-radius:4px"></div></div>';
+          resultHtml += '<span style="width:36px;font-size:10px;color:var(--muted);text-align:right">' + sl.probability.toFixed(1) + '%</span>';
+          resultHtml += '</div>';
+        });
         resultHtml += '</div>';
       }
     }

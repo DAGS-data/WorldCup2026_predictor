@@ -1,0 +1,343 @@
+{
+  "home_adv": 0.3451481893062868,
+  "rho": 0.04781443389083792,
+  "teams": [
+    {
+      "name": "Spain",
+      "flag": "\ud83c\uddea\ud83c\uddf8",
+      "attack": 0.12,
+      "defense": -0.603,
+      "net": 0.722
+    },
+    {
+      "name": "France",
+      "flag": "\ud83c\uddeb\ud83c\uddf7",
+      "attack": 0.28,
+      "defense": -0.429,
+      "net": 0.709
+    },
+    {
+      "name": "Morocco",
+      "flag": "\ud83c\uddf2\ud83c\udde6",
+      "attack": 0.215,
+      "defense": -0.289,
+      "net": 0.503
+    },
+    {
+      "name": "Belgium",
+      "flag": "\ud83c\udde7\ud83c\uddea",
+      "attack": 0.281,
+      "defense": -0.166,
+      "net": 0.447
+    },
+    {
+      "name": "Mexico",
+      "flag": "\ud83c\uddf2\ud83c\uddfd",
+      "attack": 0.174,
+      "defense": -0.232,
+      "net": 0.407
+    },
+    {
+      "name": "Colombia",
+      "flag": "\ud83c\udde8\ud83c\uddf4",
+      "attack": -0.088,
+      "defense": -0.493,
+      "net": 0.405
+    },
+    {
+      "name": "England",
+      "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+      "attack": 0.263,
+      "defense": -0.101,
+      "net": 0.364
+    },
+    {
+      "name": "Argentina",
+      "flag": "\ud83c\udde6\ud83c\uddf7",
+      "attack": 0.288,
+      "defense": -0.075,
+      "net": 0.363
+    },
+    {
+      "name": "Brazil",
+      "flag": "\ud83c\udde7\ud83c\uddf7",
+      "attack": 0.145,
+      "defense": -0.194,
+      "net": 0.34
+    },
+    {
+      "name": "Switzerland",
+      "flag": "\ud83c\udde8\ud83c\udded",
+      "attack": 0.062,
+      "defense": -0.251,
+      "net": 0.312
+    },
+    {
+      "name": "Portugal",
+      "flag": "\ud83c\uddf5\ud83c\uddf9",
+      "attack": 0.037,
+      "defense": -0.267,
+      "net": 0.305
+    },
+    {
+      "name": "Netherlands",
+      "flag": "\ud83c\uddf3\ud83c\uddf1",
+      "attack": 0.249,
+      "defense": -0.003,
+      "net": 0.252
+    },
+    {
+      "name": "Japan",
+      "flag": "\ud83c\uddef\ud83c\uddf5",
+      "attack": 0.121,
+      "defense": -0.094,
+      "net": 0.215
+    },
+    {
+      "name": "Germany",
+      "flag": "\ud83c\udde9\ud83c\uddea",
+      "attack": 0.29,
+      "defense": 0.096,
+      "net": 0.195
+    },
+    {
+      "name": "Egypt",
+      "flag": "\ud83c\uddea\ud83c\uddec",
+      "attack": 0.13,
+      "defense": -0.058,
+      "net": 0.188
+    },
+    {
+      "name": "Norway",
+      "flag": "\ud83c\uddf3\ud83c\uddf4",
+      "attack": 0.313,
+      "defense": 0.129,
+      "net": 0.184
+    },
+    {
+      "name": "Senegal",
+      "flag": "\ud83c\uddf8\ud83c\uddf3",
+      "attack": 0.281,
+      "defense": 0.158,
+      "net": 0.123
+    },
+    {
+      "name": "Canada",
+      "flag": "\ud83c\udde8\ud83c\udde6",
+      "attack": 0.1,
+      "defense": -0.013,
+      "net": 0.113
+    },
+    {
+      "name": "Ghana",
+      "flag": "\ud83c\uddec\ud83c\udded",
+      "attack": -0.17,
+      "defense": -0.267,
+      "net": 0.097
+    },
+    {
+      "name": "Ivory Coast",
+      "flag": "\ud83c\udde8\ud83c\uddee",
+      "attack": -0.05,
+      "defense": -0.145,
+      "net": 0.095
+    },
+    {
+      "name": "Iran",
+      "flag": "\ud83c\uddee\ud83c\uddf7",
+      "attack": -0.097,
+      "defense": -0.182,
+      "net": 0.084
+    },
+    {
+      "name": "Australia",
+      "flag": "\ud83c\udde6\ud83c\uddfa",
+      "attack": -0.155,
+      "defense": -0.227,
+      "net": 0.072
+    },
+    {
+      "name": "Cape Verde",
+      "flag": "\ud83c\udde8\ud83c\uddfb",
+      "attack": -0.025,
+      "defense": -0.092,
+      "net": 0.067
+    },
+    {
+      "name": "Congo DR",
+      "flag": "\ud83c\udde8\ud83c\udde9",
+      "attack": -0.015,
+      "defense": -0.082,
+      "net": 0.067
+    },
+    {
+      "name": "United States",
+      "flag": "\ud83c\uddfa\ud83c\uddf8",
+      "attack": 0.231,
+      "defense": 0.191,
+      "net": 0.04
+    },
+    {
+      "name": "Croatia",
+      "flag": "\ud83c\udded\ud83c\uddf7",
+      "attack": 0.13,
+      "defense": 0.122,
+      "net": 0.008
+    },
+    {
+      "name": "South Korea",
+      "flag": "\ud83c\uddf0\ud83c\uddf7",
+      "attack": -0.135,
+      "defense": -0.111,
+      "net": -0.024
+    },
+    {
+      "name": "Paraguay",
+      "flag": "\ud83c\uddf5\ud83c\uddfe",
+      "attack": -0.188,
+      "defense": -0.125,
+      "net": -0.064
+    },
+    {
+      "name": "Uruguay",
+      "flag": "\ud83c\uddfa\ud83c\uddfe",
+      "attack": -0.031,
+      "defense": 0.045,
+      "net": -0.075
+    },
+    {
+      "name": "South Africa",
+      "flag": "\ud83c\uddff\ud83c\udde6",
+      "attack": -0.208,
+      "defense": -0.124,
+      "net": -0.084
+    },
+    {
+      "name": "Ecuador",
+      "flag": "\ud83c\uddea\ud83c\udde8",
+      "attack": -0.244,
+      "defense": -0.144,
+      "net": -0.1
+    },
+    {
+      "name": "Austria",
+      "flag": "\ud83c\udde6\ud83c\uddf9",
+      "attack": 0.053,
+      "defense": 0.226,
+      "net": -0.173
+    },
+    {
+      "name": "Sweden",
+      "flag": "\ud83c\uddf8\ud83c\uddea",
+      "attack": 0.088,
+      "defense": 0.263,
+      "net": -0.175
+    },
+    {
+      "name": "Bosnia-Herzegovina",
+      "flag": "\ud83c\udde7\ud83c\udde6",
+      "attack": -0.041,
+      "defense": 0.154,
+      "net": -0.195
+    },
+    {
+      "name": "Scotland",
+      "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
+      "attack": -0.208,
+      "defense": 0.001,
+      "net": -0.208
+    },
+    {
+      "name": "T\u00fcrkiye",
+      "flag": "\ud83c\uddf9\ud83c\uddf7",
+      "attack": -0.068,
+      "defense": 0.145,
+      "net": -0.214
+    },
+    {
+      "name": "Algeria",
+      "flag": "\ud83c\udde9\ud83c\uddff",
+      "attack": -0.012,
+      "defense": 0.233,
+      "net": -0.245
+    },
+    {
+      "name": "Saudi Arabia",
+      "flag": "\ud83c\uddf8\ud83c\udde6",
+      "attack": -0.172,
+      "defense": 0.076,
+      "net": -0.248
+    },
+    {
+      "name": "Panama",
+      "flag": "\ud83c\uddf5\ud83c\udde6",
+      "attack": -0.296,
+      "defense": 0.004,
+      "net": -0.3
+    },
+    {
+      "name": "Czechia",
+      "flag": "\ud83c\udde8\ud83c\uddff",
+      "attack": -0.116,
+      "defense": 0.25,
+      "net": -0.366
+    },
+    {
+      "name": "Haiti",
+      "flag": "\ud83c\udded\ud83c\uddf9",
+      "attack": -0.093,
+      "defense": 0.318,
+      "net": -0.412
+    },
+    {
+      "name": "Jordan",
+      "flag": "\ud83c\uddef\ud83c\uddf4",
+      "attack": -0.11,
+      "defense": 0.363,
+      "net": -0.473
+    },
+    {
+      "name": "New Zealand",
+      "flag": "\ud83c\uddf3\ud83c\uddff",
+      "attack": 0.031,
+      "defense": 0.533,
+      "net": -0.502
+    },
+    {
+      "name": "Cura\u00e7ao",
+      "flag": "\ud83c\udde8\ud83c\uddfc",
+      "attack": -0.19,
+      "defense": 0.428,
+      "net": -0.618
+    },
+    {
+      "name": "Qatar",
+      "flag": "\ud83c\uddf6\ud83c\udde6",
+      "attack": -0.115,
+      "defense": 0.507,
+      "net": -0.621
+    },
+    {
+      "name": "Uzbekistan",
+      "flag": "\ud83c\uddfa\ud83c\uddff",
+      "attack": -0.061,
+      "defense": 0.607,
+      "net": -0.668
+    },
+    {
+      "name": "Iraq",
+      "flag": "\ud83c\uddee\ud83c\uddf6",
+      "attack": -0.198,
+      "defense": 0.507,
+      "net": -0.705
+    },
+    {
+      "name": "Tunisia",
+      "flag": "\ud83c\uddf9\ud83c\uddf3",
+      "attack": -0.159,
+      "defense": 0.658,
+      "net": -0.817
+    }
+  ],
+  "samples": 96
+}

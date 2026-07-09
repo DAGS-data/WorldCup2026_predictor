@@ -9,7 +9,7 @@ import numpy as np
 from pathlib import Path
 
 MODEL_DIR = Path(__file__).parent
-DC_PARAMS_PATH = MODEL_DIR / "dixon_coles_v1.pkl"
+DC_PARAMS_PATH = MODEL_DIR / "dixon_coles_v2.pkl"
 
 
 class DixonColesPredictor:

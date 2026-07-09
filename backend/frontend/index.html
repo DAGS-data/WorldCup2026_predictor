@@ -985,18 +985,44 @@ async function runH2H() {
     // === GOALS: CatBoost + Poisson scorelines ===
     if (goalsData && goalsData.goals_prediction) {
       var gp = goalsData.goals_prediction;
-      resultHtml += '<div style="margin-top:16px;font-size:11px;color:var(--muted);margin-bottom:6px;text-align:center">⚽ CatBoost + Poisson · Expected Goals: ' + gp.home_lambda.toFixed(1) + ' – ' + gp.away_lambda.toFixed(1) + '</div>';
-      resultHtml += '<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">';
-      (gp.top_scorelines || []).slice(0, 3).forEach(function(sl, idx) {
+      resultHtml += '<div style="margin-top:16px;font-size:11px;color:var(--muted);margin-bottom:6px;text-align:center">⚽ CatBoost + Poisson · Expected Goals: λ=' + gp.home_lambda.toFixed(1) + ' – ' + gp.away_lambda.toFixed(1) + '</div>';
+      resultHtml += '<div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">';
+      (gp.top_scorelines && gp.top_scorelines.top || gp.top_scorelines || []).slice(0, 5).forEach(function(sl, idx) {
         var pct = sl.probability.toFixed(1);
-        var opacity = idx === 0 ? '1' : idx === 1 ? '0.7' : '0.5';
-        resultHtml += '<div style="background:#F9FAFB;border:1px solid var(--border);border-radius:10px;padding:8px 16px;text-align:center;opacity:'+opacity+'">' +
-          '<div style="font-size:20px;font-weight:800;color:var(--text)">' + sl.home_goals + ' – ' + sl.away_goals + '</div>' +
-          '<div style="font-size:11px;color:var(--muted)">' + pct + '%</div>' +
-          (idx === 0 ? '<div style="font-size:9px;color:var(--green);font-weight:600">Most likely</div>' : '') +
+        var opacity = idx === 0 ? '1' : (1 - idx * 0.15);
+        resultHtml += '<div style="background:#F9FAFB;border:1px solid var(--border);border-radius:10px;padding:6px 14px;text-align:center;opacity:'+opacity+'">' +
+          '<div style="font-size:18px;font-weight:800;color:var(--text)">' + sl.home_goals + ' – ' + sl.away_goals + '</div>' +
+          '<div style="font-size:10px;color:var(--muted)">' + pct + '%</div>' +
+          (idx === 0 ? '<div style="font-size:8px;color:var(--green);font-weight:600">★ Most likely</div>' : '') +
         '</div>';
       });
       resultHtml += '</div>';
+
+      // Heatmap: 0-5 goals grid
+      var matrix = gp.top_scorelines && gp.top_scorelines.matrix_7x7;
+      if (matrix) {
+        resultHtml += '<div style="overflow-x:auto;margin-top:8px">';
+        resultHtml += '<table style="margin:0 auto;border-collapse:collapse;font-size:10px">';
+        resultHtml += '<tr><th style="padding:2px 6px;color:var(--muted)"></th>';
+        for (var a = 0; a <= 5; a++) resultHtml += '<th style="padding:2px 6px;color:var(--muted);font-weight:500">' + a + '</th>';
+        resultHtml += '</tr>';
+        for (var h = 0; h <= 5; h++) {
+          resultHtml += '<tr><td style="padding:2px 6px;color:var(--muted);font-weight:500;text-align:right">' + h + '</td>';
+          for (var a = 0; a <= 5; a++) {
+            var key = h + '-' + a;
+            var p = matrix[key] || 0;
+            var intensity = Math.min(p / 15, 1); // normalize: 15%+ = max opacity
+            var bg = p > 8 ? 'rgba(16,185,129,' + intensity.toFixed(2) + ')' :
+                      p > 3 ? 'rgba(245,158,11,' + intensity.toFixed(2) + ')' :
+                      p > 0 ? 'rgba(156,163,175,' + (intensity * 0.5).toFixed(2) + ')' : 'transparent';
+            resultHtml += '<td style="padding:3px 6px;text-align:center;background:' + bg + ';border-radius:3px;font-weight:' + (p > 8 ? '700' : '400') + ';color:' + (p > 8 ? '#065F46' : 'var(--text)') + '">' + p.toFixed(1) + '%</td>';
+          }
+          resultHtml += '</tr>';
+        }
+        resultHtml += '</table>';
+        resultHtml += '<div style="text-align:center;font-size:9px;color:var(--muted);margin-top:4px">Rows = ' + esc(t1.name) + ' goals · Columns = ' + esc(t2.name) + ' goals</div>';
+        resultHtml += '</div>';
+      }
     }
 
     document.querySelector('#h2h-result-placeholder .h2h-result').innerHTML = resultHtml;

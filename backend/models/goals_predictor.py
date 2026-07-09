@@ -84,15 +84,22 @@ class PoissonGoalPredictor:
         return (lam ** k) * math.exp(-lam) / math.factorial(k)
 
     def _top_scorelines(self, lam_h: float, lam_a: float, n: int = 5) -> list:
-        """Return top N most likely scorelines as [(home_goals, away_goals, probability), ...]"""
+        """Return top N most likely scorelines + full probability matrix."""
         scores = []
-        for h in range(8):
-            for a in range(8):
-                p = self._poisson_prob(lam_h, h) * self._poisson_prob(lam_a, a)
-                scores.append((h, a, round(p, 6)))
+        matrix = {}
+        for h in range(7):
+            ph = self._poisson_prob(lam_h, h)
+            for a in range(7):
+                pa = self._poisson_prob(lam_a, a)
+                p = round(ph * pa, 6)
+                scores.append((h, a, p))
+                matrix[f"{h}-{a}"] = round(p * 100, 2)
         scores.sort(key=lambda x: x[2], reverse=True)
-        return [{"home_goals": h, "away_goals": a, "probability": round(p * 100, 1)} 
-                for h, a, p in scores[:n]]
+        return {
+            "top": [{"home_goals": h, "away_goals": a, "probability": round(p * 100, 1)}
+                    for h, a, p in scores[:n]],
+            "matrix_7x7": matrix,
+        }
 
 
 # Singleton

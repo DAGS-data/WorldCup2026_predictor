@@ -56,7 +56,7 @@ wc2026-predictor/
 │   │   └── index.html           # Dashboard (1055 lines, vanilla JS)
 │   ├── models/
 │   │   ├── xgboost_predictor.py # XGBoost classifier + SHAP
-│   │   ├── xgboost_v1.json      # Trained model (79.5% accuracy)
+│   │   ├── xgboost_v1.json      # Trained model (76.9% accuracy)
 │   │   └── feature_names.json   # Feature index
 │   └── data/
 │       ├── teams.json           # 48 teams (ELO, FIFA, squad value)
@@ -80,13 +80,12 @@ wc2026-predictor/
 
 ## 🧠 Predictive Models
 
-The system uses **three complementary models** with clearly defined roles:
+The system uses **two complementary models** with clearly defined roles:
 
 | Model | What it predicts | When it's used |
 |--------|---------------|-----------------|
 | **XGBoost** | Knockout advancement probability | Knockout stages (R32 → Final) |
 | **ELO + Poisson** | Win / Draw / Loss + most likely scoreline | All matches |
-| **Performance Rating** | Composite rating 1–100 | Team view, comparisons |
 
 ---
 
@@ -136,11 +135,11 @@ This guarantees $P(\text{A}) + P(\text{B}) = 1.0$ always.
 
 | Metric | Value |
 |---------|-------|
-| Accuracy | 79.5% |
-| ROC AUC | 0.918 |
-| Brier Score | 0.146 |
+| Accuracy | 76.9% |
+| ROC AUC | 0.884 |
+| Brier Score | 0.178 |
 
-*(Recomputed after fixing the `overperformance` feature — see "Data Integrity Notes" near the bottom of this document.)*
+*(Recomputed after fixing the `overperformance` feature and the ELO leakage described below — see "Data Integrity Notes" near the bottom of this document.)*
 
 ### Why XGBoost?
 
@@ -271,22 +270,6 @@ $$s_{\text{pred}} = \underset{g_A, g_B}{\arg\max}\; P(g_A, g_B)$$
 - Draw / Extra Time: 24.1%
 - England wins: 23.6%
 - Most likely scoreline: 2–1
-
----
-
-## Model 3: Composite Performance Rating
-
-Rating from **1–100** combining three factors:
-
-$$\text{rating} = 1 + 99 \times (0.65 \cdot \text{ELO}_{\text{norm}} + 0.25 \cdot \text{Form} + 0.10 \cdot \text{GD}_{\text{factor}})$$
-
-| Component | Weight | Formula |
-|-----------|:----:|---------|
-| Normalized ELO | 65% | $\frac{\text{ELO} - 1380}{2130 - 1380}$ |
-| Recent form | 25% | Weighted average of last 10 matches ($\alpha = 0.93$) |
-| Goal difference | 10% | Average GD, capped at $[-3, +3]$, normalized to $[0,1]$ |
-
-Form uses exponential decay: a match from 1 round ago weighs ~2× more than one from 10 rounds ago.
 
 ---
 
@@ -443,6 +426,19 @@ cd backend && python3 main.py    # → http://localhost:8000
 
 Corrections made to bring the code in line with this document (and vice versa):
 
+- **ELO features in training now use point-in-time ELO, not final ELO.**
+  `build_dataset()` used to pull every team's *current* (i.e. today's, post-tournament)
+  `elo_rating` for every training example, including matches from the first matchday.
+  Since a team's current ELO already reflects the outcome of that match (and every
+  match since), features like `elo_diff` partially leaked the label they were meant to
+  predict. Training now replays ELO chronologically from the FIFA-rank seed
+  (`compute_elo_trajectory` in `feature_engineering.py`, seeded by
+  `initial_elo_from_fifa_rank` in `elo.py` — this is also the first place the
+  FIFA→ELO interpolation formula from the section above is actually *implemented*,
+  not just documented) and uses each team's ELO *before* that specific match. Live
+  prediction endpoints are unaffected and still use current ELO — for a match that
+  hasn't been played yet, "current" and "before the match" are the same thing, so
+  there's nothing to leak there.
 - **`overperformance` now uses real expected goals.** The feature is defined as
   $g_i - \mathbb{E}[g_i]$, but `expected_goals` was never populated anywhere in the
   codebase — it silently defaulted to `1.0` for every match, so the feature was really
@@ -467,11 +463,11 @@ Corrections made to bring the code in line with this document (and vice versa):
 - **Metrics are no longer hardcoded.** `/api/model-info` used to return static
   accuracy/AUC/Brier numbers that couldn't change even after retraining. Training now
   persists real validation metrics to `xgboost_metrics.json`, which the API reads from.
-  The accuracy/AUC/Brier numbers above are from retraining with the `overperformance`
-  fix in place — they're lower than the previous claimed 91.7%/0.987/0.066 (a real,
-  informative overperformance feature is harder to fit than a near-constant one, and
-  the previous numbers were measured on a smaller, less representative validation
-  split).
+  The numbers above went 91.7%/0.987/0.066 (original, hardcoded) → 79.5%/0.918/0.146
+  (after the `overperformance` fix) → **76.9%/0.884/0.178** (current, after the ELO
+  leakage fix). Each drop is expected, not a regression: removing a leak that made a
+  feature look artificially predictive should make validation accuracy go *down* — a
+  number that goes up after removing leakage would be the actual red flag.
 
 ---
 

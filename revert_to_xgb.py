@@ -21,7 +21,7 @@ for filepath in [
     # Model tag
     c = c.replace(
         'L2-regularized · 38 features · 86% accuracy · no overfitting',
-        '38 features · 79.5% accuracy · 0.918 AUC'
+        '38 features · 76.9% accuracy · 0.884 AUC'
     )
     
     # Comments

@@ -2331,8 +2331,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 19.6,
-      "team2_advance_prob": 80.4,
+      "team1_advance_prob": 24.1,
+      "team2_advance_prob": 75.9,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2368,8 +2368,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 86.2,
-      "team2_advance_prob": 13.8,
+      "team1_advance_prob": 83.1,
+      "team2_advance_prob": 16.9,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2405,8 +2405,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 84.6,
-      "team2_advance_prob": 15.4,
+      "team1_advance_prob": 82.3,
+      "team2_advance_prob": 17.7,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2441,8 +2441,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 61.1,
-      "team2_advance_prob": 38.9,
+      "team1_advance_prob": 60.7,
+      "team2_advance_prob": 39.3,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2477,8 +2477,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 36.9,
-      "team2_advance_prob": 63.1,
+      "team1_advance_prob": 32.2,
+      "team2_advance_prob": 67.8,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2514,8 +2514,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 92.4,
-      "team2_advance_prob": 7.6,
+      "team1_advance_prob": 89.6,
+      "team2_advance_prob": 10.4,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2552,8 +2552,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 42.9,
-      "team2_advance_prob": 57.1,
+      "team1_advance_prob": 38.3,
+      "team2_advance_prob": 61.7,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2589,8 +2589,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 89.1,
-      "team2_advance_prob": 10.9,
+      "team1_advance_prob": 88.4,
+      "team2_advance_prob": 11.6,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2625,8 +2625,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 72.7,
-      "team2_advance_prob": 27.3,
+      "team1_advance_prob": 75.1,
+      "team2_advance_prob": 24.9,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2663,8 +2663,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 93.4,
-      "team2_advance_prob": 6.6,
+      "team1_advance_prob": 91.9,
+      "team2_advance_prob": 8.1,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2700,8 +2700,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 90.2,
-      "team2_advance_prob": 9.8,
+      "team1_advance_prob": 89.4,
+      "team2_advance_prob": 10.6,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2737,8 +2737,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 71.8,
-      "team2_advance_prob": 28.2,
+      "team1_advance_prob": 70.4,
+      "team2_advance_prob": 29.6,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2774,8 +2774,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 84.3,
-      "team2_advance_prob": 15.7,
+      "team1_advance_prob": 82.1,
+      "team2_advance_prob": 17.9,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2808,8 +2808,8 @@
       "key_factors": []
     },
     "xgb_prediction": {
-      "team1_advance_prob": 38.2,
-      "team2_advance_prob": 61.8,
+      "team1_advance_prob": 33.6,
+      "team2_advance_prob": 66.4,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2845,8 +2845,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 92.3,
-      "team2_advance_prob": 7.7,
+      "team1_advance_prob": 90.3,
+      "team2_advance_prob": 9.7,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2881,8 +2881,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 84.2,
-      "team2_advance_prob": 15.8,
+      "team1_advance_prob": 82.0,
+      "team2_advance_prob": 18.0,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2919,8 +2919,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 7.2,
-      "team2_advance_prob": 92.8,
+      "team1_advance_prob": 8.9,
+      "team2_advance_prob": 91.1,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2956,8 +2956,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 13.5,
-      "team2_advance_prob": 86.5,
+      "team1_advance_prob": 14.8,
+      "team2_advance_prob": 85.2,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -2993,8 +2993,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 87.7,
-      "team2_advance_prob": 12.3,
+      "team1_advance_prob": 89.6,
+      "team2_advance_prob": 10.4,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3031,8 +3031,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 30.4,
-      "team2_advance_prob": 69.6,
+      "team1_advance_prob": 25.7,
+      "team2_advance_prob": 74.3,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3068,8 +3068,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 45.5,
-      "team2_advance_prob": 54.5,
+      "team1_advance_prob": 42.8,
+      "team2_advance_prob": 57.2,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3106,8 +3106,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 25.3,
-      "team2_advance_prob": 74.7,
+      "team1_advance_prob": 30.5,
+      "team2_advance_prob": 69.5,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3143,8 +3143,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 92.4,
-      "team2_advance_prob": 7.6,
+      "team1_advance_prob": 90.2,
+      "team2_advance_prob": 9.8,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3178,8 +3178,8 @@
       "key_factors": []
     },
     "xgb_prediction": {
-      "team1_advance_prob": 52.9,
-      "team2_advance_prob": 47.1,
+      "team1_advance_prob": 51.9,
+      "team2_advance_prob": 48.1,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3212,8 +3212,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 68.1,
-      "team2_advance_prob": 31.9,
+      "team1_advance_prob": 71.6,
+      "team2_advance_prob": 28.4,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3246,8 +3246,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 68.3,
-      "team2_advance_prob": 31.7,
+      "team1_advance_prob": 70.9,
+      "team2_advance_prob": 29.1,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3280,8 +3280,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 11.5,
-      "team2_advance_prob": 88.5,
+      "team1_advance_prob": 12.3,
+      "team2_advance_prob": 87.7,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   },
@@ -3314,8 +3314,8 @@
       ]
     },
     "xgb_prediction": {
-      "team1_advance_prob": 77.2,
-      "team2_advance_prob": 22.8,
+      "team1_advance_prob": 78.8,
+      "team2_advance_prob": 21.2,
       "model": "XGBoost (symmetric dual-prediction)"
     }
   }

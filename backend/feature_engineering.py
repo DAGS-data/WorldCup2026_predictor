@@ -14,6 +14,7 @@ import math
 from collections import defaultdict
 from pathlib import Path
 
+from elo import calculate_new_ratings, initial_elo_from_fifa_rank
 from predictor import estimate_expected_goals
 
 DATA_DIR = Path(__file__).parent / "data"
@@ -275,6 +276,63 @@ def compute_match_features(
     return f
 
 
+# === POINT-IN-TIME ELO TRAJECTORY (for training only — see build_dataset) ===
+
+def compute_elo_trajectory(matches: list[dict], teams: dict[int, dict]) -> dict[int, dict[str, float]]:
+    """
+    Replay ELO chronologically from the FIFA-rank seed and return each team's
+    ELO *before* each match it played.
+
+    Training must use the ELO a team actually had at the time of the match, not
+    the team's final/current ELO — the final ELO already encodes that match's
+    own result (and every later one), which would leak the label into the
+    feature. Live prediction endpoints don't have this problem (they always
+    predict a match that hasn't happened, so "current" ELO is legitimately
+    "before the match") and keep using the plain `elo_rating` field.
+
+    Returns: {match_id: {"team1": elo_before, "team2": elo_before}}
+    """
+    running_elo = {t_id: initial_elo_from_fifa_rank(t.get("fifa_rank", 50)) for t_id, t in teams.items()}
+
+    completed = sorted(
+        [m for m in matches if m.get("score") and m.get("status", "").startswith("completed")],
+        key=lambda m: m["date"]
+    )
+
+    pre_match_elo: dict[int, dict[str, float]] = {}
+
+    for m in completed:
+        t1_id = m.get("team1_id")
+        t2_id = m.get("team2_id")
+        if t1_id is None or t2_id is None:
+            continue
+        t1 = teams.get(t1_id)
+        t2 = teams.get(t2_id)
+        if not t1 or not t2:
+            continue
+
+        elo1 = running_elo.setdefault(t1_id, initial_elo_from_fifa_rank(t1.get("fifa_rank", 50)))
+        elo2 = running_elo.setdefault(t2_id, initial_elo_from_fifa_rank(t2.get("fifa_rank", 50)))
+        pre_match_elo[m["id"]] = {"team1": elo1, "team2": elo2}
+
+        score = m["score"]
+        s1 = int(score["team1"])
+        s2 = int(score["team2"])
+        t1_won = s1 > s2
+        if m.get("status", "").endswith("_penalties"):
+            pen = score.get("penalties", "")
+            if pen:
+                p1, p2 = map(int, pen.split("-"))
+                t1_won = p1 > p2
+        result = "W" if t1_won else ("D" if s1 == s2 else "L")
+
+        new_elo1, new_elo2 = calculate_new_ratings(elo1, elo2, result, t1.get("is_host", False))
+        running_elo[t1_id] = new_elo1
+        running_elo[t2_id] = new_elo2
+
+    return pre_match_elo
+
+
 # === SHARED TEAM HISTORY BUILDER ===
 
 def build_team_history(matches: list[dict], teams: dict[int, dict]) -> dict[int, list[dict]]:
@@ -356,10 +414,15 @@ def build_dataset(matches_file: str = None) -> tuple[list, list, list]:
     matches = load_raw_matches(matches_file)
     teams_list = load_teams()
     teams = {t["id"]: t for t in teams_list}
-    
+
+    # Point-in-time ELO per match (ELO each team actually had *before* that
+    # match) — using the team's current/final ELO here would leak each
+    # match's own result (and every later one) into its own training features.
+    pre_match_elo = compute_elo_trajectory(matches, teams)
+
     X = []
     y = []
-    
+
     # Track per-team history chronologically
     team_history = defaultdict(list)
     
@@ -379,13 +442,21 @@ def build_dataset(matches_file: str = None) -> tuple[list, list, list]:
         t2 = teams.get(t2_id)
         if not t1 or not t2:
             continue
-        
+
+        # Point-in-time ELO for this match — everything else (fifa_rank, squad
+        # value, is_host, ...) is static, so only elo_rating needs overriding.
+        match_elo = pre_match_elo.get(match["id"], {})
+        t1_elo = match_elo.get("team1", t1.get("elo_rating", 1500))
+        t2_elo = match_elo.get("team2", t2.get("elo_rating", 1500))
+        t1_pit = {**t1, "elo_rating": t1_elo}
+        t2_pit = {**t2, "elo_rating": t2_elo}
+
         score = match["score"]
         s1 = int(score["team1"])
         s2 = int(score["team2"])
         stage = match.get("stage", "group")
         date = match.get("date", "")
-        
+
         # Determine winner
         t1_won = s1 > s2
         t2_won = s2 > s1
@@ -408,7 +479,7 @@ def build_dataset(matches_file: str = None) -> tuple[list, list, list]:
         # Compute features for team1
         try:
             f1 = compute_match_features(
-                t1_id, t2_id, t1, t2,
+                t1_id, t2_id, t1_pit, t2_pit,
                 team_history[t1_id], team_history[t2_id],
                 stage, date
             )
@@ -416,11 +487,11 @@ def build_dataset(matches_file: str = None) -> tuple[list, list, list]:
             y.append(1 if t1_won else 0)
         except Exception as e:
             pass
-        
+
         # Compute features for team2
         try:
             f2 = compute_match_features(
-                t2_id, t1_id, t2, t1,
+                t2_id, t1_id, t2_pit, t1_pit,
                 team_history[t2_id], team_history[t1_id],
                 stage, date
             )
@@ -428,10 +499,8 @@ def build_dataset(matches_file: str = None) -> tuple[list, list, list]:
             y.append(1 if t2_won else 0)
         except Exception as e:
             pass
-        
-        # Update history
-        t1_elo = t1.get("elo_rating", 1500)
-        t2_elo = t2.get("elo_rating", 1500)
+
+        # Update history (using the same point-in-time ELO as the features above)
         team_history[t1_id].append({
             "score": score,
             "stage": stage,

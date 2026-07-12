@@ -3,6 +3,20 @@
 K_FACTOR = 30  # World Cup K-factor
 HOME_ADVANTAGE = 100  # ELO points for host nations
 
+INITIAL_ELO_CEILING = 2100  # ELO assigned to FIFA rank #1
+INITIAL_ELO_FLOOR = 1400  # ELO assigned to FIFA rank #90
+INITIAL_ELO_SPAN_RANKS = 89  # ranks #1..#90
+
+
+def initial_elo_from_fifa_rank(fifa_rank: float) -> float:
+    """
+    Seed ELO from the pre-tournament FIFA ranking via linear interpolation.
+
+    No historical ELO exists for all 48 World Cup teams, so this is the
+    starting point before any match updates: rank #1 -> 2100, rank #90 -> 1400.
+    """
+    return INITIAL_ELO_CEILING - (INITIAL_ELO_CEILING - INITIAL_ELO_FLOOR) / INITIAL_ELO_SPAN_RANKS * (fifa_rank - 1)
+
 
 def get_expected_score(team_elo: float, opponent_elo: float, is_home: bool = False) -> float:
     """Calculate expected score (0-1) using ELO formula."""

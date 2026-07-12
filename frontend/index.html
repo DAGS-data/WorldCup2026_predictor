@@ -949,7 +949,7 @@ async function runH2H() {
         '<div style="background:var(--red);width:'+(p2*100)+'%"></div>' +
         '</div>' +
         '<div class="prob-labels"><span><strong>'+t1.name+': '+(p1*100).toFixed(1)+'%</strong></span><span><strong>'+t2.name+': '+(p2*100).toFixed(1)+'%</strong></span></div></div>';
-      resultHtml += '<div class="model-tag">38 features · Optuna-tuned · 91.7% accuracy · 0.977 AUC</div>';
+      resultHtml += '<div class="model-tag">38 features · 79.5% accuracy · 0.918 AUC</div>';
 
       // Explanation (logistic coefficients)
       if (data.explanation && data.explanation.top_factors) {

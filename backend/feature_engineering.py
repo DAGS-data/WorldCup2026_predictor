@@ -1,7 +1,7 @@
 """
 Feature engineering pipeline for World Cup 2026 knockout predictions.
 
-Computes 50+ features per match from real ESPN data, incorporating:
+Computes 38 features per match from real ESPN data, incorporating:
 - Tournament momentum (performance vs expectation)
 - Overperformance tracking (the "Cape Verde effect")
 - Match importance weighting
@@ -13,6 +13,8 @@ import json
 import math
 from collections import defaultdict
 from pathlib import Path
+
+from predictor import estimate_expected_goals
 
 DATA_DIR = Path(__file__).parent / "data"
 
@@ -273,6 +275,73 @@ def compute_match_features(
     return f
 
 
+# === SHARED TEAM HISTORY BUILDER ===
+
+def build_team_history(matches: list[dict], teams: dict[int, dict]) -> dict[int, list[dict]]:
+    """
+    Build chronological per-team match history from completed matches.
+
+    Single source of truth for the history entries fed into `compute_match_features`
+    (training and every live prediction endpoint use this same function, so the
+    fields — including `expected_goals` for overperformance — never drift out of sync).
+    """
+    history = defaultdict(list)
+    completed = sorted(
+        [m for m in matches if m.get("score") and m.get("status", "").startswith("completed")],
+        key=lambda m: m["date"]
+    )
+
+    for m in completed:
+        t1_id = m.get("team1_id")
+        t2_id = m.get("team2_id")
+        if t1_id is None or t2_id is None:
+            continue
+        t1 = teams.get(t1_id)
+        t2 = teams.get(t2_id)
+        if not t1 or not t2:
+            continue
+
+        score = m["score"]
+        s1 = int(score["team1"])
+        s2 = int(score["team2"])
+        t1_won = s1 > s2
+        t2_won = s2 > s1
+        if m.get("status", "").endswith("_penalties"):
+            pen = score.get("penalties", "")
+            if pen:
+                p1, p2 = map(int, pen.split("-"))
+                t1_won = p1 > p2
+                t2_won = p2 > p1
+
+        t1_elo = t1.get("elo_rating", 1500)
+        t2_elo = t2.get("elo_rating", 1500)
+        stage = m.get("stage", "group")
+        date = m.get("date", "")
+
+        history[t1_id].append({
+            "score": score, "stage": stage, "date": date,
+            "team_role": "home",
+            "team_elo": t1_elo, "opponent_elo": t2_elo,
+            "expected_goals": estimate_expected_goals(t1_elo, t2_elo, t1.get("is_host", False)),
+            "status": m["status"],
+            "clean_sheet": s2 == 0,
+            "comeback": s1 <= s2 and t1_won,
+            "advanced": t1_won,
+        })
+        history[t2_id].append({
+            "score": score, "stage": stage, "date": date,
+            "team_role": "away",
+            "team_elo": t2_elo, "opponent_elo": t1_elo,
+            "expected_goals": estimate_expected_goals(t2_elo, t1_elo, t2.get("is_host", False)),
+            "status": m["status"],
+            "clean_sheet": s1 == 0,
+            "comeback": s2 <= s1 and t2_won,
+            "advanced": t2_won,
+        })
+
+    return history
+
+
 # === BUILD TRAINING DATASET ===
 
 def build_dataset(matches_file: str = None) -> tuple[list, list, list]:
@@ -361,29 +430,33 @@ def build_dataset(matches_file: str = None) -> tuple[list, list, list]:
             pass
         
         # Update history
+        t1_elo = t1.get("elo_rating", 1500)
+        t2_elo = t2.get("elo_rating", 1500)
         team_history[t1_id].append({
             "score": score,
             "stage": stage,
             "date": date,
             "team_role": "home",
-            "team_elo": t1.get("elo_rating", 1500),
-            "opponent_elo": t2.get("elo_rating", 1500),
+            "team_elo": t1_elo,
+            "opponent_elo": t2_elo,
+            "expected_goals": estimate_expected_goals(t1_elo, t2_elo, t1.get("is_host", False)),
             "status": match["status"],
             "clean_sheet": s2 == 0,
-            "comeback": s1 <= s2 and s1 > s2,
+            "comeback": s1 <= s2 and t1_won,
             "advanced": t1_won,
         })
-        
+
         team_history[t2_id].append({
             "score": score,
             "stage": stage,
             "date": date,
             "team_role": "away",
-            "team_elo": t2.get("elo_rating", 1500),
-            "opponent_elo": t1.get("elo_rating", 1500),
+            "team_elo": t2_elo,
+            "opponent_elo": t1_elo,
+            "expected_goals": estimate_expected_goals(t2_elo, t1_elo, t2.get("is_host", False)),
             "status": match["status"],
             "clean_sheet": s1 == 0,
-            "comeback": s2 <= s1 and s2 > s1,
+            "comeback": s2 <= s1 and t2_won,
             "advanced": t2_won,
         })
     

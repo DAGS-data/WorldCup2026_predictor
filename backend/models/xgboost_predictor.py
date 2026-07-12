@@ -16,21 +16,25 @@ MODEL_DIR.mkdir(exist_ok=True)
 
 MODEL_PATH = MODEL_DIR / "xgboost_v1.json"
 FEATURE_NAMES_PATH = MODEL_DIR / "feature_names.json"
+METRICS_PATH = MODEL_DIR / "xgboost_metrics.json"
 
 
 class KnockoutPredictor:
     """XGBoost predictor for World Cup knockout advancement probability."""
-    
+
     def __init__(self):
         self.model = None
         self.feature_names = None
-        self.calibration_model = None  # Platt scaling
         self._loaded = False
-        
+
     def train(self, X: list[dict], y: list[int], feature_names: list[str]):
         """
-        Train XGBoost model with Optuna hyperparameter tuning.
-        
+        Train XGBoost model with fixed, hand-picked hyperparameters.
+
+        No automated hyperparameter search (e.g. Optuna) runs here — with under
+        200 training samples, a shallow fixed configuration plus L1/L2
+        regularization is deliberately used instead to avoid overfitting.
+
         Uses time-based split: last 20% of matches for validation.
         """
         import xgboost as xgb
@@ -50,7 +54,6 @@ class KnockoutPredictor:
         print(f"  Train positive rate: {y_train.mean():.1%}")
         print(f"  Val positive rate: {y_val.mean():.1%}")
         
-        # Quick hyperparameter search (simplified — full Optuna if time allows)
         params = {
             "objective": "binary:logistic",
             "eval_metric": "logloss",
@@ -100,33 +103,33 @@ class KnockoutPredictor:
         for i, (feat, score) in enumerate(sorted(importance.items(), key=lambda x: x[1], reverse=True)[:10]):
             print(f"  {i+1}. {feat}: {score:.1f}")
         
+        metrics = {
+            "accuracy": acc, "auc": auc, "brier": brier,
+            "train_samples": len(X_train), "val_samples": len(X_val),
+        }
+
         # Save
-        self._save()
-        
-        return {"accuracy": acc, "auc": auc, "brier": brier}
-    
+        self._save(metrics)
+
+        return metrics
+
     def predict(self, features: dict) -> float:
         """
         Predict P(team advances) for a single match.
-        
+
         Returns probability in [0, 1].
         """
         if not self._loaded:
             self._load()
-        
+
         if self.model is None:
             raise RuntimeError("Model not trained. Call train() first.")
-        
+
         import xgboost as xgb
         X = np.array([[features.get(f, 0.0) for f in self.feature_names]])
         dmatrix = xgb.DMatrix(X, feature_names=self.feature_names)
-        
+
         raw_pred = float(self.model.predict(dmatrix)[0])
-        
-        # Platt calibration if available
-        if self.calibration_model:
-            raw_pred = float(self.calibration_model.predict_proba([[raw_pred]])[0][1])
-        
         return round(raw_pred, 4)
     
     def explain(self, features: dict) -> dict:
@@ -160,13 +163,16 @@ class KnockoutPredictor:
         except ImportError:
             return {"error": "SHAP not installed"}
     
-    def _save(self):
-        """Save model and metadata."""
+    def _save(self, metrics: dict | None = None):
+        """Save model, metadata, and (if provided) the validation metrics from training."""
         self.model.save_model(str(MODEL_PATH))
         with open(FEATURE_NAMES_PATH, "w") as f:
             json.dump(self.feature_names, f)
+        if metrics is not None:
+            with open(METRICS_PATH, "w") as f:
+                json.dump(metrics, f, indent=2)
         print(f"Model saved to {MODEL_PATH}")
-    
+
     def _load(self):
         """Load model from disk."""
         if MODEL_PATH.exists():
@@ -179,16 +185,20 @@ class KnockoutPredictor:
             print(f"Model loaded from {MODEL_PATH} ({len(self.feature_names)} features)")
         else:
             self._loaded = True  # mark as attempted
-    
+
     def get_metrics(self) -> dict:
-        """Return model metadata."""
+        """Return model metadata, including validation metrics from the last training run."""
         if not self._loaded:
             self._load()
-        return {
+        info = {
             "model_path": str(MODEL_PATH),
             "features": len(self.feature_names) if self.feature_names else 0,
             "loaded": self.model is not None,
         }
+        if METRICS_PATH.exists():
+            with open(METRICS_PATH) as f:
+                info.update(json.load(f))
+        return info
 
 
 # ============================================================

@@ -15,6 +15,7 @@ from starlette.responses import Response
 
 from performance import calculate_performance_rating
 from predictor import calculate_match_probabilities, get_prediction_factors, simulate_tournament
+from feature_engineering import build_team_history, compute_match_features
 from models.xgboost_predictor import KnockoutPredictor
 from models.logistic_predictor import LogisticPredictor
 from models.goals_predictor import get_goals_predictor
@@ -238,37 +239,10 @@ def predict_match_v2(team1_id: int, team2_id: int):
         raise HTTPException(status_code=404, detail="Team not found")
 
     matches = load_matches_raw()
-
-    from collections import defaultdict
-    from feature_engineering import compute_match_features
-
-    t1_hist = []
-    t2_hist = []
-
-    for m in sorted(
-        [m for m in matches if m.get("score") and m.get("status", "").startswith("completed")],
-        key=lambda x: x["date"]
-    ):
-        if m.get("team1_id") == team1_id or m.get("team2_id") == team1_id:
-            role = "home" if m["team1_id"] == team1_id else "away"
-            t1_hist.append({
-                "score": m["score"], "stage": m.get("stage", "group"),
-                "date": m["date"], "team_role": role,
-                "team_elo": t1["elo_rating"], "opponent_elo": t2["elo_rating"],
-                "status": m["status"],
-                "clean_sheet": int(m["score"]["team2" if role == "home" else "team1"]) == 0,
-                "comeback": False, "advanced": False,
-            })
-        if m.get("team1_id") == team2_id or m.get("team2_id") == team2_id:
-            role = "home" if m["team1_id"] == team2_id else "away"
-            t2_hist.append({
-                "score": m["score"], "stage": m.get("stage", "group"),
-                "date": m["date"], "team_role": role,
-                "team_elo": t2["elo_rating"], "opponent_elo": t1["elo_rating"],
-                "status": m["status"],
-                "clean_sheet": int(m["score"]["team2" if role == "home" else "team1"]) == 0,
-                "comeback": False, "advanced": False,
-            })
+    teams_by_id = {t["id"]: t for t in teams}
+    team_history = build_team_history(matches, teams_by_id)
+    t1_hist = team_history.get(team1_id, [])
+    t2_hist = team_history.get(team2_id, [])
 
     # --- Dual-prediction symmetrization ---
     # Predict P(team1 advances) from BOTH perspectives and average.
@@ -308,7 +282,7 @@ def predict_match_v2(team1_id: int, team2_id: int):
         "team2": {"name": t2["name"], "flag": t2["flag_emoji"], "elo": t2["elo_rating"], "fifa_rank": t2.get("fifa_rank")},
         "v2_prediction": {
             "team1_advance_prob": prob,
-            "model": "XGBoost (38 features, Optuna-tuned)",
+            "model": "XGBoost (38 features)",
             "features_used": len(features_fwd),
         },
         "v1_baseline": {
@@ -335,34 +309,10 @@ def predict_match_v3(team1_id: int, team2_id: int):
         raise HTTPException(status_code=404, detail="Team not found")
 
     matches = load_matches_raw()
-    from collections import defaultdict
-    from feature_engineering import compute_match_features
-
-    t1_hist, t2_hist = [], []
-    for m in sorted(
-        [m for m in matches if m.get("score") and m.get("status", "").startswith("completed")],
-        key=lambda x: x["date"]
-    ):
-        if m.get("team1_id") == team1_id or m.get("team2_id") == team1_id:
-            role = "home" if m["team1_id"] == team1_id else "away"
-            t1_hist.append({
-                "score": m["score"], "stage": m.get("stage", "group"),
-                "date": m["date"], "team_role": role,
-                "team_elo": t1["elo_rating"], "opponent_elo": t2["elo_rating"],
-                "status": m["status"],
-                "clean_sheet": int(m["score"]["team2" if role == "home" else "team1"]) == 0,
-                "comeback": False, "advanced": False,
-            })
-        if m.get("team1_id") == team2_id or m.get("team2_id") == team2_id:
-            role = "home" if m["team1_id"] == team2_id else "away"
-            t2_hist.append({
-                "score": m["score"], "stage": m.get("stage", "group"),
-                "date": m["date"], "team_role": role,
-                "team_elo": t2["elo_rating"], "opponent_elo": t1["elo_rating"],
-                "status": m["status"],
-                "clean_sheet": int(m["score"]["team2" if role == "home" else "team1"]) == 0,
-                "comeback": False, "advanced": False,
-            })
+    teams_by_id = {t["id"]: t for t in teams}
+    team_history = build_team_history(matches, teams_by_id)
+    t1_hist = team_history.get(team1_id, [])
+    t2_hist = team_history.get(team2_id, [])
 
     features_fwd = compute_match_features(
         team1_id, team2_id, t1, t2, t1_hist, t2_hist, "round_of_16", "2026-07-04")
@@ -431,7 +381,10 @@ def model_info():
         return {
             "model": "XGBoost", "type": "Binary classifier — P(advance)",
             "features": metrics.get("features", 0),
-            "accuracy": 0.917, "roc_auc": 0.977, "brier_score": 0.068,
+            "accuracy": metrics.get("accuracy"),
+            "roc_auc": metrics.get("auc"),
+            "brier_score": metrics.get("brier"),
+            "val_samples": metrics.get("val_samples"),
             "status": "loaded" if metrics.get("loaded") else "not loaded",
         }
     except Exception as e:
@@ -446,48 +399,12 @@ def bracket_v2():
     by calling the XGBoost predictor for each matchup. Returns the
     complete bracket tree with winners, probabilities, and flags.
     """
-    from feature_engineering import compute_match_features
-    from collections import defaultdict
-
     teams_raw = load_teams_raw()
     teams_lookup = {t["id"]: t for t in teams_raw}
     matches_enriched = load_matches_enriched()
     matches_raw = load_matches_raw()
 
-    # Build per-team history for feature computation
-    team_history = defaultdict(list)
-    completed = sorted(
-        [m for m in matches_raw if m.get("score") and m.get("status", "").startswith("completed")],
-        key=lambda m: m["date"]
-    )
-    for m in completed:
-        t1_id = m.get("team1_id"); t2_id = m.get("team2_id")
-        if not t1_id or not t2_id: continue
-        t1 = teams_lookup.get(t1_id); t2 = teams_lookup.get(t2_id)
-        if not t1 or not t2: continue
-        s1 = int(m["score"]["team1"]); s2 = int(m["score"]["team2"])
-        t1_won = s1 > s2; t2_won = s2 > s1
-        if m.get("status","").endswith("_penalties"):
-            pen = m["score"].get("penalties","")
-            if pen:
-                p1,p2 = map(int, pen.split("-"))
-                t1_won = p1 > p2; t2_won = p2 > p1
-        team_history[t1_id].append({
-            "score": m["score"], "stage": m.get("stage","group"),
-            "date": m["date"], "team_role": "home",
-            "team_elo": t1.get("elo_rating",1500),
-            "opponent_elo": t2.get("elo_rating",1500),
-            "status": m["status"], "clean_sheet": s2==0,
-            "comeback": s1<=s2 and t1_won, "advanced": t1_won,
-        })
-        team_history[t2_id].append({
-            "score": m["score"], "stage": m.get("stage","group"),
-            "date": m["date"], "team_role": "away",
-            "team_elo": t2.get("elo_rating",1500),
-            "opponent_elo": t1.get("elo_rating",1500),
-            "status": m["status"], "clean_sheet": s1==0,
-            "comeback": s2<=s1 and t2_won, "advanced": t2_won,
-        })
+    team_history = build_team_history(matches_raw, teams_lookup)
 
     xgb = get_xgb_predictor()
 
@@ -652,47 +569,12 @@ def bracket_v3():
     Same logic as bracket/v2 but uses L2-regularized logistic regression
     instead of XGBoost. More honest probabilities, less overfitting.
     """
-    from feature_engineering import compute_match_features
-    from collections import defaultdict
-
     teams_raw = load_teams_raw()
     teams_lookup = {t["id"]: t for t in teams_raw}
     matches_enriched = load_matches_enriched()
     matches_raw = load_matches_raw()
 
-    team_history = defaultdict(list)
-    completed = sorted(
-        [m for m in matches_raw if m.get("score") and m.get("status", "").startswith("completed")],
-        key=lambda m: m["date"]
-    )
-    for m in completed:
-        t1_id = m.get("team1_id"); t2_id = m.get("team2_id")
-        if not t1_id or not t2_id: continue
-        t1 = teams_lookup.get(t1_id); t2 = teams_lookup.get(t2_id)
-        if not t1 or not t2: continue
-        s1 = int(m["score"]["team1"]); s2 = int(m["score"]["team2"])
-        t1_won = s1 > s2; t2_won = s2 > s1
-        if m.get("status","").endswith("_penalties"):
-            pen = m["score"].get("penalties","")
-            if pen:
-                p1,p2 = map(int, pen.split("-"))
-                t1_won = p1 > p2; t2_won = p2 > p1
-        team_history[t1_id].append({
-            "score": m["score"], "stage": m.get("stage","group"),
-            "date": m["date"], "team_role": "home",
-            "team_elo": t1.get("elo_rating",1500),
-            "opponent_elo": t2.get("elo_rating",1500),
-            "status": m["status"], "clean_sheet": s2==0,
-            "comeback": s1<=s2 and t1_won, "advanced": t1_won,
-        })
-        team_history[t2_id].append({
-            "score": m["score"], "stage": m.get("stage","group"),
-            "date": m["date"], "team_role": "away",
-            "team_elo": t2.get("elo_rating",1500),
-            "opponent_elo": t1.get("elo_rating",1500),
-            "status": m["status"], "clean_sheet": s1==0,
-            "comeback": s2<=s1 and t2_won, "advanced": t2_won,
-        })
+    team_history = build_team_history(matches_raw, teams_lookup)
 
     lr = get_logistic_predictor()
 

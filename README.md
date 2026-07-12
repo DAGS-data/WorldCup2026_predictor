@@ -55,8 +55,8 @@ wc2026-predictor/
 │   ├── frontend/                # SPA served statically
 │   │   └── index.html           # Dashboard (1055 lines, vanilla JS)
 │   ├── models/
-│   │   ├── xgboost_predictor.py # XGBoost classifier + Optuna + SHAP
-│   │   ├── xgboost_v1.json      # Trained model (91.7% accuracy)
+│   │   ├── xgboost_predictor.py # XGBoost classifier + SHAP
+│   │   ├── xgboost_v1.json      # Trained model (79.5% accuracy)
 │   │   └── feature_names.json   # Feature index
 │   └── data/
 │       ├── teams.json           # 48 teams (ELO, FIFA, squad value)
@@ -74,7 +74,7 @@ wc2026-predictor/
 - **Backend:** Python 3.13, FastAPI, XGBoost, NumPy, SciPy, SHAP, Pydantic
 - **Frontend:** HTML5 + CSS3 + Vanilla JS, no build step
 - **Data:** Precomputed JSON with `@lru_cache` (response <5ms)
-- **88 completed matches**, 12 scheduled (R16 → Final)
+- **96 completed matches**, 4 scheduled (QF → Final)
 
 ---
 
@@ -128,17 +128,19 @@ This guarantees $P(\text{A}) + P(\text{B}) = 1.0$ always.
 | Algorithm | XGBoost (Gradient Boosted Trees) |
 | Type | Binary classifier |
 | Features | 38 engineered variables |
-| Samples | 176 (88 matches × 2 perspectives) |
-| Optimization | Optuna (200 rounds, TPE sampler) |
+| Samples | 192 (96 matches × 2 perspectives) |
+| Optimization | Fixed hyperparameters, hand-picked (dataset too small for automated search) |
 | Validation | Time-based split (80% train, 20% validation) |
 
 ### Metrics
 
 | Metric | Value |
 |---------|-------|
-| Accuracy | 91.7% |
-| ROC AUC | 0.987 |
-| Brier Score | 0.066 |
+| Accuracy | 79.5% |
+| ROC AUC | 0.918 |
+| Brier Score | 0.146 |
+
+*(Recomputed after fixing the `overperformance` feature — see "Data Integrity Notes" near the bottom of this document.)*
 
 ### Why XGBoost?
 
@@ -324,13 +326,13 @@ $$O_A = \frac{1}{n}\sum (g_i - \mathbb{E}[g_i]) \cdot \left(1 - 0.3 \cdot \frac{
 
 ### 6. Goal Consistency (1)
 
-$$C_A = \sqrt{\frac{1}{n-1}\sum(g_i - \bar{g})^2}$$
+$$C_A = \sqrt{\frac{1}{n}\sum(g_i - \bar{g})^2}$$
 
-### 7. Stage and Group (7)
+### 7. Stage and Group (8)
 
 `stage_importance`, `stage_is_knockout`, `stage_is_r16`, `stage_is_qf`, `stage_is_sf`, `group_pts`, `group_pts_per_match`, `group_position`
 
-### 8. Confederation and Meta-features (11)
+### 8. Confederation and Meta-features (10)
 
 `same_confederation`, `team_is_uefa`, `team_is_conmebol`, `opp_is_uefa`, `opp_is_conmebol`, `elo_diff_abs`, `elo_ratio`, `is_top5`, `opp_is_top5`, `coming_off_close_loss`
 
@@ -413,7 +415,7 @@ cd backend && python3 main.py    # → http://localhost:8000
 | Layer | Technology |
 |------|-----------|
 | Language | Python 3.13 |
-| ML | XGBoost (Optuna-tuned, 38 features) |
+| ML | XGBoost (38 features, fixed hyperparameters) |
 | API | FastAPI + Uvicorn |
 | Math | NumPy, SciPy |
 | Explainability | SHAP (TreeExplainer) |
@@ -431,11 +433,45 @@ cd backend && python3 main.py    # → http://localhost:8000
 |---|-----------|------|
 | 1 | Chen, T. & Guestrin, C. (2016). *XGBoost: A Scalable Tree Boosting System*. | [DOI](https://doi.org/10.1145/2939672.2939785) |
 | 2 | Lundberg, S. M. & Lee, S.-I. (2017). *SHAP: A Unified Approach to Interpreting Model Predictions*. | [Paper](https://papers.nips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html) |
-| 3 | Akiba, T. et al. (2019). *Optuna: A Next-generation Hyperparameter Optimization Framework*. | [DOI](https://doi.org/10.1145/3292500.3330701) |
-| 4 | Elo, A. E. (1978). *The Rating of Chessplayers, Past and Present*. | ISBN 0-668-04721-6 |
-| 5 | Maher, M. J. (1982). *Modelling association football scores*. | [DOI](https://doi.org/10.1111/j.1467-9574.1982.tb00782.x) |
-| 6 | Dixon, M. J. & Coles, S. G. (1997). *Modelling association football scores and inefficiencies*. | [DOI](https://doi.org/10.1111/1467-9876.00065) |
-| 7 | Bergstra, J. et al. (2011). *Algorithms for Hyper-Parameter Optimization*. | [Paper](https://papers.nips.cc/paper/2011/hash/86e8f7ab32cfd12577bc2619bc635690-Abstract.html) |
+| 3 | Elo, A. E. (1978). *The Rating of Chessplayers, Past and Present*. | ISBN 0-668-04721-6 |
+| 4 | Maher, M. J. (1982). *Modelling association football scores*. | [DOI](https://doi.org/10.1111/j.1467-9574.1982.tb00782.x) |
+| 5 | Dixon, M. J. & Coles, S. G. (1997). *Modelling association football scores and inefficiencies*. | [DOI](https://doi.org/10.1111/1467-9876.00065) |
+
+---
+
+## 🔧 Data Integrity Notes
+
+Corrections made to bring the code in line with this document (and vice versa):
+
+- **`overperformance` now uses real expected goals.** The feature is defined as
+  $g_i - \mathbb{E}[g_i]$, but `expected_goals` was never populated anywhere in the
+  codebase — it silently defaulted to `1.0` for every match, so the feature was really
+  just `goals_scored - 1.0`. It's now computed from the same Elo-based Poisson model
+  used for the scoreline predictor (`estimate_expected_goals` in `predictor.py`), wired
+  in through a single shared history builder (`build_team_history` in
+  `feature_engineering.py`) used by training *and* every live endpoint, so the feature
+  can't drift out of sync between the two again.
+- **`comeback` was fixed.** In the training pipeline it was defined as
+  `s1 <= s2 and s1 > s2` — a logical contradiction, always `False`. In the live
+  single-match endpoints (`/api/predict/v2`, `/api/predict/v3`) it was hardcoded to
+  `False` outright. Both now use the same (simplified) proxy already used by the
+  bracket endpoints: a team "comes back" if it didn't lead on the scoreline but still
+  won.
+- **"Optuna-tuned" was removed.** The API and frontend previously advertised
+  Optuna-based hyperparameter search; the code never called Optuna — it used a fixed,
+  hand-picked parameter set. The claim has been removed everywhere (API responses,
+  frontend labels, this document); see the *Optimization* row above.
+- **Dead Platt-scaling code was removed** from `KnockoutPredictor` — `calibration_model`
+  was initialized to `None` and never fit, so the calibration branch in `predict()`
+  never ran.
+- **Metrics are no longer hardcoded.** `/api/model-info` used to return static
+  accuracy/AUC/Brier numbers that couldn't change even after retraining. Training now
+  persists real validation metrics to `xgboost_metrics.json`, which the API reads from.
+  The accuracy/AUC/Brier numbers above are from retraining with the `overperformance`
+  fix in place — they're lower than the previous claimed 91.7%/0.987/0.066 (a real,
+  informative overperformance feature is harder to fit than a near-constant one, and
+  the previous numbers were measured on a smaller, less representative validation
+  split).
 
 ---
 
@@ -445,4 +481,4 @@ MIT
 
 ---
 
-*Data: ESPN API, Transfermarkt (July 2026), FIFA. Models: XGBoost + ELO + Poisson. 88 matches completed, 12 remaining.*
+*Data: ESPN API, Transfermarkt (July 2026), FIFA. Models: XGBoost + ELO + Poisson. 96 matches completed, 4 remaining.*
